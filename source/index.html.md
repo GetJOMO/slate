@@ -1,11 +1,9 @@
 ---
-title: API Reference
+title: Wildfire API
 
 language_tabs:
-  - shell
+  - HTTPS
   - ruby
-  - python
-  - javascript
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
@@ -19,11 +17,7 @@ search: true
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
-
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
-
-This example API documentation page was created with [Slate](https://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
+Welcome to the Wildfire API!
 
 # Authentication
 
@@ -35,35 +29,51 @@ require 'kittn'
 api = Kittn::APIClient.authorize!('meowmeowmeow')
 ```
 
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
-
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-```
-
 > Make sure to replace `meowmeowmeow` with your API key.
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+Wildfire uses JWT tokens to allow access to the API. A custom token is generated via the User on-boarding process and passed back to the client for Authentication via Firebase.
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+Wildfire expects for the JWT token to be included in all API requests to the server in a header that looks like the following:
 
-`Authorization: meowmeowmeow`
+`Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.po9twTrX99V7XgAk5mVskkiq8aa0lpYOue62ehubRY4`
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+You must use the Firebase SDK in order to Authenticate with Firebase using the `AuthViaCustomToken` on the client.
 </aside>
+
+This endpoint will register or sign-in a user who has authenticated via Facebook.
+
+## Register a User via Email Registration
+
+> Send a POST request like so:
+
+```json
+{
+  "email": "lauren@gmail.com",
+  "first_name": "Lauren",
+  "last_name": "Godwin",
+  "dob": "1988-05-12",
+  "provider": "email",
+  "gender": 2,
+  "password": "s3cur3_p455w0rd"
+}
+```
+
+### HTTP Request
+
+`POST https://wildfire-dev.herokuapp.com/api/v1/auth/email/sign-up`
+
+## Authenticate a User via Email/Password
+
+> Send a POST request like so:
+
+```json
+
+```
+
+### HTTP Request
+
+`POST https://wildfire-dev.herokuapp.com/api/v1/auth/email/sign-in`
 
 # Kittens
 
@@ -129,9 +139,24 @@ Parameter | Default | Description
 include_cats | false | If set to true, the result will also include cats.
 available | true | If set to false, the result will include kittens that have already been adopted.
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
+```json
+[
+  {
+    "id": 1,
+    "name": "Fluffums",
+    "breed": "calico",
+    "fluffiness": 6,
+    "cuteness": 7
+  },
+  {
+    "id": 2,
+    "name": "Max",
+    "breed": "unknown",
+    "fluffiness": 5,
+    "cuteness": 10
+  }
+]
+```
 
 ## Get a Specific Kitten
 
@@ -186,4 +211,3 @@ This endpoint retrieves a specific kitten.
 Parameter | Description
 --------- | -----------
 ID | The ID of the kitten to retrieve
-
