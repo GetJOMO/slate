@@ -21,29 +21,61 @@ Welcome to the Wildfire API!
 
 # Authentication
 
-> To authorize, use this code:
+## Authentication Headers
 
-```ruby
-require 'kittn'
+> HTTP Request Headers:
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
+```shell
+'Client-key': 'UNIQUE_CLIENT_KEY_GOES_HERE'
 ```
 
-> Make sure to replace `meowmeowmeow` with your API key.
+```shell
+'Authorization': 'Basic my.email@gmail.com:s3cur3_p455w0rd'
+```
 
-Wildfire uses JWT tokens to allow access to the API. A custom token is generated via the User on-boarding process and passed back to the client for Authentication via Firebase.
+```shell
+'Authorization': 'Token o1yR62rL5yvvsmxLEVEXPjC3'
+```
 
-Wildfire expects for the JWT token to be included in all API requests to the server in a header that looks like the following:
+Wildfire uses multiple HTTP headers to authenticate API requests. The three different HTTP headers & their use cases for
+each are described below.
 
-`Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.po9twTrX99V7XgAk5mVskkiq8aa0lpYOue62ehubRY4`
+### _Client-key_ Header (All requests)
+The first is a `Client-key` header that is an unique API key which is checked for in *ALL* requests to the Wildfire API.
+This API key can be obtained from an API administrator.
+
+### HTTP Basic Auth Header
+This header (in addition to the `Client-key` header) is only required on the `login` & `token` endpoint requests.
+
+### HTTP Token Auth Header
+This header (in addition to the `Client-key` header) is required on all requests that
+are not the `login` & `token` endpoint requests. Use the `token` endpoint to get an existing
+user's `auth_token` for making further requests.
 
 <aside class="notice">
-You must use the Firebase SDK in order to Authenticate with Firebase using the `AuthViaCustomToken` on the client.
+You must use the LayerKit or Layer Android SDK in order to obtain the `nonce` used in the `token` endpoint request.
 </aside>
 
-This endpoint will register or sign-in a user who has authenticated via Facebook.
+# Users
 
-## Register a User via Email Registration
+Attribute | Type | Required/Optional
+--------- | ------- | -----------
+`id` | :integer | Required
+`email` | :string | Required
+`password` | :string | Required
+`first_name` | :string | Required
+`last_name` | :string | Required
+`dob` | :date | Required
+`gender` | :integer | Optional
+`about` | :integer | Optional
+`tags` | :array | Optional
+`avatar_url` | :string | Optional
+`auth_token` | :string | Required (Set by Server & used on all requests)
+`auth_token_expires_at` | :datetime | Required (Set by Server)
+<!-- `attribute` | :type | Required/Optional -->
+
+
+## Register new User
 
 > Send a POST request like so:
 
@@ -53,9 +85,10 @@ This endpoint will register or sign-in a user who has authenticated via Facebook
   "first_name": "Lauren",
   "last_name": "Godwin",
   "dob": "1988-05-12",
-  "provider": "email",
   "gender": 2,
-  "password": "s3cur3_p455w0rd"
+  "password": "s3cur3_p455w0rd",
+  "password_confirmation": "s3cur3_p455w0rd",
+  "nonce": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.po9twTrX99V7XgAk5mVskkiq8aa0lpYOue62ehubRY4"
 }
 ```
 
