@@ -149,7 +149,9 @@ to create an `identity_token` for the client to use on future Layer requests.
 > Along with the Basic Auth Header, send a POST request with the 'nonce' from Layer
 
 ```json
+{
   "nonce": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.po9twTrX99V7XgAk5mVskkiq8aa0lpYOue62ehubRY4"
+}
 ```
 
 Description: Used to authenticate an existing user and obtain a Layer `identity_token`
@@ -161,6 +163,58 @@ Description: Used to authenticate an existing user and obtain a Layer `identity_
 <aside class="notice">
 Along with the Basic Auth Header, send a POST request with the ‘nonce’ from Layer
 </aside>
+
+## Update User
+
+> Using the user's auth Token within a Token Auth Header, send a PATCH request with the user params:
+
+```json
+{
+  "about": "An updated bio from the client app!"
+}
+```
+
+> A JSON response like the following would be returned:
+
+```json
+{
+  "first_name": "Jordan",
+  "auth_token": "cRLSSiGNKfykY9DdsJQonkTp",
+  "auth_token_expiry": "2016-10-05T16:16:54.827Z",
+  "identity_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6ImxheWVyLWVpdDt2PTEiLCJraWQiOiJsYXllcjovLy9rZXlzLzA5YTI1NDZhLTdmNDItMTFlNi1hMzk3LTAyZDM1NjAwMTJmMCJ9.eyJpc3MiOiJsYXllcjovLy9wcm92aWRlcnMvY2Y4ZDEzZTgtN2U5NS0xMWU2LTkyNGItYTE1MWU1MTI0NjI0IiwicHJuIjoiamVnMzIyNEBnbWFpbC5jb20iLCJpYXQiOjE0NzU2MDE1MzIsImV4cCI6MTQ3NjgxMTEzMiwibmNlIjpudWxsfQ.NN-AW7gpnklCoMKzZ_4MoXi0b6XJJQR1nZRXATd3M1nLe1VZk9NlIr-1hYbVRspeZOm4oZuN5HJslLMiYbEot5bm48I1OS0vqqwo64azZSVGTqmJl2GAm_lRizbb10Ic90YUdUPsrMeBfaq4B1yyGX03o2xSPQvDwBetGpqAJ_6oJkH_nDi0ZABLFtml1UHtUjKxOMU06-42r8L8FDTNOHWpw7bvB-hUa1T42OFO9cuDnPytu8yZeqEeS8MoXBY6-KUoI7qaJuaEI9G2IXYlodDZkAwW38Q_hWEp01umPSwB9551E5hApU2sJS2aih2A06tvP23yRt0r1JCI4w5pbQ",
+  "email": "jeg3224@gmail.com",
+  "dob": "1987-02-09",
+  "gender": "male",
+  "active": true,
+  "avatar_url": "https:\/\/fake.urlto.img\/user_avatar",
+  "last_login_time": "2016-10-04T16:16:54.827Z",
+  "push_notifs": {
+    "event": false,
+    "follows": false,
+    "general": false,
+    "mentions": false,
+    "messages": false
+  },
+  "social_ids": {
+    "twitter": null,
+    "facebook": null,
+    "instagram": null,
+    "pinterest": null
+  },
+  "tags": [
+    "Programming",
+    "Duke Basketball",
+    "Fishing",
+    "Boating"
+  ]
+}
+```
+
+Description: Updates the currently logged in user's profile
+
+### HTTP Request
+
+`PATCH https://wildfire-dev.herokuapp.com/api/v1/me`
 
 # Kittens
 
