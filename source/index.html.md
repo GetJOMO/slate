@@ -46,11 +46,12 @@ The first is a `Client-key` header that is an unique API key which is checked fo
 This API key can be obtained from an API administrator.
 
 ### HTTP Basic Auth Header
-This header (in addition to the `Client-key` header) is only required on the `login` & `token` endpoint requests.
+This header (in addition to the `Client-key` header) is only required on the `auth` endpoint requests. This header
+should include the users's email & password as seen in the example to the right.
 
 ### HTTP Token Auth Header
 This header (in addition to the `Client-key` header) is required on all requests that
-are not the `login` & `token` endpoint requests. Use the `token` endpoint to get an existing
+are not the `auth` endpoint requests. Use the `token` endpoint to get an existing
 user's `auth_token` for making further requests.
 
 <aside class="notice">
@@ -102,17 +103,35 @@ to create an `identity_token` for the client to use on future Layer requests.
 
 > Along with the Basic Auth Header, send a POST request with the 'nonce' from Layer
 
+```shell
+'Authorization': 'Basic my.email@gmail.com:s3cur3_p455w0rd'
+```
+
 ```json
 {
   "nonce": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.po9twTrX99V7XgAk5mVskkiq8aa0lpYOue62ehubRY4"
 }
 ```
 
-Description: Used to authenticate an existing user and obtain a Layer `identity_token`
+> The above request returns JSON structured like this:
+
+```json
+{
+  "auth_token": "Ac7qVZsS5Az7SVdgcrnEgXbf",
+  "auth_token_expiry": "2016-10-05T16:16:54.827Z",
+  "first_name": "Lauren",
+  "uid": "26934fae-7b3a-4f72-b7cb-2469c94458cd",
+  "identity_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6ImxheWVyLWVpdDt2PTEiLCJraWQiOiJsYXllcjovLy9rZXlzLzA5YTI1NDZhLTdmNDItMTFlNi1hMzk3LTAyZDM1NjAwMTJmMCJ9.eyJpc3MiOiJsYXllcjovLy9wcm92aWRlcnMvY2Y4ZDEzZTgtN2U5NS0xMWU2LTkyNGItYTE1MWU1MTI0NjI0IiwicHJuIjoiMiIsImlhdCI6MTQ3NDkwMDMxNiwiZXhwIjoxNDc2MTA5OTE2LCJuY2UiOm51bGx9.pbHs3nk5IuIYCssA4XfcwKGFWM443MSXOeQhlAgXvMd3fQMO9OMpK6o9pBTju-LRfjXW-4mC7y6jhbSVfJ34KQ5HH7np8MQEO3HlmrpBSf4LBBDtox7GC2DzhYyo9uX-MgjJRKNwIH2Gv9qUE3oB9dYU2it_y4YR6Kw_Oe9Nd1TYuK6S-PFXnhsKEHdfVb0VlSBMYOvRYL6X8N-MaQyvbz__wVpJ55Y3QligFaV1of9DGgbTZLbbqbMAQFk8GnftTiIF2em3RFxKOMMItARGC-XEvXoEIgB1N6TvyJV-67cUtg1wvoCHvK2JsHFuSAA8or-oAHBlJ52Hm5nSNg8wmw"
+}
+```
+
+Description: Used to authenticate an existing user and obtain a Layer `identity_token`. A request
+to this endpoint should include the users's email & password in HTTP Basc Auth header, as well as the `nonce` in
+body of the request.
 
 ### HTTP Request
 
-`POST https://wildfire-dev.herokuapp.com/api/v1/auth/email/sign-in`
+`POST https://wildfire-dev.herokuapp.com/api/v1/auth`
 
 <aside class="notice">
 Along with the Basic Auth Header, send a POST request with the ‘nonce’ from Layer
