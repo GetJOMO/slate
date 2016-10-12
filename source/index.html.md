@@ -11,6 +11,7 @@ toc_footers:
 
 includes:
   - errors
+  - models
 
 search: true
 ---
@@ -21,7 +22,7 @@ Welcome to the Wildfire API!
 
 # Authentication
 
-## Authentication Headers
+## Authentication Header Types
 
 > HTTP Request Headers:
 
@@ -56,54 +57,6 @@ user's `auth_token` for making further requests.
 You must use the LayerKit or Layer Android SDK in order to obtain the `nonce` used in the `token` endpoint request.
 </aside>
 
-# Users
-> Example User object:
-
-```json
-{
-  "last_name": "Knight",
-  "email": "woozykk@gmail.com",
-  "dob": "1980-10-24",
-  "gender": "1",
-  "avatar_url": "https://fake.urlto.img/user_avatar",
-  "uid": "2f9dea45-23ea-47cb-9541-c1218bf59e20",
-  "auth_token": "'a2zS95rM5yrrsmxOPVZXPjC5",
-  "auth_token_expiry": "2016-09-28 17:33:52.449806",
-  "last_login_time": "2016-09-27 17:33:52.449806",
-  "about": "This is all about Kerry Knight.",
-  "tags": "['Swift', 'UNC Sports', 'Beer', 'Startups']",
-  "social_ids": {
-    "facebook": "729779407355",
-    "twitter": null,
-    "instagram": null,
-    "pinterest": null
-  },
-  "push_notifs": {
-    "general": true,
-    "messages": true,
-    "events": false,
-    "mentions": true,
-    "follows": true
-  }
-}
-```
-
-Attribute | Type | Required/Optional
---------- | ------- | -----------
-`id` | :integer | **Required**
-`email` | :string | **Required**
-`password` | :string | **Required**
-`first_name` | :string | **Required**
-`last_name` | :string | **Required**
-`dob` | :date | **Required**
-`gender` | :integer | Optional
-`about` | :integer | Optional
-`tags` | :array | Optional
-`social_ids` | :object | Optional
-`avatar_url` | :string | Optional
-`auth_token` | :string | **Required** *(Set by Server & used on all requests)*
-`auth_token_expires_at` | :datetime | **Required** *(Set by Server)*
-
 
 ## Register new User
 
@@ -127,6 +80,7 @@ Attribute | Type | Required/Optional
 ```json
 {
   "auth_token": "Ac7qVZsS5Az7SVdgcrnEgXbf",
+  "auth_token_expiry": "2016-10-05T16:16:54.827Z",
   "first_name": "Lauren",
   "uid": "26934fae-7b3a-4f72-b7cb-2469c94458cd",
   "identity_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6ImxheWVyLWVpdDt2PTEiLCJraWQiOiJsYXllcjovLy9rZXlzLzA5YTI1NDZhLTdmNDItMTFlNi1hMzk3LTAyZDM1NjAwMTJmMCJ9.eyJpc3MiOiJsYXllcjovLy9wcm92aWRlcnMvY2Y4ZDEzZTgtN2U5NS0xMWU2LTkyNGItYTE1MWU1MTI0NjI0IiwicHJuIjoiMiIsImlhdCI6MTQ3NDkwMDMxNiwiZXhwIjoxNDc2MTA5OTE2LCJuY2UiOm51bGx9.pbHs3nk5IuIYCssA4XfcwKGFWM443MSXOeQhlAgXvMd3fQMO9OMpK6o9pBTju-LRfjXW-4mC7y6jhbSVfJ34KQ5HH7np8MQEO3HlmrpBSf4LBBDtox7GC2DzhYyo9uX-MgjJRKNwIH2Gv9qUE3oB9dYU2it_y4YR6Kw_Oe9Nd1TYuK6S-PFXnhsKEHdfVb0VlSBMYOvRYL6X8N-MaQyvbz__wVpJ55Y3QligFaV1of9DGgbTZLbbqbMAQFk8GnftTiIF2em3RFxKOMMItARGC-XEvXoEIgB1N6TvyJV-67cUtg1wvoCHvK2JsHFuSAA8or-oAHBlJ52Hm5nSNg8wmw"
@@ -163,6 +117,8 @@ Description: Used to authenticate an existing user and obtain a Layer `identity_
 <aside class="notice">
 Along with the Basic Auth Header, send a POST request with the ‘nonce’ from Layer
 </aside>
+
+# Users
 
 ## Update User
 
