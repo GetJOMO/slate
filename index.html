@@ -124,7 +124,7 @@
 
 <h1 id="authentication">Authentication</h1>
 
-<h2 id="authentication-headers">Authentication Headers</h2>
+<h2 id="authentication-header-types">Authentication Header Types</h2>
 
 <blockquote>
 <p>HTTP Request Headers:</p>
@@ -155,112 +155,6 @@ user&rsquo;s <code class="prettyprint">auth_token</code> for making further requ
 You must use the LayerKit or Layer Android SDK in order to obtain the `nonce` used in the `token` endpoint request.
 </aside>
 
-<h1 id="users">Users</h1>
-
-<blockquote>
-<p>Example User object:</p>
-</blockquote>
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Knight"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"woozykk@gmail.com"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1980-10-24"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://fake.urlto.img/user_avatar"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2f9dea45-23ea-47cb-9541-c1218bf59e20"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"auth_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"'a2zS95rM5yrrsmxOPVZXPjC5"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"auth_token_expiry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-09-28 17:33:52.449806"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"last_login_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-09-27 17:33:52.449806"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"about"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is all about Kerry Knight."</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="s2">"['Swift', 'UNC Sports', 'Beer', 'Startups']"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"social_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"facebook"</span><span class="p">:</span><span class="w"> </span><span class="s2">"729779407355"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"twitter"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"instagram"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"pinterest"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="nt">"push_notifs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"general"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"messages"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"events"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"mentions"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"follows"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<table><thead>
-<tr>
-<th>Attribute</th>
-<th>Type</th>
-<th>Required/Optional</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><code class="prettyprint">id</code></td>
-<td>:integer</td>
-<td><strong>Required</strong></td>
-</tr>
-<tr>
-<td><code class="prettyprint">email</code></td>
-<td>:string</td>
-<td><strong>Required</strong></td>
-</tr>
-<tr>
-<td><code class="prettyprint">password</code></td>
-<td>:string</td>
-<td><strong>Required</strong></td>
-</tr>
-<tr>
-<td><code class="prettyprint">first_name</code></td>
-<td>:string</td>
-<td><strong>Required</strong></td>
-</tr>
-<tr>
-<td><code class="prettyprint">last_name</code></td>
-<td>:string</td>
-<td><strong>Required</strong></td>
-</tr>
-<tr>
-<td><code class="prettyprint">dob</code></td>
-<td>:date</td>
-<td><strong>Required</strong></td>
-</tr>
-<tr>
-<td><code class="prettyprint">gender</code></td>
-<td>:integer</td>
-<td>Optional</td>
-</tr>
-<tr>
-<td><code class="prettyprint">about</code></td>
-<td>:integer</td>
-<td>Optional</td>
-</tr>
-<tr>
-<td><code class="prettyprint">tags</code></td>
-<td>:array</td>
-<td>Optional</td>
-</tr>
-<tr>
-<td><code class="prettyprint">social_ids</code></td>
-<td>:object</td>
-<td>Optional</td>
-</tr>
-<tr>
-<td><code class="prettyprint">avatar_url</code></td>
-<td>:string</td>
-<td>Optional</td>
-</tr>
-<tr>
-<td><code class="prettyprint">auth_token</code></td>
-<td>:string</td>
-<td><strong>Required</strong> <em>(Set by Server &amp; used on all requests)</em></td>
-</tr>
-<tr>
-<td><code class="prettyprint">auth_token_expires_at</code></td>
-<td>:datetime</td>
-<td><strong>Required</strong> <em>(Set by Server)</em></td>
-</tr>
-</tbody></table>
-
 <h2 id="register-new-user">Register new User</h2>
 
 <blockquote>
@@ -282,6 +176,7 @@ You must use the LayerKit or Layer Android SDK in order to obtain the `nonce` us
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"auth_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ac7qVZsS5Az7SVdgcrnEgXbf"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"auth_token_expiry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-10-05T16:16:54.827Z"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lauren"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"26934fae-7b3a-4f72-b7cb-2469c94458cd"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"identity_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6ImxheWVyLWVpdDt2PTEiLCJraWQiOiJsYXllcjovLy9rZXlzLzA5YTI1NDZhLTdmNDItMTFlNi1hMzk3LTAyZDM1NjAwMTJmMCJ9.eyJpc3MiOiJsYXllcjovLy9wcm92aWRlcnMvY2Y4ZDEzZTgtN2U5NS0xMWU2LTkyNGItYTE1MWU1MTI0NjI0IiwicHJuIjoiMiIsImlhdCI6MTQ3NDkwMDMxNiwiZXhwIjoxNDc2MTA5OTE2LCJuY2UiOm51bGx9.pbHs3nk5IuIYCssA4XfcwKGFWM443MSXOeQhlAgXvMd3fQMO9OMpK6o9pBTju-LRfjXW-4mC7y6jhbSVfJ34KQ5HH7np8MQEO3HlmrpBSf4LBBDtox7GC2DzhYyo9uX-MgjJRKNwIH2Gv9qUE3oB9dYU2it_y4YR6Kw_Oe9Nd1TYuK6S-PFXnhsKEHdfVb0VlSBMYOvRYL6X8N-MaQyvbz__wVpJ55Y3QligFaV1of9DGgbTZLbbqbMAQFk8GnftTiIF2em3RFxKOMMItARGC-XEvXoEIgB1N6TvyJV-67cUtg1wvoCHvK2JsHFuSAA8or-oAHBlJ52Hm5nSNg8wmw"</span><span class="w">
@@ -303,7 +198,9 @@ to create an `identity_token` for the client to use on future Layer requests.
 <blockquote>
 <p>Along with the Basic Auth Header, send a POST request with the &lsquo;nonce&rsquo; from Layer</p>
 </blockquote>
-<pre class="highlight json"><code><span class="w">  </span><span class="s2">"nonce"</span><span class="err">:</span><span class="w"> </span><span class="s2">"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.po9twTrX99V7XgAk5mVskkiq8aa0lpYOue62ehubRY4"</span><span class="w">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"nonce"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.po9twTrX99V7XgAk5mVskkiq8aa0lpYOue62ehubRY4"</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Description: Used to authenticate an existing user and obtain a Layer <code class="prettyprint">identity_token</code></p>
 
@@ -314,6 +211,58 @@ to create an `identity_token` for the client to use on future Layer requests.
 <aside class="notice">
 Along with the Basic Auth Header, send a POST request with the ‘nonce’ from Layer
 </aside>
+
+<h1 id="users">Users</h1>
+
+<h2 id="update-user">Update User</h2>
+
+<blockquote>
+<p>Using the user&rsquo;s auth Token within a Token Auth Header, send a PATCH request with the user params:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"about"</span><span class="p">:</span><span class="w"> </span><span class="s2">"An updated bio from the client app!"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>A JSON response like the following would be returned:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jordan"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"auth_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cRLSSiGNKfykY9DdsJQonkTp"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"auth_token_expiry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-10-05T16:16:54.827Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"identity_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6ImxheWVyLWVpdDt2PTEiLCJraWQiOiJsYXllcjovLy9rZXlzLzA5YTI1NDZhLTdmNDItMTFlNi1hMzk3LTAyZDM1NjAwMTJmMCJ9.eyJpc3MiOiJsYXllcjovLy9wcm92aWRlcnMvY2Y4ZDEzZTgtN2U5NS0xMWU2LTkyNGItYTE1MWU1MTI0NjI0IiwicHJuIjoiamVnMzIyNEBnbWFpbC5jb20iLCJpYXQiOjE0NzU2MDE1MzIsImV4cCI6MTQ3NjgxMTEzMiwibmNlIjpudWxsfQ.NN-AW7gpnklCoMKzZ_4MoXi0b6XJJQR1nZRXATd3M1nLe1VZk9NlIr-1hYbVRspeZOm4oZuN5HJslLMiYbEot5bm48I1OS0vqqwo64azZSVGTqmJl2GAm_lRizbb10Ic90YUdUPsrMeBfaq4B1yyGX03o2xSPQvDwBetGpqAJ_6oJkH_nDi0ZABLFtml1UHtUjKxOMU06-42r8L8FDTNOHWpw7bvB-hUa1T42OFO9cuDnPytu8yZeqEeS8MoXBY6-KUoI7qaJuaEI9G2IXYlodDZkAwW38Q_hWEp01umPSwB9551E5hApU2sJS2aih2A06tvP23yRt0r1JCI4w5pbQ"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jeg3224@gmail.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1987-02-09"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"male"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:\/\/fake.urlto.img\/user_avatar"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"last_login_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-10-04T16:16:54.827Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"push_notifs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"event"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"follows"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"general"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"mentions"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"messages"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"social_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"twitter"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"facebook"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"instagram"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"pinterest"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"Programming"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Duke Basketball"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Fishing"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Boating"</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Description: Updates the currently logged in user&rsquo;s profile</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">PATCH https://wildfire-dev.herokuapp.com/api/v1/me</code></p>
 
 <h1 id="kittens">Kittens</h1>
 
@@ -447,9 +396,7 @@ Along with the Basic Auth Header, send a POST request with the ‘nonce’ from 
 
           <h1 id="errors">Errors</h1>
 
-<aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files&hellip;just save them to the `includes` folder and add them to the top of your `index.md`&rsquo;s frontmatter. Files are included in the order listed.</aside>
-
-<p>The Kittn API uses the following error codes:</p>
+<p>The Wildfire API uses the following error codes:</p>
 
 <table><thead>
 <tr>
@@ -467,31 +414,15 @@ Along with the Basic Auth Header, send a POST request with the ‘nonce’ from 
 </tr>
 <tr>
 <td>403</td>
-<td>Forbidden &ndash; The kitten requested is hidden for administrators only</td>
+<td>Forbidden &ndash; The resource requested is hidden for administrators only</td>
 </tr>
 <tr>
 <td>404</td>
-<td>Not Found &ndash; The specified kitten could not be found</td>
-</tr>
-<tr>
-<td>405</td>
-<td>Method Not Allowed &ndash; You tried to access a kitten with an invalid method</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable &ndash; You requested a format that isn&rsquo;t json</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone &ndash; The kitten requested has been removed from our servers</td>
+<td>Not Found &ndash; The specified resource could not be found</td>
 </tr>
 <tr>
 <td>418</td>
 <td>I&rsquo;m a teapot</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests &ndash; You&rsquo;re requesting too many kittens! Slow down!</td>
 </tr>
 <tr>
 <td>500</td>
@@ -502,6 +433,118 @@ Along with the Basic Auth Header, send a POST request with the ‘nonce’ from 
 <td>Service Unavailable &ndash; We&rsquo;re temporarially offline for maintanance. Please try again later.</td>
 </tr>
 </tbody></table>
+
+          <h1 id="api-models">API Models</h1>
+
+<p>Below are the resource models that the Wildfire API has.</p>
+
+<h2 id="user">User</h2>
+
+<blockquote>
+<p>Example User object:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Knight"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"woozykk@gmail.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1980-10-24"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://fake.urlto.img/user_avatar"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2f9dea45-23ea-47cb-9541-c1218bf59e20"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"auth_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"'a2zS95rM5yrrsmxOPVZXPjC5"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"auth_token_expiry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-09-28 17:33:52.449806"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"last_login_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-09-27 17:33:52.449806"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"about"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is all about Kerry Knight."</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="s2">"['Swift', 'UNC Sports', 'Beer', 'Startups']"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"social_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"facebook"</span><span class="p">:</span><span class="w"> </span><span class="s2">"729779407355"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"twitter"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"instagram"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"pinterest"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"push_notifs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"general"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"messages"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"events"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"mentions"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"follows"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Required/Optional</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">id</code></td>
+<td>:integer</td>
+<td><strong>Required</strong></td>
+</tr>
+<tr>
+<td><code class="prettyprint">email</code></td>
+<td>:string</td>
+<td><strong>Required</strong></td>
+</tr>
+<tr>
+<td><code class="prettyprint">password</code></td>
+<td>:string</td>
+<td><strong>Required</strong></td>
+</tr>
+<tr>
+<td><code class="prettyprint">first_name</code></td>
+<td>:string</td>
+<td><strong>Required</strong></td>
+</tr>
+<tr>
+<td><code class="prettyprint">last_name</code></td>
+<td>:string</td>
+<td><strong>Required</strong></td>
+</tr>
+<tr>
+<td><code class="prettyprint">dob</code></td>
+<td>:date</td>
+<td><strong>Required</strong></td>
+</tr>
+<tr>
+<td><code class="prettyprint">gender</code></td>
+<td>:integer</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td><code class="prettyprint">about</code></td>
+<td>:integer</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td><code class="prettyprint">tags</code></td>
+<td>:array</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td><code class="prettyprint">social_ids</code></td>
+<td>:object</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td><code class="prettyprint">avatar_url</code></td>
+<td>:string</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td><code class="prettyprint">auth_token</code></td>
+<td>:string</td>
+<td><strong>Required</strong> <em>(Set by Server &amp; used on all requests)</em></td>
+</tr>
+<tr>
+<td><code class="prettyprint">auth_token_expires_at</code></td>
+<td>:datetime</td>
+<td><strong>Required</strong> <em>(Set by Server)</em></td>
+</tr>
+</tbody></table>
+
+<h2 id="event">Event</h2>
 
       </div>
       <div class="dark-box">
