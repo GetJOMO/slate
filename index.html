@@ -143,12 +143,13 @@ This API key can be obtained from an API administrator.</p>
 
 <h3 id="http-basic-auth-header">HTTP Basic Auth Header</h3>
 
-<p>This header (in addition to the <code class="prettyprint">Client-key</code> header) is only required on the <code class="prettyprint">login</code> &amp; <code class="prettyprint">token</code> endpoint requests.</p>
+<p>This header (in addition to the <code class="prettyprint">Client-key</code> header) is only required on the <code class="prettyprint">auth</code> endpoint requests. This header
+should include the users&rsquo;s email &amp; password as seen in the example to the right.</p>
 
 <h3 id="http-token-auth-header">HTTP Token Auth Header</h3>
 
 <p>This header (in addition to the <code class="prettyprint">Client-key</code> header) is required on all requests that
-are not the <code class="prettyprint">login</code> &amp; <code class="prettyprint">token</code> endpoint requests. Use the <code class="prettyprint">token</code> endpoint to get an existing
+are not the <code class="prettyprint">auth</code> endpoint requests. Use the <code class="prettyprint">token</code> endpoint to get an existing
 user&rsquo;s <code class="prettyprint">auth_token</code> for making further requests.</p>
 
 <aside class="notice">
@@ -198,15 +199,29 @@ to create an `identity_token` for the client to use on future Layer requests.
 <blockquote>
 <p>Along with the Basic Auth Header, send a POST request with the &lsquo;nonce&rsquo; from Layer</p>
 </blockquote>
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
+<pre class="highlight shell"><code><span class="s1">'Authorization'</span>: <span class="s1">'Basic my.email@gmail.com:s3cur3_p455w0rd'</span>
+</code></pre><pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"nonce"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.po9twTrX99V7XgAk5mVskkiq8aa0lpYOue62ehubRY4"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Description: Used to authenticate an existing user and obtain a Layer <code class="prettyprint">identity_token</code></p>
+<blockquote>
+<p>The above request returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"auth_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ac7qVZsS5Az7SVdgcrnEgXbf"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"auth_token_expiry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-10-05T16:16:54.827Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lauren"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"26934fae-7b3a-4f72-b7cb-2469c94458cd"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"identity_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6ImxheWVyLWVpdDt2PTEiLCJraWQiOiJsYXllcjovLy9rZXlzLzA5YTI1NDZhLTdmNDItMTFlNi1hMzk3LTAyZDM1NjAwMTJmMCJ9.eyJpc3MiOiJsYXllcjovLy9wcm92aWRlcnMvY2Y4ZDEzZTgtN2U5NS0xMWU2LTkyNGItYTE1MWU1MTI0NjI0IiwicHJuIjoiMiIsImlhdCI6MTQ3NDkwMDMxNiwiZXhwIjoxNDc2MTA5OTE2LCJuY2UiOm51bGx9.pbHs3nk5IuIYCssA4XfcwKGFWM443MSXOeQhlAgXvMd3fQMO9OMpK6o9pBTju-LRfjXW-4mC7y6jhbSVfJ34KQ5HH7np8MQEO3HlmrpBSf4LBBDtox7GC2DzhYyo9uX-MgjJRKNwIH2Gv9qUE3oB9dYU2it_y4YR6Kw_Oe9Nd1TYuK6S-PFXnhsKEHdfVb0VlSBMYOvRYL6X8N-MaQyvbz__wVpJ55Y3QligFaV1of9DGgbTZLbbqbMAQFk8GnftTiIF2em3RFxKOMMItARGC-XEvXoEIgB1N6TvyJV-67cUtg1wvoCHvK2JsHFuSAA8or-oAHBlJ52Hm5nSNg8wmw"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Description: Used to authenticate an existing user and obtain a Layer <code class="prettyprint">identity_token</code>. A request
+to this endpoint should include the users&rsquo;s email &amp; password in HTTP Basc Auth header, as well as the <code class="prettyprint">nonce</code> in
+body of the request.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST https://wildfire-dev.herokuapp.com/api/v1/auth/email/sign-in</code></p>
+<p><code class="prettyprint">POST https://wildfire-dev.herokuapp.com/api/v1/auth</code></p>
 
 <aside class="notice">
 Along with the Basic Auth Header, send a POST request with the ‘nonce’ from Layer
