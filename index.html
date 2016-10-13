@@ -156,6 +156,41 @@ user&rsquo;s <code class="prettyprint">auth_token</code> for making further requ
 You must use the LayerKit or Layer Android SDK in order to obtain the `nonce` used in the `token` endpoint request.
 </aside>
 
+<h2 id="verify-email-address">Verify Email Address</h2>
+
+<blockquote>
+<p>Send a GET request with the email to be verified:</p>
+</blockquote>
+<pre class="highlight shell"><code>https://wildfire-staging.herokuapp.com/api/v1/auth/verify_email?email<span class="o">=</span>woozykk@gmail.com
+</code></pre>
+<blockquote>
+<p>If the email is available, the following JSON response will be returned:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"email_exists"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint is used during the on-boarding process to verify that the user&rsquo;s email address has not
+already been registered with a previous account.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/auth/verify_email</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">email</code></td>
+<td>Specify email address to verify</td>
+</tr>
+</tbody></table>
+
 <h2 id="register-new-user">Register new User</h2>
 
 <blockquote>
