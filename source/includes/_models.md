@@ -8,6 +8,7 @@ Below are the resource models that the Wildfire API has.
 
 ```json
 {
+  "first_name": "Kerry",
   "last_name": "Knight",
   "email": "woozykk@gmail.com",
   "dob": "1980-10-24",
@@ -52,3 +53,52 @@ Attribute | Type | Required/Optional
 `auth_token_expires_at` | :datetime | **Required** *(Set by Server)*
 
 ## Event
+
+> Example Event object:
+
+```json
+{
+  "id": 9,
+  "description": "test event desc",
+  "image_url": "http://www.fakeurl.com/fake_img_id",
+  "tags": [
+    {
+      "title": "NFL"
+    },
+    {
+      "title": "Carolina Panthers"
+    },
+    {
+      "title": "Beer"
+    }
+  ],
+  "starts_at": "1988-05-12T00:00:00.000Z",
+  "duration": 1.5,
+  "venue_id": 37483747,
+  "host": {
+    "id": 1,
+    "name": "Jordan Godwin",
+    "dob": "1987-02-09",
+    "gender": "male",
+    "tags": [
+      "Programming",
+      "Duke Basketball",
+      "Fishing",
+      "Boating"
+    ]
+  }
+}
+```
+
+Attribute | Type | Required/Optional
+--------- | ------- | -----------
+`description` | :string | **Required**
+`image_url` | :string | **Required**
+`tags` | :object | **Required**
+`starts_at` | :datetime | **Required**
+`duration` | :float | **Required**
+`venue_id` | :integer | Optional
+`coords` | :point | **Required** *(lat/lng values formatted by the server)*
+`host_id` | :integer | **Required**
+`created_at` | :datetime | Optional
+`updated_at` | :datetime | Optional

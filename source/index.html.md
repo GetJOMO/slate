@@ -191,55 +191,209 @@ Description: Updates the currently logged in user's profile
 
 `PATCH https://wildfire-dev.herokuapp.com/api/v1/me`
 
-# Kittens
+# Events
+
+## Create Event
+
+> Send a POST request with required parameters:
+
+```json
+{
+  "description": "test event desc",
+  "image_url": "http://www.fakeurl.com/fake_img_id",
+  "tags": [
+    {
+      "title": "NFL"
+    },
+    {
+      "title": "Carolina Panthers"
+    },
+    {
+      "title": "Beer"
+    }
+  ],
+  "starts_at": "1988-05-12",
+  "duration": 1.5,
+  "venue_id": 37483747,
+  "password": "12345678",
+  "coords": {
+    "lat": 34.4332,
+    "lng": -77.8485
+  }
+}
+```
+
+> A JSON response like the following would be returned:
+
+```json
+{
+  "id": 9,
+  "description": "test event desc",
+  "image_url": "http://www.fakeurl.com/fake_img_id",
+  "tags": [
+    {
+      "title": "NFL"
+    },
+    {
+      "title": "Carolina Panthers"
+    },
+    {
+      "title": "Beer"
+    }
+  ],
+  "starts_at": "1988-05-12T00:00:00.000Z",
+  "duration": 1.5,
+  "venue_id": 37483747,
+  "host": {
+    "id": 1,
+    "name": "Jordan Godwin",
+    "dob": "1987-02-09",
+    "gender": "male",
+    "tags": [
+      "Programming",
+      "Duke Basketball",
+      "Fishing",
+      "Boating"
+    ]
+  }
+}
+```
+
+This endpoint creates an Event for the currently logged in user.
+
+### HTTP Request
+
+`POST https://wildfire-dev.herokuapp.com/api/v1/events`
+
+## Update Event
+
+> Send a PATCH request with required parameters:
+
+```json
+{
+  "description": "test event desc",
+  "image_url": "http://www.fakeurl.com/fake_img_id",
+  "tags": [
+    {
+      "title": "NFL"
+    },
+    {
+      "title": "Carolina Panthers"
+    },
+    {
+      "title": "Beer"
+    }
+  ],
+  "starts_at": "1988-05-12",
+  "duration": 1.5,
+  "venue_id": 37483747,
+  "password": "12345678",
+  "coords": {
+    "lat": 34.4332,
+    "lng": -77.8485
+  }
+}
+```
+
+> A JSON response like the following would be returned:
+
+```json
+{
+  "id": 9,
+  "description": "test event desc",
+  "image_url": "http://www.fakeurl.com/fake_img_id",
+  "tags": [
+    {
+      "title": "NFL"
+    },
+    {
+      "title": "Carolina Panthers"
+    },
+    {
+      "title": "Beer"
+    }
+  ],
+  "starts_at": "1988-05-12T00:00:00.000Z",
+  "duration": 1.5,
+  "venue_id": 37483747,
+  "host": {
+    "id": 1,
+    "name": "Jordan Godwin",
+    "dob": "1987-02-09",
+    "gender": "male",
+    "tags": [
+      "Programming",
+      "Duke Basketball",
+      "Fishing",
+      "Boating"
+    ]
+  }
+}
+```
+
+This endpoint updates an Event for the currently logged in user.
+
+### HTTP Request
+
+`PATCH https://wildfire-dev.herokuapp.com/api/v1/events/:id`
+
+## Delete Event
+
+> Send a DELETE request with Event ID in the URI:
+
+```
+DELETE http://wildfire-dev.herokuapp.com/api/v1/events/9
+```
+
+> A JSON response like the following would be returned:
+
+```json
+{ "message": "Event was successfully deleted." }
+```
+
+This endpoint deletes an Event by the currently logged in user.
+
+### HTTP Request
+
+`DELETE https://wildfire-dev.herokuapp.com/api/v1/events/:id`
+
+# Resource (Endpoint Template)
 
 ## Get All Kittens
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
-
-> The above command returns JSON structured like this:
+> Send a POST request with required parameters:
 
 ```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
+{
+  "key": "value",
+  "key": "value",
+  "key": "value",
+  "key": [
+    {
+      "key": "value"
+    },
+    {
+      "key": "value"
+    }
+  ]
+}
+```
+
+> A JSON response like the following would be returned:
+
+```json
+{
+  "key": "value",
+  "key": "value",
+  "key": [
+    {
+      "key": "value"
+    },
+    {
+      "key": "value"
+    }
+  ]
+}
 ```
 
 This endpoint retrieves all kittens.
