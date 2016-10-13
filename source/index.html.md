@@ -58,6 +58,35 @@ user's `auth_token` for making further requests.
 You must use the LayerKit or Layer Android SDK in order to obtain the `nonce` used in the `token` endpoint request.
 </aside>
 
+## Verify Email Address
+
+> Send a GET request with the email to be verified:
+
+```shell
+https://wildfire-staging.herokuapp.com/api/v1/auth/verify_email?email=woozykk@gmail.com
+```
+
+> If the email is available, the following JSON response will be returned:
+
+```json
+{
+  "email_exists": false
+}
+```
+
+This endpoint is used during the on-boarding process to verify that the user's email address has not
+already been registered with a previous account.
+
+### HTTP Request
+
+`GET https://wildfire-staging.herokuapp.com/api/v1/auth/verify_email`
+
+### Query Parameters
+
+Parameter | Description
+--------- | -----------
+`email` | Specify email address to verify
+
 
 ## Register new User
 
