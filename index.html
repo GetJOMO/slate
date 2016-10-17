@@ -262,6 +262,27 @@ body of the request.</p>
 Along with the Basic Auth Header, send a POST request with the ‘nonce’ from Layer
 </aside>
 
+<h2 id="logout-the-current-user">Logout the current User</h2>
+
+<blockquote>
+<p>Along with the Token Auth Header, send a PATCH request to the specified URI:</p>
+</blockquote>
+<pre class="highlight shell"><code><span class="s1">'Authorization'</span>: <span class="s1">'Token Ac7qVZsS5Az7SVdgcrnEgXbf'</span>
+</code></pre>
+<blockquote>
+<p>The server will respond with a 200 status code and the following JSON:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successfully logged-out user."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Description: Used to logout the current user. This will set their <code class="prettyprint">active</code> attribute to <code class="prettyprint">false</code>,
+and delete their <code class="prettyprint">auth_token</code>, forcing them to re-authenticate on the following request.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST https://wildfire-dev.herokuapp.com/api/v1/me/logout</code></p>
+
 <h1 id="users">Users</h1>
 
 <h2 id="update-user">Update User</h2>
@@ -313,6 +334,33 @@ Along with the Basic Auth Header, send a POST request with the ‘nonce’ from 
 <h3 id="http-request">HTTP Request</h3>
 
 <p><code class="prettyprint">PATCH https://wildfire-dev.herokuapp.com/api/v1/me</code></p>
+
+<h2 id="deactivate-the-current-user">Deactivate the current User</h2>
+
+<blockquote>
+<p>Along with the Token Auth Header, send a PATCH request to the specified URI:</p>
+</blockquote>
+<pre class="highlight shell"><code><span class="s1">'Authorization'</span>: <span class="s1">'Token Ac7qVZsS5Az7SVdgcrnEgXbf'</span>
+</code></pre>
+<blockquote>
+<p>The server will respond with a 200 status code and the following JSON:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User logged-out &amp; account deactivated"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Description: Used to deactivate the current user. Upon authentication of the current user,
+the following data on the auth&#39;ed user&rsquo;s model will be updated:</p>
+
+<p><code class="prettyprint">active: false</code>
+<code class="prettyprint">push_notifs: { general: false, messages: false, event: false, mentions: false, follows: false }</code>
+<code class="prettyprint">auth_token: nil</code>
+<code class="prettyprint">auth_token_expiry: Time.zone.now</code>
+<code class="prettyprint">password_reset_token: nil</code></p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST https://wildfire-dev.herokuapp.com/api/v1/me/deactivate</code></p>
 
 <h1 id="events">Events</h1>
 
