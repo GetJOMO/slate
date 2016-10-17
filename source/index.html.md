@@ -166,6 +166,29 @@ body of the request.
 Along with the Basic Auth Header, send a POST request with the ‘nonce’ from Layer
 </aside>
 
+## Logout the current User
+
+> Along with the Token Auth Header, send a PATCH request to the specified URI:
+
+```shell
+'Authorization': 'Token Ac7qVZsS5Az7SVdgcrnEgXbf'
+```
+
+> The server will respond with a 200 status code and the following JSON:
+
+```json
+{
+  "message": "Successfully logged-out user."
+}
+```
+
+Description: Used to logout the current user. This will set their `active` attribute to `false`,
+and delete their `auth_token`, forcing them to re-authenticate on the following request.
+
+### HTTP Request
+
+`POST https://wildfire-dev.herokuapp.com/api/v1/me/logout`
+
 # Users
 
 ## Update User
@@ -219,6 +242,36 @@ Description: Updates the currently logged in user's profile
 ### HTTP Request
 
 `PATCH https://wildfire-dev.herokuapp.com/api/v1/me`
+
+## Deactivate the current User
+
+> Along with the Token Auth Header, send a PATCH request to the specified URI:
+
+```shell
+'Authorization': 'Token Ac7qVZsS5Az7SVdgcrnEgXbf'
+```
+
+> The server will respond with a 200 status code and the following JSON:
+
+```json
+{
+  "message": "User logged-out & account deactivated"
+}
+```
+
+Description: Used to deactivate the current user. Upon authentication of the current user,
+the following data on the auth'ed user's model will be updated:
+
+`active: false`
+`push_notifs: { general: false, messages: false, event: false, mentions: false, follows: false }`
+`auth_token: nil`
+`auth_token_expiry: Time.zone.now`
+`password_reset_token: nil`
+
+
+### HTTP Request
+
+`POST https://wildfire-dev.herokuapp.com/api/v1/me/deactivate`
 
 # Events
 
