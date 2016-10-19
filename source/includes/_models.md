@@ -11,7 +11,7 @@ Below are the resource models that the Wildfire API has.
   "first_name": "Kerry",
   "last_name": "Knight",
   "email": "woozykk@gmail.com",
-  "dob": "1980-10-24",
+  "dob": "1982-10-24",
   "avatar_url": "https://fake.urlto.img/user_avatar",
   "auth_token": "'a2zS95rM5yrrsmxOPVZXPjC5",
   "auth_token_expiry": "2016-09-28 17:33:52.449806",

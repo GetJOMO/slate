@@ -98,8 +98,10 @@ Parameter | Description
   "first_name": "Lauren",
   "last_name": "Godwin",
   "dob": "1988-05-12",
+  "city": "wilmington",
+  "state": "NC",
+  "phone": "9105558385",
   "password": "s3cur3_p455w0rd",
-  "password_confirmation": "s3cur3_p455w0rd",
   "nonce": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.po9twTrX99V7XgAk5mVskkiq8aa0lpYOue62ehubRY4"
 }
 ```
