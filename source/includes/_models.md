@@ -12,9 +12,7 @@ Below are the resource models that the Wildfire API has.
   "last_name": "Knight",
   "email": "woozykk@gmail.com",
   "dob": "1980-10-24",
-  "gender": "1",
   "avatar_url": "https://fake.urlto.img/user_avatar",
-  "uid": "2f9dea45-23ea-47cb-9541-c1218bf59e20",
   "auth_token": "'a2zS95rM5yrrsmxOPVZXPjC5",
   "auth_token_expiry": "2016-09-28 17:33:52.449806",
   "last_login_time": "2016-09-27 17:33:52.449806",
@@ -44,7 +42,6 @@ Attribute | Type | Required/Optional
 `first_name` | :string | **Required**
 `last_name` | :string | **Required**
 `dob` | :date | **Required**
-`gender` | :integer | Optional
 `about` | :integer | Optional
 `tags` | :array | Optional
 `social_ids` | :object | Optional
@@ -79,7 +76,6 @@ Attribute | Type | Required/Optional
     "id": 1,
     "name": "Jordan Godwin",
     "dob": "1987-02-09",
-    "gender": "male",
     "tags": [
       "Programming",
       "Duke Basketball",

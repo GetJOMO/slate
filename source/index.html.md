@@ -98,7 +98,6 @@ Parameter | Description
   "first_name": "Lauren",
   "last_name": "Godwin",
   "dob": "1988-05-12",
-  "gender": 2,
   "password": "s3cur3_p455w0rd",
   "password_confirmation": "s3cur3_p455w0rd",
   "nonce": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.po9twTrX99V7XgAk5mVskkiq8aa0lpYOue62ehubRY4"
@@ -112,7 +111,6 @@ Parameter | Description
   "auth_token": "Ac7qVZsS5Az7SVdgcrnEgXbf",
   "auth_token_expiry": "2016-10-05T16:16:54.827Z",
   "first_name": "Lauren",
-  "uid": "26934fae-7b3a-4f72-b7cb-2469c94458cd",
   "identity_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6ImxheWVyLWVpdDt2PTEiLCJraWQiOiJsYXllcjovLy9rZXlzLzA5YTI1NDZhLTdmNDItMTFlNi1hMzk3LTAyZDM1NjAwMTJmMCJ9.eyJpc3MiOiJsYXllcjovLy9wcm92aWRlcnMvY2Y4ZDEzZTgtN2U5NS0xMWU2LTkyNGItYTE1MWU1MTI0NjI0IiwicHJuIjoiMiIsImlhdCI6MTQ3NDkwMDMxNiwiZXhwIjoxNDc2MTA5OTE2LCJuY2UiOm51bGx9.pbHs3nk5IuIYCssA4XfcwKGFWM443MSXOeQhlAgXvMd3fQMO9OMpK6o9pBTju-LRfjXW-4mC7y6jhbSVfJ34KQ5HH7np8MQEO3HlmrpBSf4LBBDtox7GC2DzhYyo9uX-MgjJRKNwIH2Gv9qUE3oB9dYU2it_y4YR6Kw_Oe9Nd1TYuK6S-PFXnhsKEHdfVb0VlSBMYOvRYL6X8N-MaQyvbz__wVpJ55Y3QligFaV1of9DGgbTZLbbqbMAQFk8GnftTiIF2em3RFxKOMMItARGC-XEvXoEIgB1N6TvyJV-67cUtg1wvoCHvK2JsHFuSAA8or-oAHBlJ52Hm5nSNg8wmw"
 }
 ```
@@ -149,7 +147,6 @@ to create an `identity_token` for the client to use on future Layer requests.
   "auth_token": "Ac7qVZsS5Az7SVdgcrnEgXbf",
   "auth_token_expiry": "2016-10-05T16:16:54.827Z",
   "first_name": "Lauren",
-  "uid": "26934fae-7b3a-4f72-b7cb-2469c94458cd",
   "identity_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6ImxheWVyLWVpdDt2PTEiLCJraWQiOiJsYXllcjovLy9rZXlzLzA5YTI1NDZhLTdmNDItMTFlNi1hMzk3LTAyZDM1NjAwMTJmMCJ9.eyJpc3MiOiJsYXllcjovLy9wcm92aWRlcnMvY2Y4ZDEzZTgtN2U5NS0xMWU2LTkyNGItYTE1MWU1MTI0NjI0IiwicHJuIjoiMiIsImlhdCI6MTQ3NDkwMDMxNiwiZXhwIjoxNDc2MTA5OTE2LCJuY2UiOm51bGx9.pbHs3nk5IuIYCssA4XfcwKGFWM443MSXOeQhlAgXvMd3fQMO9OMpK6o9pBTju-LRfjXW-4mC7y6jhbSVfJ34KQ5HH7np8MQEO3HlmrpBSf4LBBDtox7GC2DzhYyo9uX-MgjJRKNwIH2Gv9qUE3oB9dYU2it_y4YR6Kw_Oe9Nd1TYuK6S-PFXnhsKEHdfVb0VlSBMYOvRYL6X8N-MaQyvbz__wVpJ55Y3QligFaV1of9DGgbTZLbbqbMAQFk8GnftTiIF2em3RFxKOMMItARGC-XEvXoEIgB1N6TvyJV-67cUtg1wvoCHvK2JsHFuSAA8or-oAHBlJ52Hm5nSNg8wmw"
 }
 ```
@@ -211,7 +208,6 @@ and delete their `auth_token`, forcing them to re-authenticate on the following 
   "identity_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6ImxheWVyLWVpdDt2PTEiLCJraWQiOiJsYXllcjovLy9rZXlzLzA5YTI1NDZhLTdmNDItMTFlNi1hMzk3LTAyZDM1NjAwMTJmMCJ9.eyJpc3MiOiJsYXllcjovLy9wcm92aWRlcnMvY2Y4ZDEzZTgtN2U5NS0xMWU2LTkyNGItYTE1MWU1MTI0NjI0IiwicHJuIjoiamVnMzIyNEBnbWFpbC5jb20iLCJpYXQiOjE0NzU2MDE1MzIsImV4cCI6MTQ3NjgxMTEzMiwibmNlIjpudWxsfQ.NN-AW7gpnklCoMKzZ_4MoXi0b6XJJQR1nZRXATd3M1nLe1VZk9NlIr-1hYbVRspeZOm4oZuN5HJslLMiYbEot5bm48I1OS0vqqwo64azZSVGTqmJl2GAm_lRizbb10Ic90YUdUPsrMeBfaq4B1yyGX03o2xSPQvDwBetGpqAJ_6oJkH_nDi0ZABLFtml1UHtUjKxOMU06-42r8L8FDTNOHWpw7bvB-hUa1T42OFO9cuDnPytu8yZeqEeS8MoXBY6-KUoI7qaJuaEI9G2IXYlodDZkAwW38Q_hWEp01umPSwB9551E5hApU2sJS2aih2A06tvP23yRt0r1JCI4w5pbQ",
   "email": "jeg3224@gmail.com",
   "dob": "1987-02-09",
-  "gender": "male",
   "active": true,
   "avatar_url": "https:\/\/fake.urlto.img\/user_avatar",
   "last_login_time": "2016-10-04T16:16:54.827Z",
@@ -330,7 +326,6 @@ the following data on the auth'ed user's model will be updated:
     "id": 1,
     "name": "Jordan Godwin",
     "dob": "1987-02-09",
-    "gender": "male",
     "tags": [
       "Programming",
       "Duke Basketball",
@@ -402,7 +397,6 @@ This endpoint creates an Event for the currently logged in user.
     "id": 1,
     "name": "Jordan Godwin",
     "dob": "1987-02-09",
-    "gender": "male",
     "tags": [
       "Programming",
       "Duke Basketball",
