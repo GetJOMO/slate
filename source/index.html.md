@@ -277,6 +277,71 @@ the following data on the auth'ed user's model will be updated:
 
 `POST https://wildfire-dev.herokuapp.com/api/v1/me/deactivate`
 
+## Find Users by Digits ID
+
+> Along with the Token Auth Header, send a POST request to the specified URI:
+
+```shell
+'Authorization': 'Token Ac7qVZsS5Az7SVdgcrnEgXbf'
+```
+
+```json
+{
+  "digits_ids": ["21659940719036163543", "19008283224256407389", "22530798334117390808", "68701303679444498592", "64307672012076350746", "28459077552041890622"]
+}
+```
+
+> The server will respond with a 200 status code and the following JSON:
+
+```json
+[
+  {
+    "id": 13,
+    "first_name": "Jordy",
+    "last_name": "D'Amore",
+    "avatar_url": "https://fake.urlto.img/Jordy_user_avatar"
+  },
+  {
+    "id": 14,
+    "first_name": "Jaquan",
+    "last_name": "Breitenberg",
+    "avatar_url": "https://fake.urlto.img/Jaquan_user_avatar"
+  },
+  {
+    "id": 15,
+    "first_name": "Frieda",
+    "last_name": "Stamm",
+    "avatar_url": "https://fake.urlto.img/Frieda_user_avatar"
+  }
+  {
+    "id": 16,
+    "first_name": "Brice",
+    "last_name": "Marvin",
+    "avatar_url": "https://fake.urlto.img/Brice_user_avatar"
+  },
+  {
+    "id": 17,
+    "first_name": "Titus",
+    "last_name": "Gleichner",
+    "avatar_url": "https://fake.urlto.img/Titus_user_avatar"
+  },
+  {
+    "id": 18,
+    "first_name": "Elwyn",
+    "last_name": "Ledner",
+    "avatar_url": "https://fake.urlto.img/Elwyn_user_avatar"
+  }
+]
+```
+
+Description: Use this endpoint to pass an array of unique `:id`'s obtained from Digits,
+in which will then be matched on users in the database on each user's `digit_id` attribute.
+
+
+### HTTP Request
+
+`POST https://wildfire-dev.herokuapp.com/api/v1/users/find_digits`
+
 # Events
 
 ## Create Event
