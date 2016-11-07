@@ -100,11 +100,12 @@ Parameter | Description
   "dob": "1988-05-12",
   "city": "wilmington",
   "state": "NC",
+  "avatar_url": "https://fake.urlto.img/Frieda_user_avatar",
+  "digits_id": "74389204389432034948",
   "coords": {
     "lat": 34.4332,
     "lng": -77.8485
   },
-  "phone": "9105558385",
   "password": "s3cur3_p455w0rd",
   "nonce": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.po9twTrX99V7XgAk5mVskkiq8aa0lpYOue62ehubRY4"
 }
@@ -506,9 +507,9 @@ This endpoint deletes an Event by the currently logged in user.
 
 `DELETE https://wildfire-dev.herokuapp.com/api/v1/events/:id`
 
-# Resource (Endpoint Template)
+# {TEMPLATE}
 
-## Get All Kittens
+## {TEMPLATE: Title of the Endpoint}
 
 > Send a POST request with required parameters:
 
@@ -545,37 +546,18 @@ This endpoint deletes an Event by the currently logged in user.
 }
 ```
 
-This endpoint retrieves all kittens.
+Description: {TEMPLATE}
 
 ### HTTP Request
 
-`GET http://example.com/api/kittens`
+`{HTTP_VERB} https://wildfire-staging.herokuapp.com/api/v1/{TEMPLATE}`
 
-### Query Parameters
+### Query Parameters (or additional details)
 
 Parameter | Default | Description
 --------- | ------- | -----------
 include_cats | false | If set to true, the result will also include cats.
 available | true | If set to false, the result will include kittens that have already been adopted.
-
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
 
 ## Get a Specific Kitten
 
