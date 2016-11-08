@@ -447,13 +447,13 @@ in which will then be matched on users in the database on each user's `digit_id`
   "image_url": "http://www.fakeurl.com/fake_img_id",
   "tags": [
     {
-      "title": "NFL"
+      "id": 6
     },
     {
-      "title": "Carolina Panthers"
+      "id": 26
     },
     {
-      "title": "Beer"
+      "id": 160
     }
   ],
   "starts_at": "1988-05-12",
@@ -476,18 +476,25 @@ in which will then be matched on users in the database on each user's `digit_id`
   "image_url": "http://www.fakeurl.com/fake_img_id",
   "tags": [
     {
+      "id": "6",
       "title": "NFL"
     },
     {
+      "id": "26",
       "title": "Carolina Panthers"
     },
     {
+      "id": "160",
       "title": "Beer"
     }
   ],
   "starts_at": "1988-05-12T00:00:00.000Z",
   "duration": 1.5,
   "venue_id": 37483747,
+  "coords": {
+    "lat": 34.4332,
+    "lng": -77.8485
+  },
   "host": {
     "id": 1,
     "name": "Jordan Godwin",
@@ -567,16 +574,19 @@ Description: Use this endpoint to display an Event using it's
 
 ```json
 {
-  "description": "test event desc",
+  "description": "Updated test event desc",
   "image_url": "http://www.fakeurl.com/fake_img_id",
   "tags": [
     {
+      "id": "6",
       "title": "NFL"
     },
     {
+      "id": "26",
       "title": "Carolina Panthers"
     },
     {
+      "id": "160",
       "title": "Beer"
     }
   ],
@@ -596,16 +606,19 @@ Description: Use this endpoint to display an Event using it's
 ```json
 {
   "id": 9,
-  "description": "test event desc",
+  "description": "Updated test event desc",
   "image_url": "http://www.fakeurl.com/fake_img_id",
   "tags": [
     {
+      "id": "6",
       "title": "NFL"
     },
     {
+      "id": "26",
       "title": "Carolina Panthers"
     },
     {
+      "id": "160",
       "title": "Beer"
     }
   ],
@@ -626,7 +639,8 @@ Description: Use this endpoint to display an Event using it's
 }
 ```
 
-This endpoint updates an Event for the currently logged in user.
+Description: This endpoint updates an Event for the event host by passing
+ALL of the Event's attributes, including the ones that aren't being updated
 
 ### HTTP Request
 
@@ -646,7 +660,7 @@ DELETE http://wildfire-dev.herokuapp.com/api/v1/events/9
 { "message": "Event was successfully deleted." }
 ```
 
-This endpoint deletes an Event by the currently logged in user.
+Description: This endpoint deletes an Event for the event host.
 
 ### HTTP Request
 
