@@ -435,6 +435,48 @@ in which will then be matched on users in the database on each user's `digit_id`
 
 `POST https://wildfire-dev.herokuapp.com/api/v1/users/find_digits`
 
+## All User Followings
+
+> Send a GET request to the specified URI:
+
+```shell
+https://wildfire-staging.herokuapp.com/api/v1/me/following
+```
+
+> A JSON response like the following would be returned:
+
+```json
+[
+  {
+    "id": 3,
+    "name": "Lauren Godwin",
+    "avatar_url": "https:\/\/fake.urlto.img\/user_avatar_3"
+  },
+  {
+    "id": 5,
+    "name": "Jordan Godwin",
+    "avatar_url": "https:\/\/fake.urlto.img\/user_avatar_5"
+  },
+  {
+    "id": 12,
+    "name": "Gavin Anthony",
+    "avatar_url": "https:\/\/fake.urlto.img\/user_avatar_12"
+  }
+  ,{
+    "id": 23,
+    "name": "Kerry Knight",
+    "avatar_url": "https:\/\/fake.urlto.img\/user_avatar_23"
+  }
+]
+```
+
+Description: This endpoint will return an array of users that the
+requesting user is currently following.
+
+### HTTP Request
+
+`GET https://wildfire-staging.herokuapp.com/api/v1/me/following`
+
 # Events
 
 ## Create Event
