@@ -111,14 +111,46 @@ Parameter | Description
 }
 ```
 
-> The above request returns JSON structured like this:
+> The above request returns the following JSON:
 
 ```json
 {
-  "auth_token": "Ac7qVZsS5Az7SVdgcrnEgXbf",
-  "auth_token_expiry": "2016-10-05T16:16:54.827Z",
+  "email": "lk3317@gmail.com",
   "first_name": "Lauren",
-  "identity_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6ImxheWVyLWVpdDt2PTEiLCJraWQiOiJsYXllcjovLy9rZXlzLzA5YTI1NDZhLTdmNDItMTFlNi1hMzk3LTAyZDM1NjAwMTJmMCJ9.eyJpc3MiOiJsYXllcjovLy9wcm92aWRlcnMvY2Y4ZDEzZTgtN2U5NS0xMWU2LTkyNGItYTE1MWU1MTI0NjI0IiwicHJuIjoiMiIsImlhdCI6MTQ3NDkwMDMxNiwiZXhwIjoxNDc2MTA5OTE2LCJuY2UiOm51bGx9.pbHs3nk5IuIYCssA4XfcwKGFWM443MSXOeQhlAgXvMd3fQMO9OMpK6o9pBTju-LRfjXW-4mC7y6jhbSVfJ34KQ5HH7np8MQEO3HlmrpBSf4LBBDtox7GC2DzhYyo9uX-MgjJRKNwIH2Gv9qUE3oB9dYU2it_y4YR6Kw_Oe9Nd1TYuK6S-PFXnhsKEHdfVb0VlSBMYOvRYL6X8N-MaQyvbz__wVpJ55Y3QligFaV1of9DGgbTZLbbqbMAQFk8GnftTiIF2em3RFxKOMMItARGC-XEvXoEIgB1N6TvyJV-67cUtg1wvoCHvK2JsHFuSAA8or-oAHBlJ52Hm5nSNg8wmw"
+  "last_name": "Godwin",
+  "dob": "1988-05-12",
+  "about": null,
+  "city": "Wilmington",
+  "state": "NC",
+  "coords": {
+    "lat": 34.2257,
+    "lng": 77.9447
+  },
+  "push_notifs": {
+    "general": true,
+    "messages": true,
+    "events": true,
+    "mentions": true,
+    "user_follows": true
+  },
+  "social_ids": {
+    "facebook": null,
+    "twitter": null,
+    "instagram": null,
+    "pinterest": null
+  },
+  "tags": [
+    { "tag_id": "20", "tag_name": "Sports" },
+    { "tag_id": "22", "tag_name": "College" },
+    { "tag_id": "29", "tag_name": "Football" }
+  ],
+  "avatar_url": "https:\/\/fake.urlto.img\/user_avatar",
+  "auth_token": "WnwkLV4R9YDuD1bDcQvH7Pe6",
+  "auth_token_expiry": "2016-11-09T15:38:59.493Z",
+  "identity_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6ImxheWVyLWVpdDt2PTEiLCJraWQiOiJsYXllcjovLy9rZXlzLzA5YTI1NDZhLTdmNDItMTFlNi1hMzk3LTAyZDM1NjAwMTJmMCJ9.eyJpc3MiOiJsYXllcjovLy9wcm92aWRlcnMvY2Y4ZDEzZTgtN2U5NS0xMWU2LTkyNGItYTE1MWU1MTI0NjI0IiwicHJuIjoibGszMzE3QGdtYWlsLmNvbSIsImlhdCI6MTQ3ODYxOTUzOSwiZXhwIjoxNDc5ODI5MTM5LCJuY2UiOiJfMTU3NnVQdFo5QzV1NXhlV0pVcXdHZzhTOVF5dnRNVmFhdGlTQ3c4dDlmWEE3NnFEX1NmSHBVeTMxYy1MRmVVNnlza3VuSXkyN3dzc0E1bHdYS0V3ZyJ9.PMtpDlAmR1U1DZt2ep_fWndEvn_Z16nFCoFw9CLE0DbAMLs_G8bHgUaytccjrDUi4iXSEwA4qVKrhSCWs_sR16qICKfNUgNevu4ioL3OYmIoZjExsm6hHVKO8B3s43gHlHIO7B8UWIWs5CuuRj2VK3piNnOkO63daChNPDZHdVVgq47-ldB2k9GuctRPHe8Zu3dZK2Wa5N24BOYah0K79V5Dntsbmre0UP9lVy4HQBv0VmnVcJBR4UNzrt4lFD2xJsX-SdZYrFPWjVuYN4GqyvFOO2N8A1NPd7hYcBqVY8cdY0ZQ2KA5qboMaA5-2XxAQuTfOx36FwUSWoatUq80yA",
+  "active": true,
+  "last_login_time": "2016-11-08T15:38:59.493Z",
+  "digits_id": "36345202355432034911"
 }
 ```
 
