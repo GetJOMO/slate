@@ -508,6 +508,59 @@ This endpoint creates an Event for the currently logged in user.
 
 `POST https://wildfire-dev.herokuapp.com/api/v1/events`
 
+## Show Event
+
+> Send a GET request to the following URL:
+
+```json
+https://wildfire-dev.herokuapp.com/api/v1/events/22
+```
+
+> A JSON response like the following would be returned:
+
+```json
+{
+  "id": 22,
+  "description": "test event desc",
+  "image_url": "http://www.fakeurl.com/fake_img_id",
+  "starts_at": "1988-05-12T00:00:00.000Z",
+  "duration": 1.5,
+  "venue_id": 37483747,
+  "host": {
+    "id": 1,
+    "name": "Jordan Godwin",
+    "dob": "1987-02-09",
+    "tags": [
+      "Programming",
+      "Duke Basketball",
+      "Fishing",
+      "Boating"
+    ]
+  },
+  "tags": [
+    {
+      "id": "6",
+      "title": "NFL"
+    },
+    {
+      "id": "26",
+      "title": "Carolina Panthers"
+    },
+    {
+      "id": "160",
+      "title": "Beer"
+    }
+  ]
+}
+```
+
+Description: Use this endpoint to display an Event using it's
+`:id` attribute in the URI request.
+
+### HTTP Request
+
+`GET https://wildfire-dev.herokuapp.com/api/v1/events/:id`
+
 ## Update Event
 
 > Send a PATCH request with required parameters:
