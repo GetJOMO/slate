@@ -477,6 +477,56 @@ requesting user is currently following.
 
 `GET https://wildfire-staging.herokuapp.com/api/v1/me/following`
 
+## Follow a User
+
+> Send a POST request to the specified URI:
+
+```shell
+https://wildfire-staging.herokuapp.com/api/v1/users/3/follow
+```
+
+> A JSON response like the following would be returned:
+
+```json
+  {
+    "id": 3,
+    "name": "Lauren Godwin",
+    "avatar_url": "https://fake.urlto.img/user_avatar_3"
+  }
+```
+
+Description: Use this endpoint to follow a target user (create a follow) for the
+current_user with the target of another user. This is the Twitter-style 'one-way' Follow.
+
+### HTTP Request
+
+`POST https://wildfire-staging.herokuapp.com/api/v1/users/:id/follow`
+
+## Unfollow a User
+
+> Send a DELETE request to the specified URI:
+
+```shell
+https://wildfire-staging.herokuapp.com/api/v1/users/5/unfollow
+```
+
+> A JSON response like the following would be returned:
+
+```json
+  {
+    "id": 3,
+    "name": "Jordan Godwin",
+    "avatar_url": "https://fake.urlto.img/user_avatar_5"
+  }
+```
+
+Description: Use this endpoint to unfollow a target user (delete a follow)
+for the current_user with the target of another user.
+
+### HTTP Request
+
+`DELETE https://wildfire-staging.herokuapp.com/api/v1/users/:id/unfollow`
+
 # Events
 
 ## Create Event
@@ -561,7 +611,7 @@ This endpoint creates an Event for the currently logged in user.
 
 > Send a GET request to the following URL:
 
-```json
+```shell
 https://wildfire-dev.herokuapp.com/api/v1/events/22
 ```
 
