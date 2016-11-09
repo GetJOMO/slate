@@ -68,6 +68,9 @@ https://wildfire-staging.herokuapp.com/api/v1/auth/verify_email?email=woozykk@gm
 
 > If the email is available, the following JSON response will be returned:
 
+```shell
+status: 200
+```
 ```json
 {
   "email_exists": false
@@ -113,6 +116,9 @@ Parameter | Description
 
 > The above request returns the following JSON:
 
+```shell
+status: 201
+```
 ```json
 {
   "id": 12,
@@ -182,6 +188,9 @@ to create an `identity_token` for the client to use on future Layer requests.
 
 > The above request returns JSON structured like this:
 
+```shell
+status: 200
+```
 ```json
 {
   "id": 12,
@@ -244,8 +253,11 @@ Along with the Basic Auth Header, send a POST request with the ‘nonce’ from 
 'Authorization': 'Token Ac7qVZsS5Az7SVdgcrnEgXbf'
 ```
 
-> The server will respond with a 200 status code and the following JSON:
+> The server will respond with the following JSON:
 
+```shell
+status: 200
+```
 ```json
 {
   "message": "Successfully logged-out user."
@@ -271,6 +283,9 @@ and delete their `auth_token`, forcing them to re-authenticate on the following 
 
 > A JSON response like the following would be returned:
 
+```shell
+status: 200
+```
 ```json
 {
   "identity_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6ImxheWVyLWVpdDt2PTEiLCJraWQiOiJsYXllcjovLy9rZXlzLzA5YTI1NDZhLTdmNDItMTFlNi1hMzk3LTAyZDM1NjAwMTJmMCJ9.eyJpc3MiOiJsYXllcjovLy9wcm92aWRlcnMvY2Y4ZDEzZTgtN2U5NS0xMWU2LTkyNGItYTE1MWU1MTI0NjI0IiwicHJuIjoiNDY2MzE3Mzk0IiwiaWF0IjoxNDc4NjMxOTE2LCJleHAiOjE0Nzk4NDE1MTYsIm5jZSI6bnVsbH0.EV-yLIsPdBthQCK2bboi307kOj4v3bKlc_0pB35v0NVLC5QExDukFwZlg5kFk0NlgyLDYLpRlbpefX_inEjE18wAM--JkYl1EDqFxKfehK-eiL7Hjyt8Nis-uuKF5S4fSrJ0vU_uG10LLVxHw3LJtM9shw8V2tZRGOfEroxa4Zp24LO0NKQP7QlxnTFxU1YOzmR3L88hpMvYrXT27oWV_vAsjjVHhpltlTVk-J1vmHNWG28IuJDHtEmznJzJHchWk3J34xGs9EOXflAyxwPxbGIYZfxbm0RW-XNNjPwAK9-Xgv9MTVOK7ymo_oGK_n2IDcUaa9gx0eFFLlGE9GJvs"
@@ -298,6 +313,9 @@ identity token for making user authenticated requests to Layer's API
 
 > A JSON response like the following would be returned:
 
+```shell
+status: 200
+```
 ```json
 {
   "id": 23,
@@ -348,8 +366,11 @@ Description: Updates the currently logged in user's profile
 'Authorization': 'Token Ac7qVZsS5Az7SVdgcrnEgXbf'
 ```
 
-> The server will respond with a 200 status code and the following JSON:
+> The server will respond with the following JSON:
 
+```shell
+status: 200
+```
 ```json
 {
   "message": "User logged-out & account deactivated"
@@ -384,8 +405,11 @@ the following data on the auth'ed user's model will be updated:
 }
 ```
 
-> The server will respond with a 200 status code and the following JSON:
+> The server will respond with the following JSON:
 
+```shell
+status: 200
+```
 ```json
 [
   {
@@ -445,6 +469,9 @@ https://wildfire-staging.herokuapp.com/api/v1/me/following
 
 > A JSON response like the following would be returned:
 
+```shell
+status: 200
+```
 ```json
 [
   {
@@ -487,6 +514,9 @@ https://wildfire-staging.herokuapp.com/api/v1/users/3/follow
 
 > A JSON response like the following would be returned:
 
+```shell
+status: 201
+```
 ```json
   {
     "id": 3,
@@ -512,6 +542,9 @@ https://wildfire-staging.herokuapp.com/api/v1/users/5/unfollow
 
 > A JSON response like the following would be returned:
 
+```shell
+status: 200
+```
 ```json
   {
     "id": 3,
@@ -561,6 +594,9 @@ for the current_user with the target of another user.
 
 > A JSON response like the following would be returned:
 
+```shell
+status: 201
+```
 ```json
 {
   "id": 9,
@@ -617,6 +653,9 @@ https://wildfire-dev.herokuapp.com/api/v1/events/22
 
 > A JSON response like the following would be returned:
 
+```shell
+status: 200
+```
 ```json
 {
   "id": 22,
@@ -695,6 +734,9 @@ Description: Use this endpoint to display an Event using it's
 
 > A JSON response like the following would be returned:
 
+```shell
+status: 200
+```
 ```json
 {
   "id": 9,
@@ -748,6 +790,9 @@ DELETE http://wildfire-dev.herokuapp.com/api/v1/events/9
 
 > A JSON response like the following would be returned:
 
+```shell
+status: 200
+```
 ```json
 { "message": "Event was successfully deleted." }
 ```
@@ -782,6 +827,9 @@ Description: This endpoint deletes an Event for the event host.
 
 > A JSON response like the following would be returned:
 
+```shell
+status: 200
+```
 ```json
 {
   "key": "value",
