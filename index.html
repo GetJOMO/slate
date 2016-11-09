@@ -166,7 +166,8 @@ You must use the LayerKit or Layer Android SDK in order to obtain the `nonce` us
 <blockquote>
 <p>If the email is available, the following JSON response will be returned:</p>
 </blockquote>
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
+<pre class="highlight shell"><code>status: 200
+</code></pre><pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"email_exists"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -216,7 +217,8 @@ already been registered with a previous account.</p>
 <blockquote>
 <p>The above request returns the following JSON:</p>
 </blockquote>
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
+<pre class="highlight shell"><code>status: 201
+</code></pre><pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
   </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lk3317@gmail.com"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lauren"</span><span class="p">,</span><span class="w">
@@ -280,7 +282,8 @@ to create an `identity_token` for the client to use on future Layer requests.
 <blockquote>
 <p>The above request returns JSON structured like this:</p>
 </blockquote>
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
+<pre class="highlight shell"><code>status: 200
+</code></pre><pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
   </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lk3317@gmail.com"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lauren"</span><span class="p">,</span><span class="w">
@@ -340,9 +343,10 @@ Along with the Basic Auth Header, send a POST request with the ‘nonce’ from 
 <pre class="highlight shell"><code><span class="s1">'Authorization'</span>: <span class="s1">'Token Ac7qVZsS5Az7SVdgcrnEgXbf'</span>
 </code></pre>
 <blockquote>
-<p>The server will respond with a 200 status code and the following JSON:</p>
+<p>The server will respond with the following JSON:</p>
 </blockquote>
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
+<pre class="highlight shell"><code>status: 200
+</code></pre><pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successfully logged-out user."</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -365,7 +369,8 @@ and delete their <code class="prettyprint">auth_token</code>, forcing them to re
 <blockquote>
 <p>A JSON response like the following would be returned:</p>
 </blockquote>
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
+<pre class="highlight shell"><code>status: 200
+</code></pre><pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"identity_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6ImxheWVyLWVpdDt2PTEiLCJraWQiOiJsYXllcjovLy9rZXlzLzA5YTI1NDZhLTdmNDItMTFlNi1hMzk3LTAyZDM1NjAwMTJmMCJ9.eyJpc3MiOiJsYXllcjovLy9wcm92aWRlcnMvY2Y4ZDEzZTgtN2U5NS0xMWU2LTkyNGItYTE1MWU1MTI0NjI0IiwicHJuIjoiNDY2MzE3Mzk0IiwiaWF0IjoxNDc4NjMxOTE2LCJleHAiOjE0Nzk4NDE1MTYsIm5jZSI6bnVsbH0.EV-yLIsPdBthQCK2bboi307kOj4v3bKlc_0pB35v0NVLC5QExDukFwZlg5kFk0NlgyLDYLpRlbpefX_inEjE18wAM--JkYl1EDqFxKfehK-eiL7Hjyt8Nis-uuKF5S4fSrJ0vU_uG10LLVxHw3LJtM9shw8V2tZRGOfEroxa4Zp24LO0NKQP7QlxnTFxU1YOzmR3L88hpMvYrXT27oWV_vAsjjVHhpltlTVk-J1vmHNWG28IuJDHtEmznJzJHchWk3J34xGs9EOXflAyxwPxbGIYZfxbm0RW-XNNjPwAK9-Xgv9MTVOK7ymo_oGK_n2IDcUaa9gx0eFFLlGE9GJvs"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -390,7 +395,8 @@ identity token for making user authenticated requests to Layer&rsquo;s API</p>
 <blockquote>
 <p>A JSON response like the following would be returned:</p>
 </blockquote>
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
+<pre class="highlight shell"><code>status: 200
+</code></pre><pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w">
   </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jordan"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Godwin"</span><span class="p">,</span><span class="w">
@@ -438,9 +444,10 @@ identity token for making user authenticated requests to Layer&rsquo;s API</p>
 <pre class="highlight shell"><code><span class="s1">'Authorization'</span>: <span class="s1">'Token Ac7qVZsS5Az7SVdgcrnEgXbf'</span>
 </code></pre>
 <blockquote>
-<p>The server will respond with a 200 status code and the following JSON:</p>
+<p>The server will respond with the following JSON:</p>
 </blockquote>
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
+<pre class="highlight shell"><code>status: 200
+</code></pre><pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User logged-out &amp; account deactivated"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -468,9 +475,10 @@ the following data on the auth&#39;ed user&rsquo;s model will be updated:</p>
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<p>The server will respond with a 200 status code and the following JSON:</p>
+<p>The server will respond with the following JSON:</p>
 </blockquote>
-<pre class="highlight json"><code><span class="p">[</span><span class="w">
+<pre class="highlight shell"><code>status: 200
+</code></pre><pre class="highlight json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
     </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jordy"</span><span class="p">,</span><span class="w">
@@ -516,27 +524,94 @@ in which will then be matched on users in the database on each user&rsquo;s <cod
 
 <p><code class="prettyprint">POST https://wildfire-dev.herokuapp.com/api/v1/users/find_digits</code></p>
 
-<h2 id="following-users">Following Users</h2>
+<h2 id="all-user-followings">All User Followings</h2>
 
 <blockquote>
-<p>{TEMPLATE: Instructions to send the Request}</p>
+<p>Send a GET request to the specified URI:</p>
 </blockquote>
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"value"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
+<pre class="highlight shell"><code>https://wildfire-staging.herokuapp.com/api/v1/me/following
+</code></pre>
 <blockquote>
 <p>A JSON response like the following would be returned:</p>
 </blockquote>
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"digits_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"729779407355320349924"</span><span class="p">,</span><span class="w"> </span><span class="s2">"743892043894320349484"</span><span class="p">,</span><span class="w"> </span><span class="s2">"237436235012457230738"</span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<pre class="highlight shell"><code>status: 200
+</code></pre><pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lauren Godwin"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:\/\/fake.urlto.img\/user_avatar_3"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jordan Godwin"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:\/\/fake.urlto.img\/user_avatar_5"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gavin Anthony"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:\/\/fake.urlto.img\/user_avatar_12"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+  </span><span class="p">,{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kerry Knight"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:\/\/fake.urlto.img\/user_avatar_23"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>Description: {TEMPLATE}</p>
+<p>Description: This endpoint will return an array of users that the
+requesting user is currently following.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">{HTTP_VERB} https://wildfire-staging.herokuapp.com/api/v1/users/find_digits</code></p>
+<p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/me/following</code></p>
+
+<h2 id="follow-a-user">Follow a User</h2>
+
+<blockquote>
+<p>Send a POST request to the specified URI:</p>
+</blockquote>
+<pre class="highlight shell"><code>https://wildfire-staging.herokuapp.com/api/v1/users/3/follow
+</code></pre>
+<blockquote>
+<p>A JSON response like the following would be returned:</p>
+</blockquote>
+<pre class="highlight shell"><code>status: 201
+</code></pre><pre class="highlight json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lauren Godwin"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://fake.urlto.img/user_avatar_3"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Description: Use this endpoint to follow a target user (create a follow) for the
+current_user with the target of another user. This is the Twitter-style &#39;one-way&rsquo; Follow.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST https://wildfire-staging.herokuapp.com/api/v1/users/:id/follow</code></p>
+
+<h2 id="unfollow-a-user">Unfollow a User</h2>
+
+<blockquote>
+<p>Send a DELETE request to the specified URI:</p>
+</blockquote>
+<pre class="highlight shell"><code>https://wildfire-staging.herokuapp.com/api/v1/users/5/unfollow
+</code></pre>
+<blockquote>
+<p>A JSON response like the following would be returned:</p>
+</blockquote>
+<pre class="highlight shell"><code>status: 200
+</code></pre><pre class="highlight json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jordan Godwin"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://fake.urlto.img/user_avatar_5"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Description: Use this endpoint to unfollow a target user (delete a follow)
+for the current_user with the target of another user.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">DELETE https://wildfire-staging.herokuapp.com/api/v1/users/:id/unfollow</code></p>
 
 <h1 id="events">Events</h1>
 
@@ -572,7 +647,8 @@ in which will then be matched on users in the database on each user&rsquo;s <cod
 <blockquote>
 <p>A JSON response like the following would be returned:</p>
 </blockquote>
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
+<pre class="highlight shell"><code>status: 201
+</code></pre><pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
   </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test event desc"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.fakeurl.com/fake_img_id"</span><span class="p">,</span><span class="w">
@@ -621,12 +697,13 @@ in which will then be matched on users in the database on each user&rsquo;s <cod
 <blockquote>
 <p>Send a GET request to the following URL:</p>
 </blockquote>
-<pre class="highlight json"><code><span class="err">https://wildfire-dev.herokuapp.com/api/v</span><span class="mi">1</span><span class="err">/events/</span><span class="mi">22</span><span class="w">
-</span></code></pre>
+<pre class="highlight shell"><code>https://wildfire-dev.herokuapp.com/api/v1/events/22
+</code></pre>
 <blockquote>
 <p>A JSON response like the following would be returned:</p>
 </blockquote>
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
+<pre class="highlight shell"><code>status: 200
+</code></pre><pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w">
   </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test event desc"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.fakeurl.com/fake_img_id"</span><span class="p">,</span><span class="w">
@@ -702,7 +779,8 @@ in which will then be matched on users in the database on each user&rsquo;s <cod
 <blockquote>
 <p>A JSON response like the following would be returned:</p>
 </blockquote>
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
+<pre class="highlight shell"><code>status: 200
+</code></pre><pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
   </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Updated test event desc"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.fakeurl.com/fake_img_id"</span><span class="p">,</span><span class="w">
@@ -753,7 +831,8 @@ ALL of the Event&rsquo;s attributes, including the ones that aren&rsquo;t being 
 <blockquote>
 <p>A JSON response like the following would be returned:</p>
 </blockquote>
-<pre class="highlight json"><code><span class="p">{</span><span class="w"> </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Event was successfully deleted."</span><span class="w"> </span><span class="p">}</span><span class="w">
+<pre class="highlight shell"><code>status: 200
+</code></pre><pre class="highlight json"><code><span class="p">{</span><span class="w"> </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Event was successfully deleted."</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Description: This endpoint deletes an Event for the event host.</p>
 
@@ -785,7 +864,8 @@ ALL of the Event&rsquo;s attributes, including the ones that aren&rsquo;t being 
 <blockquote>
 <p>A JSON response like the following would be returned:</p>
 </blockquote>
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
+<pre class="highlight shell"><code>status: 200
+</code></pre><pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"value"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"value"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"key"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
