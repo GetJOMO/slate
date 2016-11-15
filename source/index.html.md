@@ -518,11 +518,13 @@ https://wildfire-staging.herokuapp.com/api/v1/users/3/follow
 status: 201
 ```
 ```json
-  {
-    "id": 3,
-    "name": "Lauren Godwin",
-    "avatar_url": "https://fake.urlto.img/user_avatar_3"
-  }
+{
+  "id": 3,
+  "first_name": "Lauren",
+  "last_name": "Godwin",
+  "avatar_url": "https://fake.urlto.img/user_avatar_3",
+  "follow_status": true
+}
 ```
 
 Description: Use this endpoint to follow a target user (create a follow) for the
@@ -537,7 +539,7 @@ current_user with the target of another user. This is the Twitter-style 'one-way
 > Send a DELETE request to the specified URI:
 
 ```shell
-https://wildfire-staging.herokuapp.com/api/v1/users/5/unfollow
+https://wildfire-staging.herokuapp.com/api/v1/users/55/unfollow
 ```
 
 > A JSON response like the following would be returned:
@@ -546,11 +548,13 @@ https://wildfire-staging.herokuapp.com/api/v1/users/5/unfollow
 status: 200
 ```
 ```json
-  {
-    "id": 3,
-    "name": "Jordan Godwin",
-    "avatar_url": "https://fake.urlto.img/user_avatar_5"
-  }
+{
+  "id": 55,
+  "first_name": "Jordan",
+  "last_name": "Godwin",
+  "avatar_url": "https://fake.urlto.img/user_avatar_55",
+  "follow_status": false
+}
 ```
 
 Description: Use this endpoint to unfollow a target user (delete a follow)
