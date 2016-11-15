@@ -576,11 +576,13 @@ requesting user is currently following.</p>
 <p>A JSON response like the following would be returned:</p>
 </blockquote>
 <pre class="highlight shell"><code>status: 201
-</code></pre><pre class="highlight json"><code><span class="w">  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lauren Godwin"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://fake.urlto.img/user_avatar_3"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+</code></pre><pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lauren"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Godwin"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://fake.urlto.img/user_avatar_3"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Description: Use this endpoint to follow a target user (create a follow) for the
 current_user with the target of another user. This is the Twitter-style &#39;one-way&rsquo; Follow.</p>
@@ -594,17 +596,19 @@ current_user with the target of another user. This is the Twitter-style &#39;one
 <blockquote>
 <p>Send a DELETE request to the specified URI:</p>
 </blockquote>
-<pre class="highlight shell"><code>https://wildfire-staging.herokuapp.com/api/v1/users/5/unfollow
+<pre class="highlight shell"><code>https://wildfire-staging.herokuapp.com/api/v1/users/55/unfollow
 </code></pre>
 <blockquote>
 <p>A JSON response like the following would be returned:</p>
 </blockquote>
 <pre class="highlight shell"><code>status: 200
-</code></pre><pre class="highlight json"><code><span class="w">  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jordan Godwin"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://fake.urlto.img/user_avatar_5"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+</code></pre><pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">55</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jordan"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Godwin"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://fake.urlto.img/user_avatar_55"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Description: Use this endpoint to unfollow a target user (delete a follow)
 for the current_user with the target of another user.</p>
