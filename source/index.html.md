@@ -303,11 +303,20 @@ identity token for making user authenticated requests to Layer's API
 
 ## Update User
 
-> Using the user's auth Token within a Token Auth Header, send a PATCH request with the user params:
+> Send a PATCH request with any of the user object's parameters:
 
 ```json
 {
   "about": "An updated bio from the client app!"
+}
+```
+
+> For Updating password, send the following parameters:
+
+```json
+{
+  "password": "new_password",
+  "password_confirmation": "new_password"
 }
 ```
 
@@ -405,7 +414,7 @@ the following data on the auth'ed user's model will be updated:
 }
 ```
 
-> The server will respond with the following JSON:
+> The server will respond with ONE of the following JSON reponses:
 
 ```shell
 status: 200
