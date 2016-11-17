@@ -386,10 +386,18 @@ identity token for making user authenticated requests to Layer&rsquo;s API</p>
 <h2 id="update-user">Update User</h2>
 
 <blockquote>
-<p>Using the user&rsquo;s auth Token within a Token Auth Header, send a PATCH request with the user params:</p>
+<p>Send a PATCH request with any of the user object&rsquo;s parameters:</p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"about"</span><span class="p">:</span><span class="w"> </span><span class="s2">"An updated bio from the client app!"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>For Updating password, send the following parameters:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new_password"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"password_confirmation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new_password"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
@@ -475,7 +483,7 @@ the following data on the auth&#39;ed user&rsquo;s model will be updated:</p>
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<p>The server will respond with the following JSON:</p>
+<p>The server will respond with ONE of the following JSON reponses:</p>
 </blockquote>
 <pre class="highlight shell"><code>status: 200
 </code></pre><pre class="highlight json"><code><span class="p">[</span><span class="w">
