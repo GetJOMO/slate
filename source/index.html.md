@@ -468,7 +468,7 @@ in which will then be matched on users in the database on each user's `digit_id`
 
 `POST https://wildfire-dev.herokuapp.com/api/v1/users/find_digits`
 
-## All User Followings
+## Retrieve User Followings
 
 > Send a GET request to the specified URI:
 
@@ -580,6 +580,119 @@ for the current_user with the target of another user.
 ### HTTP Request
 
 `DELETE https://wildfire-staging.herokuapp.com/api/v1/users/:id/unfollow`
+
+## Retrieve Blocked Users
+
+> Send a GET request to the specified URI:
+
+```shell
+https://wildfire-staging.herokuapp.com/api/v1/me/blocked
+```
+
+> A JSON response like the following would be returned:
+
+```shell
+status: 200
+```
+```json
+[
+  {
+    "id": 3,
+    "first_name": "Lauren",
+    "last_name": "Godwin",
+    "avatar_url": "https:\/\/fake.urlto.img\/user_avatar_3",
+    "block_status": true
+  },
+  {
+    "id": 5,
+    "name": "Jordan",
+    "last_name": "Godwin",
+    "avatar_url": "https:\/\/fake.urlto.img\/user_avatar_5",
+    "block_status": true
+  },
+  {
+    "id": 12,
+    "name": "Gavin",
+    "last_name": "Anthony",
+    "avatar_url": "https:\/\/fake.urlto.img\/user_avatar_12",
+    "block_status": true
+  }
+  ,{
+    "id": 23,
+    "name": "Kerry",
+    "last_name": "Knight",
+    "avatar_url": "https:\/\/fake.urlto.img\/user_avatar_23",
+    "block_status": true
+  }
+]
+```
+
+Description: This endpoint will return an array of users that the
+requesting user has blocked.
+
+### HTTP Request
+
+`GET https://wildfire-staging.herokuapp.com/api/v1/me/blocked`
+
+## Block a User
+
+> Send a POST request to the specified URI:
+
+```shell
+https://wildfire-staging.herokuapp.com/api/v1/users/3/block
+```
+
+> A JSON response like the following would be returned:
+
+```shell
+status: 201
+```
+```json
+{
+  "id": 3,
+  "first_name": "Lauren",
+  "last_name": "Godwin",
+  "avatar_url": "https://fake.urlto.img/user_avatar_3",
+  "block_status": true
+}
+```
+
+Description: Use this endpoint to block a target user (create a block) for the
+current_user with the target of another user.
+
+### HTTP Request
+
+`POST https://wildfire-staging.herokuapp.com/api/v1/users/:id/block`
+
+## Unblock a User
+
+> Send a DELETE request to the specified URI:
+
+```shell
+https://wildfire-staging.herokuapp.com/api/v1/users/55/unblock
+```
+
+> A JSON response like the following would be returned:
+
+```shell
+status: 200
+```
+```json
+{
+  "id": 55,
+  "first_name": "Jordan",
+  "last_name": "Godwin",
+  "avatar_url": "https://fake.urlto.img/user_avatar_55",
+  "block_status": true
+}
+```
+
+Description: Use this endpoint to unblock a target user (remove a block)
+for the current_user with the target of another user.
+
+### HTTP Request
+
+`DELETE https://wildfire-staging.herokuapp.com/api/v1/users/:id/unblock`
 
 # Events
 
