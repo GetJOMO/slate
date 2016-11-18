@@ -485,23 +485,31 @@ status: 200
 [
   {
     "id": 3,
-    "name": "Lauren Godwin",
-    "avatar_url": "https:\/\/fake.urlto.img\/user_avatar_3"
+    "first_name": "Lauren",
+    "last_name": "Godwin",
+    "avatar_url": "https:\/\/fake.urlto.img\/user_avatar_3",
+    "follow_status": true
   },
   {
     "id": 5,
-    "name": "Jordan Godwin",
-    "avatar_url": "https:\/\/fake.urlto.img\/user_avatar_5"
+    "name": "Jordan",
+    "last_name": "Godwin",
+    "avatar_url": "https:\/\/fake.urlto.img\/user_avatar_5",
+    "follow_status": true
   },
   {
     "id": 12,
-    "name": "Gavin Anthony",
-    "avatar_url": "https:\/\/fake.urlto.img\/user_avatar_12"
+    "name": "Gavin",
+    "last_name": "Anthony",
+    "avatar_url": "https:\/\/fake.urlto.img\/user_avatar_12",
+    "follow_status": true
   }
   ,{
     "id": 23,
-    "name": "Kerry Knight",
-    "avatar_url": "https:\/\/fake.urlto.img\/user_avatar_23"
+    "name": "Kerry",
+    "last_name": "Knight",
+    "avatar_url": "https:\/\/fake.urlto.img\/user_avatar_23",
+    "follow_status": true
   }
 ]
 ```
