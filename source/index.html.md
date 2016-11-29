@@ -468,6 +468,62 @@ in which will then be matched on users in the database on each user's `digit_id`
 
 `POST https://wildfire-dev.herokuapp.com/api/v1/users/find_digits`
 
+## Get User Profile
+
+> Send a GET request with required parameters:
+
+```shell
+https://wildfire-staging.herokuapp.com/api/v1/users/5/profile
+```
+
+> A JSON response like the following would be returned:
+
+```shell
+status: 200
+```
+```json
+{
+  "id": 2,
+  "first_name": "Kerry",
+  "last_name": "Knight",
+  "dob": "1980-11-17",
+  "about": "about kerry knight",
+  "city": "Wilmington",
+  "state": "NC",
+  "avatar_url": "http://lorempixel.com/300/300/sports/#{Faker::Number.between(1, 9)}",
+  "follow_status": false,
+  "tags": [
+    {
+      "id": 14,
+      "name": "Lakers",
+      "parent_id": 3,
+      "created_at": "2016-11-28T15:56:46.605Z",
+      "updated_at": "2016-11-28T15:56:46.605Z"
+    },
+    {
+      "id": 13,
+      "name": "Jazz",
+      "parent_id": 3,
+      "created_at": "2016-11-28T15:56:46.591Z",
+      "updated_at": "2016-11-28T15:56:46.591Z"
+    },
+    {
+      "id": 1,
+      "name": "Sports",
+      "parent_id": null,
+      "created_at": "2016-11-28T15:56:46.392Z",
+      "updated_at": "2016-11-28T15:56:46.392Z"
+    }
+  ]
+}
+```
+
+This endpoint will return the profile attributes for a specified user.
+
+### HTTP Request
+
+`GET https://wildfire-staging.herokuapp.com/api/v1/users/:id/profile`
+
 ## Retrieve User Followings
 
 > Send a GET request to the specified URI:
