@@ -377,9 +377,7 @@ Description: Updates the currently logged in user's profile
 
 > The server will respond with the following JSON:
 
-```shell
-status: 200
-```
+s
 ```json
 {
   "message": "User logged-out & account deactivated"
@@ -1120,12 +1118,65 @@ status: 200
 ]
 ```
 
-This endpoint will return an array of users who are are attending
+This endpoint will return an array of users who are attending
 the event.
 
 ### HTTP Request
 
 `GET https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/attendees`
+
+## Show Event Requests
+
+> Send a GET request with required parameters:
+
+```shell
+https://wildfire-dev.herokuapp.com/api/v1/events/22/requests
+```
+
+> A JSON response like the following would be returned:
+
+```shell
+status: 200
+```
+```json
+[
+  {
+    "id": 45,
+    "first_name": "Leonora",
+    "last_name": "Bergstrom",
+    "avatar_url": "http://lorempixel.com/300/300/cats/6",
+    "follow_status": false
+  },
+  {
+    "id": 324,
+    "first_name": "Arvid",
+    "last_name": "Mertz",
+    "avatar_url": "http://lorempixel.com/300/300/cats/7",
+    "follow_status": true
+  },
+  {
+    "id": 363,
+    "first_name": "Eugene",
+    "last_name": "Hand",
+    "avatar_url": "http://lorempixel.com/300/300/cats/9",
+    "follow_status": false
+  },
+  {
+    "id": 473,
+    "first_name": "Jett",
+    "last_name": "Shanahan",
+    "avatar_url": "http://lorempixel.com/300/300/cats/3",
+    "follow_status": false
+  }
+]
+```
+
+This endpoint will return an array of users who are have requested
+to join the event.
+
+### HTTP Request
+
+`GET https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/requests`
 
 # {TEMPLATE}
 
