@@ -1258,6 +1258,192 @@ from the specified event.
 
 `DELETE https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/unjoin`
 
+## Request to join Event
+
+> Send a POST request with required parameters:
+
+```shell
+https://wildfire-dev.herokuapp.com/api/v1/events/32/request
+```
+
+> A JSON response like the following would be returned:
+
+```shell
+status: 201
+```
+```json
+{
+  "id": 32,
+  "description": "Enim qui beatae et veniam dolores quia repellat voluptas.",
+  "image_url": "http:\/\/lorempixel.com\/600\/600\/sports\/3",
+  "venue_id": 713175208,
+  "private": false,
+  "starts_at": "2016-11-30T15:31:34.000Z",
+  "ends_at": "2016-11-30T15:31:40.129Z",
+  "duration": 6.13,
+  "active": false,
+  "coords": {
+    "lat": 34.1737,
+    "lng": -77.9406
+  },
+  "host": {
+    "id": 73,
+    "name": "Jamir Schmeler",
+    "dob": "1984-09-13",
+    "tags": [
+      {
+        "id": 4,
+        "name": "College",
+        "parent_id": 2,
+        "created_at": "2016-11-29T23:20:38.164Z",
+        "updated_at": "2016-11-29T23:20:38.164Z"
+      },
+      {
+        "id": 3,
+        "name": "Professional",
+        "parent_id": 2,
+        "created_at": "2016-11-29T23:20:38.149Z",
+        "updated_at": "2016-11-29T23:20:38.149Z"
+      },
+      {
+        "id": 7,
+        "name": "NCSU",
+        "parent_id": 4,
+        "created_at": "2016-11-29T23:20:38.223Z",
+        "updated_at": "2016-11-29T23:20:38.223Z"
+      },
+      {
+        "id": 3,
+        "name": "Professional",
+        "parent_id": 2,
+        "created_at": "2016-11-29T23:20:38.149Z",
+        "updated_at": "2016-11-29T23:20:38.149Z"
+      }
+    ]
+  },
+  "tags": [
+    {
+      "id": "6",
+      "title": "NFL"
+    },
+    {
+      "id": "26",
+      "title": "Carolina Panthers"
+    },
+    {
+      "id": "160",
+      "title": "Beer"
+    }
+  ],
+  "requests": [
+    {
+      "id": 1,
+      "first_name": "Jordan",
+      "last_name": "Godwin",
+      "avatar_url": "http:\/\/lorempixel.com\/300\/300\/sports\/5",
+      "follow_status": false
+    }
+  ]
+}
+```
+
+This endpoint will create a 'request' (Attendant record w/ a `:requested` status)
+for the specified event.
+
+### HTTP Request
+
+`POST https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/request`
+
+## Remove an Event join request
+
+> Send a DELETE request with required parameters:
+
+```shell
+https://wildfire-dev.herokuapp.com/api/v1/events/32/unrequest
+```
+
+> A JSON response like the following would be returned:
+
+```shell
+status: 200
+```
+```json
+{
+  "id": 32,
+  "description": "Enim qui beatae et veniam dolores quia repellat voluptas.",
+  "image_url": "http:\/\/lorempixel.com\/600\/600\/sports\/3",
+  "venue_id": 713175208,
+  "private": true,
+  "starts_at": "2016-11-30T15:31:34.000Z",
+  "ends_at": "2016-11-30T15:31:40.129Z",
+  "duration": 6.13,
+  "active": false,
+  "coords": {
+    "lat": 34.1737,
+    "lng": -77.9406
+  },
+  "host": {
+    "id": 73,
+    "name": "Jamir Schmeler",
+    "dob": "1984-09-13",
+    "tags": [
+      {
+        "id": 4,
+        "name": "College",
+        "parent_id": 2,
+        "created_at": "2016-11-29T23:20:38.164Z",
+        "updated_at": "2016-11-29T23:20:38.164Z"
+      },
+      {
+        "id": 3,
+        "name": "Professional",
+        "parent_id": 2,
+        "created_at": "2016-11-29T23:20:38.149Z",
+        "updated_at": "2016-11-29T23:20:38.149Z"
+      },
+      {
+        "id": 7,
+        "name": "NCSU",
+        "parent_id": 4,
+        "created_at": "2016-11-29T23:20:38.223Z",
+        "updated_at": "2016-11-29T23:20:38.223Z"
+      },
+      {
+        "id": 3,
+        "name": "Professional",
+        "parent_id": 2,
+        "created_at": "2016-11-29T23:20:38.149Z",
+        "updated_at": "2016-11-29T23:20:38.149Z"
+      }
+    ]
+  },
+  "tags": [
+    {
+      "id": "6",
+      "title": "NFL"
+    },
+    {
+      "id": "26",
+      "title": "Carolina Panthers"
+    },
+    {
+      "id": "160",
+      "title": "Beer"
+    }
+  ],
+  "requests": [
+
+  ]
+}
+```
+
+This endpoint will _destroy_ a previously created 'request' (Attendant record w/ a `:requested` status)
+from the specified event.
+
+### HTTP Request
+
+`DELETE https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/unrequest`
+
 ## Show Event Attendees
 
 > Send a GET request with required parameters:
