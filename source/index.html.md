@@ -1550,6 +1550,77 @@ to join the event.
 
 `GET https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/requests`
 
+# Tags
+
+## Get all Tags
+
+> Send a GET request with required parameters:
+
+```shell
+https://wildfire-staging.herokuapp.com/api/v1/tags
+```
+
+> A JSON response like the following would be returned:
+
+```shell
+status: 200
+```
+```json
+[
+  {
+    "id": 1,
+    "name": "Sports"
+  },
+  {
+    "id": 2,
+    "name": "Basketball",
+    "parent_id_0": 1
+  },
+  {
+    "id": 3,
+    "name": "Professional",
+    "parent_id_0": 1,
+    "parent_id_1": 2
+  },
+  {
+    "id": 4,
+    "name": "College",
+    "parent_id_0": 1,
+    "parent_id_1": 2
+  },
+  {
+    ...
+  }
+  {
+    "id": 5,
+    "name": "Duke",
+    "parent_id_0": 1,
+    "parent_id_1": 2,
+    "parent_id_2": 4
+  },
+  {
+    "id": 6,
+    "name": "UNC",
+    "parent_id_0": 1,
+    "parent_id_1": 2,
+    "parent_id_2": 4
+  },
+  {
+    "id": 7,
+    "name": "NCSU",
+    "parent_id_0": 1,
+    "parent_id_1": 2,
+    "parent_id_2": 4
+  }
+]
+```
+
+This endpoint will return a flat array of Tag objects
+
+### HTTP Request
+
+`{HTTP_VERB} https://wildfire-staging.herokuapp.com/api/v1/tags`
+
 # {TEMPLATE}
 
 ## {TEMPLATE: Title of the Endpoint}
