@@ -829,6 +829,91 @@ This endpoint creates and/or updates a Tag(s) for the currently logged in user.
 
 `PATCH https://wildfire-dev.herokuapp.com/api/v1/me/tags`
 
+## User's Hosted Events
+
+> Send a GET request with required parameters:
+
+```shell
+https://wildfire-staging.herokuapp.com/api/v1/me/events/hosted
+```
+
+> A JSON response like the following would be returned:
+
+```shell
+status: 200
+```
+```json
+[
+  {
+    "id": 88,
+    "description": "Vel tempore enim inventore similique molestiae nemo.",
+    "image_url": "http:\/\/lorempixel.com\/600\/600\/sports\/9",
+    "venue_id": 857054673,
+    "private": false,
+    "starts_at": "2016-11-28T10:46:42.000Z",
+    "ends_at": "2016-11-28T10:46:49.030Z",
+    "duration": 7.03,
+    "active": false,
+    "coords": {
+      "lat": 34.1459,
+      "lng": -77.9223
+    },
+    "host": {
+      "id": 1,
+      "name": "Jordan Godwin",
+      "dob": "1987-02-03",
+      "tags": [
+
+      ]
+    },
+    "tags": [
+      {
+        "id": "6",
+        "title": "NFL"
+      },
+      {
+        "id": "26",
+        "title": "Carolina Panthers"
+      },
+      {
+        "id": "160",
+        "title": "Beer"
+      }
+    ],
+    "attendees": [
+      {
+        "id": 2,
+        "first_name": "Kerry",
+        "last_name": "Knight",
+        "avatar_url": "http://lorempixel.com/300/300/sports/5",
+        "follow_status": true
+      },
+      {
+        "id": 3,
+        "first_name": "Gavin",
+        "last_name": "Anthony",
+        "avatar_url": "http://lorempixel.com/300/300/sports/8",
+        "follow_status": true
+      },
+      {
+        "id": 3,
+        "first_name": "Lauren",
+        "last_name": "Godwin",
+        "avatar_url": "http://lorempixel.com/300/300/flowers/11",
+        "follow_status": true
+      }
+    ]
+  }
+]
+```
+
+This endpoint will return an array of Events that the current_user
+has hosted.
+
+### HTTP Request
+
+`GET https://wildfire-staging.herokuapp.com/api/v1/me/events/hosted`
+
 # Events
 
 ## Create Event
