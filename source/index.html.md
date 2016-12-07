@@ -146,7 +146,7 @@ status: 201
     "instagram": null,
     "pinterest": null
   },
-  "tags": [
+  "profile_tags":[
     { "tag_id": "20", "tag_name": "Sports" },
     { "tag_id": "22", "tag_name": "College" },
     { "tag_id": "29", "tag_name": "Football" }
@@ -218,7 +218,7 @@ status: 200
     "instagram": null,
     "pinterest": null
   },
-  "tags": [
+  "profile_tags": [
     { "tag_id": "20", "tag_name": "Sports" },
     { "tag_id": "22", "tag_name": "College" },
     { "tag_id": "29", "tag_name": "Football" }
@@ -352,11 +352,10 @@ status: 200
     "instagram": null,
     "pinterest": null
   },
-  "tags": [
-    "Programming",
-    "Duke Basketball",
-    "Fishing",
-    "Boating"
+  "profile_tags": [
+    { "tag_id": "20", "tag_name": "Sports" },
+    { "tag_id": "22", "tag_name": "College" },
+    { "tag_id": "29", "tag_name": "Football" }
   ]
 }
 ```
@@ -490,7 +489,7 @@ status: 200
   "state": "NC",
   "avatar_url": "http://lorempixel.com/300/300/sports/#{Faker::Number.between(1, 9)}",
   "follow_status": false,
-  "tags": [
+  "profile_tags": [
     {
       "id": 14,
       "name": "Lakers",
@@ -798,7 +797,7 @@ status: 200
   "active": true,
   "last_login_time": "2016-11-22T23:40:41.146Z",
   "digits_id": "771065260681887744",
-  "tags": [
+  "profile_tags": [
     {
       "id": 5,
       "name": "Duke",
@@ -862,8 +861,11 @@ status: 200
       "id": 1,
       "name": "Jordan Godwin",
       "dob": "1987-02-03",
-      "tags": [
-
+      "profile_tags": [
+        {
+          "id": "26",
+          "title": "Carolina Panthers"
+        }
       ]
     },
     "tags": [
@@ -981,11 +983,11 @@ status: 201
     "id": 1,
     "name": "Jordan Godwin",
     "dob": "1987-02-09",
-    "tags": [
-      "Programming",
-      "Duke Basketball",
-      "Fishing",
-      "Boating"
+    "profile_tags": [
+      {
+        "id": "26",
+        "title": "Carolina Panthers"
+      }
     ]
   }
 }
@@ -1022,11 +1024,11 @@ status: 200
     "id": 1,
     "name": "Jordan Godwin",
     "dob": "1987-02-09",
-    "tags": [
-      "Programming",
-      "Duke Basketball",
-      "Fishing",
-      "Boating"
+    "profile_tags": [
+      {
+        "id": "26",
+        "title": "Carolina Panthers"
+      }
     ]
   },
   "tags": [
@@ -1117,11 +1119,15 @@ status: 200
     "id": 1,
     "name": "Jordan Godwin",
     "dob": "1987-02-09",
-    "tags": [
-      "Programming",
-      "Duke Basketball",
-      "Fishing",
-      "Boating"
+    "profile_tags": [
+      {
+        "id": "26",
+        "title": "Carolina Panthers"
+      },
+      {
+        "id": "53",
+        "title": "Boating"
+      }
     ]
   }
 }
@@ -1189,7 +1195,7 @@ status: 201
     "id": 73,
     "name": "Jamir Schmeler",
     "dob": "1984-09-13",
-    "tags": [
+    "profile_tags": [
       {
         "id": 4,
         "name": "College",
@@ -1285,7 +1291,7 @@ status: 200
     "id": 73,
     "name": "Jamir Schmeler",
     "dob": "1984-09-13",
-    "tags": [
+    "profile_tags": [
       {
         "id": 4,
         "name": "College",
@@ -1375,7 +1381,7 @@ status: 201
     "id": 73,
     "name": "Jamir Schmeler",
     "dob": "1984-09-13",
-    "tags": [
+    "profile_tags": [
       {
         "id": 4,
         "name": "College",
@@ -1471,7 +1477,7 @@ status: 200
     "id": 73,
     "name": "Jamir Schmeler",
     "dob": "1984-09-13",
-    "tags": [
+    "profile_tags": [
       {
         "id": 4,
         "name": "College",
