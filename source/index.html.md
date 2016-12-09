@@ -747,13 +747,13 @@ for the current_user with the target of another user.
 
 `DELETE https://wildfire-staging.herokuapp.com/api/v1/users/:id/unblock`
 
-## Add/Update User Profile Tags
+## User Profile Tags
 
 > Send a PATCH request with required parameters:
 
 ```json
 {
-  "tag_ids": [1, 3, 5]
+  "profile_tag_ids": [1, 3, 5]
 }
 ```
 
@@ -818,15 +818,130 @@ status: 200
       "name": "Basketball",
       "parent_id": 1
     }
+  ],
+  "feed_tags": [
+    {
+      "id": 5,
+      "name": "Duke",
+      "parent_id": 4
+    },
+    {
+      "id": 1,
+      "name": "Sports",
+      "parent_id": ""
+    },
+    {
+      "id": 2,
+      "name": "Basketball",
+      "parent_id": 1
+    }
   ]
 }
 ```
 
-This endpoint creates and/or updates a Tag(s) for the currently logged in user.
+This endpoint creates, updates, and deletes Profile tags for the currently logged in user.
 
 ### HTTP Request
 
-`PATCH https://wildfire-dev.herokuapp.com/api/v1/me/tags`
+`PATCH https://wildfire-dev.herokuapp.com/api/v1/me/profile_tags`
+
+## User Feed Tags
+
+> Send a PATCH request with required parameters:
+
+```json
+{
+  "feed_tag_ids": [1, 2, 5]
+}
+```
+
+> A JSON response like the following would be returned:
+
+```shell
+status: 200
+```
+```json
+{
+  "id": 1,
+  "email": "jordan@likeli.co",
+  "first_name": "Jordan",
+  "last_name": "Godwin",
+  "dob": "1987-02-03",
+  "about": "This is all about Jordan.",
+  "city": "Wilmington",
+  "state": "NC",
+  "coords": {
+    "lat": 34.2257,
+    "lng": -77.9447
+  },
+  "push_notifs": {
+    "general": true,
+    "mentions": true,
+    "messages": true,
+    "user_follows": true,
+    "event_updates": true,
+    "join_requests": true,
+    "event_comments": true
+  },
+  "social_ids": {
+    "twitter": null,
+    "facebook": null,
+    "instagram": null,
+    "pinterest": null
+  },
+  "avatar_url": "http:\/\/lorempixel.com\/300\/300\/sports\/6",
+  "auth_token": "vQWzcVfUcbhfwFQ1nk421Z6F",
+  "auth_token_expiry": "2016-11-29T23:40:41.146Z",
+  "active": true,
+  "last_login_time": "2016-11-22T23:40:41.146Z",
+  "digits_id": "771065260681887744",
+  "profile_tags": [
+    {
+      "id": 5,
+      "name": "Duke",
+      "parent_id": 4
+    },
+    {
+      "id": 3,
+      "name": "Professional",
+      "parent_id": 2
+    },
+    {
+      "id": 1,
+      "name": "Sports",
+      "parent_id": ""
+    },
+    {
+      "id": 2,
+      "name": "Basketball",
+      "parent_id": 1
+    }
+  ],
+  "feed_tags": [
+    {
+      "id": 5,
+      "name": "Duke",
+      "parent_id": 4
+    },
+    {
+      "id": 1,
+      "name": "Sports",
+      "parent_id": ""
+    },
+    {
+      "id": 2,
+      "name": "Basketball",
+      "parent_id": 1
+    }
+  ]
+}
+```
+
+This endpoint creates, updates, and deletes filter Feed tags for the currently logged in user.
+
+### HTTP Request
+
+`PATCH https://wildfire-dev.herokuapp.com/api/v1/me/feed_tags`
 
 ## User's Hosted Events
 
