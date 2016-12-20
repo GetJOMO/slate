@@ -521,12 +521,65 @@ This endpoint will return the profile attributes for a specified user.
 
 `GET https://wildfire-staging.herokuapp.com/api/v1/users/:id/profile`
 
+## Retrieve User Followers
+
+> Send a GET request to the specified URI:
+
+```shell
+https://wildfire-staging.herokuapp.com/api/v1/users/3/followers
+```
+
+> A JSON response like the following would be returned:
+
+```shell
+status: 200
+```
+```json
+[
+  {
+    "id": 3,
+    "first_name": "Lauren",
+    "last_name": "Godwin",
+    "avatar_url": "https:\/\/fake.urlto.img\/user_avatar_3",
+    "follow_status": true
+  },
+  {
+    "id": 5,
+    "name": "Jordan",
+    "last_name": "Godwin",
+    "avatar_url": "https:\/\/fake.urlto.img\/user_avatar_5",
+    "follow_status": true
+  },
+  {
+    "id": 12,
+    "name": "Gavin",
+    "last_name": "Anthony",
+    "avatar_url": "https:\/\/fake.urlto.img\/user_avatar_12",
+    "follow_status": true
+  }
+  ,{
+    "id": 23,
+    "name": "Kerry",
+    "last_name": "Knight",
+    "avatar_url": "https:\/\/fake.urlto.img\/user_avatar_23",
+    "follow_status": true
+  }
+]
+```
+
+Description: This endpoint will return an array of users that are
+followers of the specified user.
+
+### HTTP Request
+
+`GET https://wildfire-staging.herokuapp.com/api/v1/users/:id/followers`
+
 ## Retrieve User Followings
 
 > Send a GET request to the specified URI:
 
 ```shell
-https://wildfire-staging.herokuapp.com/api/v1/me/following
+https://wildfire-staging.herokuapp.com/api/v1/users/3/following
 ```
 
 > A JSON response like the following would be returned:
@@ -572,7 +625,7 @@ requesting user is currently following.
 
 ### HTTP Request
 
-`GET https://wildfire-staging.herokuapp.com/api/v1/me/following`
+`GET https://wildfire-staging.herokuapp.com/api/v1/users/:id/following`
 
 ## Follow a User
 
