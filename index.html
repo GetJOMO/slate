@@ -586,12 +586,61 @@ in which will then be matched on users in the database on each user&rsquo;s <cod
 
 <p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/users/:id/profile</code></p>
 
+<h2 id="retrieve-user-followers">Retrieve User Followers</h2>
+
+<blockquote>
+<p>Send a GET request to the specified URI:</p>
+</blockquote>
+<pre class="highlight shell"><code>https://wildfire-staging.herokuapp.com/api/v1/users/3/followers
+</code></pre>
+<blockquote>
+<p>A JSON response like the following would be returned:</p>
+</blockquote>
+<pre class="highlight shell"><code>status: 200
+</code></pre><pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lauren"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Godwin"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:\/\/fake.urlto.img\/user_avatar_3"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jordan"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Godwin"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:\/\/fake.urlto.img\/user_avatar_5"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gavin"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Anthony"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:\/\/fake.urlto.img\/user_avatar_12"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+  </span><span class="p">,{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kerry"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Knight"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:\/\/fake.urlto.img\/user_avatar_23"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Description: This endpoint will return an array of users that are
+followers of the specified user.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/users/:id/followers</code></p>
+
 <h2 id="retrieve-user-followings">Retrieve User Followings</h2>
 
 <blockquote>
 <p>Send a GET request to the specified URI:</p>
 </blockquote>
-<pre class="highlight shell"><code>https://wildfire-staging.herokuapp.com/api/v1/me/following
+<pre class="highlight shell"><code>https://wildfire-staging.herokuapp.com/api/v1/users/3/following
 </code></pre>
 <blockquote>
 <p>A JSON response like the following would be returned:</p>
@@ -633,7 +682,7 @@ requesting user is currently following.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/me/following</code></p>
+<p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/users/:id/following</code></p>
 
 <h2 id="follow-a-user">Follow a User</h2>
 
