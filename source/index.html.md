@@ -487,29 +487,77 @@ status: 200
   "about": "about kerry knight",
   "city": "Wilmington",
   "state": "NC",
-  "avatar_url": "http://lorempixel.com/300/300/sports/#{Faker::Number.between(1, 9)}",
+  "avatar_url": "http:\/\/lorempixel.com\/300\/300\/sports\/5",
+  "social_ids": {
+    "twitter": null,
+    "facebook": null,
+    "instagram": null,
+    "pinterest": null
+  },
+  "followers_count": 16,
+  "following_count": 9,
+  "attended_count": 0,
+  "block_status": false,
   "follow_status": false,
   "profile_tags": [
     {
       "id": 14,
       "name": "Lakers",
-      "parent_id": 3,
-      "created_at": "2016-11-28T15:56:46.605Z",
-      "updated_at": "2016-11-28T15:56:46.605Z"
+      "parent_id": 3
+    }
+  ],
+  "events": [
+    {
+      "id": 4,
+      "description": "Sed aut omnis quaerat quisquam hic est et possimus.",
+      "media_url": "http://lorempixel.com/600/600/sports/7",
+      "media_thumb": "http://lorempixel.com/128/128/sports/5",
+      "media_type": 0,
+      "comments_count": 0,
+      "attendee_count": 1,
+      "privacy": 0,
+      "starts_at": "2017-01-03T09:53:32.000Z",
+      "ends_at": "2017-01-03T09:53:35.810Z",
+      "duration": 3.81
     },
     {
-      "id": 13,
-      "name": "Jazz",
-      "parent_id": 3,
-      "created_at": "2016-11-28T15:56:46.591Z",
-      "updated_at": "2016-11-28T15:56:46.591Z"
+      "id": 3,
+      "description": "Vel dolores earum sint saepe ea iste.",
+      "media_url": "http://lorempixel.com/600/600/sports/9",
+      "media_thumb": "http://lorempixel.com/128/128/sports/9",
+      "media_type": 0,
+      "comments_count": 0,
+      "attendee_count": 2,
+      "privacy": 0,
+      "starts_at": "2017-01-04T14:20:45.000Z",
+      "ends_at": "2017-01-04T14:20:45.149Z",
+      "duration": 0.15
+    },
+    {
+      "id": 2,
+      "description": "Sit enim atque autem repellendus odit iusto tempora in.",
+      "media_url": "http://lorempixel.com/600/600/sports/4",
+      "media_thumb": "http://lorempixel.com/128/128/sports/2",
+      "media_type": 0,
+      "comments_count": 0,
+      "attendee_count": 0,
+      "privacy": 0,
+      "starts_at": "2017-01-04T21:10:23.000Z",
+      "ends_at": "2017-01-04T21:10:28.490Z",
+      "duration": 5.49
     },
     {
       "id": 1,
-      "name": "Sports",
-      "parent_id": null,
-      "created_at": "2016-11-28T15:56:46.392Z",
-      "updated_at": "2016-11-28T15:56:46.392Z"
+      "description": "Non rerum repellendus ipsa et sunt quas vel.",
+      "media_url": "http://lorempixel.com/600/600/sports/9",
+      "media_thumb": "http://lorempixel.com/128/128/sports/2",
+      "media_type": 0,
+      "comments_count": 0,
+      "attendee_count": 0,
+      "privacy": 0,
+      "starts_at": "2017-01-04T11:18:59.000Z",
+      "ends_at": "2017-01-04T11:19:04.419Z",
+      "duration": 5.42
     }
   ]
 }
