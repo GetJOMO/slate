@@ -1352,6 +1352,135 @@ user has joined.
 
 `GET https://wildfire-staging.herokuapp.com/api/v1/users/276/events/joined`
 
+## Event Join Requests for User
+
+> Send a GET request with required parameters:
+
+```shell
+https://wildfire-staging.herokuapp.com/api/v1/users/57/events/requested
+```
+
+> A JSON response like the following would be returned:
+
+```shell
+status: 200
+```
+```json
+[
+  {
+    "id": 33,
+    "description": "Exercitationem doloremque eaque ea dolor qui.",
+    "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/2",
+    "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/9",
+    "media_type": null,
+    "comments_count": 0,
+    "attendee_count": 4,
+    "privacy": 0,
+    "starts_at": "2017-01-03T08:54:01.000Z",
+    "ends_at": "2017-01-03T08:54:03.270Z",
+    "duration": 2.27,
+    "host": {
+      "id": 26,
+      "first_name": "Marion",
+      "last_name": "Powlowski",
+      "dob": "1984-08-09"
+    },
+    "venue": {
+      "name": "New Venue",
+      "icon_url": "https://ss0.4sqi.net/img/categories_v2/nightlife/default_bg_64.png",
+      "coords": {
+        "lat": 34.4332,
+        "lng": -77.8485
+      },
+      "category": "Beach Bar",
+      "venue_id": 37483747
+    },
+    "tags": [
+      {
+        "id": 3,
+        "name": "Motorsports",
+        "parent_id": 4
+      },
+      {
+        "id": 3,
+        "name": "Extreme Sports",
+        "parent_id": 20
+      }
+    ],
+    "attendees": [
+      {
+        "id": 354,
+        "first_name": "Charlene",
+        "last_name": "Reilly",
+        "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/4",
+        "block_status": false,
+        "follow_status": false
+      }
+    ],
+    "comments": []
+  },
+  {
+    "id": 81,
+    "description": "Molestias sunt cupiditate consequatur.",
+    "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/6",
+    "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/4",
+    "media_type": null,
+    "comments_count": 0,
+    "attendee_count": 2,
+    "privacy": 0,
+    "starts_at": "2017-01-05T22:22:18.000Z",
+    "ends_at": "2017-01-05T22:22:24.509Z",
+    "duration": 6.51,
+    "host": {
+      "id": 58,
+      "first_name": "Constance",
+      "last_name": "Torphy",
+      "dob": "1987-05-26"
+    },
+    "venue": {
+      "name": "New Venue",
+      "icon_url": "https://ss0.4sqi.net/img/categories_v2/nightlife/default_bg_64.png",
+      "coords": {
+        "lat": 34.4332,
+        "lng": -77.8485
+      },
+      "category": "Beach Bar",
+      "venue_id": 37483747
+    },
+    "tags": [
+      {
+        "id": 1,
+        "name": "Sports",
+        "parent_id": null
+      },
+      {
+        "id": 3,
+        "name": "Basketball",
+        "parent_id": 1
+      }
+    ],
+    "attendees": [
+      {
+        "id": 350,
+        "first_name": "Yadira",
+        "last_name": "Gerhold",
+        "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/6",
+        "block_status": false,
+        "follow_status": false
+      }
+    ],
+    "comments": []
+  }
+]
+```
+
+This endpoint will return an array of Events that the specified
+user has joined.
+
+### HTTP Request
+
+`GET https://wildfire-staging.herokuapp.com/api/v1/users/276/events/joined`
+
 # Events
 
 ## Create Event
