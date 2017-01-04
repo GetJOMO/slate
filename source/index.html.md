@@ -1153,12 +1153,204 @@ status: 200
 ]
 ```
 
-This endpoint will return an array of Events that the current_user
-has hosted.
+This endpoint will return an array of Events that the specified
+user has hosted.
 
 ### HTTP Request
 
 `GET https://wildfire-staging.herokuapp.com/api/v1/users/1/events/hosted`
+
+## Joined Events for User
+
+> Send a GET request with required parameters:
+
+```shell
+https://wildfire-staging.herokuapp.com/api/v1/users/276/events/joined
+```
+
+> A JSON response like the following would be returned:
+
+```shell
+status: 200
+```
+```json
+[
+  {
+    "id": 50,
+    "description": "Veniam omnis mollitia est similique deleniti accusantium cumque.",
+    "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/8",
+    "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/9",
+    "media_type": 0,
+    "comments_count": 0,
+    "attendee_count": 1,
+    "privacy": 0,
+    "starts_at": "2017-01-03T10:40:17.000Z",
+    "ends_at": "2017-01-03T10:40:17.660Z",
+    "duration": 0.66,
+    "host": {
+      "id": 21,
+      "first_name": "Reagan",
+      "last_name": "Smitham",
+      "dob": "1984-07-10"
+    },
+    "venue": {
+      "name": "New Venue",
+      "icon_url": "https://ss0.4sqi.net/img/categories_v2/nightlife/default_bg_64.png",
+      "coords": {
+        "lat": 34.4332,
+        "lng": -77.8485
+      },
+      "category": "Beach Bar",
+      "venue_id": 37483747
+    },
+    "tags": [
+      {
+        "id": 21,
+        "name": "Social Entertainment",
+        "parent_id": 38
+      }
+    ],
+    "attendees": [
+      {
+        "id": 276,
+        "first_name": "Adeline",
+        "last_name": "Ziemann",
+        "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/2",
+        "block_status": false,
+        "follow_status": false
+      }
+    ],
+    "comments": []
+  },
+  {
+    "id": 77,
+    "description": "Expedita aliquam veritatis autem quo itaque.",
+    "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/8",
+    "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/4",
+    "media_type": null,
+    "comments_count": 0,
+    "attendee_count": 4,
+    "privacy": 0,
+    "starts_at": "2017-01-05T07:22:26.000Z",
+    "ends_at": "2017-01-05T07:22:35.429Z",
+    "duration": 9.43,
+    "host": {
+      "id": 16,
+      "first_name": "Lia",
+      "last_name": "Koch",
+      "dob": "1996-03-21"
+    },
+    "venue": {
+      "name": "New Venue",
+      "icon_url": "https://ss0.4sqi.net/img/categories_v2/nightlife/default_bg_64.png",
+      "coords": {
+        "lat": 34.4332,
+        "lng": -77.8485
+      },
+      "category": "Beach Bar",
+      "venue_id": 37483747
+    },
+    "tags": [
+      {
+        "id": 3,
+        "name": "Motorsports",
+        "parent_id": 4
+      },
+      {
+        "id": 3,
+        "name": "Extreme Sports",
+        "parent_id": 20
+      }
+    ],
+    "attendees": [
+      {
+        "id": 241,
+        "first_name": "Christopher",
+        "last_name": "Goyette",
+        "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/3",
+        "block_status": false,
+        "follow_status": false
+      },
+      {
+        "id": 201,
+        "first_name": "Lance",
+        "last_name": "Hudson",
+        "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/2",
+        "block_status": false,
+        "follow_status": false
+      },
+      {
+        "id": 276,
+        "first_name": "Adeline",
+        "last_name": "Ziemann",
+        "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/2",
+        "block_status": false,
+        "follow_status": false
+      }
+    ],
+    "comments": []
+  },
+  {
+    "id": 95,
+    "description": "Eos quaerat expedita nobis perferendis.",
+    "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/3",
+    "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/7",
+    "media_type": null,
+    "comments_count": 0,
+    "attendee_count": 1,
+    "privacy": 0,
+    "starts_at": "2017-01-05T01:21:10.000Z",
+    "ends_at": "2017-01-05T01:21:12.020Z",
+    "duration": 2.02,
+    "host": {
+      "id": 48,
+      "first_name": "Aric",
+      "last_name": "Ratke",
+      "dob": "1997-12-16"
+    },
+    "venue": {
+      "name": "New Venue",
+      "icon_url": "https://ss0.4sqi.net/img/categories_v2/nightlife/default_bg_64.png",
+      "coords": {
+        "lat": 34.4332,
+        "lng": -77.8485
+      },
+      "category": "Beach Bar",
+      "venue_id": 37483747
+    },
+    "tags": [
+      {
+        "id": 1,
+        "name": "Sports",
+        "parent_id": null
+      },
+      {
+        "id": 3,
+        "name": "Basketball",
+        "parent_id": 1
+      }
+    ],
+    "attendees": [
+      {
+        "id": 276,
+        "first_name": "Adeline",
+        "last_name": "Ziemann",
+        "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/2",
+        "block_status": false,
+        "follow_status": false
+      }
+    ],
+    "comments": []
+  }
+]
+```
+
+This endpoint will return an array of Events that the specified
+user has joined.
+
+### HTTP Request
+
+`GET https://wildfire-staging.herokuapp.com/api/v1/users/276/events/joined`
 
 # Events
 
