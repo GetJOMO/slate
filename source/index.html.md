@@ -1587,34 +1587,63 @@ status: 200
 ```json
 {
   "id": 22,
-  "description": "test event desc",
-  "image_url": "http://www.fakeurl.com/fake_img_id",
-  "starts_at": "1988-05-12T00:00:00.000Z",
-  "duration": 1.5,
-  "venue_id": 37483747,
+  "description": "Sed aut omnis quaerat quisquam hic est et possimus.",
+  "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/7",
+  "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/5",
+  "media_type": null,
+  "comments_count": 0,
+  "attendee_count": 1,
+  "privacy": 0,
+  "starts_at": "2017-01-03T09:53:32.000Z",
+  "ends_at": "2017-01-03T09:53:35.810Z",
+  "duration": 3.81,
   "host": {
-    "id": 1,
-    "name": "Jordan Godwin",
-    "dob": "1987-02-09",
-    "profile_tags": [
-      {
-        "id": "26",
-        "title": "Carolina Panthers"
-      }
-    ]
+    "id": 2,
+    "first_name": "Kerry",
+    "last_name": "Knight",
+    "dob": "1980-11-17"
+  },
+  "venue": {
+    "name": "New Venue",
+    "icon_url": "https:\/\/ss0.4sqi.net\/img\/categories_v2\/nightlife\/default_bg_64.png",
+    "coords": {
+      "lat": 34.4332,
+      "lng": -77.8485
+    },
+    "category": "Beach Bar",
+    "venue_id": 37483747
   },
   "tags": [
     {
-      "id": "6",
-      "title": "NFL"
+      "id": 1,
+      "name": "Sports",
+      "parent_id": null,
+      "created_at": "2017-01-04T15:57:02.323Z",
+      "updated_at": "2017-01-04T15:57:02.323Z"
     },
     {
-      "id": "26",
-      "title": "Carolina Panthers"
-    },
+      "id": 2,
+      "name": "Basketball",
+      "parent_id": 1,
+      "created_at": "2017-01-04T15:57:02.372Z",
+      "updated_at": "2017-01-04T15:57:02.372Z"
+    }
+  ],
+  "attendees": [
     {
-      "id": "160",
-      "title": "Beer"
+      "id": 489,
+      "first_name": "Stacey",
+      "last_name": "Armstrong",
+      "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/3",
+      "block_status": false,
+      "follow_status": false
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "See you there! I'll bring the beer!!",
+      "user_id": 1
     }
   ]
 }
