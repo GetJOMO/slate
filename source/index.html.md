@@ -1044,12 +1044,12 @@ This endpoint creates, updates, and deletes filter Feed tags for the currently l
 
 `PATCH https://wildfire-dev.herokuapp.com/api/v1/me/feed_tags`
 
-## User's Hosted Events
+## Hosted Events for User
 
 > Send a GET request with required parameters:
 
 ```shell
-https://wildfire-staging.herokuapp.com/api/v1/me/events/hosted
+https://wildfire-staging.herokuapp.com/api/v1/users/1/events/hosted
 ```
 
 > A JSON response like the following would be returned:
@@ -1060,67 +1060,95 @@ status: 200
 ```json
 [
   {
-    "id": 88,
-    "description": "Vel tempore enim inventore similique molestiae nemo.",
-    "image_url": "http:\/\/lorempixel.com\/600\/600\/sports\/9",
-    "venue_id": 857054673,
-    "private": false,
-    "starts_at": "2016-11-28T10:46:42.000Z",
-    "ends_at": "2016-11-28T10:46:49.030Z",
-    "duration": 7.03,
-    "active": false,
-    "coords": {
-      "lat": 34.1459,
-      "lng": -77.9223
-    },
+    "id": 66,
+    "description": "Minima aspernatur quia rerum ipsum veniam.",
+    "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/9",
+    "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/5",
+    "media_type": null,
+    "comments_count": 0,
+    "attendee_count": 1,
+    "privacy": 0,
+    "starts_at": "2017-01-06T01:03:14.000Z",
+    "ends_at": "2017-01-06T01:03:18.709Z",
+    "duration": 4.71,
     "host": {
       "id": 1,
-      "name": "Jordan Godwin",
-      "dob": "1987-02-03",
-      "profile_tags": [
-        {
-          "id": "26",
-          "title": "Carolina Panthers"
-        }
-      ]
+      "first_name": "Jordan",
+      "last_name": "Godwin",
+      "dob": "1987-02-03"
     },
+    "venue": null,
     "tags": [
       {
-        "id": "6",
-        "title": "NFL"
+        "id": 1,
+        "name": "Sports",
+        "parent_id": null,
       },
       {
-        "id": "26",
-        "title": "Carolina Panthers"
-      },
-      {
-        "id": "160",
-        "title": "Beer"
+        "id": 3,
+        "name": "Football",
+        "parent_id": 1,
       }
     ],
     "attendees": [
       {
-        "id": 2,
-        "first_name": "Kerry",
-        "last_name": "Knight",
-        "avatar_url": "http://lorempixel.com/300/300/sports/5",
-        "follow_status": true
-      },
-      {
-        "id": 3,
-        "first_name": "Gavin",
-        "last_name": "Anthony",
-        "avatar_url": "http://lorempixel.com/300/300/sports/8",
-        "follow_status": true
-      },
-      {
-        "id": 3,
-        "first_name": "Lauren",
-        "last_name": "Godwin",
-        "avatar_url": "http://lorempixel.com/300/300/flowers/11",
-        "follow_status": true
+        "id": 30,
+        "first_name": "Charlotte",
+        "last_name": "Jenkins",
+        "avatar_url": "http://lorempixel.com/300/300/cats/2",
+        "block_status": false,
+        "follow_status": false
       }
-    ]
+    ],
+    "comments": []
+  },
+  {
+    "id": 109,
+    "description": "My First Event!",
+    "media_url": "http://www.aws.com/media_url",
+    "media_thumb": "http://www.aws.com/media_thumb",
+    "media_type": 0,
+    "comments_count": 0,
+    "attendee_count": 0,
+    "privacy": 0,
+    "starts_at": "2017-01-10T00:00:00.000Z",
+    "ends_at": "2017-01-10T06:00:00.000Z",
+    "duration": 6,
+    "host": {
+      "id": 1,
+      "first_name": "Jordan",
+      "last_name": "Godwin",
+      "dob": "1987-02-03"
+    },
+    "venue": {
+      "name": "New Venue",
+      "icon_url": "https://ss0.4sqi.net/img/categories_v2/nightlife/default_bg_64.png",
+      "coords": {
+        "lat": 34.4332,
+        "lng": -77.8485
+      },
+      "category": "Beach Bar",
+      "venue_id": 37483747
+    },
+    "tags": [
+      {
+        "id": 1,
+        "name": "Sports",
+        "parent_id": null,
+      },
+      {
+        "id": 3,
+        "name": "Football",
+        "parent_id": 1,
+      },
+      {
+        "id": 11,
+        "name": "NASCAR",
+        "parent_id": 7,
+      }
+    ],
+    "attendees": [],
+    "comments": []
   }
 ]
 ```
@@ -1130,7 +1158,7 @@ has hosted.
 
 ### HTTP Request
 
-`GET https://wildfire-staging.herokuapp.com/api/v1/me/events/hosted`
+`GET https://wildfire-staging.herokuapp.com/api/v1/users/1/events/hosted`
 
 # Events
 
@@ -1169,8 +1197,8 @@ status: 201
 {
   "id": 109,
   "description": "My First Event!",
-  "media_url": "http:\/\/www.aws.com\/media_url",
-  "media_thumb": "http:\/\/www.aws.com\/media_thumb",
+  "media_url": "http://www.aws.com/media_url",
+  "media_thumb": "http://www.aws.com/media_thumb",
   "media_type": 0,
   "comments_count": 0,
   "attendee_count": 0,
