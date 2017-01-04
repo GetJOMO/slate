@@ -1092,26 +1092,22 @@ has hosted.
 
 ```json
 {
-  "description": "test event desc",
-  "image_url": "http://www.fakeurl.com/fake_img_id",
-  "tags": [
-    {
-      "id": 6
+  "description": "My First Event!",
+  "media_url": "http://www.aws.com/media_url",
+  "media_thumb": "http://www.aws.com/media_thumb",
+  "media_type": "0",
+  "tag_ids": [3, 1, 11],
+  "starts_at": "2017-01-10",
+  "duration": 6,
+  "venue": {
+    "venue_id": 37483747,
+    "name": "New Venue",
+    "icon_url": "https://ss0.4sqi.net/img/categories_v2/nightlife/default_bg_64.png",
+    "category": "Beach Bar",
+    "coords": {
+      "lat": 34.4332,
+      "lng": -77.8485
     },
-    {
-      "id": 26
-    },
-    {
-      "id": 160
-    }
-  ],
-  "starts_at": "1988-05-12",
-  "duration": 1.5,
-  "venue_id": 37483747,
-  "password": "12345678",
-  "coords": {
-    "lat": 34.4332,
-    "lng": -77.8485
   }
 }
 ```
@@ -1123,41 +1119,52 @@ status: 201
 ```
 ```json
 {
-  "id": 9,
-  "description": "test event desc",
-  "image_url": "http://www.fakeurl.com/fake_img_id",
-  "tags": [
-    {
-      "id": "6",
-      "title": "NFL"
-    },
-    {
-      "id": "26",
-      "title": "Carolina Panthers"
-    },
-    {
-      "id": "160",
-      "title": "Beer"
-    }
-  ],
-  "starts_at": "1988-05-12T00:00:00.000Z",
-  "duration": 1.5,
-  "venue_id": 37483747,
-  "coords": {
-    "lat": 34.4332,
-    "lng": -77.8485
-  },
+  "id": 109,
+  "description": "My First Event!",
+  "media_url": "http:\/\/www.aws.com\/media_url",
+  "media_thumb": "http:\/\/www.aws.com\/media_thumb",
+  "media_type": 0,
+  "comments_count": 0,
+  "attendee_count": 0,
+  "privacy": 0,
+  "starts_at": "2017-01-10T00:00:00.000Z",
+  "ends_at": "2017-01-10T06:00:00.000Z",
+  "duration": 6,
   "host": {
     "id": 1,
-    "name": "Jordan Godwin",
-    "dob": "1987-02-09",
-    "profile_tags": [
-      {
-        "id": "26",
-        "title": "Carolina Panthers"
-      }
-    ]
-  }
+    "first_name": "Jordan",
+    "last_name": "Godwin",
+    "dob": "1987-02-03"
+  },
+  "venue": {
+    "name": "New Venue",
+    "icon_url": "https:\/\/ss0.4sqi.net\/img\/categories_v2\/nightlife\/default_bg_64.png",
+    "coords": {
+      "lat": 34.4332,
+      "lng": -77.8485
+    },
+    "category": "Beach Bar",
+    "venue_id": 37483747
+  },
+  "tags": [
+    {
+      "id": 1,
+      "name": "Sports",
+      "parent_id": null
+    },
+    {
+      "id": 3,
+      "name": "Football",
+      "parent_id": 1
+    },
+    {
+      "id": 11,
+      "name": "NASCAR",
+      "parent_id": 7
+    }
+  ],
+  "attendees": [],
+  "comments": []
 }
 ```
 
