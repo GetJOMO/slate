@@ -1768,7 +1768,7 @@ Description: This endpoint deletes an Event for the event host.
 > Send a POST request with required parameters:
 
 ```shell
-https://wildfire-dev.herokuapp.com/api/v1/events/22/join
+https://wildfire-dev.herokuapp.com/api/v1/events/15/join
 ```
 
 > A JSON response like the following would be returned:
@@ -1778,66 +1778,38 @@ status: 201
 ```
 ```json
 {
-  "id": 22,
-  "description": "Enim qui beatae et veniam dolores quia repellat voluptas.",
-  "image_url": "http:\/\/lorempixel.com\/600\/600\/sports\/3",
-  "venue_id": 713175208,
-  "private": false,
-  "starts_at": "2016-11-30T15:31:34.000Z",
-  "ends_at": "2016-11-30T15:31:40.129Z",
-  "duration": 6.13,
-  "active": false,
-  "coords": {
-    "lat": 34.1737,
-    "lng": -77.9406
-  },
+  "id": 15,
+  "description": "Et rerum vero eveniet excepturi.",
+  "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/6",
+  "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/5",
+  "media_type": null,
+  "comments_count": 0,
+  "attendee_count": 1,
+  "privacy": 0,
+  "starts_at": "2017-01-04T12:22:53.000Z",
+  "ends_at": "2017-01-04T12:23:02.630Z",
+  "duration": 9.63,
   "host": {
-    "id": 73,
-    "name": "Jamir Schmeler",
-    "dob": "1984-09-13",
-    "profile_tags": [
-      {
-        "id": 4,
-        "name": "College",
-        "parent_id": 2,
-        "created_at": "2016-11-29T23:20:38.164Z",
-        "updated_at": "2016-11-29T23:20:38.164Z"
-      },
-      {
-        "id": 3,
-        "name": "Professional",
-        "parent_id": 2,
-        "created_at": "2016-11-29T23:20:38.149Z",
-        "updated_at": "2016-11-29T23:20:38.149Z"
-      },
-      {
-        "id": 7,
-        "name": "NCSU",
-        "parent_id": 4,
-        "created_at": "2016-11-29T23:20:38.223Z",
-        "updated_at": "2016-11-29T23:20:38.223Z"
-      },
-      {
-        "id": 3,
-        "name": "Professional",
-        "parent_id": 2,
-        "created_at": "2016-11-29T23:20:38.149Z",
-        "updated_at": "2016-11-29T23:20:38.149Z"
-      }
-    ]
+    "id": 7,
+    "first_name": "Carlotta",
+    "last_name": "Huels",
+    "dob": "1998-08-05"
+  },
+  "venue": {
+    "name": "New Venue",
+    "icon_url": "https:\/\/ss0.4sqi.net\/img\/categories_v2\/nightlife\/default_bg_64.png",
+    "coords": {
+      "lat": 34.4332,
+      "lng": -77.8485
+    },
+    "category": "Beach Bar",
+    "venue_id": 37483747
   },
   "tags": [
     {
-      "id": "6",
-      "title": "NFL"
-    },
-    {
-      "id": "26",
-      "title": "Carolina Panthers"
-    },
-    {
-      "id": "160",
-      "title": "Beer"
+      "id": 160,
+      "name": "IW Cardinals Basketball",
+      "parent_id": 155,
     }
   ],
   "attendees": [
@@ -1845,8 +1817,20 @@ status: 201
       "id": 1,
       "first_name": "Jordan",
       "last_name": "Godwin",
-      "avatar_url": "http:\/\/lorempixel.com\/300\/300\/sports\/5",
-      "follow_status": false
+      "avatar_url": "http:\/\/lorempixel.com\/300\/300\/sports\/1"
+    },
+    {
+      "id": 2,
+      "first_name": "Kerry",
+      "last_name": "Knight",
+      "avatar_url": "http:\/\/lorempixel.com\/300\/300\/sports\/2"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "See you there! I'll bring the beer!!",
+      "user_id": 1
     }
   ]
 }
@@ -1864,7 +1848,7 @@ for the specified event.
 > Send a DELETE request with required parameters:
 
 ```shell
-https://wildfire-dev.herokuapp.com/api/v1/events/22/unjoin
+https://wildfire-dev.herokuapp.com/api/v1/events/15/unjoin
 ```
 
 > A JSON response like the following would be returned:
@@ -1874,70 +1858,54 @@ status: 200
 ```
 ```json
 {
-  "id": 22,
-  "description": "Enim qui beatae et veniam dolores quia repellat voluptas.",
-  "image_url": "http:\/\/lorempixel.com\/600\/600\/sports\/3",
-  "venue_id": 713175208,
-  "private": false,
-  "starts_at": "2016-11-30T15:31:34.000Z",
-  "ends_at": "2016-11-30T15:31:40.129Z",
-  "duration": 6.13,
-  "active": false,
-  "coords": {
-    "lat": 34.1737,
-    "lng": -77.9406
-  },
+  "id": 15,
+  "description": "Et rerum vero eveniet excepturi.",
+  "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/6",
+  "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/5",
+  "media_type": null,
+  "comments_count": 0,
+  "attendee_count": 1,
+  "privacy": 0,
+  "starts_at": "2017-01-04T12:22:53.000Z",
+  "ends_at": "2017-01-04T12:23:02.630Z",
+  "duration": 9.63,
   "host": {
-    "id": 73,
-    "name": "Jamir Schmeler",
-    "dob": "1984-09-13",
-    "profile_tags": [
-      {
-        "id": 4,
-        "name": "College",
-        "parent_id": 2,
-        "created_at": "2016-11-29T23:20:38.164Z",
-        "updated_at": "2016-11-29T23:20:38.164Z"
-      },
-      {
-        "id": 3,
-        "name": "Professional",
-        "parent_id": 2,
-        "created_at": "2016-11-29T23:20:38.149Z",
-        "updated_at": "2016-11-29T23:20:38.149Z"
-      },
-      {
-        "id": 7,
-        "name": "NCSU",
-        "parent_id": 4,
-        "created_at": "2016-11-29T23:20:38.223Z",
-        "updated_at": "2016-11-29T23:20:38.223Z"
-      },
-      {
-        "id": 3,
-        "name": "Professional",
-        "parent_id": 2,
-        "created_at": "2016-11-29T23:20:38.149Z",
-        "updated_at": "2016-11-29T23:20:38.149Z"
-      }
-    ]
+    "id": 7,
+    "first_name": "Carlotta",
+    "last_name": "Huels",
+    "dob": "1998-08-05"
+  },
+  "venue": {
+    "name": "New Venue",
+    "icon_url": "https:\/\/ss0.4sqi.net\/img\/categories_v2\/nightlife\/default_bg_64.png",
+    "coords": {
+      "lat": 34.4332,
+      "lng": -77.8485
+    },
+    "category": "Beach Bar",
+    "venue_id": 37483747
   },
   "tags": [
     {
-      "id": "6",
-      "title": "NFL"
-    },
-    {
-      "id": "26",
-      "title": "Carolina Panthers"
-    },
-    {
-      "id": "160",
-      "title": "Beer"
+      "id": 160,
+      "name": "IW Cardinals Basketball",
+      "parent_id": 155,
     }
   ],
   "attendees": [
-
+    {
+      "id": 2,
+      "first_name": "Kerry",
+      "last_name": "Knight",
+      "avatar_url": "http:\/\/lorempixel.com\/300\/300\/sports\/2"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "See you there! I'll bring the beer!!",
+      "user_id": 1
+    }
   ]
 }
 ```
@@ -1954,7 +1922,7 @@ from the specified event.
 > Send a POST request with required parameters:
 
 ```shell
-https://wildfire-dev.herokuapp.com/api/v1/events/32/request
+https://wildfire-dev.herokuapp.com/api/v1/events/50/request
 ```
 
 > A JSON response like the following would be returned:
@@ -1964,66 +1932,48 @@ status: 201
 ```
 ```json
 {
-  "id": 32,
-  "description": "Enim qui beatae et veniam dolores quia repellat voluptas.",
-  "image_url": "http:\/\/lorempixel.com\/600\/600\/sports\/3",
-  "venue_id": 713175208,
-  "private": false,
-  "starts_at": "2016-11-30T15:31:34.000Z",
-  "ends_at": "2016-11-30T15:31:40.129Z",
-  "duration": 6.13,
-  "active": false,
-  "coords": {
-    "lat": 34.1737,
-    "lng": -77.9406
-  },
+  "id": 50,
+  "description": "Veniam omnis mollitia est similique deleniti accusantium cumque.",
+  "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/8",
+  "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/9",
+  "media_type": null,
+  "comments_count": 0,
+  "attendee_count": 1,
+  "privacy": 1,
+  "starts_at": "2017-01-03T10:40:17.000Z",
+  "ends_at": "2017-01-03T10:40:17.660Z",
+  "duration": 0.66,
   "host": {
-    "id": 73,
-    "name": "Jamir Schmeler",
-    "dob": "1984-09-13",
-    "profile_tags": [
-      {
-        "id": 4,
-        "name": "College",
-        "parent_id": 2,
-        "created_at": "2016-11-29T23:20:38.164Z",
-        "updated_at": "2016-11-29T23:20:38.164Z"
-      },
-      {
-        "id": 3,
-        "name": "Professional",
-        "parent_id": 2,
-        "created_at": "2016-11-29T23:20:38.149Z",
-        "updated_at": "2016-11-29T23:20:38.149Z"
-      },
-      {
-        "id": 7,
-        "name": "NCSU",
-        "parent_id": 4,
-        "created_at": "2016-11-29T23:20:38.223Z",
-        "updated_at": "2016-11-29T23:20:38.223Z"
-      },
-      {
-        "id": 3,
-        "name": "Professional",
-        "parent_id": 2,
-        "created_at": "2016-11-29T23:20:38.149Z",
-        "updated_at": "2016-11-29T23:20:38.149Z"
-      }
-    ]
+    "id": 21,
+    "first_name": "Reagan",
+    "last_name": "Smitham",
+    "dob": "1984-07-10"
+  },
+  "venue": {
+    "name": "New Venue",
+    "icon_url": "https:\/\/ss0.4sqi.net\/img\/categories_v2\/nightlife\/default_bg_64.png",
+    "coords": {
+      "lat": 34.4332,
+      "lng": -77.8485
+    },
+    "category": "Beach Bar",
+    "venue_id": 37483747
   },
   "tags": [
     {
-      "id": "6",
-      "title": "NFL"
-    },
+      "id": 160,
+      "name": "IW Cardinals Basketball",
+      "parent_id": 155,
+    }
+  ],
+  "attendees": [
     {
-      "id": "26",
-      "title": "Carolina Panthers"
-    },
-    {
-      "id": "160",
-      "title": "Beer"
+      "id": 276,
+      "first_name": "Adeline",
+      "last_name": "Ziemann",
+      "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/2",
+      "block_status": false,
+      "follow_status": false
     }
   ],
   "requests": [
@@ -2031,10 +1981,16 @@ status: 201
       "id": 1,
       "first_name": "Jordan",
       "last_name": "Godwin",
-      "avatar_url": "http:\/\/lorempixel.com\/300\/300\/sports\/5",
-      "follow_status": false
+      "avatar_url": "http:\/\/lorempixel.com\/300\/300\/sports\/2"
+    },
+    {
+      "id": 2,
+      "first_name": "Kerry",
+      "last_name": "Knight",
+      "avatar_url": "http:\/\/lorempixel.com\/300\/300\/sports\/2"
     }
-  ]
+  ],
+  "comments": []
 }
 ```
 
@@ -2060,71 +2016,59 @@ status: 200
 ```
 ```json
 {
-  "id": 32,
-  "description": "Enim qui beatae et veniam dolores quia repellat voluptas.",
-  "image_url": "http:\/\/lorempixel.com\/600\/600\/sports\/3",
-  "venue_id": 713175208,
-  "private": true,
-  "starts_at": "2016-11-30T15:31:34.000Z",
-  "ends_at": "2016-11-30T15:31:40.129Z",
-  "duration": 6.13,
-  "active": false,
-  "coords": {
-    "lat": 34.1737,
-    "lng": -77.9406
-  },
+  "id": 50,
+  "description": "Veniam omnis mollitia est similique deleniti accusantium cumque.",
+  "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/8",
+  "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/9",
+  "media_type": null,
+  "comments_count": 0,
+  "attendee_count": 1,
+  "privacy": 1,
+  "starts_at": "2017-01-03T10:40:17.000Z",
+  "ends_at": "2017-01-03T10:40:17.660Z",
+  "duration": 0.66,
   "host": {
-    "id": 73,
-    "name": "Jamir Schmeler",
-    "dob": "1984-09-13",
-    "profile_tags": [
-      {
-        "id": 4,
-        "name": "College",
-        "parent_id": 2,
-        "created_at": "2016-11-29T23:20:38.164Z",
-        "updated_at": "2016-11-29T23:20:38.164Z"
-      },
-      {
-        "id": 3,
-        "name": "Professional",
-        "parent_id": 2,
-        "created_at": "2016-11-29T23:20:38.149Z",
-        "updated_at": "2016-11-29T23:20:38.149Z"
-      },
-      {
-        "id": 7,
-        "name": "NCSU",
-        "parent_id": 4,
-        "created_at": "2016-11-29T23:20:38.223Z",
-        "updated_at": "2016-11-29T23:20:38.223Z"
-      },
-      {
-        "id": 3,
-        "name": "Professional",
-        "parent_id": 2,
-        "created_at": "2016-11-29T23:20:38.149Z",
-        "updated_at": "2016-11-29T23:20:38.149Z"
-      }
-    ]
+    "id": 21,
+    "first_name": "Reagan",
+    "last_name": "Smitham",
+    "dob": "1984-07-10"
+  },
+  "venue": {
+    "name": "New Venue",
+    "icon_url": "https:\/\/ss0.4sqi.net\/img\/categories_v2\/nightlife\/default_bg_64.png",
+    "coords": {
+      "lat": 34.4332,
+      "lng": -77.8485
+    },
+    "category": "Beach Bar",
+    "venue_id": 37483747
   },
   "tags": [
     {
-      "id": "6",
-      "title": "NFL"
-    },
+      "id": 160,
+      "name": "IW Cardinals Basketball",
+      "parent_id": 155,
+    }
+  ],
+  "attendees": [
     {
-      "id": "26",
-      "title": "Carolina Panthers"
-    },
-    {
-      "id": "160",
-      "title": "Beer"
+      "id": 276,
+      "first_name": "Adeline",
+      "last_name": "Ziemann",
+      "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/2",
+      "block_status": false,
+      "follow_status": false
     }
   ],
   "requests": [
-
-  ]
+    {
+      "id": 2,
+      "first_name": "Kerry",
+      "last_name": "Knight",
+      "avatar_url": "http:\/\/lorempixel.com\/300\/300\/sports\/2"
+    }
+  ],
+  "comments": []
 }
 ```
 
