@@ -2256,6 +2256,177 @@ This endpoint will return a flat array of Tag objects
 
 `{HTTP_VERB} https://wildfire-staging.herokuapp.com/api/v1/tags`
 
+# Venues
+
+## Foursquare Venues (Venue Name Query)
+
+> Send a GET request with required parameters:
+
+```shell
+https://wildfire-staging.herokuapp.com/api/v1/search_venues?lat=34.2347&lng=-77.9481&query=duck+dive
+```
+
+> A JSON response like the following would be returned:
+
+```shell
+status: 200
+```
+```json
+[
+  {
+    "name": "Duck & Dive Pub",
+    "lat": 34.234175252892,
+    "lng": -77.947961431061,
+    "distance": 59,
+    "venue_id": "4ba29614f964a520ba0638e3",
+    "icon": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/nightlife\/pub_64.png",
+    "category": "Pub"
+  },
+  {
+    "name": "Dig & Dive",
+    "lat": 34.238095496413,
+    "lng": -77.899629099616,
+    "distance": 4476,
+    "venue_id": "54f47e79498e08a96c858200",
+    "icon": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/food\/default_64.png",
+    "category": "Comfort Food Restaurant"
+  },
+  {
+    "name": "Ducks Sporting Goods",
+    "lat": 34.213194444444,
+    "lng": -77.887222222222,
+    "distance": 6093,
+    "venue_id": "4cf9375a951537042b626189",
+    "icon": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/shops\/sports_outdoors_64.png",
+    "category": "Sporting Goods Shop"
+  },
+  {
+    ...
+  },
+  {
+    "name": "The Dive",
+    "lat": 34.262494015181,
+    "lng": -77.884393520048,
+    "distance": 6628,
+    "venue_id": "4e7e7684b803c1522317898e",
+    "icon": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/nightlife\/pub_64.png",
+    "category": "Bar"
+  },
+  {
+    "name": "At a pond feeding,ducks",
+    "lat": 34.197162628174,
+    "lng": -77.906967163086,
+    "distance": 5638,
+    "venue_id": "500c4074e4b07352bcdb260e",
+    "icon": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/parks_outdoors\/outdoors_64.png",
+    "category": "Other Great Outdoors"
+  }
+]
+```
+
+Description: This endpoint will return up to 10 Foursquare results based
+on the `:lat`, `:lng`, and `:query` parameters provided by the requesting client.
+
+### HTTP Request
+
+`GET https://wildfire-staging.herokuapp.com/api/v1/search_venues?lat=00.00000&lng=00.00000&query=search+query+string+here`
+
+### Query Parameters (*All are required*)
+
+Parameter | Default | Description
+--------- | ------- | -----------
+`lat` | nil | The requesting client's latitude coordinate
+`lng` | nil | The requesting client's longitude coordinate
+`query` | nil | A string containing the search query of the name of a Foursquare venue
+
+## Foursquare Venues (Radius Search)
+
+> Send a GET request with required parameters:
+
+```shell
+https://wildfire-staging.herokuapp.com/api/v1/nearby_venues?lat=34.2347&lng=-77.9481&radius=3000
+```
+
+> A JSON response like the following would be returned:
+
+```shell
+status: 200
+```
+```json
+[
+  {
+    "name": "Buzz's Roost",
+    "lat": 34.23477,
+    "lng": -77.948472,
+    "distance": 35,
+    "venue_id": "51394473e4b0668118640b27",
+    "icon": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/nightlife\/pub_64.png",
+    "category": "Bar"
+  },
+  {
+    "name": "The Husk Seed Store And Bar",
+    "lat": 34.234334508993,
+    "lng": -77.94827937235,
+    "distance": 43,
+    "venue_id": "4e860502e5fab0fb114a3a48",
+    "icon": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/nightlife\/pub_64.png",
+    "category": "Bar"
+  },
+  {
+    "name": "Untappd HQ - ILM",
+    "lat": 34.235789629482,
+    "lng": -77.947483062744,
+    "distance": 133,
+    "venue_id": "5759a613cd1040089032b492",
+    "icon": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/shops\/technology_64.png",
+    "category": "Tech Startup"
+  },
+  ...
+  {
+    "name": "Downtown Wilmington",
+    "lat": 34.235575987706,
+    "lng": -77.948658669509,
+    "distance": 110,
+    "venue_id": "5192e5dc498e754446937af3",
+    "icon": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/parks_outdoors\/neighborhood_64.png",
+    "category": "Neighborhood"
+  },
+  {
+    "name": "Next Glass",
+    "lat": 34.2346553,
+    "lng": -77.9482581,
+    "distance": 15,
+    "venue_id": "57dc3ca4498e856bf7b6f4a4",
+    "icon": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/nightlife\/pub_64.png",
+    "category": "Bar"
+  },
+  {
+    "name": "Village Market",
+    "lat": 34.234469895747,
+    "lng": -77.947632332954,
+    "distance": 50,
+    "venue_id": "4b5c9c40f964a520ba3929e3",
+    "icon": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/shops\/conveniencestore_64.png",
+    "category": "Convenience Store"
+  }
+]
+```
+
+Description: This endpoint will return up to 10 Foursquare results based on the `:radius`
+distance of the `:lat` & `:lng` parameters provided by the requesting client.
+
+### HTTP Request
+
+`GET https://wildfire-staging.herokuapp.com/api/v1/nearby_venues?lat=00.00000&lng=00.00000&radius=0000`
+
+### Query Parameters (*All are required*)
+
+Parameter | Default | Description
+--------- | ------- | -----------
+`lat` | nil | The requesting client's latitude coordinate
+`lng` | nil | The requesting client's longitude coordinate
+`radius` | nil | An integer value representing the radius distance (in meters) from the specified `:lat` & `:lng` values
+
 # {TEMPLATE}
 
 ## {TEMPLATE: Title of the Endpoint}
