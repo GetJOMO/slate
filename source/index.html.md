@@ -1158,7 +1158,7 @@ user has hosted.
 
 ### HTTP Request
 
-`GET https://wildfire-staging.herokuapp.com/api/v1/users/1/events/hosted`
+`GET https://wildfire-staging.herokuapp.com/api/v1/users/:id/events/hosted`
 
 ## Joined Events for User
 
@@ -1350,7 +1350,7 @@ user has joined.
 
 ### HTTP Request
 
-`GET https://wildfire-staging.herokuapp.com/api/v1/users/276/events/joined`
+`GET https://wildfire-staging.herokuapp.com/api/v1/users/:id/events/joined`
 
 ## Event Join Requests for User
 
@@ -1479,7 +1479,7 @@ user has joined.
 
 ### HTTP Request
 
-`GET https://wildfire-staging.herokuapp.com/api/v1/users/276/events/joined`
+`GET https://wildfire-staging.herokuapp.com/api/v1/users/:id/events/requested`
 
 # Events
 
