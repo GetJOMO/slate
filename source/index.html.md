@@ -1917,12 +1917,12 @@ from the specified event.
 
 `DELETE https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/unjoin`
 
-## Request to join Event
+## Create an Event Join Request
 
 > Send a POST request with required parameters:
 
 ```shell
-https://wildfire-dev.herokuapp.com/api/v1/events/50/request
+https://wildfire-dev.herokuapp.com/api/v1/events/50/requests
 ```
 
 > A JSON response like the following would be returned:
@@ -1995,18 +1995,18 @@ status: 201
 ```
 
 This endpoint will create a 'request' (Attendant record w/ a `:requested` status)
-for the specified event.
+for the specified private event.
 
 ### HTTP Request
 
-`POST https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/request`
+`POST https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/requests`
 
-## Remove an Event join request
+## Remove/Ignore a Join Request
 
 > Send a DELETE request with required parameters:
 
 ```shell
-https://wildfire-dev.herokuapp.com/api/v1/events/32/unrequest
+https://wildfire-dev.herokuapp.com/api/v1/events/32/requests/:user_id
 ```
 
 > A JSON response like the following would be returned:
