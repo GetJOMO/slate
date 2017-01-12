@@ -2427,6 +2427,191 @@ Parameter | Default | Description
 `lng` | nil | The requesting client's longitude coordinate
 `radius` | nil | An integer value representing the radius distance (in meters) from the specified `:lat` & `:lng` values
 
+# Feeds
+
+## User Feed
+
+> Send a POST request with required parameters:
+
+```shell
+GET https://wildfire-staging.herokuapp.com/api/v1/feeds/user_feed?lat=34.225723432&lng=-77.944723238
+```
+
+> A JSON response like the following would be returned:
+
+```shell
+status: 200
+```
+```json
+[
+  {
+    "id": 2,
+    "description": "Gavin's Coffee event description for <a class=\"user\" id=\"2\">Kerry Knight<\/a> and <a class=\"user\" id=\"1\">Jordan Godwin<\/a>.",
+    "media": {
+      "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/8",
+      "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/8",
+      "media_type": null
+    },
+    "starts_at": "2017-01-21T03:22:12.000Z",
+    "ends_at": "2017-01-21T03:22:17.719Z",
+    "status": 0,
+    "privacy": 0,
+    "comments_count": 0,
+    "attendee_count": 0,
+    "host": {
+      "id": 3,
+      "first_name": "Gavin",
+      "last_name": "Baradic",
+      "avatar_url": "http:\/\/lorempixel.com\/300\/300\/sports\/4",
+      "block_status": false,
+      "follow_status": false,
+      "profile_tags": [
+        {
+          "id": 1,
+          "name": "Sports",
+          "parent_id": null
+        },
+        {
+          "id": 3,
+          "name": "Football",
+          "parent_id": 1
+        }
+      ]
+    },
+    "venue": {
+      "name": "21 South Coffee",
+      "icon_url": "https:\/\/ss0.4sqi.net\/img\/categories_v2\/nightlife\/default_bg_64.png",
+      "coords": {
+        "lat": 34.4332,
+        "lng": -77.8485
+      },
+      "category": "Coffee Shop",
+      "venue_id": 57483748
+    },
+    "tags": [
+      {
+        "id": 1,
+        "name": "Sports",
+        "parent_id": null
+      },
+      {
+        "id": 3,
+        "name": "Football",
+        "parent_id": 1
+      },
+      {
+        "id": 5,
+        "name": "Hockey",
+        "parent_id": 1
+      },
+      {
+        "id": 7,
+        "name": "Racing",
+        "parent_id": 1
+      }
+    ]
+  },
+  ...
+]
+```
+
+Description: This endpoint will return a feed of filtered events based on the
+requesting user's filter tags & users that he/she follows.
+
+### HTTP Request
+
+`GET https://wildfire-staging.herokuapp.com/api/v1/feeds/user_feed`
+
+### Query Parameters (required)
+
+Parameter | Default | Description
+--------- | ------- | -----------
+`lat` | n/a | latitude coordinate of the requesting client
+`lng` | n/a | longitude coordinate of the requesting client
+
+## Local Feed
+
+> Send a POST request with required parameters:
+
+```shell
+GET https://wildfire-staging.herokuapp.com/api/v1/feeds/local?lat=34.225723432&lng=-77.944723238
+```
+
+> A JSON response like the following would be returned:
+
+```shell
+status: 200
+```
+```json
+[
+  {
+    "id": 3,
+    "description": "Jordan's fishing trip for <a class=\"user\" id=\"2\">Kerry Knight<\/a> and <a class=\"user\" id=\"3\">Gavin Baradic<\/a> goes here",
+    "media": {
+      "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/3",
+      "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/6",
+      "media_type": null
+    },
+    "starts_at": "2017-01-19T11:17:07.000Z",
+    "ends_at": "2017-01-19T11:17:16.439Z",
+    "status": 0,
+    "privacy": 0,
+    "comments_count": 0,
+    "attendee_count": 0,
+    "host": {
+      "id": 1,
+      "first_name": "Jordan",
+      "last_name": "Godwin",
+      "avatar_url": "http:\/\/lorempixel.com\/300\/300\/sports\/3",
+      "profile_tags": [
+        {
+          "id": 94,
+          "name": "Fishing",
+          "parent_id": 32,
+        }
+      ]
+    },
+    "venue": {
+      "name": "Atlantic Ocean",
+      "icon_url": "https:\/\/ss0.4sqi.net\/img\/categories_v2\/nightlife\/default_bg_64.png",
+      "coords": {
+        "lat": 34.4332,
+        "lng": -77.8485
+      },
+      "category": "Outdoors",
+      "venue_id": 55483745
+    },
+    "tags": [
+      {
+        "id": 32,
+        "name": "Outdoors",
+        "parent_id": 1,
+      },
+      {
+        "id": 94,
+        "name": "Fishing",
+        "parent_id": 32,
+      }
+    ]
+  },
+  ...
+]
+```
+
+Description: This endpoint will return a feed of filtered events based on the
+location that the event was recorded starting with the closest first.
+
+### HTTP Request
+
+`GET https://wildfire-staging.herokuapp.com/api/v1/feeds/local`
+
+### Query Parameters (required)
+
+Parameter | Default | Description
+--------- | ------- | -----------
+`lat` | n/a | latitude coordinate of the requesting client
+`lng` | n/a | longitude coordinate of the requesting client
+
 # {TEMPLATE}
 
 ## {TEMPLATE: Title of the Endpoint}
