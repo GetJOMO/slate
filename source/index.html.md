@@ -2427,6 +2427,100 @@ Parameter | Default | Description
 `lng` | nil | The requesting client's longitude coordinate
 `radius` | nil | An integer value representing the radius distance (in meters) from the specified `:lat` & `:lng` values
 
+## Past Events for Venue
+
+> Send a GET request with required parameters:
+
+```shell
+`https://wildfire-staging.herokuapp.com/api/v1/venues/:venue_id/events/past`
+```
+
+> A JSON response like the following would be returned:
+
+```shell
+status: 200
+```
+```json
+[
+  {
+    "id": 2,
+    "description": "Gavin's Coffee event description for <a class=\"user\" id=\"2\">Kerry Knight<\/a> and <a class=\"user\" id=\"1\">Jordan Godwin<\/a>.",
+    "media": {
+      "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/8",
+      "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/8",
+      "media_type": null
+    },
+    "starts_at": "2017-01-21T03:22:12.000Z",
+    "ends_at": "2017-01-21T03:22:17.719Z",
+    "status": 0,
+    "privacy": 0,
+    "comments_count": 0,
+    "attendee_count": 0,
+    "host": {
+      "id": 3,
+      "first_name": "Gavin",
+      "last_name": "Baradic",
+      "avatar_url": "http:\/\/lorempixel.com\/300\/300\/sports\/4",
+      "block_status": false,
+      "follow_status": false,
+      "profile_tags": [
+        {
+          "id": 1,
+          "name": "Sports",
+          "parent_id": null
+        },
+        {
+          "id": 3,
+          "name": "Football",
+          "parent_id": 1
+        }
+      ]
+    },
+    "venue": {
+      "name": "21 South Coffee",
+      "icon_url": "https:\/\/ss0.4sqi.net\/img\/categories_v2\/nightlife\/default_bg_64.png",
+      "coords": {
+        "lat": 34.4332,
+        "lng": -77.8485
+      },
+      "category": "Coffee Shop",
+      "venue_id": 57483748
+    },
+    "tags": [
+      {
+        "id": 1,
+        "name": "Sports",
+        "parent_id": null
+      },
+      {
+        "id": 3,
+        "name": "Football",
+        "parent_id": 1
+      },
+      {
+        "id": 5,
+        "name": "Hockey",
+        "parent_id": 1
+      },
+      {
+        "id": 7,
+        "name": "Racing",
+        "parent_id": 1
+      }
+    ]
+  },
+  ...
+]
+```
+
+Description: This endpoint will return an array of events from the
+specified Foursquare venue that are in the past and therefore no longer
+active or available to join.
+
+### HTTP Request
+
+`GET https://wildfire-staging.herokuapp.com/api/v1/venues/:venue_id/events/past`
+
 # Feeds
 
 ## User Feed
