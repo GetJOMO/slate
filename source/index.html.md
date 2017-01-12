@@ -2263,7 +2263,7 @@ This endpoint will return a flat array of Tag objects
 > Send a GET request with required parameters:
 
 ```shell
-https://wildfire-staging.herokuapp.com/api/v1/search_venues?lat=34.2347&lng=-77.9481&query=duck+dive
+https://wildfire-staging.herokuapp.com/api/v1/venues/search?lat=34.2347&lng=-77.9481&query=duck+dive
 ```
 
 > A JSON response like the following would be returned:
@@ -2329,7 +2329,7 @@ on the `:lat`, `:lng`, and `:query` parameters provided by the requesting client
 
 ### HTTP Request
 
-`GET https://wildfire-staging.herokuapp.com/api/v1/search_venues?lat=00.00000&lng=00.00000&query=search+query+string+here`
+`GET https://wildfire-staging.herokuapp.com/api/v1/venues/search?lat=00.00000&lng=00.00000&query=search+query+string+here`
 
 ### Query Parameters (*All are required*)
 
@@ -2344,7 +2344,7 @@ Parameter | Default | Description
 > Send a GET request with required parameters:
 
 ```shell
-https://wildfire-staging.herokuapp.com/api/v1/nearby_venues?lat=34.2347&lng=-77.9481&radius=3000
+https://wildfire-staging.herokuapp.com/api/v1/venues/nearby?lat=34.2347&lng=-77.9481&radius=3000
 ```
 
 > A JSON response like the following would be returned:
@@ -2417,7 +2417,7 @@ distance of the `:lat` & `:lng` parameters provided by the requesting client.
 
 ### HTTP Request
 
-`GET https://wildfire-staging.herokuapp.com/api/v1/nearby_venues?lat=00.00000&lng=00.00000&radius=0000`
+`GET https://wildfire-staging.herokuapp.com/api/v1/venues/nearby?lat=00.00000&lng=00.00000&radius=0000`
 
 ### Query Parameters (*All are required*)
 
