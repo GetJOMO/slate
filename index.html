@@ -122,6 +122,81 @@
 
 <p>Welcome to the Wildfire API!</p>
 
+<h2 id="legend">Legend</h2>
+
+<blockquote>
+<p>Sample Pagination Request</p>
+</blockquote>
+<pre class="highlight shell"><code>https://wildfire-staging.herokuapp.com/api/v1/events/55/comments?page<span class="o">=</span>2&amp;per_page<span class="o">=</span>12
+</code></pre>
+<blockquote>
+<p>Sample Pagination Response (headers)</p>
+</blockquote>
+<pre class="highlight shell"><code>HTTP/1.1 200 OK
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; <span class="nv">mode</span><span class="o">=</span>block
+X-Content-Type-Options: nosniff
+Link: &lt;https://wildfire-staging.herokuapp.com/api/v1/events/55/comments?page<span class="o">=</span>2&amp;per_page<span class="o">=</span>12&gt;;
+Per-Page: 12
+Total: 50
+Current-Page: 2
+Content-Type: application/json; <span class="nv">charset</span><span class="o">=</span>utf-8
+ETag: W/<span class="s2">"44633c96f6521810dd8d72c80650e337"</span>
+Cache-Control: max-age<span class="o">=</span>0, private, must-revalidate
+X-Request-Id: 64e2a61d-5cf2-40f1-b5c3-b5f3e9f14ff5
+X-Runtime: 1.020325
+Connection: close
+Transfer-Encoding: chunked
+</code></pre>
+<h3 id="pagination">Pagination</h3>
+
+<p>Endpoints that are paginated are denoted with <code class="prettyprint">[Pg&#39;d]</code> in their title. These Endpoints
+accecpt the following additional parameters:</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">:page</code></td>
+<td>1</td>
+<td>The page number to be returned</td>
+</tr>
+<tr>
+<td><code class="prettyprint">:per_page</code></td>
+<td>30</td>
+<td>The number of items to return on each <em>paged</em> request</td>
+</tr>
+</tbody></table>
+
+<p><code class="prettyprint">NOTE: If neither of the above parameters are specified, the defaults will be used.</code></p>
+
+<p>Upon receiving a response from a paginated endpoint, each response will contain
+the following headers:</p>
+
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">Total</code></td>
+<td>The total count of items for the specified endpoint</td>
+</tr>
+<tr>
+<td><code class="prettyprint">Per-Page</code></td>
+<td>The number of items returned in the current request</td>
+</tr>
+<tr>
+<td><code class="prettyprint">Current-Page</code></td>
+<td>The page number of the current request</td>
+</tr>
+</tbody></table>
+
 <h1 id="authentication">Authentication</h1>
 
 <h2 id="authentication-header-types">Authentication Header Types</h2>
@@ -634,7 +709,7 @@ in which will then be matched on users in the database on each user&rsquo;s <cod
 
 <p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/users/:id/profile</code></p>
 
-<h2 id="retrieve-user-followers">Retrieve User Followers</h2>
+<h2 id="retrieve-user-followers-pg-39-d">Retrieve User Followers [Pg&rsquo;d]</h2>
 
 <blockquote>
 <p>Send a GET request to the specified URI:</p>
@@ -683,7 +758,7 @@ followers of the specified user.</p>
 
 <p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/users/:id/followers</code></p>
 
-<h2 id="retrieve-user-followings">Retrieve User Followings</h2>
+<h2 id="retrieve-user-followings-pg-39-d">Retrieve User Followings [Pg&rsquo;d]</h2>
 
 <blockquote>
 <p>Send a GET request to the specified URI:</p>
@@ -784,7 +859,7 @@ for the current_user with the target of another user.</p>
 
 <p><code class="prettyprint">DELETE https://wildfire-staging.herokuapp.com/api/v1/users/:id/unfollow</code></p>
 
-<h2 id="retrieve-blocked-users">Retrieve Blocked Users</h2>
+<h2 id="retrieve-blocked-users-pg-39-d">Retrieve Blocked Users [Pg&rsquo;d]</h2>
 
 <blockquote>
 <p>Send a GET request to the specified URI:</p>
@@ -1073,7 +1148,7 @@ for the current_user with the target of another user.</p>
 
 <p><code class="prettyprint">PATCH https://wildfire-dev.herokuapp.com/api/v1/me/feed_tags</code></p>
 
-<h2 id="hosted-events-for-user">Hosted Events for User</h2>
+<h2 id="hosted-events-for-user-pg-39-d">Hosted Events for User [Pg&rsquo;d]</h2>
 
 <blockquote>
 <p>Send a GET request with required parameters:</p>
@@ -1185,7 +1260,7 @@ user has hosted.</p>
 
 <p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/users/:id/events/hosted</code></p>
 
-<h2 id="joined-events-for-user">Joined Events for User</h2>
+<h2 id="joined-events-for-user-pg-39-d">Joined Events for User [Pg&rsquo;d]</h2>
 
 <blockquote>
 <p>Send a GET request with required parameters:</p>
@@ -2064,7 +2139,7 @@ from the specified event.</p>
 
 <p><code class="prettyprint">DELETE https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/unrequest</code></p>
 
-<h2 id="show-event-attendees">Show Event Attendees</h2>
+<h2 id="show-event-attendees-pg-39-d">Show Event Attendees [Pg&rsquo;d]</h2>
 
 <blockquote>
 <p>Send a GET request with required parameters:</p>
@@ -2113,7 +2188,7 @@ the event.</p>
 
 <p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/attendees</code></p>
 
-<h2 id="show-event-requests">Show Event Requests</h2>
+<h2 id="show-event-requests-pg-39-d">Show Event Requests [Pg&rsquo;d]</h2>
 
 <blockquote>
 <p>Send a GET request with required parameters:</p>
@@ -2529,7 +2604,7 @@ distance of the <code class="prettyprint">:lat</code> &amp; <code class="prettyp
 </tr>
 </tbody></table>
 
-<h2 id="past-events-for-venue">Past Events for Venue</h2>
+<h2 id="past-venue-events-pg-39-d">Past Venue Events [Pg&rsquo;d]</h2>
 
 <blockquote>
 <p>Send a GET request with required parameters:</p>
@@ -2619,7 +2694,7 @@ active or available to join.</p>
 
 <p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/venues/:venue_id/events/past</code></p>
 
-<h2 id="active-events-for-venue">Active Events for Venue</h2>
+<h2 id="active-venue-events-pg-39-d">Active Venue Events [Pg&rsquo;d]</h2>
 
 <blockquote>
 <p>Send a GET request with required parameters:</p>
@@ -2704,7 +2779,7 @@ active or available to join.</p>
 <p>Description: This endpoint will return an array of events from the
 specified Foursquare venue that are currently active/happening now.</p>
 
-<h2 id="future-events-for-venue">Future Events for Venue</h2>
+<h2 id="future-venue-events-pg-39-d">Future Venue Events [Pg&rsquo;d]</h2>
 
 <blockquote>
 <p>Send a GET request with required parameters:</p>
@@ -2795,7 +2870,7 @@ specified Foursquare venue that are set to happen at a time in the near future.<
 
 <h1 id="feeds">Feeds</h1>
 
-<h2 id="user-feed">User Feed</h2>
+<h2 id="user-feed-pg-39-d">User Feed [Pg&rsquo;d]</h2>
 
 <blockquote>
 <p>Send a POST request with required parameters:</p>
@@ -2905,7 +2980,7 @@ requesting user&rsquo;s filter tags &amp; users that he/she follows.</p>
 </tr>
 </tbody></table>
 
-<h2 id="local-feed">Local Feed</h2>
+<h2 id="local-feed-pg-39-d">Local Feed [Pg&rsquo;d]</h2>
 
 <blockquote>
 <p>Send a POST request with required parameters:</p>
