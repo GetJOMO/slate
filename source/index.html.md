@@ -20,6 +20,55 @@ search: true
 
 Welcome to the Wildfire API!
 
+## Legend
+
+> Sample Pagination Request
+
+```shell
+https://wildfire-staging.herokuapp.com/api/v1/events/55/comments?page=2&per_page=12
+```
+
+> Sample Pagination Response (headers)
+
+```shell
+HTTP/1.1 200 OK
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+Link: <https://wildfire-staging.herokuapp.com/api/v1/events/55/comments?page=2&per_page=12>;
+Per-Page: 12
+Total: 50
+Current-Page: 2
+Content-Type: application/json; charset=utf-8
+ETag: W/"44633c96f6521810dd8d72c80650e337"
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: 64e2a61d-5cf2-40f1-b5c3-b5f3e9f14ff5
+X-Runtime: 1.020325
+Connection: close
+Transfer-Encoding: chunked
+```
+
+
+### Pagination
+Endpoints that are paginated are denoted with `[Pg'd]` in their title. These Endpoints
+accecpt the following additional parameters:
+
+Parameter | Default | Description
+--------- | ------- | -----------
+`:page` | 1 | The page number to be returned
+`:per_page` | 30 | The number of items to return on each _paged_ request
+
+`NOTE: If neither of the above parameters are specified, the defaults will be used.`
+
+Upon receiving a response from a paginated endpoint, each response will contain
+the following headers:
+
+Header | Description
+--------- | -----------
+`Total` | The total count of items for the specified endpoint
+`Per-Page` | The number of items returned in the current request
+`Current-Page` | The page number of the current request
+
 # Authentication
 
 ## Authentication Header Types
@@ -569,7 +618,7 @@ This endpoint will return the profile attributes for a specified user.
 
 `GET https://wildfire-staging.herokuapp.com/api/v1/users/:id/profile`
 
-## Retrieve User Followers
+## Retrieve User Followers [Pg'd]
 
 > Send a GET request to the specified URI:
 
@@ -622,7 +671,7 @@ followers of the specified user.
 
 `GET https://wildfire-staging.herokuapp.com/api/v1/users/:id/followers`
 
-## Retrieve User Followings
+## Retrieve User Followings [Pg'd]
 
 > Send a GET request to the specified URI:
 
@@ -735,7 +784,7 @@ for the current_user with the target of another user.
 
 `DELETE https://wildfire-staging.herokuapp.com/api/v1/users/:id/unfollow`
 
-## Retrieve Blocked Users
+## Retrieve Blocked Users [Pg'd]
 
 > Send a GET request to the specified URI:
 
@@ -1044,7 +1093,7 @@ This endpoint creates, updates, and deletes filter Feed tags for the currently l
 
 `PATCH https://wildfire-dev.herokuapp.com/api/v1/me/feed_tags`
 
-## Hosted Events for User
+## Hosted Events for User [Pg'd]
 
 > Send a GET request with required parameters:
 
@@ -1160,7 +1209,7 @@ user has hosted.
 
 `GET https://wildfire-staging.herokuapp.com/api/v1/users/:id/events/hosted`
 
-## Joined Events for User
+## Joined Events for User [Pg'd]
 
 > Send a GET request with required parameters:
 
@@ -2079,7 +2128,7 @@ from the specified event.
 
 `DELETE https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/unrequest`
 
-## Show Event Attendees
+## Show Event Attendees [Pg'd]
 
 > Send a GET request with required parameters:
 
@@ -2132,7 +2181,7 @@ the event.
 
 `GET https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/attendees`
 
-## Show Event Requests
+## Show Event Requests [Pg'd]
 
 > Send a GET request with required parameters:
 
@@ -2532,7 +2581,7 @@ Parameter | Default | Description
 `lng` | nil | The requesting client's longitude coordinate
 `radius` | nil | An integer value representing the radius distance (in meters) from the specified `:lat` & `:lng` values
 
-## Past Events for Venue
+## Past Venue Events [Pg'd]
 
 > Send a GET request with required parameters:
 
@@ -2626,7 +2675,7 @@ active or available to join.
 
 `GET https://wildfire-staging.herokuapp.com/api/v1/venues/:venue_id/events/past`
 
-## Active Events for Venue
+## Active Venue Events [Pg'd]
 
 > Send a GET request with required parameters:
 
@@ -2714,7 +2763,7 @@ status: 200
 Description: This endpoint will return an array of events from the
 specified Foursquare venue that are currently active/happening now.
 
-## Future Events for Venue
+## Future Venue Events [Pg'd]
 
 > Send a GET request with required parameters:
 
@@ -2808,7 +2857,7 @@ specified Foursquare venue that are set to happen at a time in the near future.
 
 # Feeds
 
-## User Feed
+## User Feed [Pg'd]
 
 > Send a POST request with required parameters:
 
@@ -2908,7 +2957,7 @@ Parameter | Default | Description
 `lat` | n/a | latitude coordinate of the requesting client
 `lng` | n/a | longitude coordinate of the requesting client
 
-## Local Feed
+## Local Feed [Pg'd]
 
 > Send a POST request with required parameters:
 
