@@ -1401,7 +1401,7 @@ user has joined.
 
 `GET https://wildfire-staging.herokuapp.com/api/v1/users/:id/events/joined`
 
-## Event Join Requests for User
+## Event Join Requests for User [Pg'd]
 
 > Send a GET request with required parameters:
 
