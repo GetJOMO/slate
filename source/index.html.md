@@ -2234,6 +2234,185 @@ to join the event.
 
 `GET https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/requests`
 
+## Create Event Comment
+
+> Send a POST request with required parameters:
+
+```shell
+https://wildfire-dev.herokuapp.com/api/v1/events/22/comments
+```
+
+> A JSON response like the following would be returned:
+
+```shell
+status: 200
+```
+```json
+{
+  "id": 1,
+  "body": "See you there! I'll bring the beer!!",
+  "event_id": 12,
+  "user": {
+    "id": 74,
+    "first_name": "Jordan",
+    "last_name": "Godwin",
+    "avatar_url": "http://lorempixel.com/300/300/sports/9",
+    "profile_tags": [
+      {
+        "id": 135,
+        "name": "Duke Basketball",
+        "parent_id": 131
+      },
+      {
+        "id": 284,
+        "name": "Boating",
+        "parent_id": 279
+      }
+    ]
+  }
+}
+```
+
+Description: This endpoint will create a comment for the specified event.
+
+### HTTP Request
+
+`POST https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/comments`
+
+## Delete Event Comment
+
+> Send a DELETE request with required parameters:
+
+```shell
+https://wildfire-dev.herokuapp.com/api/v1/events/22/comments/141
+```
+
+> A JSON response like the following would be returned:
+
+```shell
+status: 200
+```
+```json
+{
+  "head": "no_content"
+}
+```
+
+Description: This endpoint will delete a specified comment for the specified event.
+
+### HTTP Request
+
+`POST https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/comments`
+
+## Show Event Comments [Pg'd]
+
+> Send a GET request with required parameters:
+
+```shell
+https://wildfire-dev.herokuapp.com/api/v1/events/22/comments
+```
+
+> A JSON response like the following would be returned:
+
+```shell
+status: 200
+```
+```json
+[
+  {
+    "id": 5,
+    "body": "Eveniet id officiis libero architecto quia.",
+    "event_id": 12,
+    "user": {
+      "id": 74,
+      "first_name": "Eulalia",
+      "last_name": "Ritchie",
+      "avatar_url": "http://lorempixel.com/300/300/cats/6",
+      "block_status": false,
+      "follow_status": false,
+      "profile_tags": [
+        {
+          "id": 135,
+          "name": "MRSH Thundering Herd Basketball",
+          "parent_id": 131
+        },
+        {
+          "id": 284,
+          "name": "TOL Rockets Basketball",
+          "parent_id": 279
+        }
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "body": "Ducimus sed sunt voluptatem laborum dolores.",
+    "event_id": 12,
+    "user": {
+      "id": 63,
+      "first_name": "Alena",
+      "last_name": "Batz",
+      "avatar_url": "http://lorempixel.com/300/300/cats/2",
+      "block_status": false,
+      "follow_status": false,
+      "profile_tags": [
+        {
+          "id": 141,
+          "name": "UTSA Roadrunners Basketball",
+          "parent_id": 131
+        },
+        {
+          "id": 329,
+          "name": "BRWN Bears Basketball",
+          "parent_id": 328
+        },
+        {
+          "id": 379,
+          "name": "LAS Explorers Basketball",
+          "parent_id": 370
+        }
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "body": "Quisquam ipsam quia corporis occaecati ex.",
+    "event_id": 12,
+    "user": {
+      "id": 29,
+      "first_name": "Everardo",
+      "last_name": "Leffler",
+      "avatar_url": "http://lorempixel.com/300/300/cats/7",
+      "block_status": false,
+      "follow_status": false,
+      "profile_tags": [
+        {
+          "id": 169,
+          "name": "SWAC Basketball",
+          "parent_id": 12
+        },
+        {
+          "id": 217,
+          "name": "LIP Bisons Basketball",
+          "parent_id": 210
+        },
+        {
+          "id": 327,
+          "name": "SFNY Terriers Basketball",
+          "parent_id": 317
+        }
+      ]
+    }
+  }
+]
+```
+
+Description: This endpoint will return an array of comments for the specified event.
+
+### HTTP Request
+
+`GET https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/comments`
+
 # Tags
 
 ## Get all Tags
