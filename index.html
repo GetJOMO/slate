@@ -1448,7 +1448,7 @@ user has joined.</p>
 
 <p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/users/:id/events/joined</code></p>
 
-<h2 id="event-join-requests-for-user">Event Join Requests for User</h2>
+<h2 id="event-join-requests-for-user-pg-39-d">Event Join Requests for User [Pg&rsquo;d]</h2>
 
 <blockquote>
 <p>Send a GET request with required parameters:</p>
@@ -2236,6 +2236,173 @@ to join the event.</p>
 <h3 id="http-request">HTTP Request</h3>
 
 <p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/requests</code></p>
+
+<h2 id="create-event-comment">Create Event Comment</h2>
+
+<blockquote>
+<p>Send a POST request with required parameters:</p>
+</blockquote>
+<pre class="highlight shell"><code>https://wildfire-dev.herokuapp.com/api/v1/events/22/comments
+</code></pre>
+<blockquote>
+<p>A JSON response like the following would be returned:</p>
+</blockquote>
+<pre class="highlight shell"><code>status: 200
+</code></pre><pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"See you there! I'll bring the beer!!"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">74</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jordan"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Godwin"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://lorempixel.com/300/300/sports/9"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"profile_tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">135</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Duke Basketball"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">131</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">284</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Boating"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">279</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Description: This endpoint will create a comment for the specified event.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/comments</code></p>
+
+<h2 id="delete-event-comment">Delete Event Comment</h2>
+
+<blockquote>
+<p>Send a DELETE request with required parameters:</p>
+</blockquote>
+<pre class="highlight shell"><code>https://wildfire-dev.herokuapp.com/api/v1/events/22/comments/141
+</code></pre>
+<blockquote>
+<p>A JSON response like the following would be returned:</p>
+</blockquote>
+<pre class="highlight shell"><code>status: 200
+</code></pre><pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"head"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no_content"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Description: This endpoint will delete a specified comment for the specified event.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/comments</code></p>
+
+<h2 id="show-event-comments-pg-39-d">Show Event Comments [Pg&rsquo;d]</h2>
+
+<blockquote>
+<p>Send a GET request with required parameters:</p>
+</blockquote>
+<pre class="highlight shell"><code>https://wildfire-dev.herokuapp.com/api/v1/events/22/comments
+</code></pre>
+<blockquote>
+<p>A JSON response like the following would be returned:</p>
+</blockquote>
+<pre class="highlight shell"><code>status: 200
+</code></pre><pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Eveniet id officiis libero architecto quia."</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">74</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Eulalia"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ritchie"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://lorempixel.com/300/300/cats/6"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"block_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"profile_tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">135</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MRSH Thundering Herd Basketball"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">131</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">284</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TOL Rockets Basketball"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">279</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ducimus sed sunt voluptatem laborum dolores."</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">63</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alena"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Batz"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://lorempixel.com/300/300/cats/2"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"block_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"profile_tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">141</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UTSA Roadrunners Basketball"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">131</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">329</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRWN Bears Basketball"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">328</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">379</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LAS Explorers Basketball"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">370</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quisquam ipsam quia corporis occaecati ex."</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">29</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Everardo"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Leffler"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://lorempixel.com/300/300/cats/7"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"block_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"profile_tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">169</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SWAC Basketball"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">217</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LIP Bisons Basketball"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">210</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">327</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SFNY Terriers Basketball"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">317</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Description: This endpoint will return an array of comments for the specified event.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/comments</code></p>
 
 <h1 id="tags">Tags</h1>
 
