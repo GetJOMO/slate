@@ -1182,6 +1182,7 @@ status: 200
       "dob": "1987-02-03"
     },
     "venue": {
+      "id": 32,
       "name": "New Venue",
       "icon_url": "https://ss0.4sqi.net/img/categories_v2/nightlife/default_bg_64.png",
       "coords": {
@@ -1189,7 +1190,7 @@ status: 200
         "lng": -77.8485
       },
       "category": "Beach Bar",
-      "venue_id": 37483747
+      "foursquare_id": "fsdf37fds483df747af"
     },
     "tags": [
       {
@@ -1257,6 +1258,7 @@ status: 200
       "dob": "1984-07-10"
     },
     "venue": {
+      "id": 32,
       "name": "New Venue",
       "icon_url": "https://ss0.4sqi.net/img/categories_v2/nightlife/default_bg_64.png",
       "coords": {
@@ -1264,7 +1266,7 @@ status: 200
         "lng": -77.8485
       },
       "category": "Beach Bar",
-      "venue_id": 37483747
+      "foursquare_id": "fsdf37fds483df747af"
     },
     "tags": [
       {
@@ -1306,6 +1308,7 @@ status: 200
       "dob": "1996-03-21"
     },
     "venue": {
+      "id": 32,
       "name": "New Venue",
       "icon_url": "https://ss0.4sqi.net/img/categories_v2/nightlife/default_bg_64.png",
       "coords": {
@@ -1313,7 +1316,7 @@ status: 200
         "lng": -77.8485
       },
       "category": "Beach Bar",
-      "venue_id": 37483747
+      "foursquare_id": "fsdf37fds483df747af"
     },
     "tags": [
       {
@@ -1376,6 +1379,7 @@ status: 200
       "dob": "1997-12-16"
     },
     "venue": {
+      "id": 32,
       "name": "New Venue",
       "icon_url": "https://ss0.4sqi.net/img/categories_v2/nightlife/default_bg_64.png",
       "coords": {
@@ -1383,7 +1387,7 @@ status: 200
         "lng": -77.8485
       },
       "category": "Beach Bar",
-      "venue_id": 37483747
+      "foursquare_id": "fsdf37fds483df747af"
     },
     "tags": [
       {
@@ -1455,6 +1459,7 @@ status: 200
       "dob": "1984-08-09"
     },
     "venue": {
+      "id": 32,
       "name": "New Venue",
       "icon_url": "https://ss0.4sqi.net/img/categories_v2/nightlife/default_bg_64.png",
       "coords": {
@@ -1462,7 +1467,7 @@ status: 200
         "lng": -77.8485
       },
       "category": "Beach Bar",
-      "venue_id": 37483747
+      "foursquare_id": "fsdf37fds483df747af"
     },
     "tags": [
       {
@@ -1509,6 +1514,7 @@ status: 200
       "dob": "1987-05-26"
     },
     "venue": {
+      "id": 32,
       "name": "New Venue",
       "icon_url": "https://ss0.4sqi.net/img/categories_v2/nightlife/default_bg_64.png",
       "coords": {
@@ -1516,7 +1522,7 @@ status: 200
         "lng": -77.8485
       },
       "category": "Beach Bar",
-      "venue_id": 37483747
+      "foursquare_id": "fsdf37fds483df747af"
     },
     "tags": [
       {
@@ -1568,7 +1574,8 @@ user has joined.
   "starts_at": "2017-01-10",
   "duration": 6,
   "venue": {
-    "venue_id": 37483747,
+    "id": 32,
+    "foursquare_id": "fsdf37fds483df747af",
     "name": "New Venue",
     "icon_url": "https://ss0.4sqi.net/img/categories_v2/nightlife/default_bg_64.png",
     "category": "Beach Bar",
@@ -1607,6 +1614,7 @@ status: 201
     "dob": "1987-02-03"
   },
   "venue": {
+    "id": 32,
     "name": "New Venue",
     "icon_url": "https:\/\/ss0.4sqi.net\/img\/categories_v2\/nightlife\/default_bg_64.png",
     "coords": {
@@ -1614,7 +1622,7 @@ status: 201
       "lng": -77.8485
     },
     "category": "Beach Bar",
-    "venue_id": 37483747
+    "foursquare_id": "fsdf37fds483df747af"
   },
   "tags": [
     {
@@ -1679,6 +1687,7 @@ status: 200
     "dob": "1980-11-17"
   },
   "venue": {
+    "id": 32,
     "name": "New Venue",
     "icon_url": "https:\/\/ss0.4sqi.net\/img\/categories_v2\/nightlife\/default_bg_64.png",
     "coords": {
@@ -1686,7 +1695,7 @@ status: 200
       "lng": -77.8485
     },
     "category": "Beach Bar",
-    "venue_id": 37483747
+    "foursquare_id": "fsdf37fds483df747af"
   },
   "tags": [
     {
@@ -1769,6 +1778,7 @@ status: 200
     "dob": "1980-11-17"
   },
   "venue": {
+    "id": 32,
     "name": "New Venue",
     "icon_url": "https:\/\/ss0.4sqi.net\/img\/categories_v2\/nightlife\/default_bg_64.png",
     "coords": {
@@ -1776,7 +1786,7 @@ status: 200
       "lng": -77.8485
     },
     "category": "Beach Bar",
-    "venue_id": 37483747
+    "foursquare_id": "fsdf37fds483df747af"
   },
   "tags": [
     {
@@ -1875,6 +1885,7 @@ status: 201
     "dob": "1998-08-05"
   },
   "venue": {
+    "id": 32,
     "name": "New Venue",
     "icon_url": "https:\/\/ss0.4sqi.net\/img\/categories_v2\/nightlife\/default_bg_64.png",
     "coords": {
@@ -1882,7 +1893,7 @@ status: 201
       "lng": -77.8485
     },
     "category": "Beach Bar",
-    "venue_id": 37483747
+    "foursquare_id": "fsdf37fds483df747af"
   },
   "tags": [
     {
@@ -1957,6 +1968,7 @@ status: 200
     "dob": "1998-08-05"
   },
   "venue": {
+    "id": 32,
     "name": "New Venue",
     "icon_url": "https:\/\/ss0.4sqi.net\/img\/categories_v2\/nightlife\/default_bg_64.png",
     "coords": {
@@ -1964,7 +1976,7 @@ status: 200
       "lng": -77.8485
     },
     "category": "Beach Bar",
-    "venue_id": 37483747
+    "foursquare_id": "fsdf37fds483df747af"
   },
   "tags": [
     {
@@ -2031,6 +2043,7 @@ status: 201
     "dob": "1984-07-10"
   },
   "venue": {
+    "id": 32,
     "name": "New Venue",
     "icon_url": "https:\/\/ss0.4sqi.net\/img\/categories_v2\/nightlife\/default_bg_64.png",
     "coords": {
@@ -2038,7 +2051,7 @@ status: 201
       "lng": -77.8485
     },
     "category": "Beach Bar",
-    "venue_id": 37483747
+    "foursquare_id": "fsdf37fds483df747af"
   },
   "tags": [
     {
@@ -2115,6 +2128,7 @@ status: 200
     "dob": "1984-07-10"
   },
   "venue": {
+    "id": 32,
     "name": "New Venue",
     "icon_url": "https:\/\/ss0.4sqi.net\/img\/categories_v2\/nightlife\/default_bg_64.png",
     "coords": {
@@ -2122,7 +2136,7 @@ status: 200
       "lng": -77.8485
     },
     "category": "Beach Bar",
-    "venue_id": 37483747
+    "foursquare_id": "fsdf37fds483df747af"
   },
   "tags": [
     {
@@ -2533,6 +2547,7 @@ status: 200
 ```
 ```json
 {
+  "id": 2,
   "name": "Untappd HQ - ILM",
   "phone": "9102924336",
   "hours": {
@@ -2540,7 +2555,7 @@ status: 200
     "is_open": true
   },
   "url": "http:\/\/untappd.com",
-  "venue_id": "5759a613cd1040089032b492",
+  "foursquare_id": "5759a613cd1040089032b492",
   "icon_url": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/shops\/technology_64.png",
   "category": "Tech Startup",
   "events": [
@@ -2581,6 +2596,7 @@ status: 200
         ]
       },
       "venue": {
+        "id": 32,
         "name": "Untappd HQ - ILM",
         "icon_url": "https:\/\/ss0.4sqi.net\/img\/categories_v2\/nightlife\/default_bg_64.png",
         "coords": {
@@ -2588,7 +2604,7 @@ status: 200
           "lng": -77.8485
         },
         "category": "Tech Startup",
-        "venue_id": "5759a613cd1040089032b492"
+        "foursquare_id": "5759a613cd1040089032b492"
       },
       "tags": [
         {
@@ -2623,7 +2639,7 @@ the current open/closed status.
 
 ### HTTP Request
 
-`GET https://wildfire-staging.herokuapp.com/api/v1/venues/:venue_id`
+`GET https://wildfire-staging.herokuapp.com/api/v1/venues/:id`
 
 ## Foursquare Venues (Venue Name Query)
 
@@ -2645,7 +2661,7 @@ status: 200
     "lat": 34.234175252892,
     "lng": -77.947961431061,
     "distance": 59,
-    "venue_id": "4ba29614f964a520ba0638e3",
+    "foursquare_id": "4ba29614f964a520ba0638e3",
     "icon": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/nightlife\/pub_64.png",
     "category": "Pub"
   },
@@ -2654,7 +2670,7 @@ status: 200
     "lat": 34.238095496413,
     "lng": -77.899629099616,
     "distance": 4476,
-    "venue_id": "54f47e79498e08a96c858200",
+    "foursquare_id": "54f47e79498e08a96c858200",
     "icon": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/food\/default_64.png",
     "category": "Comfort Food Restaurant"
   },
@@ -2663,7 +2679,7 @@ status: 200
     "lat": 34.213194444444,
     "lng": -77.887222222222,
     "distance": 6093,
-    "venue_id": "4cf9375a951537042b626189",
+    "foursquare_id": "4cf9375a951537042b626189",
     "icon": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/shops\/sports_outdoors_64.png",
     "category": "Sporting Goods Shop"
   },
@@ -2675,7 +2691,7 @@ status: 200
     "lat": 34.262494015181,
     "lng": -77.884393520048,
     "distance": 6628,
-    "venue_id": "4e7e7684b803c1522317898e",
+    "foursquare_id": "4e7e7684b803c1522317898e",
     "icon": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/nightlife\/pub_64.png",
     "category": "Bar"
   },
@@ -2684,7 +2700,7 @@ status: 200
     "lat": 34.197162628174,
     "lng": -77.906967163086,
     "distance": 5638,
-    "venue_id": "500c4074e4b07352bcdb260e",
+    "foursquare_id": "500c4074e4b07352bcdb260e",
     "icon": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/parks_outdoors\/outdoors_64.png",
     "category": "Other Great Outdoors"
   }
@@ -2726,7 +2742,7 @@ status: 200
     "lat": 34.23477,
     "lng": -77.948472,
     "distance": 35,
-    "venue_id": "51394473e4b0668118640b27",
+    "foursquare_id": "51394473e4b0668118640b27",
     "icon": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/nightlife\/pub_64.png",
     "category": "Bar"
   },
@@ -2735,7 +2751,7 @@ status: 200
     "lat": 34.234334508993,
     "lng": -77.94827937235,
     "distance": 43,
-    "venue_id": "4e860502e5fab0fb114a3a48",
+    "foursquare_id": "4e860502e5fab0fb114a3a48",
     "icon": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/nightlife\/pub_64.png",
     "category": "Bar"
   },
@@ -2744,7 +2760,7 @@ status: 200
     "lat": 34.235789629482,
     "lng": -77.947483062744,
     "distance": 133,
-    "venue_id": "5759a613cd1040089032b492",
+    "foursquare_id": "5759a613cd1040089032b492",
     "icon": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/shops\/technology_64.png",
     "category": "Tech Startup"
   },
@@ -2754,7 +2770,7 @@ status: 200
     "lat": 34.235575987706,
     "lng": -77.948658669509,
     "distance": 110,
-    "venue_id": "5192e5dc498e754446937af3",
+    "foursquare_id": "5192e5dc498e754446937af3",
     "icon": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/parks_outdoors\/neighborhood_64.png",
     "category": "Neighborhood"
   },
@@ -2763,7 +2779,7 @@ status: 200
     "lat": 34.2346553,
     "lng": -77.9482581,
     "distance": 15,
-    "venue_id": "57dc3ca4498e856bf7b6f4a4",
+    "foursquare_id": "57dc3ca4498e856bf7b6f4a4",
     "icon": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/nightlife\/pub_64.png",
     "category": "Bar"
   },
@@ -2772,7 +2788,7 @@ status: 200
     "lat": 34.234469895747,
     "lng": -77.947632332954,
     "distance": 50,
-    "venue_id": "4b5c9c40f964a520ba3929e3",
+    "foursquare_id": "4b5c9c40f964a520ba3929e3",
     "icon": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/shops\/conveniencestore_64.png",
     "category": "Convenience Store"
   }
@@ -2846,6 +2862,7 @@ status: 200
       ]
     },
     "venue": {
+      "id": 84,
       "name": "21 South Coffee",
       "icon_url": "https:\/\/ss0.4sqi.net\/img\/categories_v2\/nightlife\/default_bg_64.png",
       "coords": {
@@ -2853,7 +2870,7 @@ status: 200
         "lng": -77.8485
       },
       "category": "Coffee Shop",
-      "venue_id": 57483748
+      "foursquare_id": "ag5gd742dsf83g7d48g",
     },
     "tags": [
       {
@@ -2942,6 +2959,7 @@ status: 200
       ]
     },
     "venue": {
+      "id": 84,
       "name": "21 South Coffee",
       "icon_url": "https:\/\/ss0.4sqi.net\/img\/categories_v2\/nightlife\/default_bg_64.png",
       "coords": {
@@ -2949,7 +2967,7 @@ status: 200
         "lng": -77.8485
       },
       "category": "Coffee Shop",
-      "venue_id": 57483748
+      "foursquare_id": "ag5gd742dsf83g7d48g",
     },
     "tags": [
       {
@@ -3032,6 +3050,7 @@ status: 200
       ]
     },
     "venue": {
+      "id": 84,
       "name": "21 South Coffee",
       "icon_url": "https:\/\/ss0.4sqi.net\/img\/categories_v2\/nightlife\/default_bg_64.png",
       "coords": {
@@ -3039,7 +3058,7 @@ status: 200
         "lng": -77.8485
       },
       "category": "Coffee Shop",
-      "venue_id": 57483748
+      "foursquare_id": "ag5gd742dsf83g7d48g",
     },
     "tags": [
       {
@@ -3128,6 +3147,7 @@ status: 200
       ]
     },
     "venue": {
+      "id": 84,
       "name": "21 South Coffee",
       "icon_url": "https:\/\/ss0.4sqi.net\/img\/categories_v2\/nightlife\/default_bg_64.png",
       "coords": {
@@ -3135,7 +3155,7 @@ status: 200
         "lng": -77.8485
       },
       "category": "Coffee Shop",
-      "venue_id": 57483748
+      "foursquare_id": "ag5gd742dsf83g7d48g",
     },
     "tags": [
       {
@@ -3223,6 +3243,7 @@ status: 200
       ]
     },
     "venue": {
+      "id": 193,
       "name": "Atlantic Ocean",
       "icon_url": "https:\/\/ss0.4sqi.net\/img\/categories_v2\/nightlife\/default_bg_64.png",
       "coords": {
@@ -3230,7 +3251,7 @@ status: 200
         "lng": -77.8485
       },
       "category": "Outdoors",
-      "venue_id": 55483745
+      "foursquare_id": "le5kd742qff83m7d48st",
     },
     "tags": [
       {
