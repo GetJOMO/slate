@@ -1184,6 +1184,8 @@ status: 200
     "venue": {
       "id": 32,
       "name": "New Venue",
+      "city": "Wilmington",
+      "state": "NC",
       "icon_url": "https://ss0.4sqi.net/img/categories_v2/nightlife/default_bg_64.png",
       "coords": {
         "lat": 34.4332,
@@ -1260,6 +1262,8 @@ status: 200
     "venue": {
       "id": 32,
       "name": "New Venue",
+      "city": "Wilmington",
+      "state": "NC",
       "icon_url": "https://ss0.4sqi.net/img/categories_v2/nightlife/default_bg_64.png",
       "coords": {
         "lat": 34.4332,
@@ -1310,6 +1314,8 @@ status: 200
     "venue": {
       "id": 32,
       "name": "New Venue",
+      "city": "Wilmington",
+      "state": "NC",
       "icon_url": "https://ss0.4sqi.net/img/categories_v2/nightlife/default_bg_64.png",
       "coords": {
         "lat": 34.4332,
@@ -1381,6 +1387,8 @@ status: 200
     "venue": {
       "id": 32,
       "name": "New Venue",
+      "city": "Wilmington",
+      "state": "NC",
       "icon_url": "https://ss0.4sqi.net/img/categories_v2/nightlife/default_bg_64.png",
       "coords": {
         "lat": 34.4332,
@@ -1461,6 +1469,8 @@ status: 200
     "venue": {
       "id": 32,
       "name": "New Venue",
+      "city": "Wilmington",
+      "state": "NC",
       "icon_url": "https://ss0.4sqi.net/img/categories_v2/nightlife/default_bg_64.png",
       "coords": {
         "lat": 34.4332,
@@ -1516,6 +1526,8 @@ status: 200
     "venue": {
       "id": 32,
       "name": "New Venue",
+      "city": "Wilmington",
+      "state": "NC",
       "icon_url": "https://ss0.4sqi.net/img/categories_v2/nightlife/default_bg_64.png",
       "coords": {
         "lat": 34.4332,
@@ -1575,14 +1587,16 @@ user has joined.
   "duration": 6,
   "venue": {
     "id": 32,
-    "foursquare_id": "fsdf37fds483df747af",
     "name": "New Venue",
+    "city": "Wilmington",
+    "state": "NC",
     "icon_url": "https://ss0.4sqi.net/img/categories_v2/nightlife/default_bg_64.png",
-    "category": "Beach Bar",
     "coords": {
       "lat": 34.4332,
       "lng": -77.8485
     },
+    "category": "Beach Bar",
+    "foursquare_id": "fsdf37fds483df747af"
   }
 }
 ```
@@ -1616,6 +1630,8 @@ status: 201
   "venue": {
     "id": 32,
     "name": "New Venue",
+    "city": "Wilmington",
+    "state": "NC",
     "icon_url": "https:\/\/ss0.4sqi.net\/img\/categories_v2\/nightlife\/default_bg_64.png",
     "coords": {
       "lat": 34.4332,
@@ -1689,6 +1705,8 @@ status: 200
   "venue": {
     "id": 32,
     "name": "New Venue",
+    "city": "Wilmington",
+    "state": "NC",
     "icon_url": "https:\/\/ss0.4sqi.net\/img\/categories_v2\/nightlife\/default_bg_64.png",
     "coords": {
       "lat": 34.4332,
@@ -1780,6 +1798,8 @@ status: 200
   "venue": {
     "id": 32,
     "name": "New Venue",
+    "city": "Wilmington",
+    "state": "NC",
     "icon_url": "https:\/\/ss0.4sqi.net\/img\/categories_v2\/nightlife\/default_bg_64.png",
     "coords": {
       "lat": 34.4332,
@@ -1887,6 +1907,8 @@ status: 201
   "venue": {
     "id": 32,
     "name": "New Venue",
+    "city": "Wilmington",
+    "state": "NC",
     "icon_url": "https:\/\/ss0.4sqi.net\/img\/categories_v2\/nightlife\/default_bg_64.png",
     "coords": {
       "lat": 34.4332,
@@ -1970,6 +1992,8 @@ status: 200
   "venue": {
     "id": 32,
     "name": "New Venue",
+    "city": "Wilmington",
+    "state": "NC",
     "icon_url": "https:\/\/ss0.4sqi.net\/img\/categories_v2\/nightlife\/default_bg_64.png",
     "coords": {
       "lat": 34.4332,
@@ -2045,6 +2069,8 @@ status: 201
   "venue": {
     "id": 32,
     "name": "New Venue",
+    "city": "Wilmington",
+    "state": "NC",
     "icon_url": "https:\/\/ss0.4sqi.net\/img\/categories_v2\/nightlife\/default_bg_64.png",
     "coords": {
       "lat": 34.4332,
@@ -2130,6 +2156,8 @@ status: 200
   "venue": {
     "id": 32,
     "name": "New Venue",
+    "city": "Wilmington",
+    "state": "NC",
     "icon_url": "https:\/\/ss0.4sqi.net\/img\/categories_v2\/nightlife\/default_bg_64.png",
     "coords": {
       "lat": 34.4332,
@@ -2537,7 +2565,7 @@ This endpoint will return a flat array of Tag objects
 > Send a GET request with required parameters:
 
 ```shell
-`https://wildfire-staging.herokuapp.com/api/v1/venues/5759a613cd1040089032b492`
+`https://wildfire-staging.herokuapp.com/api/v1/venues/2`
 ```
 
 > A JSON response like the following would be returned:
@@ -2547,17 +2575,27 @@ status: 200
 ```
 ```json
 {
-  "id": 2,
+  "id": 1,
   "name": "Untappd HQ - ILM",
-  "phone": "9102924336",
-  "hours": {
-    "status": "Open until 5pm",
-    "is_open": true
+  "city": "Wilmington",
+  "state": "NC",
+  "coords": {
+    "lat": 34.235789629482,
+    "lng": -77.947483062744
   },
-  "url": "http:\/\/untappd.com",
-  "foursquare_id": "5759a613cd1040089032b492",
   "icon_url": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/shops\/technology_64.png",
+  "foursquare_id": "5759a613cd1040089032b492",
   "category": "Tech Startup",
+  "data": {
+    "phone": "9102924336",
+    "hours": {
+      "status": "Open til 5pm",
+      "is_open": true
+    },
+    "address": "21 S Front St",
+    "zip_code": "28401",
+    "web_url": "http:\/\/untappd.com"
+  },
   "events": [
     {
       "id": 2,
@@ -2597,6 +2635,8 @@ status: 200
       },
       "venue": {
         "id": 32,
+        "city": "Wilmington",
+        "state": "NC",
         "name": "Untappd HQ - ILM",
         "icon_url": "https:\/\/ss0.4sqi.net\/img\/categories_v2\/nightlife\/default_bg_64.png",
         "coords": {
@@ -2658,57 +2698,80 @@ status: 200
 [
   {
     "name": "Duck & Dive Pub",
-    "lat": 34.234175252892,
-    "lng": -77.947961431061,
+    "city": "Wilmington",
+    "state": "NC",
+    "coords": {
+      "lat": 34.234175252892,
+      "lng": -77.947961431061
+    },
     "distance": 59,
     "foursquare_id": "4ba29614f964a520ba0638e3",
-    "icon": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/nightlife\/pub_64.png",
+    "icon_url": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/nightlife\/pub_64.png",
     "category": "Pub"
   },
   {
     "name": "Dig & Dive",
-    "lat": 34.238095496413,
-    "lng": -77.899629099616,
+    "city": "Wilmington",
+    "state": "NC",
+    "coords": {
+      "lat": 34.238095496413,
+      "lng": -77.899629099616
+    },
     "distance": 4476,
     "foursquare_id": "54f47e79498e08a96c858200",
-    "icon": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/food\/default_64.png",
+    "icon_url": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/food\/default_64.png",
     "category": "Comfort Food Restaurant"
   },
   {
     "name": "Ducks Sporting Goods",
-    "lat": 34.213194444444,
-    "lng": -77.887222222222,
+    "city": "Wilmington",
+    "state": "NC",
+    "coords": {
+      "lat": 34.213194444444,
+      "lng": -77.887222222222
+    },
     "distance": 6093,
     "foursquare_id": "4cf9375a951537042b626189",
-    "icon": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/shops\/sports_outdoors_64.png",
+    "icon_url": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/shops\/sports_outdoors_64.png",
     "category": "Sporting Goods Shop"
   },
   {
     ...
   },
   {
-    "name": "The Dive",
-    "lat": 34.262494015181,
-    "lng": -77.884393520048,
-    "distance": 6628,
-    "foursquare_id": "4e7e7684b803c1522317898e",
-    "icon": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/nightlife\/pub_64.png",
-    "category": "Bar"
+    "name": "Two Duck Lake",
+    "city": "Castle Hayne",
+    "state": "NC",
+    "coords": {
+      "lat": 34.300494887124,
+      "lng": -77.919621866052
+    },
+    "distance": 7778,
+    "foursquare_id": "4efba1e377c822653ea5e151",
+    "icon_url": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/parks_outdoors\/lake_64.png",
+    "category": "Lake"
   },
   {
-    "name": "At a pond feeding,ducks",
-    "lat": 34.197162628174,
-    "lng": -77.906967163086,
-    "distance": 5638,
-    "foursquare_id": "500c4074e4b07352bcdb260e",
-    "icon": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/parks_outdoors\/outdoors_64.png",
-    "category": "Other Great Outdoors"
+    "name": "Diversified Energy",
+    "city": "Wilm",
+    "state": "NC",
+    "coords": {
+      "lat": 34.268261124196,
+      "lng": -77.82300554898
+    },
+    "distance": 12101,
+    "foursquare_id": "5012f671e4b0f8ec77ef3c1a",
+    "icon_url": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/building\/default_64.png",
+    "category": "Building"
   }
 ]
 ```
 
 Description: This endpoint will return up to 10 Foursquare results based
 on the `:lat`, `:lng`, and `:query` parameters provided by the requesting client.
+
+*NOTE:* These objects are not stored in our database. Upon creating an event, the
+venue object that is passed back will then be cached and stored for retrieval later.
 
 ### HTTP Request
 
@@ -2739,64 +2802,78 @@ status: 200
 [
   {
     "name": "Buzz's Roost",
-    "lat": 34.23477,
-    "lng": -77.948472,
+    "city": "Wilmington",
+    "state": "NC",
+    "coords": {
+      "lat": 34.23477,
+      "lng": -77.948472
+    },
     "distance": 35,
     "foursquare_id": "51394473e4b0668118640b27",
-    "icon": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/nightlife\/pub_64.png",
-    "category": "Bar"
-  },
-  {
-    "name": "The Husk Seed Store And Bar",
-    "lat": 34.234334508993,
-    "lng": -77.94827937235,
-    "distance": 43,
-    "foursquare_id": "4e860502e5fab0fb114a3a48",
-    "icon": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/nightlife\/pub_64.png",
+    "icon_url": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/nightlife\/pub_64.png",
     "category": "Bar"
   },
   {
     "name": "Untappd HQ - ILM",
-    "lat": 34.235789629482,
-    "lng": -77.947483062744,
+    "city": "Wilmington",
+    "state": "NC",
+    "coords": {
+      "lat": 34.235789629482,
+      "lng": -77.947483062744
+    },
     "distance": 133,
     "foursquare_id": "5759a613cd1040089032b492",
-    "icon": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/shops\/technology_64.png",
+    "icon_url": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/shops\/technology_64.png",
     "category": "Tech Startup"
+  },
+  {
+    "name": "The Husk Seed Store And Bar",
+    "city": "Wilmington",
+    "state": "NC",
+    "coords": {
+      "lat": 34.234334508993,
+      "lng": -77.94827937235
+    },
+    "distance": 43,
+    "foursquare_id": "4e860502e5fab0fb114a3a48",
+    "icon_url": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/nightlife\/pub_64.png",
+    "category": "Bar"
   },
   ...
   {
-    "name": "Downtown Wilmington",
-    "lat": 34.235575987706,
-    "lng": -77.948658669509,
-    "distance": 110,
-    "foursquare_id": "5192e5dc498e754446937af3",
-    "icon": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/parks_outdoors\/neighborhood_64.png",
-    "category": "Neighborhood"
+    "name": "Wilmington Riverwalk",
+    "city": "Wilmington",
+    "state": "NC",
+    "coords": {
+      "lat": 34.234473662713,
+      "lng": -77.949545550328
+    },
+    "distance": 135,
+    "foursquare_id": "4c9e7f43ca44236a38872b99",
+    "icon_url": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/parks_outdoors\/sceniclookout_64.png",
+    "category": "Scenic Lookout"
   },
   {
-    "name": "Next Glass",
-    "lat": 34.2346553,
-    "lng": -77.9482581,
-    "distance": 15,
-    "foursquare_id": "57dc3ca4498e856bf7b6f4a4",
-    "icon": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/nightlife\/pub_64.png",
-    "category": "Bar"
-  },
-  {
-    "name": "Village Market",
-    "lat": 34.234469895747,
-    "lng": -77.947632332954,
-    "distance": 50,
-    "foursquare_id": "4b5c9c40f964a520ba3929e3",
-    "icon": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/shops\/conveniencestore_64.png",
-    "category": "Convenience Store"
+    "name": "Dram + Morsel",
+    "city": "Wilmington",
+    "state": "NC",
+    "coords": {
+      "lat": 34.234334962627,
+      "lng": -77.948360145092
+    },
+    "distance": 47,
+    "foursquare_id": "5855ef680bc55b58b7c6fc64",
+    "icon_url": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/food\/tapas_64.png",
+    "category": "Tapas Restaurant"
   }
 ]
 ```
 
 Description: This endpoint will return up to 10 Foursquare results based on the `:radius`
 distance of the `:lat` & `:lng` parameters provided by the requesting client.
+
+*NOTE:* These objects are not stored in our database. Upon creating an event, the
+venue object that is passed back will then be cached and stored for retrieval later.
 
 ### HTTP Request
 
@@ -2864,6 +2941,8 @@ status: 200
     "venue": {
       "id": 84,
       "name": "21 South Coffee",
+      "city": "Wilmington",
+      "state": "NC",
       "icon_url": "https:\/\/ss0.4sqi.net\/img\/categories_v2\/nightlife\/default_bg_64.png",
       "coords": {
         "lat": 34.4332,
@@ -2961,6 +3040,8 @@ status: 200
     "venue": {
       "id": 84,
       "name": "21 South Coffee",
+      "city": "Wilmington",
+      "state": "NC",
       "icon_url": "https:\/\/ss0.4sqi.net\/img\/categories_v2\/nightlife\/default_bg_64.png",
       "coords": {
         "lat": 34.4332,
@@ -3052,6 +3133,8 @@ status: 200
     "venue": {
       "id": 84,
       "name": "21 South Coffee",
+      "city": "Wilmington",
+      "state": "NC",
       "icon_url": "https:\/\/ss0.4sqi.net\/img\/categories_v2\/nightlife\/default_bg_64.png",
       "coords": {
         "lat": 34.4332,
@@ -3149,6 +3232,8 @@ status: 200
     "venue": {
       "id": 84,
       "name": "21 South Coffee",
+      "city": "Wilmington",
+      "state": "NC",
       "icon_url": "https:\/\/ss0.4sqi.net\/img\/categories_v2\/nightlife\/default_bg_64.png",
       "coords": {
         "lat": 34.4332,
@@ -3245,6 +3330,8 @@ status: 200
     "venue": {
       "id": 193,
       "name": "Atlantic Ocean",
+      "city": "Wilmington",
+      "state": "NC",
       "icon_url": "https:\/\/ss0.4sqi.net\/img\/categories_v2\/nightlife\/default_bg_64.png",
       "coords": {
         "lat": 34.4332,
