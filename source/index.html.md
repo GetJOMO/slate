@@ -146,20 +146,20 @@ Parameter | Description
 
 ```json
 {
-  "email": "lauren@gmail.com",
-  "first_name": "Lauren",
-  "last_name": "Godwin",
-  "dob": "1988-05-12",
-  "city": "wilmington",
-  "state": "NC",
-  "avatar_url": "https://fake.urlto.img/Frieda_user_avatar",
-  "digits_id": "74389204389432034948",
+  "email": "greenbay4lyfe@gmail.com",
+  "first_name": "Aaron",
+  "last_name": "Rodgers",
+  "dob": "1983-12-02",
+  "city": "Green Bay",
+  "state": "WI",
+  "avatar_url": "https:\/\/nflprofile.com\/aaron_rodgers",
   "coords": {
-    "lat": 34.4332,
-    "lng": -77.8485
+    "lat": "44.5192",
+    "lng": "88.0198"
   },
-  "password": "s3cur3_p455w0rd",
-  "nonce": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.po9twTrX99V7XgAk5mVskkiq8aa0lpYOue62ehubRY4"
+  "digits_id": "36345202355432034912",
+  "password": "super_bowl_bound",
+  "nonce": "0D9lwwyOhgGzfLdfp0QpI7CjVcReaipQKfugVPLWXfUNMoBEE1T_2vzjEkCHirTWq7w7lp8GXs7f1vqwv6G6Kw"
 }
 ```
 
@@ -170,24 +170,26 @@ status: 201
 ```
 ```json
 {
-  "id": 12,
-  "email": "lk3317@gmail.com",
-  "first_name": "Lauren",
-  "last_name": "Godwin",
-  "dob": "1988-05-12",
+  "id": 507,
+  "email": "greenbay4lyfe@gmail.com",
+  "first_name": "Aaron",
+  "last_name": "Rodgers",
+  "dob": "1983-12-02",
   "about": null,
-  "city": "Wilmington",
-  "state": "NC",
+  "city": "Green Bay",
+  "state": "WI",
   "coords": {
-    "lat": 34.2257,
-    "lng": 77.9447
+    "lat": 44.5192,
+    "lng": 88.0198
   },
   "push_notifs": {
     "general": true,
     "messages": true,
-    "events": true,
+    "event_updates": true,
     "mentions": true,
-    "user_follows": true
+    "event_comments": true,
+    "user_follows": true,
+    "join_requests": true
   },
   "social_ids": {
     "facebook": null,
@@ -195,18 +197,19 @@ status: 201
     "instagram": null,
     "pinterest": null
   },
-  "profile_tags":[
-    { "tag_id": "20", "tag_name": "Sports" },
-    { "tag_id": "22", "tag_name": "College" },
-    { "tag_id": "29", "tag_name": "Football" }
-  ],
-  "avatar_url": "https:\/\/fake.urlto.img\/user_avatar",
-  "auth_token": "WnwkLV4R9YDuD1bDcQvH7Pe6",
-  "auth_token_expiry": "2016-11-09T15:38:59.493Z",
-  "identity_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6ImxheWVyLWVpdDt2PTEiLCJraWQiOiJsYXllcjovLy9rZXlzLzA5YTI1NDZhLTdmNDItMTFlNi1hMzk3LTAyZDM1NjAwMTJmMCJ9.eyJpc3MiOiJsYXllcjovLy9wcm92aWRlcnMvY2Y4ZDEzZTgtN2U5NS0xMWU2LTkyNGItYTE1MWU1MTI0NjI0IiwicHJuIjoibGszMzE3QGdtYWlsLmNvbSIsImlhdCI6MTQ3ODYxOTUzOSwiZXhwIjoxNDc5ODI5MTM5LCJuY2UiOiJfMTU3NnVQdFo5QzV1NXhlV0pVcXdHZzhTOVF5dnRNVmFhdGlTQ3c4dDlmWEE3NnFEX1NmSHBVeTMxYy1MRmVVNnlza3VuSXkyN3dzc0E1bHdYS0V3ZyJ9.PMtpDlAmR1U1DZt2ep_fWndEvn_Z16nFCoFw9CLE0DbAMLs_G8bHgUaytccjrDUi4iXSEwA4qVKrhSCWs_sR16qICKfNUgNevu4ioL3OYmIoZjExsm6hHVKO8B3s43gHlHIO7B8UWIWs5CuuRj2VK3piNnOkO63daChNPDZHdVVgq47-ldB2k9GuctRPHe8Zu3dZK2Wa5N24BOYah0K79V5Dntsbmre0UP9lVy4HQBv0VmnVcJBR4UNzrt4lFD2xJsX-SdZYrFPWjVuYN4GqyvFOO2N8A1NPd7hYcBqVY8cdY0ZQ2KA5qboMaA5-2XxAQuTfOx36FwUSWoatUq80yA",
-  "active": true,
-  "last_login_time": "2016-11-08T15:38:59.493Z",
-  "digits_id": "36345202355432034911"
+  "avatar_url": "https:\/\/nflprofile.com\/aaron_rodgers",
+  "followers_count": 0,
+  "following_count": 0,
+  "attended_count": 0,
+  "hosted_count": 0,
+  "auth_token": "gq5fusas63pjQ38beMPn9XPt",
+  "auth_token_expiry": "2017-02-03T19:51:08.659Z",
+  "identity_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6ImxheWVyLWVpdDt2PTEiLCJraWQiOiJsYXllcjovLy9rZXlzLzA5YTI1NDZhLTdmNDItMTFlNi1hMzk3LTAyZDM1NjAwMTJmMCJ9.eyJpc3MiOiJsYXllcjovLy9wcm92aWRlcnMvY2Y4ZDEzZTgtN2U5NS0xMWU2LTkyNGItYTE1MWU1MTI0NjI0IiwicHJuIjoiNTA3IiwiaWF0IjoxNDg2MDY1MDY4LCJleHAiOjE0ODcyNzQ2NjgsIm5jZSI6IjBEOWx3d3lPaGdHemZMZGZwMFFwSTdDalZjUmVhaXBRS2Z1Z1ZQTFdYZlVOTW9CRUUxVF8ydnpqRWtDSGlyVFdxN3c3bHA4R1hzN2YxdnF3djZHNkt3In0.WwIqqbmCsI1qgbMmp-IEu3VEB3_wxVK1PxtVfIdHCUK7c0S5eh4DUxrrF8ZS6FV7jcML3x0vNlQN_Cwp0Vf9k99zaVz8H0XZ2tPrKPWBESnkRQn6dh-DiKe_E5SySxYIjeleMMaQ_ZMVt93d2GMYLCEnz0Lj2dO6eeI-Zoig05Gu7jCC5hQ0mc2TXTi5tRHVPdkaVfqWw9X1EZhbE55lXncMg8aqg4Y-ivnRc-wVabd_Vz2ypt9G0X0ls1LkpWsn1oBssO6yOj3VSby-duMd2n2A54svFswHQRAs_Ka7msiD5Ht2U-88D5indwr5w2z0ZPg-owVu1VG4GJ8ljxitNQ",
+  "last_login_time": "2017-02-02T19:51:08.660Z",
+  "digits_id": "36345202355432034912",
+  "profile_tags": [],
+  "feed_tags": [],
+  "feed_time_setting": 0
 }
 ```
 
