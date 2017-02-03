@@ -2962,6 +2962,78 @@ Parameter | Default | Description
 `lng` | nil | The requesting client's longitude coordinate
 `radius` | nil | An integer value representing the radius distance (in meters) from the specified `:lat` & `:lng` values
 
+## Follow a Venue
+
+> Send a POST request with required parameters:
+
+```shell
+`https://wildfire-staging.herokuapp.com/api/v1/venues/:venue_id/follow`
+```
+
+> A JSON response like the following would be returned:
+
+```shell
+status: 200
+```
+```json
+{
+  "id": 1,
+  "name": "Untappd HQ - ILM",
+  "city": "Wilmington",
+  "state": "NC",
+  "icon_url": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/shops\/technology_64.png",
+  "coords": {
+    "lat": 34.235789629482,
+    "lng": -77.947483062744
+  },
+  "category": "Tech Startup",
+  "foursquare_id": "5759a613cd1040089032b492"
+}
+```
+
+Description: This endpoint will create a `follow` for the current user with the
+followed target being the specified venue.
+
+### HTTP Request
+
+`POST https://wildfire-staging.herokuapp.com/api/v1/venues/:venue_id/follow`
+
+## Un-follow a Venue
+
+> Send a DELETE request with required parameters:
+
+```shell
+`https://wildfire-staging.herokuapp.com/api/v1/venues/:venue_id/follow`
+```
+
+> A JSON response like the following would be returned:
+
+```shell
+status: 200
+```
+```json
+{
+  "id": 1,
+  "name": "Untappd HQ - ILM",
+  "city": "Wilmington",
+  "state": "NC",
+  "icon_url": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/shops\/technology_64.png",
+  "coords": {
+    "lat": 34.235789629482,
+    "lng": -77.947483062744
+  },
+  "category": "Tech Startup",
+  "foursquare_id": "5759a613cd1040089032b492"
+}
+```
+
+Description: This endpoint will *remove* a previously created `follow` for the current user with the
+followed target being the specified venue.
+
+### HTTP Request
+
+`DELETE https://wildfire-staging.herokuapp.com/api/v1/venues/:venue_id/follow`
+
 ## Past Venue Events [Pg'd]
 
 > Send a GET request with required parameters:
