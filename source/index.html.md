@@ -182,6 +182,7 @@ status: 201
     "lat": 44.5192,
     "lng": 88.0198
   },
+  "start_date_range": 0,
   "push_notifs": {
     "general": true,
     "messages": true,
@@ -555,6 +556,7 @@ status: 200
   "city": "Wilmington",
   "state": "NC",
   "avatar_url": "http:\/\/lorempixel.com\/300\/300\/sports\/7",
+  "start_date_range": 0,
   "social_ids": {
     "twitter": null,
     "facebook": null,
