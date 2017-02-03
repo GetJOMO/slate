@@ -682,7 +682,7 @@ followers of the specified user.
 > Send a GET request to the specified URI:
 
 ```shell
-https://wildfire-staging.herokuapp.com/api/v1/users/3/following
+https://wildfire-staging.herokuapp.com/api/v1/users/3/following/users
 ```
 
 > A JSON response like the following would be returned:
@@ -724,11 +724,88 @@ status: 200
 ```
 
 Description: This endpoint will return an array of users that the
-requesting user is currently following.
+specified user is currently following.
 
 ### HTTP Request
 
-`GET https://wildfire-staging.herokuapp.com/api/v1/users/:id/following`
+`GET https://wildfire-staging.herokuapp.com/api/v1/users/:id/following/users`
+
+## Retrieve Venue Followings [Pg'd]
+
+> Send a GET request to the specified URI:
+
+```shell
+https://wildfire-staging.herokuapp.com/api/v1/users/3/following/venues
+```
+
+> A JSON response like the following would be returned:
+
+```shell
+status: 200
+```
+```json
+[
+  {
+    "id": 1,
+    "name": "Untappd HQ - ILM",
+    "city": "Wilmington",
+    "state": "NC",
+    "icon_url": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/shops\/technology_64.png",
+    "coords": {
+      "lat": 34.235789629482,
+      "lng": -77.947483062744
+    },
+    "category": "Tech Startup",
+    "foursquare_id": "5759a613cd1040089032b492"
+  },
+  {
+    "id": 2,
+    "name": "Duck & Dive Pub",
+    "city": "Wilmington",
+    "state": "NC",
+    "icon_url": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/nightlife\/pub_64.png",
+    "coords": {
+      "lat": 34.234175252892,
+      "lng": -77.947961431061
+    },
+    "category": "Pub",
+    "foursquare_id": "4bf58dd8d48988d11b941735"
+  },
+  {
+    "id": 3,
+    "name": "24 South Coffee House",
+    "city": "Wilmington",
+    "state": "NC",
+    "icon_url": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/food\/coffeeshop_64.png",
+    "coords": {
+      "lat": 34.234456599111,
+      "lng": -77.948524800075
+    },
+    "category": "Coffee Shop",
+    "foursquare_id": "53fa55f3498ed31bb942100a"
+  },
+  {
+    "id": 4,
+    "name": "Masonboro Inlet",
+    "city": "Wilmington",
+    "state": "NC",
+    "icon_url": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/parks_outdoors\/beach_64.png",
+    "coords": {
+      "lat": 34.182547362367,
+      "lng": -77.81902944261
+    },
+    "category": "Beach",
+    "foursquare_id": "4c30a001a0ced13a3c61126e"
+  }
+]
+```
+
+Description: This endpoint will return an array of venues that the
+specified user is currently following.
+
+### HTTP Request
+
+`GET https://wildfire-staging.herokuapp.com/api/v1/users/:id/following/venues`
 
 ## Follow a User
 
