@@ -392,6 +392,12 @@ status: 200
   "first_name": "Jordan",
   "last_name": "Godwin",
   "about": "An updated bio from the client app!",
+  "city": "Wilmington",
+  "state": "NC",
+  "coords": {
+    "lat": 34.2257,
+    "lng": 77.9447
+  },
   "auth_token": "cRLSSiGNKfykY9DdsJQonkTp",
   "auth_token_expiry": "2016-10-05T16:16:54.827Z",
   "identity_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6ImxheWVyLWVpdDt2PTEiLCJraWQiOiJsYXllcjovLy9rZXlzLzA5YTI1NDZhLTdmNDItMTFlNi1hMzk3LTAyZDM1NjAwMTJmMCJ9.eyJpc3MiOiJsYXllcjovLy9wcm92aWRlcnMvY2Y4ZDEzZTgtN2U5NS0xMWU2LTkyNGItYTE1MWU1MTI0NjI0IiwicHJuIjoiamVnMzIyNEBnbWFpbC5jb20iLCJpYXQiOjE0NzU2MDE1MzIsImV4cCI6MTQ3NjgxMTEzMiwibmNlIjpudWxsfQ.NN-AW7gpnklCoMKzZ_4MoXi0b6XJJQR1nZRXATd3M1nLe1VZk9NlIr-1hYbVRspeZOm4oZuN5HJslLMiYbEot5bm48I1OS0vqqwo64azZSVGTqmJl2GAm_lRizbb10Ic90YUdUPsrMeBfaq4B1yyGX03o2xSPQvDwBetGpqAJ_6oJkH_nDi0ZABLFtml1UHtUjKxOMU06-42r8L8FDTNOHWpw7bvB-hUa1T42OFO9cuDnPytu8yZeqEeS8MoXBY6-KUoI7qaJuaEI9G2IXYlodDZkAwW38Q_hWEp01umPSwB9551E5hApU2sJS2aih2A06tvP23yRt0r1JCI4w5pbQ",
@@ -555,6 +561,10 @@ status: 200
   "about": "about kerry knight",
   "city": "Wilmington",
   "state": "NC",
+  "coords": {
+    "lat": 34.2257,
+    "lng": 77.9447
+  },
   "avatar_url": "http:\/\/lorempixel.com\/300\/300\/sports\/7",
   "start_date_range": 0,
   "social_ids": {
@@ -606,6 +616,7 @@ status: 200
           "lat": 34.234175252892,
           "lng": -77.947961431061
         },
+        "follow_status": true,
         "category": "Pub",
         "foursquare_id": "4bf58dd8d48988d11b941735"
       },
@@ -1266,6 +1277,7 @@ status: 200
         "lat": 34.4332,
         "lng": -77.8485
       },
+      "follow_status": true,
       "category": "Beach Bar",
       "foursquare_id": "fsdf37fds483df747af"
     },
@@ -1344,6 +1356,7 @@ status: 200
         "lat": 34.4332,
         "lng": -77.8485
       },
+      "follow_status": false,
       "category": "Beach Bar",
       "foursquare_id": "fsdf37fds483df747af"
     },
@@ -1396,6 +1409,7 @@ status: 200
         "lat": 34.4332,
         "lng": -77.8485
       },
+      "follow_status": false,
       "category": "Beach Bar",
       "foursquare_id": "fsdf37fds483df747af"
     },
@@ -1469,6 +1483,7 @@ status: 200
         "lat": 34.4332,
         "lng": -77.8485
       },
+      "follow_status": true,
       "category": "Beach Bar",
       "foursquare_id": "fsdf37fds483df747af"
     },
@@ -1551,6 +1566,7 @@ status: 200
         "lat": 34.4332,
         "lng": -77.8485
       },
+      "follow_status": true,
       "category": "Beach Bar",
       "foursquare_id": "fsdf37fds483df747af"
     },
@@ -1608,6 +1624,7 @@ status: 200
         "lat": 34.4332,
         "lng": -77.8485
       },
+      "follow_status": false,
       "category": "Beach Bar",
       "foursquare_id": "fsdf37fds483df747af"
     },
@@ -1670,6 +1687,7 @@ user has joined.
       "lat": 34.4332,
       "lng": -77.8485
     },
+    "follow_status": false,
     "category": "Beach Bar",
     "foursquare_id": "fsdf37fds483df747af"
   }
@@ -1712,6 +1730,7 @@ status: 201
       "lat": 34.4332,
       "lng": -77.8485
     },
+    "follow_status": false,
     "category": "Beach Bar",
     "foursquare_id": "fsdf37fds483df747af"
   },
@@ -1787,6 +1806,7 @@ status: 200
       "lat": 34.4332,
       "lng": -77.8485
     },
+    "follow_status": true,
     "category": "Beach Bar",
     "foursquare_id": "fsdf37fds483df747af"
   },
@@ -1880,6 +1900,7 @@ status: 200
       "lat": 34.4332,
       "lng": -77.8485
     },
+    "follow_status": true,
     "category": "Beach Bar",
     "foursquare_id": "fsdf37fds483df747af"
   },
@@ -1989,6 +2010,7 @@ status: 201
       "lat": 34.4332,
       "lng": -77.8485
     },
+    "follow_status": false,
     "category": "Beach Bar",
     "foursquare_id": "fsdf37fds483df747af"
   },
@@ -2074,6 +2096,7 @@ status: 200
       "lat": 34.4332,
       "lng": -77.8485
     },
+    "follow_status": false,
     "category": "Beach Bar",
     "foursquare_id": "fsdf37fds483df747af"
   },
@@ -2096,7 +2119,8 @@ status: 200
     {
       "id": 1,
       "body": "See you there! I'll bring the beer!!",
-      "user_id": 1
+      "user_id": 1,
+      "created_at": "2017-02-06T22:40:59.502Z"
     }
   ]
 }
@@ -2151,6 +2175,7 @@ status: 201
       "lat": 34.4332,
       "lng": -77.8485
     },
+    "follow_status": false,
     "category": "Beach Bar",
     "foursquare_id": "fsdf37fds483df747af"
   },
@@ -2238,6 +2263,7 @@ status: 200
       "lat": 34.4332,
       "lng": -77.8485
     },
+    "follow_status": false,
     "category": "Beach Bar",
     "foursquare_id": "fsdf37fds483df747af"
   },
@@ -2401,6 +2427,7 @@ status: 200
   "id": 1,
   "body": "See you there! I'll bring the beer!!",
   "event_id": 12,
+  "created_at": "2017-02-06T22:40:59.502Z",
   "user": {
     "id": 74,
     "first_name": "Jordan",
@@ -2472,6 +2499,7 @@ status: 200
     "id": 5,
     "body": "Eveniet id officiis libero architecto quia.",
     "event_id": 12,
+    "created_at": "2017-02-06T22:40:59.502Z",
     "user": {
       "id": 74,
       "first_name": "Eulalia",
@@ -2497,6 +2525,7 @@ status: 200
     "id": 6,
     "body": "Ducimus sed sunt voluptatem laborum dolores.",
     "event_id": 12,
+    "created_at": "2017-02-06T22:40:59.502Z",
     "user": {
       "id": 63,
       "first_name": "Alena",
@@ -2527,6 +2556,7 @@ status: 200
     "id": 7,
     "body": "Quisquam ipsam quia corporis occaecati ex.",
     "event_id": 12,
+    "created_at": "2017-02-06T22:40:59.502Z",
     "user": {
       "id": 29,
       "first_name": "Everardo",
@@ -2718,6 +2748,7 @@ status: 200
           "lat": 34.4332,
           "lng": -77.8485
         },
+        "follow_status": false,
         "category": "Tech Startup",
         "foursquare_id": "5759a613cd1040089032b492"
       },
@@ -3095,6 +3126,7 @@ status: 200
         "lat": 34.4332,
         "lng": -77.8485
       },
+      "follow_status": false,
       "category": "Coffee Shop",
       "foursquare_id": "ag5gd742dsf83g7d48g",
     },
@@ -3194,6 +3226,7 @@ status: 200
         "lat": 34.4332,
         "lng": -77.8485
       },
+      "follow_status": true,
       "category": "Coffee Shop",
       "foursquare_id": "ag5gd742dsf83g7d48g",
     },
@@ -3287,6 +3320,7 @@ status: 200
         "lat": 34.4332,
         "lng": -77.8485
       },
+      "follow_status": true,
       "category": "Coffee Shop",
       "foursquare_id": "ag5gd742dsf83g7d48g",
     },
@@ -3386,6 +3420,7 @@ status: 200
         "lat": 34.4332,
         "lng": -77.8485
       },
+      "follow_status": false,
       "category": "Coffee Shop",
       "foursquare_id": "ag5gd742dsf83g7d48g",
     },
@@ -3484,6 +3519,7 @@ status: 200
         "lat": 34.4332,
         "lng": -77.8485
       },
+      "follow_status": false,
       "category": "Outdoors",
       "foursquare_id": "le5kd742qff83m7d48st",
     },
