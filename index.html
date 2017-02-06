@@ -496,6 +496,12 @@ identity token for making user authenticated requests to Layer&rsquo;s API</p>
   </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jordan"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Godwin"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"about"</span><span class="p">:</span><span class="w"> </span><span class="s2">"An updated bio from the client app!"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wilmington"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NC"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"coords"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.2257</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">77.9447</span><span class="w">
+  </span><span class="p">},</span><span class="w">
   </span><span class="nt">"auth_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cRLSSiGNKfykY9DdsJQonkTp"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"auth_token_expiry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-10-05T16:16:54.827Z"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"identity_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6ImxheWVyLWVpdDt2PTEiLCJraWQiOiJsYXllcjovLy9rZXlzLzA5YTI1NDZhLTdmNDItMTFlNi1hMzk3LTAyZDM1NjAwMTJmMCJ9.eyJpc3MiOiJsYXllcjovLy9wcm92aWRlcnMvY2Y4ZDEzZTgtN2U5NS0xMWU2LTkyNGItYTE1MWU1MTI0NjI0IiwicHJuIjoiamVnMzIyNEBnbWFpbC5jb20iLCJpYXQiOjE0NzU2MDE1MzIsImV4cCI6MTQ3NjgxMTEzMiwibmNlIjpudWxsfQ.NN-AW7gpnklCoMKzZ_4MoXi0b6XJJQR1nZRXATd3M1nLe1VZk9NlIr-1hYbVRspeZOm4oZuN5HJslLMiYbEot5bm48I1OS0vqqwo64azZSVGTqmJl2GAm_lRizbb10Ic90YUdUPsrMeBfaq4B1yyGX03o2xSPQvDwBetGpqAJ_6oJkH_nDi0ZABLFtml1UHtUjKxOMU06-42r8L8FDTNOHWpw7bvB-hUa1T42OFO9cuDnPytu8yZeqEeS8MoXBY6-KUoI7qaJuaEI9G2IXYlodDZkAwW38Q_hWEp01umPSwB9551E5hApU2sJS2aih2A06tvP23yRt0r1JCI4w5pbQ"</span><span class="p">,</span><span class="w">
@@ -647,6 +653,10 @@ in which will then be matched on users in the database on each user&rsquo;s <cod
   </span><span class="nt">"about"</span><span class="p">:</span><span class="w"> </span><span class="s2">"about kerry knight"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wilmington"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NC"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"coords"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.2257</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">77.9447</span><span class="w">
+  </span><span class="p">},</span><span class="w">
   </span><span class="nt">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:\/\/lorempixel.com\/300\/300\/sports\/7"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"start_date_range"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="nt">"social_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -698,6 +708,7 @@ in which will then be matched on users in the database on each user&rsquo;s <cod
           </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.234175252892</span><span class="p">,</span><span class="w">
           </span><span class="nt">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.947961431061</span><span class="w">
         </span><span class="p">},</span><span class="w">
+        </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pub"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"foursquare_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4bf58dd8d48988d11b941735"</span><span class="w">
       </span><span class="p">},</span><span class="w">
@@ -1314,6 +1325,7 @@ for the current_user with the target of another user.</p>
         </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.4332</span><span class="p">,</span><span class="w">
         </span><span class="nt">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.8485</span><span class="w">
       </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
       </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Beach Bar"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"foursquare_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fsdf37fds483df747af"</span><span class="w">
     </span><span class="p">},</span><span class="w">
@@ -1388,6 +1400,7 @@ user has hosted.</p>
         </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.4332</span><span class="p">,</span><span class="w">
         </span><span class="nt">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.8485</span><span class="w">
       </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
       </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Beach Bar"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"foursquare_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fsdf37fds483df747af"</span><span class="w">
     </span><span class="p">},</span><span class="w">
@@ -1440,6 +1453,7 @@ user has hosted.</p>
         </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.4332</span><span class="p">,</span><span class="w">
         </span><span class="nt">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.8485</span><span class="w">
       </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
       </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Beach Bar"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"foursquare_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fsdf37fds483df747af"</span><span class="w">
     </span><span class="p">},</span><span class="w">
@@ -1513,6 +1527,7 @@ user has hosted.</p>
         </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.4332</span><span class="p">,</span><span class="w">
         </span><span class="nt">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.8485</span><span class="w">
       </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
       </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Beach Bar"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"foursquare_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fsdf37fds483df747af"</span><span class="w">
     </span><span class="p">},</span><span class="w">
@@ -1591,6 +1606,7 @@ user has joined.</p>
         </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.4332</span><span class="p">,</span><span class="w">
         </span><span class="nt">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.8485</span><span class="w">
       </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
       </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Beach Bar"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"foursquare_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fsdf37fds483df747af"</span><span class="w">
     </span><span class="p">},</span><span class="w">
@@ -1648,6 +1664,7 @@ user has joined.</p>
         </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.4332</span><span class="p">,</span><span class="w">
         </span><span class="nt">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.8485</span><span class="w">
       </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
       </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Beach Bar"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"foursquare_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fsdf37fds483df747af"</span><span class="w">
     </span><span class="p">},</span><span class="w">
@@ -1684,6 +1701,79 @@ user has joined.</p>
 
 <p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/users/:id/events/requested</code></p>
 
+<h2 id="tag-mention-user">Tag/Mention User</h2>
+
+<blockquote>
+<p>Send a GET request with required parameters:</p>
+</blockquote>
+<pre class="highlight shell"><code>https://wildfire-staging.herokuapp.com/api/v1/users/search?q<span class="o">=</span>Joh
+</code></pre>
+<blockquote>
+<p>A JSON response like the following would be returned:</p>
+</blockquote>
+<pre class="highlight shell"><code>status: 200
+</code></pre><pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">67</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kyra"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Johnston"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:\/\/lorempixel.com\/300\/300\/cats\/9"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Marielaburgh"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TN"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">276</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lorenz"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Johnson"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:\/\/lorempixel.com\/300\/300\/cats\/8"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dickensport"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NE"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">460</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Heather"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Johns"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:\/\/lorempixel.com\/300\/300\/cats\/1"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"North Florineburgh"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MS"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">471</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Johann"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ziemann"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:\/\/lorempixel.com\/300\/300\/cats\/4"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Binston"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KY"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint will return an array of users where their first or
+last name match part of the search query.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/users/search</code></p>
+
+<h3 id="query-parameters-required">Query Parameters (<em>required</em>)</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">q</code></td>
+<td>nil</td>
+<td>The requesting client&rsquo;s name query</td>
+</tr>
+</tbody></table>
+
 <h1 id="events">Events</h1>
 
 <h2 id="create-event">Create Event</h2>
@@ -1709,6 +1799,7 @@ user has joined.</p>
       </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.4332</span><span class="p">,</span><span class="w">
       </span><span class="nt">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.8485</span><span class="w">
     </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Beach Bar"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"foursquare_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fsdf37fds483df747af"</span><span class="w">
   </span><span class="p">}</span><span class="w">
@@ -1748,6 +1839,7 @@ user has joined.</p>
       </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.4332</span><span class="p">,</span><span class="w">
       </span><span class="nt">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.8485</span><span class="w">
     </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Beach Bar"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"foursquare_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fsdf37fds483df747af"</span><span class="w">
   </span><span class="p">},</span><span class="w">
@@ -1819,6 +1911,7 @@ user has joined.</p>
       </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.4332</span><span class="p">,</span><span class="w">
       </span><span class="nt">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.8485</span><span class="w">
     </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Beach Bar"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"foursquare_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fsdf37fds483df747af"</span><span class="w">
   </span><span class="p">},</span><span class="w">
@@ -1908,6 +2001,7 @@ user has joined.</p>
       </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.4332</span><span class="p">,</span><span class="w">
       </span><span class="nt">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.8485</span><span class="w">
     </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Beach Bar"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"foursquare_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fsdf37fds483df747af"</span><span class="w">
   </span><span class="p">},</span><span class="w">
@@ -2009,6 +2103,7 @@ ALL of the Event&rsquo;s attributes, including the ones that aren&rsquo;t being 
       </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.4332</span><span class="p">,</span><span class="w">
       </span><span class="nt">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.8485</span><span class="w">
     </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Beach Bar"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"foursquare_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fsdf37fds483df747af"</span><span class="w">
   </span><span class="p">},</span><span class="w">
@@ -2090,6 +2185,7 @@ for the specified event.</p>
       </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.4332</span><span class="p">,</span><span class="w">
       </span><span class="nt">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.8485</span><span class="w">
     </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Beach Bar"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"foursquare_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fsdf37fds483df747af"</span><span class="w">
   </span><span class="p">},</span><span class="w">
@@ -2112,7 +2208,8 @@ for the specified event.</p>
     </span><span class="p">{</span><span class="w">
       </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
       </span><span class="nt">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"See you there! I'll bring the beer!!"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="nt">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-06T22:40:59.502Z"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -2163,6 +2260,7 @@ from the specified event.</p>
       </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.4332</span><span class="p">,</span><span class="w">
       </span><span class="nt">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.8485</span><span class="w">
     </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Beach Bar"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"foursquare_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fsdf37fds483df747af"</span><span class="w">
   </span><span class="p">},</span><span class="w">
@@ -2246,6 +2344,7 @@ for the specified private event.</p>
       </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.4332</span><span class="p">,</span><span class="w">
       </span><span class="nt">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.8485</span><span class="w">
     </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Beach Bar"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"foursquare_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fsdf37fds483df747af"</span><span class="w">
   </span><span class="p">},</span><span class="w">
@@ -2397,6 +2496,7 @@ to join the event.</p>
   </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
   </span><span class="nt">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"See you there! I'll bring the beer!!"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-06T22:40:59.502Z"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">74</span><span class="p">,</span><span class="w">
     </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jordan"</span><span class="p">,</span><span class="w">
@@ -2460,6 +2560,7 @@ to join the event.</p>
     </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
     </span><span class="nt">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Eveniet id officiis libero architecto quia."</span><span class="p">,</span><span class="w">
     </span><span class="nt">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-06T22:40:59.502Z"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">74</span><span class="p">,</span><span class="w">
       </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Eulalia"</span><span class="p">,</span><span class="w">
@@ -2485,6 +2586,7 @@ to join the event.</p>
     </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
     </span><span class="nt">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ducimus sed sunt voluptatem laborum dolores."</span><span class="p">,</span><span class="w">
     </span><span class="nt">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-06T22:40:59.502Z"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">63</span><span class="p">,</span><span class="w">
       </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alena"</span><span class="p">,</span><span class="w">
@@ -2515,6 +2617,7 @@ to join the event.</p>
     </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
     </span><span class="nt">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quisquam ipsam quia corporis occaecati ex."</span><span class="p">,</span><span class="w">
     </span><span class="nt">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-06T22:40:59.502Z"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">29</span><span class="p">,</span><span class="w">
       </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Everardo"</span><span class="p">,</span><span class="w">
@@ -2698,6 +2801,7 @@ to join the event.</p>
           </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.4332</span><span class="p">,</span><span class="w">
           </span><span class="nt">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.8485</span><span class="w">
         </span><span class="p">},</span><span class="w">
+        </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tech Startup"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"foursquare_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5759a613cd1040089032b492"</span><span class="w">
       </span><span class="p">},</span><span class="w">
@@ -3091,6 +3195,7 @@ followed target being the specified venue.</p>
         </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.4332</span><span class="p">,</span><span class="w">
         </span><span class="nt">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.8485</span><span class="w">
       </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
       </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Coffee Shop"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"foursquare_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ag5gd742dsf83g7d48g"</span><span class="p">,</span><span class="w">
     </span><span class="err">}</span><span class="p">,</span><span class="w">
@@ -3186,6 +3291,7 @@ active or available to join.</p>
         </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.4332</span><span class="p">,</span><span class="w">
         </span><span class="nt">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.8485</span><span class="w">
       </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
       </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Coffee Shop"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"foursquare_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ag5gd742dsf83g7d48g"</span><span class="p">,</span><span class="w">
     </span><span class="err">}</span><span class="p">,</span><span class="w">
@@ -3276,6 +3382,7 @@ specified Foursquare venue that are currently active/happening now.</p>
         </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.4332</span><span class="p">,</span><span class="w">
         </span><span class="nt">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.8485</span><span class="w">
       </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
       </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Coffee Shop"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"foursquare_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ag5gd742dsf83g7d48g"</span><span class="p">,</span><span class="w">
     </span><span class="err">}</span><span class="p">,</span><span class="w">
@@ -3372,6 +3479,7 @@ specified Foursquare venue that are set to happen at a time in the near future.<
         </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.4332</span><span class="p">,</span><span class="w">
         </span><span class="nt">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.8485</span><span class="w">
       </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
       </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Coffee Shop"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"foursquare_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ag5gd742dsf83g7d48g"</span><span class="p">,</span><span class="w">
     </span><span class="err">}</span><span class="p">,</span><span class="w">
@@ -3480,6 +3588,7 @@ requesting user&rsquo;s filter tags &amp; users that he/she follows.</p>
         </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.4332</span><span class="p">,</span><span class="w">
         </span><span class="nt">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.8485</span><span class="w">
       </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
       </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Outdoors"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"foursquare_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"le5kd742qff83m7d48st"</span><span class="p">,</span><span class="w">
     </span><span class="err">}</span><span class="p">,</span><span class="w">
