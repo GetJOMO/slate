@@ -1662,6 +1662,73 @@ user has joined.
 
 `GET https://wildfire-staging.herokuapp.com/api/v1/users/:id/events/requested`
 
+## Tag/Mention User
+
+> Send a GET request with required parameters:
+
+```shell
+https://wildfire-staging.herokuapp.com/api/v1/users/search?q=Joh
+```
+
+> A JSON response like the following would be returned:
+
+```shell
+status: 200
+```
+```json
+[
+  {
+    "id": 67,
+    "first_name": "Kyra",
+    "last_name": "Johnston",
+    "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/9",
+    "city": "Marielaburgh",
+    "state": "TN",
+    "follow_status": false
+  },
+  {
+    "id": 276,
+    "first_name": "Lorenz",
+    "last_name": "Johnson",
+    "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/8",
+    "city": "Dickensport",
+    "state": "NE",
+    "follow_status": false
+  },
+  {
+    "id": 460,
+    "first_name": "Heather",
+    "last_name": "Johns",
+    "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/1",
+    "city": "North Florineburgh",
+    "state": "MS",
+    "follow_status": false
+  },
+  {
+    "id": 471,
+    "first_name": "Johann",
+    "last_name": "Ziemann",
+    "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/4",
+    "city": "Binston",
+    "state": "KY",
+    "follow_status": false
+  }
+]
+```
+
+This endpoint will return an array of users where their first or
+last name match part of the search query.
+
+### HTTP Request
+
+`GET https://wildfire-staging.herokuapp.com/api/v1/users/search`
+
+### Query Parameters (*required*)
+
+Parameter | Default | Description
+--------- | ------- | -----------
+`q` | nil | The requesting client's name query
+
 # Events
 
 ## Create Event
