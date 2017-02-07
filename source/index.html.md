@@ -898,28 +898,32 @@ status: 200
     "first_name": "Lauren",
     "last_name": "Godwin",
     "avatar_url": "https:\/\/fake.urlto.img\/user_avatar_3",
-    "block_status": true
+    "block_status": true,
+    "report_status": -1
   },
   {
     "id": 5,
     "name": "Jordan",
     "last_name": "Godwin",
     "avatar_url": "https:\/\/fake.urlto.img\/user_avatar_5",
-    "block_status": true
+    "block_status": true,
+    "report_status": -1
   },
   {
     "id": 12,
     "name": "Gavin",
     "last_name": "Anthony",
     "avatar_url": "https:\/\/fake.urlto.img\/user_avatar_12",
-    "block_status": true
+    "block_status": true,
+    "report_status": -1
   }
   ,{
     "id": 23,
     "name": "Kerry",
     "last_name": "Knight",
     "avatar_url": "https:\/\/fake.urlto.img\/user_avatar_23",
-    "block_status": true
+    "block_status": true,
+    "report_status": -1
   }
 ]
 ```
@@ -950,7 +954,8 @@ status: 201
   "first_name": "Lauren",
   "last_name": "Godwin",
   "avatar_url": "https://fake.urlto.img/user_avatar_3",
-  "block_status": true
+  "block_status": true,
+  "report_status": -1
 }
 ```
 
@@ -980,7 +985,8 @@ status: 200
   "first_name": "Jordan",
   "last_name": "Godwin",
   "avatar_url": "https://fake.urlto.img/user_avatar_55",
-  "block_status": true
+  "block_status": true,
+  "report_status": -1
 }
 ```
 
@@ -990,6 +996,44 @@ for the current_user with the target of another user.
 ### HTTP Request
 
 `DELETE https://wildfire-staging.herokuapp.com/api/v1/users/:id/unblock`
+
+## Report a User
+
+> Send a POST request to the specified URI with the required params:
+
+```shell
+https://wildfire-staging.herokuapp.com/api/v1/users/1/report
+```
+```json
+{
+  "report_status": 2
+}
+```
+
+> A JSON response like the following would be returned:
+
+```shell
+status: 201
+```
+```json
+{
+  "id": 1,
+  "first_name": "Jordan",
+  "last_name": "Godwin",
+  "avatar_url": "https://fake.urlto.img/user_avatar_3",
+  "block_status": true,
+  "report_status": 2
+}
+```
+
+Description: Use this endpoint to report a target user (create a block w/ report_status)
+for the current_user with the target of another user.
+
+Note: Use the _Unblock User_ endpoint to remove the block with report status.
+
+### HTTP Request
+
+`POST https://wildfire-staging.herokuapp.com/api/v1/users/:id/report`
 
 ## User Profile Tags
 
