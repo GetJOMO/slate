@@ -1249,9 +1249,11 @@ status: 200
   {
     "id": 66,
     "description": "Minima aspernatur quia rerum ipsum veniam.",
-    "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/9",
-    "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/5",
-    "media_type": null,
+    "media": {
+      "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/9",
+      "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/5",
+      "media_type": 0
+    },
     "comments_count": 0,
     "attendee_count": 1,
     "status": 0,
@@ -1294,9 +1296,11 @@ status: 200
   {
     "id": 109,
     "description": "My First Event!",
-    "media_url": "http://www.aws.com/media_url",
-    "media_thumb": "http://www.aws.com/media_thumb",
-    "media_type": 0,
+    "media": {
+      "media_url": "http://www.aws.com/media_url",
+      "media_thumb": "http://www.aws.com/media_thumb",
+      "media_type": 0
+    },
     "comments_count": 0,
     "attendee_count": 0,
     "status": 0,
@@ -1373,9 +1377,11 @@ status: 200
   {
     "id": 50,
     "description": "Veniam omnis mollitia est similique deleniti accusantium cumque.",
-    "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/8",
-    "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/9",
-    "media_type": 0,
+    "media": {
+      "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/8",
+      "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/9",
+      "media_type": 0
+    },
     "comments_count": 0,
     "attendee_count": 1,
     "status": 0,
@@ -1426,9 +1432,11 @@ status: 200
   {
     "id": 77,
     "description": "Expedita aliquam veritatis autem quo itaque.",
-    "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/8",
-    "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/4",
-    "media_type": null,
+    "media": {
+      "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/8",
+      "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/4",
+      "media_type": 0
+    },
     "comments_count": 0,
     "attendee_count": 4,
     "status": 0,
@@ -1500,9 +1508,11 @@ status: 200
   {
     "id": 95,
     "description": "Eos quaerat expedita nobis perferendis.",
-    "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/3",
-    "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/7",
-    "media_type": null,
+    "media": {
+      "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/3",
+      "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/7",
+      "media_type": 0
+    },
     "comments_count": 0,
     "attendee_count": 1,
     "status": 0,
@@ -1583,9 +1593,11 @@ status: 200
   {
     "id": 33,
     "description": "Exercitationem doloremque eaque ea dolor qui.",
-    "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/2",
-    "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/9",
-    "media_type": null,
+    "media": {
+      "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/2",
+      "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/9",
+      "media_type": 0,
+    },
     "comments_count": 0,
     "attendee_count": 4,
     "status": 0,
@@ -1641,9 +1653,11 @@ status: 200
   {
     "id": 81,
     "description": "Molestias sunt cupiditate consequatur.",
-    "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/6",
-    "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/4",
-    "media_type": null,
+    "media": {
+      "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/6",
+      "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/4",
+      "media_type": 0,
+    },
     "comments_count": 0,
     "attendee_count": 2,
     "status": 0,
@@ -1782,9 +1796,11 @@ Parameter | Default | Description
 ```json
 {
   "description": "My First Event!",
-  "media_url": "http://www.aws.com/media_url",
-  "media_thumb": "http://www.aws.com/media_thumb",
-  "media_type": "0",
+  "media": {
+    "media_url": "http://www.aws.com/media_url",
+    "media_thumb": "http://www.aws.com/media_thumb",
+    "media_type": 0
+  },
   "tag_ids": [3, 1, 11],
   "starts_at": "2017-01-10",
   "duration": 6,
@@ -1814,9 +1830,11 @@ status: 201
 {
   "id": 109,
   "description": "My First Event!",
-  "media_url": "http://www.aws.com/media_url",
-  "media_thumb": "http://www.aws.com/media_thumb",
-  "media_type": 0,
+  "media": {
+    "media_url": "http://www.aws.com/media_url",
+    "media_thumb": "http://www.aws.com/media_thumb",
+    "media_type": 0
+  },
   "comments_count": 0,
   "attendee_count": 0,
   "status": 0,
@@ -1890,9 +1908,11 @@ status: 200
 {
   "id": 22,
   "description": "Sed aut omnis quaerat quisquam hic est et possimus.",
-  "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/7",
-  "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/5",
-  "media_type": 0,
+  "media": {
+    "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/7",
+    "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/5",
+    "media_type": 0
+  },
   "comments_count": 0,
   "attendee_count": 1,
   "status": 0,
@@ -1984,9 +2004,11 @@ status: 200
 {
   "id": 4,
   "description": "An updated event description!",
-  "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/7",
-  "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/5",
-  "media_type": 0,
+  "media": {
+    "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/7",
+    "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/5",
+    "media_type": 0
+  },
   "comments_count": 1,
   "attendee_count": 1,
   "status": 0,
@@ -2094,9 +2116,11 @@ status: 201
 {
   "id": 15,
   "description": "Et rerum vero eveniet excepturi.",
-  "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/6",
-  "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/5",
-  "media_type": null,
+  "media": {
+    "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/6",
+    "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/5",
+    "media_type": 0
+  },
   "comments_count": 0,
   "attendee_count": 1,
   "status": 0,
@@ -2180,9 +2204,11 @@ status: 200
 {
   "id": 15,
   "description": "Et rerum vero eveniet excepturi.",
-  "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/6",
-  "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/5",
-  "media_type": null,
+  "media": {
+    "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/6",
+    "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/5",
+    "media_type": 0
+  },
   "comments_count": 0,
   "attendee_count": 1,
   "status": 0,
@@ -2261,9 +2287,11 @@ status: 201
 {
   "id": 50,
   "description": "Veniam omnis mollitia est similique deleniti accusantium cumque.",
-  "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/8",
-  "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/9",
-  "media_type": null,
+  "media": {
+    "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/8",
+    "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/9",
+    "media_type": 0
+  },
   "comments_count": 0,
   "attendee_count": 1,
   "privacy": 1,
@@ -2349,9 +2377,11 @@ status: 200
 {
   "id": 50,
   "description": "Veniam omnis mollitia est similique deleniti accusantium cumque.",
-  "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/8",
-  "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/9",
-  "media_type": null,
+  "media": {
+    "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/8",
+    "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/9",
+    "media_type": 0
+  },
   "comments_count": 0,
   "attendee_count": 1,
   "privacy": 1,
