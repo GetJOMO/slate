@@ -1720,6 +1720,90 @@ user has joined.
 
 `GET https://wildfire-staging.herokuapp.com/api/v1/users/:id/events/requested`
 
+## Toggle Event Notifications
+
+> Send a PATCH request with required parameters:
+
+```shell
+https://wildfire-staging.herokuapp.com/api/v1/events/33/attendees/notifications
+```
+
+> A JSON response like the following would be returned:
+
+```shell
+status: 200
+```
+```json
+{
+  "id": 33,
+  "description": "Exercitationem doloremque eaque ea dolor qui.",
+  "media": {
+    "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/2",
+    "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/9",
+    "media_type": 0,
+  },
+  "comments_count": 0,
+  "attendee_count": 4,
+  "status": 0,
+  "privacy": 0,
+  "attendee_status": 0,
+  "notifications_status": false,
+  "starts_at": "2017-01-03T08:54:01.000Z",
+  "ends_at": "2017-01-03T08:54:03.270Z",
+  "duration": 2.27,
+  "host": {
+    "id": 26,
+    "first_name": "Marion",
+    "last_name": "Powlowski",
+    "dob": "1984-08-09"
+  },
+  "venue": {
+    "id": 32,
+    "name": "New Venue",
+    "city": "Wilmington",
+    "state": "NC",
+    "icon_url": "https://ss0.4sqi.net/img/categories_v2/nightlife/default_bg_64.png",
+    "coords": {
+      "lat": 34.4332,
+      "lng": -77.8485
+    },
+    "follow_status": true,
+    "category": "Beach Bar",
+    "foursquare_id": "fsdf37fds483df747af"
+  },
+  "tags": [
+    {
+      "id": 3,
+      "name": "Motorsports",
+      "parent_id": 4
+    },
+    {
+      "id": 3,
+      "name": "Extreme Sports",
+      "parent_id": 20
+    }
+  ],
+  "attendees": [
+    {
+      "id": 354,
+      "first_name": "Charlene",
+      "last_name": "Reilly",
+      "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/4",
+      "block_status": false,
+      "follow_status": false
+    }
+  ],
+  "comments": []
+}
+```
+
+This endpoint will toggle the `notifications_status` on this event for current user,
+thus disabling or enabling notifications for the specified event.
+
+### HTTP Request
+
+`PATCH https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/attendees/notifications`
+
 ## Tag/Mention User
 
 > Send a GET request with required parameters:
@@ -2442,7 +2526,7 @@ from the specified event.
 
 ### HTTP Request
 
-`DELETE https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/unrequest`
+`DELETE https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/requests/:user_id`
 
 ## Show Event Attendees [Pg'd]
 
