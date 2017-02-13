@@ -586,9 +586,13 @@ status: 200
       "id": 29,
       "description": "Event 29: Kerry's Super Bowl party for <a class=\"user\" id=\"1\">Jordan Godwin<\/a> and <a class=\"user\" id=\"3\">Gavin Baradic<\/a>.",
       "media": {
-        "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/3",
-        "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/9",
-        "media_type": null
+        "media_url": "http://lorempixel.com/600/338/sports/3",
+        "media_thumb": "http://lorempixel.com/300/169/sports/9",
+        "media_type": 0,
+        "width": 600,
+        "height": 338,
+        "thumb_width": 300,
+        "thumb_height": 169
       },
       "starts_at": "2017-02-13T21:06:00.000Z",
       "ends_at": "2017-02-13T21:06:03.930Z",
@@ -1250,9 +1254,13 @@ status: 200
     "id": 66,
     "description": "Minima aspernatur quia rerum ipsum veniam.",
     "media": {
-      "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/9",
-      "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/5",
-      "media_type": 0
+      "media_url": "http://lorempixel.com/600/338/sports/9",
+      "media_thumb": "http://lorempixel.com/300/169/sports/5",
+      "media_type": 0,
+      "width": 600,
+      "height": 338,
+      "thumb_width": 300,
+      "thumb_height": 169
     },
     "comments_count": 0,
     "attendee_count": 1,
@@ -1297,9 +1305,13 @@ status: 200
     "id": 109,
     "description": "My First Event!",
     "media": {
-      "media_url": "http://www.aws.com/media_url",
-      "media_thumb": "http://www.aws.com/media_thumb",
-      "media_type": 0
+      "media_url": "http://lorempixel.com/600/338/sports/3",
+      "media_thumb": "http://lorempixel.com/300/169/sports/9",
+      "media_type": 0,
+      "width": 600,
+      "height": 338,
+      "thumb_width": 300,
+      "thumb_height": 169
     },
     "comments_count": 0,
     "attendee_count": 0,
@@ -1378,9 +1390,13 @@ status: 200
     "id": 50,
     "description": "Veniam omnis mollitia est similique deleniti accusantium cumque.",
     "media": {
-      "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/8",
-      "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/9",
-      "media_type": 0
+      "media_url": "http://lorempixel.com/600/338/sports/3",
+      "media_thumb": "http://lorempixel.com/300/169/sports/9",
+      "media_type": 0,
+      "width": 600,
+      "height": 338,
+      "thumb_width": 300,
+      "thumb_height": 169
     },
     "comments_count": 0,
     "attendee_count": 1,
@@ -1433,9 +1449,13 @@ status: 200
     "id": 77,
     "description": "Expedita aliquam veritatis autem quo itaque.",
     "media": {
-      "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/8",
-      "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/4",
-      "media_type": 0
+      "media_url": "http://lorempixel.com/600/338/sports/3",
+      "media_thumb": "http://lorempixel.com/300/169/sports/9",
+      "media_type": 0,
+      "width": 600,
+      "height": 338,
+      "thumb_width": 300,
+      "thumb_height": 169
     },
     "comments_count": 0,
     "attendee_count": 4,
@@ -1509,9 +1529,13 @@ status: 200
     "id": 95,
     "description": "Eos quaerat expedita nobis perferendis.",
     "media": {
-      "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/3",
-      "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/7",
-      "media_type": 0
+      "media_url": "http://lorempixel.com/600/338/sports/3",
+      "media_thumb": "http://lorempixel.com/300/169/sports/9",
+      "media_type": 0,
+      "width": 600,
+      "height": 338,
+      "thumb_width": 300,
+      "thumb_height": 169
     },
     "comments_count": 0,
     "attendee_count": 1,
@@ -1594,9 +1618,13 @@ status: 200
     "id": 33,
     "description": "Exercitationem doloremque eaque ea dolor qui.",
     "media": {
-      "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/2",
-      "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/9",
+      "media_url": "http://lorempixel.com/600/338/sports/3",
+      "media_thumb": "http://lorempixel.com/300/169/sports/9",
       "media_type": 0,
+      "width": 600,
+      "height": 338,
+      "thumb_width": 300,
+      "thumb_height": 169
     },
     "comments_count": 0,
     "attendee_count": 4,
@@ -1654,9 +1682,13 @@ status: 200
     "id": 81,
     "description": "Molestias sunt cupiditate consequatur.",
     "media": {
-      "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/6",
-      "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/4",
+      "media_url": "http://lorempixel.com/600/338/sports/3",
+      "media_thumb": "http://lorempixel.com/300/169/sports/9",
       "media_type": 0,
+      "width": 600,
+      "height": 338,
+      "thumb_width": 300,
+      "thumb_height": 169
     },
     "comments_count": 0,
     "attendee_count": 2,
@@ -1738,9 +1770,13 @@ status: 200
   "id": 33,
   "description": "Exercitationem doloremque eaque ea dolor qui.",
   "media": {
-    "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/2",
-    "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/9",
+    "media_url": "http://lorempixel.com/600/338/sports/3",
+    "media_thumb": "http://lorempixel.com/300/169/sports/9",
     "media_type": 0,
+    "width": 600,
+    "height": 338,
+    "thumb_width": 300,
+    "thumb_height": 169
   },
   "comments_count": 0,
   "attendee_count": 4,
@@ -1881,9 +1917,13 @@ Parameter | Default | Description
 {
   "description": "My First Event!",
   "media": {
-    "media_url": "http://www.aws.com/media_url",
-    "media_thumb": "http://www.aws.com/media_thumb",
-    "media_type": 0
+    "media_url": "http://lorempixel.com/600/338/sports/3",
+    "media_thumb": "http://lorempixel.com/300/169/sports/9",
+    "media_type": 0,
+    "width": 600,
+    "height": 338,
+    "thumb_width": 300,
+    "thumb_height": 169
   },
   "tag_ids": [3, 1, 11],
   "starts_at": "2017-01-10",
@@ -1915,9 +1955,13 @@ status: 201
   "id": 109,
   "description": "My First Event!",
   "media": {
-    "media_url": "http://www.aws.com/media_url",
-    "media_thumb": "http://www.aws.com/media_thumb",
-    "media_type": 0
+    "media_url": "http://lorempixel.com/600/338/sports/3",
+    "media_thumb": "http://lorempixel.com/300/169/sports/9",
+    "media_type": 0,
+    "width": 600,
+    "height": 338,
+    "thumb_width": 300,
+    "thumb_height": 169
   },
   "comments_count": 0,
   "attendee_count": 0,
@@ -1993,9 +2037,13 @@ status: 200
   "id": 22,
   "description": "Sed aut omnis quaerat quisquam hic est et possimus.",
   "media": {
-    "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/7",
-    "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/5",
-    "media_type": 0
+    "media_url": "http://lorempixel.com/600/338/sports/3",
+    "media_thumb": "http://lorempixel.com/300/169/sports/9",
+    "media_type": 0,
+    "width": 600,
+    "height": 338,
+    "thumb_width": 300,
+    "thumb_height": 169
   },
   "comments_count": 0,
   "attendee_count": 1,
@@ -2089,9 +2137,13 @@ status: 200
   "id": 4,
   "description": "An updated event description!",
   "media": {
-    "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/7",
-    "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/5",
-    "media_type": 0
+    "media_url": "http://lorempixel.com/600/338/sports/3",
+    "media_thumb": "http://lorempixel.com/300/169/sports/9",
+    "media_type": 0,
+    "width": 600,
+    "height": 338,
+    "thumb_width": 300,
+    "thumb_height": 169
   },
   "comments_count": 1,
   "attendee_count": 1,
@@ -2201,9 +2253,13 @@ status: 201
   "id": 15,
   "description": "Et rerum vero eveniet excepturi.",
   "media": {
-    "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/6",
-    "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/5",
-    "media_type": 0
+    "media_url": "http://lorempixel.com/600/338/sports/3",
+    "media_thumb": "http://lorempixel.com/300/169/sports/9",
+    "media_type": 0,
+    "width": 600,
+    "height": 338,
+    "thumb_width": 300,
+    "thumb_height": 169
   },
   "comments_count": 0,
   "attendee_count": 1,
@@ -2289,9 +2345,13 @@ status: 200
   "id": 15,
   "description": "Et rerum vero eveniet excepturi.",
   "media": {
-    "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/6",
-    "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/5",
-    "media_type": 0
+    "media_url": "http://lorempixel.com/600/338/sports/3",
+    "media_thumb": "http://lorempixel.com/300/169/sports/9",
+    "media_type": 0,
+    "width": 600,
+    "height": 338,
+    "thumb_width": 300,
+    "thumb_height": 169
   },
   "comments_count": 0,
   "attendee_count": 1,
@@ -2372,9 +2432,13 @@ status: 201
   "id": 50,
   "description": "Veniam omnis mollitia est similique deleniti accusantium cumque.",
   "media": {
-    "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/8",
-    "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/9",
-    "media_type": 0
+    "media_url": "http://lorempixel.com/600/338/sports/3",
+    "media_thumb": "http://lorempixel.com/300/169/sports/9",
+    "media_type": 0,
+    "width": 600,
+    "height": 338,
+    "thumb_width": 300,
+    "thumb_height": 169
   },
   "comments_count": 0,
   "attendee_count": 1,
@@ -2462,9 +2526,13 @@ status: 200
   "id": 50,
   "description": "Veniam omnis mollitia est similique deleniti accusantium cumque.",
   "media": {
-    "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/8",
-    "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/9",
-    "media_type": 0
+    "media_url": "http://lorempixel.com/600/338/sports/3",
+    "media_thumb": "http://lorempixel.com/300/169/sports/9",
+    "media_type": 0,
+    "width": 600,
+    "height": 338,
+    "thumb_width": 300,
+    "thumb_height": 169
   },
   "comments_count": 0,
   "attendee_count": 1,
@@ -2931,9 +2999,13 @@ status: 200
       "id": 2,
       "description": "Gavin's Coffee event description for <a class=\"user\" id=\"2\">Kerry Knight<\/a> and <a class=\"user\" id=\"1\">Jordan Godwin<\/a>.",
       "media": {
-        "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/8",
-        "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/8",
-        "media_type": null
+        "media_url": "http://lorempixel.com/600/338/sports/3",
+        "media_thumb": "http://lorempixel.com/300/169/sports/9",
+        "media_type": 0,
+        "width": 600,
+        "height": 338,
+        "thumb_width": 300,
+        "thumb_height": 169
       },
       "starts_at": "2017-01-21T03:22:12.000Z",
       "ends_at": "2017-01-21T03:22:17.719Z",
@@ -3309,9 +3381,13 @@ status: 200
     "id": 2,
     "description": "Gavin's Coffee event description for <a class=\"user\" id=\"2\">Kerry Knight<\/a> and <a class=\"user\" id=\"1\">Jordan Godwin<\/a>.",
     "media": {
-      "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/8",
-      "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/8",
-      "media_type": null
+      "media_url": "http://lorempixel.com/600/338/sports/3",
+      "media_thumb": "http://lorempixel.com/300/169/sports/9",
+      "media_type": 0,
+      "width": 600,
+      "height": 338,
+      "thumb_width": 300,
+      "thumb_height": 169
     },
     "starts_at": "2017-01-21T03:22:12.000Z",
     "ends_at": "2017-01-21T03:22:17.719Z",
@@ -3409,9 +3485,13 @@ status: 200
     "id": 2,
     "description": "Gavin's Coffee event description for <a class=\"user\" id=\"2\">Kerry Knight<\/a> and <a class=\"user\" id=\"1\">Jordan Godwin<\/a>.",
     "media": {
-      "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/8",
-      "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/8",
-      "media_type": null
+      "media_url": "http://lorempixel.com/600/338/sports/3",
+      "media_thumb": "http://lorempixel.com/300/169/sports/9",
+      "media_type": 0,
+      "width": 600,
+      "height": 338,
+      "thumb_width": 300,
+      "thumb_height": 169
     },
     "starts_at": "2017-01-21T03:22:12.000Z",
     "ends_at": "2017-01-21T03:22:17.719Z",
@@ -3503,9 +3583,13 @@ status: 200
     "id": 2,
     "description": "Gavin's Coffee event description for <a class=\"user\" id=\"2\">Kerry Knight<\/a> and <a class=\"user\" id=\"1\">Jordan Godwin<\/a>.",
     "media": {
-      "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/8",
-      "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/8",
-      "media_type": null
+      "media_url": "http://lorempixel.com/600/338/sports/3",
+      "media_thumb": "http://lorempixel.com/300/169/sports/9",
+      "media_type": 0,
+      "width": 600,
+      "height": 338,
+      "thumb_width": 300,
+      "thumb_height": 169
     },
     "starts_at": "2017-01-21T03:22:12.000Z",
     "ends_at": "2017-01-21T03:22:17.719Z",
@@ -3603,9 +3687,13 @@ status: 200
     "id": 2,
     "description": "Gavin's Coffee event description for <a class=\"user\" id=\"2\">Kerry Knight<\/a> and <a class=\"user\" id=\"1\">Jordan Godwin<\/a>.",
     "media": {
-      "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/8",
-      "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/8",
-      "media_type": null
+      "media_url": "http://lorempixel.com/600/338/sports/3",
+      "media_thumb": "http://lorempixel.com/300/169/sports/9",
+      "media_type": 0,
+      "width": 600,
+      "height": 338,
+      "thumb_width": 300,
+      "thumb_height": 169
     },
     "starts_at": "2017-01-21T03:22:12.000Z",
     "ends_at": "2017-01-21T03:22:17.719Z",
@@ -3709,9 +3797,13 @@ status: 200
     "id": 3,
     "description": "Jordan's fishing trip for <a class=\"user\" id=\"2\">Kerry Knight<\/a> and <a class=\"user\" id=\"3\">Gavin Baradic<\/a> goes here",
     "media": {
-      "media_url": "http:\/\/lorempixel.com\/600\/600\/sports\/3",
-      "media_thumb": "http:\/\/lorempixel.com\/128\/128\/sports\/6",
-      "media_type": null
+      "media_url": "http://lorempixel.com/600/338/sports/3",
+      "media_thumb": "http://lorempixel.com/300/169/sports/9",
+      "media_type": 0,
+      "width": 600,
+      "height": 338,
+      "thumb_width": 300,
+      "thumb_height": 169
     },
     "starts_at": "2017-01-19T11:17:07.000Z",
     "ends_at": "2017-01-19T11:17:16.439Z",
