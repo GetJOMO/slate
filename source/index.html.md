@@ -1927,7 +1927,8 @@ Parameter | Default | Description
   },
   "tag_ids": [3, 1, 11],
   "starts_at": "2017-01-10",
-  "duration": 6,
+  "duration": 3,
+  "privacy": 2,
   "venue": {
     "id": 32,
     "name": "New Venue",
@@ -2103,7 +2104,8 @@ status: 200
     {
       "id": 1,
       "body": "See you there! I'll bring the beer!!",
-      "user_id": 1
+      "user_id": 1,
+      "created_at": "2017-02-06T22:40:59.502Z"
     }
   ]
 }
@@ -2199,7 +2201,8 @@ status: 200
     {
       "id": 1,
       "body": "See you there! I'll bring the beer!!",
-      "user_id": 1
+      "user_id": 1,
+      "created_at": "2017-02-06T22:40:59.502Z"
     }
   ]
 }
@@ -2314,7 +2317,8 @@ status: 201
     {
       "id": 1,
       "body": "See you there! I'll bring the beer!!",
-      "user_id": 1
+      "user_id": 1,
+      "created_at": "2017-02-06T22:40:59.502Z"
     }
   ]
 }
@@ -2709,6 +2713,20 @@ to join the event.
 ```shell
 https://wildfire-dev.herokuapp.com/api/v1/events/22/comments
 ```
+```json
+{
+  "body": "See you there! I'll bring the beer!!",
+  "media": {
+    "media_url": "test.com/img",
+    "media_thumb": "test.com/img_thumb",
+    "media_type": 0,
+    "height": 300,
+    "width": 300,
+    "thumb_height": 100,
+    "thumb_width": 100
+  }
+}
+```
 
 > A JSON response like the following would be returned:
 
@@ -2717,27 +2735,25 @@ status: 200
 ```
 ```json
 {
-  "id": 1,
+  "id": 2447,
   "body": "See you there! I'll bring the beer!!",
   "event_id": 12,
-  "created_at": "2017-02-06T22:40:59.502Z",
+  "created_at": "2017-02-15T16:17:29.565Z",
+  "media": {
+    "media_url": "test.com/img",
+    "media_thumb": "test.com/img_thumb",
+    "media_type": 0,
+    "height": 300,
+    "width": 300,
+    "thumb_height": 100,
+    "thumb_width": 100
+  },
   "user": {
-    "id": 74,
+    "id": 1,
     "first_name": "Jordan",
     "last_name": "Godwin",
-    "avatar_url": "http://lorempixel.com/300/300/sports/9",
-    "profile_tags": [
-      {
-        "id": 135,
-        "name": "Duke Basketball",
-        "parent_id": 131
-      },
-      {
-        "id": 284,
-        "name": "Boating",
-        "parent_id": 279
-      }
-    ]
+    "avatar_url": "http://lorempixel.com/300/300/sports/1",
+    "profile_tags": []
   }
 }
 ```
