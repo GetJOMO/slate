@@ -1033,7 +1033,11 @@ status: 201
 Description: Use this endpoint to report a target user (create a block w/ report_status)
 for the current_user with the target of another user.
 
-Note: Use the _Unblock User_ endpoint to remove the block with report status.
+Report Status Enum values: `{ spam: 0, messages: 1, media: 2, bullying: 3, other: 4 }`
+
+*Note:* By reporting a user, you are essentially blocking the user and
+including a report status. Therefore, use the _Unblock User_ endpoint
+to remove the block with report status.
 
 ### HTTP Request
 
