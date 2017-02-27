@@ -3995,7 +3995,7 @@ Parameter | Default | Description
 `lat` | n/a | latitude coordinate of the requesting client
 `lng` | n/a | longitude coordinate of the requesting client
 
-## Local Map Feed [Pg'd]
+## Local Map Feed
 
 > Send a POST request with required parameters:
 
@@ -4024,6 +4024,9 @@ status: 200
     "follow_status": true,
     "foursquare_id": "5759a613cd1040089032b492",
     "active_events_count": 14
+  },
+  {
+    ...
   },
   {
     "id": 2,
@@ -4081,6 +4084,105 @@ events for that venue.
 ### HTTP Request
 
 `GET https://wildfire-staging.herokuapp.com/api/v1/feeds/local_map`
+
+### Query Parameters (required)
+
+Parameter | Default | Description
+--------- | ------- | -----------
+`lat` | n/a | latitude coordinate of the requesting client
+`lng` | n/a | longitude coordinate of the requesting client
+`radius` | n/a | radius in meters from the users current location
+
+## Filtered Map Feed
+
+> Send a POST request with required parameters:
+
+```shell
+GET https://wildfire-staging.herokuapp.com/api/v1/feeds/filtered_map?lat=34.225723432&lng=-77.944723238&radius=8000
+```
+
+> A JSON response like the following would be returned:
+
+```shell
+status: 200
+```
+```json
+[
+  {
+    "id": 1,
+    "name": "Untappd HQ - ILM",
+    "city": "Wilmington",
+    "state": "NC",
+    "icon_url": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/shops\/technology_64.png",
+    "coords": {
+      "lat": 34.235789629482,
+      "lng": -77.947483062744
+    },
+    "category": "Tech Startup",
+    "follow_status": true,
+    "foursquare_id": "5759a613cd1040089032b492",
+    "active_events_count": 14
+  },
+  {
+    "id": 2,
+    "name": "Duck & Dive Pub",
+    "city": "Wilmington",
+    "state": "NC",
+    "icon_url": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/nightlife\/pub_64.png",
+    "coords": {
+      "lat": 34.234175252892,
+      "lng": -77.947961431061
+    },
+    "category": "Pub",
+    "follow_status": false,
+    "foursquare_id": "4bf58dd8d48988d11b941735",
+    "active_events_count": 11
+  },
+  {
+    ...
+  },
+  {
+    "id": 3,
+    "name": "24 South Coffee House",
+    "city": "Wilmington",
+    "state": "NC",
+    "icon_url": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/food\/coffeeshop_64.png",
+    "coords": {
+      "lat": 34.234456599111,
+      "lng": -77.948524800075
+    },
+    "category": "Coffee Shop",
+    "follow_status": false,
+    "foursquare_id": "53fa55f3498ed31bb942100a",
+    "active_events_count": 7
+  },
+  {
+    "id": 4,
+    "name": "Masonboro Inlet",
+    "city": "Wilmington",
+    "state": "NC",
+    "icon_url": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/parks_outdoors\/beach_64.png",
+    "coords": {
+      "lat": 34.182547362367,
+      "lng": -77.81902944261
+    },
+    "category": "Beach",
+    "follow_status": false,
+    "foursquare_id": "4c30a001a0ced13a3c61126e",
+    "active_events_count": 3
+  }
+]
+```
+
+Description: This endpoint will return an array of Venues based on
+the filter settings that the current_user has set. Each venue object
+includes the count of _unfinished_ venues. Use the
+`/api/v1/venues/:venue_id/events` endpoint to retrieve the unfinished
+events for each venue.
+
+### HTTP Request
+
+`GET https://wildfire-staging.herokuapp.com/api/v1/feeds/filtered_map`
 
 ### Query Parameters (required)
 
