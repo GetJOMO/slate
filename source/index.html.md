@@ -2529,94 +2529,6 @@ for the specified private event.
 
 `POST https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/requests`
 
-## Ignore a Join Request
-
-> Send a DELETE request with required parameters:
-
-```shell
-https://wildfire-dev.herokuapp.com/api/v1/events/32/requests/:user_id
-```
-
-> A JSON response like the following would be returned:
-
-```shell
-status: 200
-```
-```json
-{
-  "id": 50,
-  "description": "Veniam omnis mollitia est similique deleniti accusantium cumque.",
-  "media": {
-    "media_url": "http://lorempixel.com/600/338/sports/3",
-    "media_thumb": "http://lorempixel.com/300/169/sports/9",
-    "media_type": 0,
-    "width": 600,
-    "height": 338,
-    "thumb_width": 300,
-    "thumb_height": 169
-  },
-  "comments_count": 0,
-  "attendee_count": 1,
-  "privacy": 1,
-  "starts_at": "2017-01-03T10:40:17.000Z",
-  "ends_at": "2017-01-03T10:40:17.660Z",
-  "duration": 0.66,
-  "host": {
-    "id": 21,
-    "first_name": "Reagan",
-    "last_name": "Smitham",
-    "dob": "1984-07-10"
-  },
-  "venue": {
-    "id": 32,
-    "name": "New Venue",
-    "city": "Wilmington",
-    "state": "NC",
-    "icon_url": "https:\/\/ss0.4sqi.net\/img\/categories_v2\/nightlife\/default_bg_64.png",
-    "coords": {
-      "lat": 34.4332,
-      "lng": -77.8485
-    },
-    "follow_status": false,
-    "category": "Beach Bar",
-    "foursquare_id": "fsdf37fds483df747af"
-  },
-  "tags": [
-    {
-      "id": 160,
-      "name": "IW Cardinals Basketball",
-      "parent_id": 155,
-    }
-  ],
-  "attendees": [
-    {
-      "id": 276,
-      "first_name": "Adeline",
-      "last_name": "Ziemann",
-      "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/2",
-      "block_status": false,
-      "follow_status": false
-    }
-  ],
-  "requests": [
-    {
-      "id": 2,
-      "first_name": "Kerry",
-      "last_name": "Knight",
-      "avatar_url": "http:\/\/lorempixel.com\/300\/300\/sports\/2"
-    }
-  ],
-  "comments": []
-}
-```
-
-This endpoint will _destroy_ a previously created 'request' (Attendant record w/ a `:requested` status)
-from the specified event.
-
-### HTTP Request
-
-`DELETE https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/requests/:user_id`
-
 ## Show Event Attendees [Pg'd]
 
 > Send a GET request with required parameters:
@@ -2780,7 +2692,7 @@ by the `requested_at` attribute beginning with the most recent.
 
 `GET https://wildfire-staging.herokuapp.com/api/v1/join_requests`
 
-## Confirm/Approve an Event Join Request
+## Accept an Event Join Request
 
 > Send a PATCH request with required parameters:
 
@@ -2808,6 +2720,32 @@ is a single JSON object that includes the updated attendee_status
 ### HTTP Request
 
 `PATCH https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/requests/:user_id`
+
+## Ignore a Join Request
+
+> Send a DELETE request with required parameters:
+
+```shell
+https://wildfire-dev.herokuapp.com/api/v1/events/32/requests/7
+```
+
+> A JSON response like the following would be returned:
+
+```shell
+status: 200
+```
+```json
+{
+  "head": "no_content"
+}
+```
+
+This endpoint will _destroy_ a previously created 'request' (Attendant record w/ a `:requested` status)
+from the specified event.
+
+### HTTP Request
+
+`DELETE https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/requests/:user_id`
 
 ## Create Event Comment
 
