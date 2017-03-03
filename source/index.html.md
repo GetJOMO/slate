@@ -2675,7 +2675,7 @@ the event.
 > Send a GET request with required parameters:
 
 ```shell
-https://wildfire-dev.herokuapp.com/api/v1/events/22/requests
+https://wildfire-dev.herokuapp.com/api/v1/join_requests
 ```
 
 > A JSON response like the following would be returned:
@@ -2686,42 +2686,103 @@ status: 200
 ```json
 [
   {
-    "id": 45,
-    "first_name": "Leonora",
-    "last_name": "Bergstrom",
-    "avatar_url": "http://lorempixel.com/300/300/cats/6",
+    "id": 7,
+    "first_name": "Roy",
+    "last_name": "Bradtke",
+    "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/2",
+    "event_id": 38,
+    "description": "Event 38: Kerry's sports party for <a class=\"user\" id=\"1\">Jordan Godwin<\/a> and <a class=\"user\" id=\"3\">Gavin Baradic<\/a>.",
+    "requested_at": "2017-03-02T21:56:39.258Z",
+    "block_status": false,
     "follow_status": false
   },
   {
-    "id": 324,
-    "first_name": "Arvid",
-    "last_name": "Mertz",
-    "avatar_url": "http://lorempixel.com/300/300/cats/7",
-    "follow_status": true
-  },
-  {
-    "id": 363,
-    "first_name": "Eugene",
-    "last_name": "Hand",
-    "avatar_url": "http://lorempixel.com/300/300/cats/9",
+    "id": 11,
+    "first_name": "Abel",
+    "last_name": "Berge",
+    "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/9",
+    "event_id": 26,
+    "description": "Event 26: Kerry's sports party for <a class=\"user\" id=\"1\">Jordan Godwin<\/a> and <a class=\"user\" id=\"3\">Gavin Baradic<\/a>.",
+    "requested_at": "2017-03-02T21:56:31.896Z",
+    "block_status": false,
     "follow_status": false
   },
   {
-    "id": 473,
-    "first_name": "Jett",
-    "last_name": "Shanahan",
-    "avatar_url": "http://lorempixel.com/300/300/cats/3",
+    "id": 13,
+    "first_name": "Juvenal",
+    "last_name": "Graham",
+    "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/7",
+    "event_id": 32,
+    "description": "Event 32: Kerry's sports party for <a class=\"user\" id=\"1\">Jordan Godwin<\/a> and <a class=\"user\" id=\"3\">Gavin Baradic<\/a>.",
+    "requested_at": "2017-03-02T21:56:35.553Z",
+    "block_status": false,
+    "follow_status": false
+  },
+  {
+    "id": 18,
+    "first_name": "Hassie",
+    "last_name": "Medhurst",
+    "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/7",
+    "event_id": 14,
+    "description": "Event 14: Kerry's sports party for <a class=\"user\" id=\"1\">Jordan Godwin<\/a> and <a class=\"user\" id=\"3\">Gavin Baradic<\/a>.",
+    "requested_at": "2017-03-02T21:56:24.297Z",
+    "block_status": false,
+    "follow_status": false
+  },
+  {
+    "id": 19,
+    "first_name": "Nicholaus",
+    "last_name": "Weimann",
+    "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/7",
+    "event_id": 38,
+    "description": "Event 38: Kerry's sports party for <a class=\"user\" id=\"1\">Jordan Godwin<\/a> and <a class=\"user\" id=\"3\">Gavin Baradic<\/a>.",
+    "requested_at": "2017-03-02T21:56:39.037Z",
+    "block_status": false,
+    "follow_status": false
+  },
+  {
+    "id": 29,
+    "first_name": "Cara",
+    "last_name": "Hermann",
+    "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/5",
+    "event_id": 14,
+    "description": "Event 14: Kerry's sports party for <a class=\"user\" id=\"1\">Jordan Godwin<\/a> and <a class=\"user\" id=\"3\">Gavin Baradic<\/a>.",
+    "requested_at": "2017-03-02T21:56:24.287Z",
+    "block_status": false,
+    "follow_status": false
+  },
+  {
+    "id": 29,
+    "first_name": "Cara",
+    "last_name": "Hermann",
+    "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/5",
+    "event_id": 26,
+    "description": "Event 26: Kerry's sports party for <a class=\"user\" id=\"1\">Jordan Godwin<\/a> and <a class=\"user\" id=\"3\">Gavin Baradic<\/a>.",
+    "requested_at": "2017-03-02T21:56:31.843Z",
+    "block_status": false,
+    "follow_status": false
+  },
+  {
+    "id": 44,
+    "first_name": "Gunnar",
+    "last_name": "West",
+    "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/1",
+    "event_id": 14,
+    "description": "Event 14: Kerry's sports party for <a class=\"user\" id=\"1\">Jordan Godwin<\/a> and <a class=\"user\" id=\"3\">Gavin Baradic<\/a>.",
+    "requested_at": "2017-03-02T21:56:24.347Z",
+    "block_status": false,
     "follow_status": false
   }
 ]
 ```
 
 This endpoint will return an array of users who are have requested
-to join the event.
+to join any of your event active or future events. These are ordered
+by the `requested_at` attribute beginning with the most recent.
 
 ### HTTP Request
 
-`GET https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/requests`
+`GET https://wildfire-staging.herokuapp.com/api/v1/join_requests`
 
 ## Create Event Comment
 
