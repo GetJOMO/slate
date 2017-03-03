@@ -2529,7 +2529,7 @@ for the specified private event.
 
 `POST https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/requests`
 
-## Remove/Ignore a Join Request
+## Ignore a Join Request
 
 > Send a DELETE request with required parameters:
 
@@ -2670,7 +2670,7 @@ the event.
 
 `GET https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/attendees`
 
-## Show Event Requests [Pg'd]
+## Join Requests for Event Host [Pg'd]
 
 > Send a GET request with required parameters:
 
@@ -2693,6 +2693,7 @@ status: 200
     "event_id": 38,
     "description": "Event 38: Kerry's sports party for <a class=\"user\" id=\"1\">Jordan Godwin<\/a> and <a class=\"user\" id=\"3\">Gavin Baradic<\/a>.",
     "requested_at": "2017-03-02T21:56:39.258Z",
+    "attendee_status": 1,
     "block_status": false,
     "follow_status": false
   },
@@ -2704,6 +2705,7 @@ status: 200
     "event_id": 26,
     "description": "Event 26: Kerry's sports party for <a class=\"user\" id=\"1\">Jordan Godwin<\/a> and <a class=\"user\" id=\"3\">Gavin Baradic<\/a>.",
     "requested_at": "2017-03-02T21:56:31.896Z",
+    "attendee_status": 1,
     "block_status": false,
     "follow_status": false
   },
@@ -2715,6 +2717,7 @@ status: 200
     "event_id": 32,
     "description": "Event 32: Kerry's sports party for <a class=\"user\" id=\"1\">Jordan Godwin<\/a> and <a class=\"user\" id=\"3\">Gavin Baradic<\/a>.",
     "requested_at": "2017-03-02T21:56:35.553Z",
+    "attendee_status": 1,
     "block_status": false,
     "follow_status": false
   },
@@ -2726,6 +2729,7 @@ status: 200
     "event_id": 14,
     "description": "Event 14: Kerry's sports party for <a class=\"user\" id=\"1\">Jordan Godwin<\/a> and <a class=\"user\" id=\"3\">Gavin Baradic<\/a>.",
     "requested_at": "2017-03-02T21:56:24.297Z",
+    "attendee_status": 1,
     "block_status": false,
     "follow_status": false
   },
@@ -2737,6 +2741,7 @@ status: 200
     "event_id": 38,
     "description": "Event 38: Kerry's sports party for <a class=\"user\" id=\"1\">Jordan Godwin<\/a> and <a class=\"user\" id=\"3\">Gavin Baradic<\/a>.",
     "requested_at": "2017-03-02T21:56:39.037Z",
+    "attendee_status": 1,
     "block_status": false,
     "follow_status": false
   },
@@ -2748,17 +2753,7 @@ status: 200
     "event_id": 14,
     "description": "Event 14: Kerry's sports party for <a class=\"user\" id=\"1\">Jordan Godwin<\/a> and <a class=\"user\" id=\"3\">Gavin Baradic<\/a>.",
     "requested_at": "2017-03-02T21:56:24.287Z",
-    "block_status": false,
-    "follow_status": false
-  },
-  {
-    "id": 29,
-    "first_name": "Cara",
-    "last_name": "Hermann",
-    "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/5",
-    "event_id": 26,
-    "description": "Event 26: Kerry's sports party for <a class=\"user\" id=\"1\">Jordan Godwin<\/a> and <a class=\"user\" id=\"3\">Gavin Baradic<\/a>.",
-    "requested_at": "2017-03-02T21:56:31.843Z",
+    "attendee_status": 1,
     "block_status": false,
     "follow_status": false
   },
@@ -2770,6 +2765,7 @@ status: 200
     "event_id": 14,
     "description": "Event 14: Kerry's sports party for <a class=\"user\" id=\"1\">Jordan Godwin<\/a> and <a class=\"user\" id=\"3\">Gavin Baradic<\/a>.",
     "requested_at": "2017-03-02T21:56:24.347Z",
+    "attendee_status": 1,
     "block_status": false,
     "follow_status": false
   }
@@ -2783,6 +2779,35 @@ by the `requested_at` attribute beginning with the most recent.
 ### HTTP Request
 
 `GET https://wildfire-staging.herokuapp.com/api/v1/join_requests`
+
+## Confirm/Approve an Event Join Request
+
+> Send a PATCH request with required parameters:
+
+```shell
+https://wildfire-dev.herokuapp.com/api/v1/events/38/requests/7
+```
+
+> A JSON response like the following would be returned:
+
+```shell
+status: 200
+```
+```json
+{
+  "id": 7,
+  "event_id": 38,
+  "attendee_status": 2,
+}
+```
+
+This endpoint will update a given user's join request from
+`requested` to `joined` (`1` => `2`). The returned response
+is a single JSON object that includes the updated attendee_status
+
+### HTTP Request
+
+`PATCH https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/requests/:user_id`
 
 ## Create Event Comment
 
