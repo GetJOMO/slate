@@ -1424,7 +1424,7 @@ user has hosted.</p>
 <blockquote>
 <p>Send a GET request with required parameters:</p>
 </blockquote>
-<pre class="highlight shell"><code>https://wildfire-staging.herokuapp.com/api/v1/users/276/events/joined
+<pre class="highlight shell"><code>https://wildfire-staging.herokuapp.com/api/v1/users/276/attendants/joins
 </code></pre>
 <blockquote>
 <p>A JSON response like the following would be returned:</p>
@@ -1644,14 +1644,14 @@ user has joined.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/users/:id/events/joined</code></p>
+<p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/users/:id/attendants/joins</code></p>
 
 <h2 id="event-join-requests-for-user-pg-39-d">Event Join Requests for User [Pg&rsquo;d]</h2>
 
 <blockquote>
 <p>Send a GET request with required parameters:</p>
 </blockquote>
-<pre class="highlight shell"><code>https://wildfire-staging.herokuapp.com/api/v1/users/57/events/requested
+<pre class="highlight shell"><code>https://wildfire-staging.herokuapp.com/api/v1/users/57/attendants/requests
 </code></pre>
 <blockquote>
 <p>A JSON response like the following would be returned:</p>
@@ -1795,7 +1795,113 @@ user has joined.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/users/:id/events/requested</code></p>
+<p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/users/:id/attendants/requests</code></p>
+
+<h2 id="all-join-requests-for-hosted-events-pg-39-d">All Join Requests for Hosted Events [Pg&rsquo;d]</h2>
+
+<blockquote>
+<p>Send a GET request with required parameters:</p>
+</blockquote>
+<pre class="highlight shell"><code>https://wildfire-dev.herokuapp.com/api/v1/users/23/events/requests
+</code></pre>
+<blockquote>
+<p>A JSON response like the following would be returned:</p>
+</blockquote>
+<pre class="highlight shell"><code>status: 200
+</code></pre><pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Roy"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bradtke"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:\/\/lorempixel.com\/300\/300\/cats\/2"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">38</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Event 38: Kerry's sports party for &lt;a class=\"user\" id=\"1\"&gt;Jordan Godwin&lt;\/a&gt; and &lt;a class=\"user\" id=\"3\"&gt;Gavin Baradic&lt;\/a&gt;."</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"requested_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-02T21:56:39.258Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"attendee_status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"block_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Abel"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Berge"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:\/\/lorempixel.com\/300\/300\/cats\/9"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">26</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Event 26: Kerry's sports party for &lt;a class=\"user\" id=\"1\"&gt;Jordan Godwin&lt;\/a&gt; and &lt;a class=\"user\" id=\"3\"&gt;Gavin Baradic&lt;\/a&gt;."</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"requested_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-02T21:56:31.896Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"attendee_status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"block_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Juvenal"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Graham"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:\/\/lorempixel.com\/300\/300\/cats\/7"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Event 32: Kerry's sports party for &lt;a class=\"user\" id=\"1\"&gt;Jordan Godwin&lt;\/a&gt; and &lt;a class=\"user\" id=\"3\"&gt;Gavin Baradic&lt;\/a&gt;."</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"requested_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-02T21:56:35.553Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"attendee_status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"block_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hassie"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Medhurst"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:\/\/lorempixel.com\/300\/300\/cats\/7"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Event 14: Kerry's sports party for &lt;a class=\"user\" id=\"1\"&gt;Jordan Godwin&lt;\/a&gt; and &lt;a class=\"user\" id=\"3\"&gt;Gavin Baradic&lt;\/a&gt;."</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"requested_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-02T21:56:24.297Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"attendee_status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"block_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nicholaus"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Weimann"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:\/\/lorempixel.com\/300\/300\/cats\/7"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">38</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Event 38: Kerry's sports party for &lt;a class=\"user\" id=\"1\"&gt;Jordan Godwin&lt;\/a&gt; and &lt;a class=\"user\" id=\"3\"&gt;Gavin Baradic&lt;\/a&gt;."</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"requested_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-02T21:56:39.037Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"attendee_status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"block_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">29</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cara"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hermann"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:\/\/lorempixel.com\/300\/300\/cats\/5"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Event 14: Kerry's sports party for &lt;a class=\"user\" id=\"1\"&gt;Jordan Godwin&lt;\/a&gt; and &lt;a class=\"user\" id=\"3\"&gt;Gavin Baradic&lt;\/a&gt;."</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"requested_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-02T21:56:24.287Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"attendee_status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"block_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">44</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gunnar"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"West"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:\/\/lorempixel.com\/300\/300\/cats\/1"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Event 14: Kerry's sports party for &lt;a class=\"user\" id=\"1\"&gt;Jordan Godwin&lt;\/a&gt; and &lt;a class=\"user\" id=\"3\"&gt;Gavin Baradic&lt;\/a&gt;."</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"requested_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-02T21:56:24.347Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"attendee_status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"block_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint will return an array of users who have requested
+to join <em>any</em> of the specified user&rsquo;s active or future events. These are ordered
+by the <code class="prettyprint">requested_at</code> attribute beginning with the most recent.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/users/:user_id/events/requests</code></p>
 
 <h2 id="toggle-event-notifications">Toggle Event Notifications</h2>
 
@@ -2272,12 +2378,12 @@ ALL of the Event&rsquo;s attributes, including the ones that aren&rsquo;t being 
 
 <p><code class="prettyprint">DELETE https://wildfire-dev.herokuapp.com/api/v1/events/:id</code></p>
 
-<h2 id="join-an-event">Join an Event</h2>
+<h2 id="join-request-to-join-an-event">Join/Request to Join an Event</h2>
 
 <blockquote>
 <p>Send a POST request with required parameters:</p>
 </blockquote>
-<pre class="highlight shell"><code>https://wildfire-dev.herokuapp.com/api/v1/events/15/join
+<pre class="highlight shell"><code>https://wildfire-dev.herokuapp.com/api/v1/events/15/joins
 </code></pre>
 <blockquote>
 <p>A JSON response like the following would be returned:</p>
@@ -2355,19 +2461,20 @@ ALL of the Event&rsquo;s attributes, including the ones that aren&rsquo;t being 
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint will create a &#39;join&rsquo; (Attendant record w/ an <code class="prettyprint">:attending</code> status)
-for the specified event.</p>
+<p>This endpoint, depending on the state of the event&rsquo;s <code class="prettyprint">:privacy</code> attribute,
+will create an Attendant record with either an <code class="prettyprint">:attending</code> or <code class="prettyprint">:requested</code>
+status; <code class="prettyprint">attending</code> status when event is public and <code class="prettyprint">requested</code> when event is private.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/join</code></p>
+<p><code class="prettyprint">POST https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/joins</code></p>
 
-<h2 id="unjoin-an-event">Unjoin an Event</h2>
+<h2 id="remove-a-join-an-event">Remove a Join an Event</h2>
 
 <blockquote>
 <p>Send a DELETE request with required parameters:</p>
 </blockquote>
-<pre class="highlight shell"><code>https://wildfire-dev.herokuapp.com/api/v1/events/15/unjoin
+<pre class="highlight shell"><code>https://wildfire-dev.herokuapp.com/api/v1/events/15/joins
 </code></pre>
 <blockquote>
 <p>A JSON response like the following would be returned:</p>
@@ -2444,99 +2551,9 @@ from the specified event.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">DELETE https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/unjoin</code></p>
+<p><code class="prettyprint">DELETE https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/joins</code></p>
 
-<h2 id="create-an-event-join-request">Create an Event Join Request</h2>
-
-<blockquote>
-<p>Send a POST request with required parameters:</p>
-</blockquote>
-<pre class="highlight shell"><code>https://wildfire-dev.herokuapp.com/api/v1/events/50/requests
-</code></pre>
-<blockquote>
-<p>A JSON response like the following would be returned:</p>
-</blockquote>
-<pre class="highlight shell"><code>status: 201
-</code></pre><pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Veniam omnis mollitia est similique deleniti accusantium cumque."</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"media"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"media_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://lorempixel.com/600/338/sports/3"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"media_thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://lorempixel.com/300/169/sports/9"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"media_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">338</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"thumb_width"</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"thumb_height"</span><span class="p">:</span><span class="w"> </span><span class="mi">169</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="nt">"comments_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"attendee_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"privacy"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"starts_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-03T10:40:17.000Z"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"ends_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-03T10:40:17.660Z"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.66</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"host"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Reagan"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smitham"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1984-07-10"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="nt">"venue"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New Venue"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wilmington"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NC"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"icon_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:\/\/ss0.4sqi.net\/img\/categories_v2\/nightlife\/default_bg_64.png"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"coords"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.4332</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.8485</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Beach Bar"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"foursquare_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fsdf37fds483df747af"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">160</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IW Cardinals Basketball"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">155</span><span class="p">,</span><span class="w">
-    </span><span class="err">}</span><span class="w">
-  </span><span class="p">],</span><span class="w">
-  </span><span class="nt">"attendees"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">276</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Adeline"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ziemann"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:\/\/lorempixel.com\/300\/300\/cats\/2"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"block_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">],</span><span class="w">
-  </span><span class="nt">"requests"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jordan"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Godwin"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:\/\/lorempixel.com\/300\/300\/sports\/2"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kerry"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Knight"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:\/\/lorempixel.com\/300\/300\/sports\/2"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">],</span><span class="w">
-  </span><span class="nt">"comments"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint will create a &#39;request&rsquo; (Attendant record w/ a <code class="prettyprint">:requested</code> status)
-for the specified private event.</p>
-
-<h3 id="http-request">HTTP Request</h3>
-
-<p><code class="prettyprint">POST https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/requests</code></p>
-
-<h2 id="show-event-attendees-pg-39-d">Show Event Attendees [Pg&rsquo;d]</h2>
+<h2 id="retrieve-join-attendees-for-event-pg-39-d">Retrieve Join (Attendees) for Event [Pg&rsquo;d]</h2>
 
 <blockquote>
 <p>Send a GET request with required parameters:</p>
@@ -2583,14 +2600,14 @@ the event.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/attendees</code></p>
+<p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/joins</code></p>
 
-<h2 id="join-requests-for-event-host-pg-39-d">Join Requests for Event Host [Pg&rsquo;d]</h2>
+<h2 id="retrieve-join-requests-for-event-pg-39-d">Retrieve Join Requests for Event [Pg&rsquo;d]</h2>
 
 <blockquote>
 <p>Send a GET request with required parameters:</p>
 </blockquote>
-<pre class="highlight shell"><code>https://wildfire-dev.herokuapp.com/api/v1/join_requests
+<pre class="highlight shell"><code>https://wildfire-dev.herokuapp.com/api/v1/events/327/requests
 </code></pre>
 <blockquote>
 <p>A JSON response like the following would be returned:</p>
@@ -2683,15 +2700,14 @@ the event.</p>
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>This endpoint will return an array of users who are have requested
-to join any of your event active or future events. These are ordered
-by the <code class="prettyprint">requested_at</code> attribute beginning with the most recent.</p>
+<p>This endpoint will return an array of users who have <em>requested</em>
+to join the specified event.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/join_requests</code></p>
+<p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/requests</code></p>
 
-<h2 id="accept-an-event-join-request">Accept an Event Join Request</h2>
+<h2 id="approve-an-event-join-request">Approve an Event Join Request</h2>
 
 <blockquote>
 <p>Send a PATCH request with required parameters:</p>
@@ -2710,7 +2726,7 @@ by the <code class="prettyprint">requested_at</code> attribute beginning with th
 </span></code></pre>
 <p>This endpoint will update a given user&rsquo;s join request from
 <code class="prettyprint">requested</code> to <code class="prettyprint">joined</code> (<code class="prettyprint">1</code> =&gt; <code class="prettyprint">2</code>). The returned response
-is a single JSON object that includes the updated attendee_status</p>
+is a single JSON object that includes the updated attendee_status.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -2827,7 +2843,7 @@ from the specified event.</p>
     </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
     </span><span class="nt">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Eveniet id officiis libero architecto quia."</span><span class="p">,</span><span class="w">
     </span><span class="nt">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-06T22:40:59.502Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-06T22:30:59.502Z"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">74</span><span class="p">,</span><span class="w">
       </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Eulalia"</span><span class="p">,</span><span class="w">
@@ -2853,7 +2869,7 @@ from the specified event.</p>
     </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
     </span><span class="nt">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ducimus sed sunt voluptatem laborum dolores."</span><span class="p">,</span><span class="w">
     </span><span class="nt">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-06T22:40:59.502Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-06T22:33:59.502Z"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">63</span><span class="p">,</span><span class="w">
       </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alena"</span><span class="p">,</span><span class="w">
@@ -2913,7 +2929,7 @@ from the specified event.</p>
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>Description: This endpoint will return an array of comments for the specified event.</p>
+<p>Description: This endpoint will return an array of comments for the specified event in ascending order by <code class="prettyprint">:created_at</code>.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
