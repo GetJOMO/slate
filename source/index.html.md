@@ -1383,7 +1383,7 @@ user has hosted.
 > Send a GET request with required parameters:
 
 ```shell
-https://wildfire-staging.herokuapp.com/api/v1/users/276/events/joined
+https://wildfire-staging.herokuapp.com/api/v1/users/276/attendants/joins
 ```
 
 > A JSON response like the following would be returned:
@@ -1607,14 +1607,14 @@ user has joined.
 
 ### HTTP Request
 
-`GET https://wildfire-staging.herokuapp.com/api/v1/users/:id/events/joined`
+`GET https://wildfire-staging.herokuapp.com/api/v1/users/:id/attendants/joins`
 
 ## Event Join Requests for User [Pg'd]
 
 > Send a GET request with required parameters:
 
 ```shell
-https://wildfire-staging.herokuapp.com/api/v1/users/57/events/requested
+https://wildfire-staging.herokuapp.com/api/v1/users/57/attendants/requests
 ```
 
 > A JSON response like the following would be returned:
@@ -1762,7 +1762,117 @@ user has joined.
 
 ### HTTP Request
 
-`GET https://wildfire-staging.herokuapp.com/api/v1/users/:id/events/requested`
+`GET https://wildfire-staging.herokuapp.com/api/v1/users/:id/attendants/requests`
+
+## All Join Requests for Hosted Events [Pg'd]
+
+> Send a GET request with required parameters:
+
+```shell
+https://wildfire-dev.herokuapp.com/api/v1/users/23/events/requests
+```
+
+> A JSON response like the following would be returned:
+
+```shell
+status: 200
+```
+```json
+[
+  {
+    "id": 7,
+    "first_name": "Roy",
+    "last_name": "Bradtke",
+    "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/2",
+    "event_id": 38,
+    "description": "Event 38: Kerry's sports party for <a class=\"user\" id=\"1\">Jordan Godwin<\/a> and <a class=\"user\" id=\"3\">Gavin Baradic<\/a>.",
+    "requested_at": "2017-03-02T21:56:39.258Z",
+    "attendee_status": 1,
+    "block_status": false,
+    "follow_status": false
+  },
+  {
+    "id": 11,
+    "first_name": "Abel",
+    "last_name": "Berge",
+    "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/9",
+    "event_id": 26,
+    "description": "Event 26: Kerry's sports party for <a class=\"user\" id=\"1\">Jordan Godwin<\/a> and <a class=\"user\" id=\"3\">Gavin Baradic<\/a>.",
+    "requested_at": "2017-03-02T21:56:31.896Z",
+    "attendee_status": 1,
+    "block_status": false,
+    "follow_status": false
+  },
+  {
+    "id": 13,
+    "first_name": "Juvenal",
+    "last_name": "Graham",
+    "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/7",
+    "event_id": 32,
+    "description": "Event 32: Kerry's sports party for <a class=\"user\" id=\"1\">Jordan Godwin<\/a> and <a class=\"user\" id=\"3\">Gavin Baradic<\/a>.",
+    "requested_at": "2017-03-02T21:56:35.553Z",
+    "attendee_status": 1,
+    "block_status": false,
+    "follow_status": false
+  },
+  {
+    "id": 18,
+    "first_name": "Hassie",
+    "last_name": "Medhurst",
+    "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/7",
+    "event_id": 14,
+    "description": "Event 14: Kerry's sports party for <a class=\"user\" id=\"1\">Jordan Godwin<\/a> and <a class=\"user\" id=\"3\">Gavin Baradic<\/a>.",
+    "requested_at": "2017-03-02T21:56:24.297Z",
+    "attendee_status": 1,
+    "block_status": false,
+    "follow_status": false
+  },
+  {
+    "id": 19,
+    "first_name": "Nicholaus",
+    "last_name": "Weimann",
+    "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/7",
+    "event_id": 38,
+    "description": "Event 38: Kerry's sports party for <a class=\"user\" id=\"1\">Jordan Godwin<\/a> and <a class=\"user\" id=\"3\">Gavin Baradic<\/a>.",
+    "requested_at": "2017-03-02T21:56:39.037Z",
+    "attendee_status": 1,
+    "block_status": false,
+    "follow_status": false
+  },
+  {
+    "id": 29,
+    "first_name": "Cara",
+    "last_name": "Hermann",
+    "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/5",
+    "event_id": 14,
+    "description": "Event 14: Kerry's sports party for <a class=\"user\" id=\"1\">Jordan Godwin<\/a> and <a class=\"user\" id=\"3\">Gavin Baradic<\/a>.",
+    "requested_at": "2017-03-02T21:56:24.287Z",
+    "attendee_status": 1,
+    "block_status": false,
+    "follow_status": false
+  },
+  {
+    "id": 44,
+    "first_name": "Gunnar",
+    "last_name": "West",
+    "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/1",
+    "event_id": 14,
+    "description": "Event 14: Kerry's sports party for <a class=\"user\" id=\"1\">Jordan Godwin<\/a> and <a class=\"user\" id=\"3\">Gavin Baradic<\/a>.",
+    "requested_at": "2017-03-02T21:56:24.347Z",
+    "attendee_status": 1,
+    "block_status": false,
+    "follow_status": false
+  }
+]
+```
+
+This endpoint will return an array of users who have requested
+to join *any* of the specified user's active or future events. These are ordered
+by the `requested_at` attribute beginning with the most recent.
+
+### HTTP Request
+
+`GET https://wildfire-staging.herokuapp.com/api/v1/users/:user_id/events/requests`
 
 ## Toggle Event Notifications
 
@@ -2253,12 +2363,12 @@ Description: This endpoint deletes an Event for the event host.
 
 `DELETE https://wildfire-dev.herokuapp.com/api/v1/events/:id`
 
-## Join an Event
+## Join/Request to Join an Event
 
 > Send a POST request with required parameters:
 
 ```shell
-https://wildfire-dev.herokuapp.com/api/v1/events/15/join
+https://wildfire-dev.herokuapp.com/api/v1/events/15/joins
 ```
 
 > A JSON response like the following would be returned:
@@ -2340,19 +2450,20 @@ status: 201
 }
 ```
 
-This endpoint will create a 'join' (Attendant record w/ an `:attending` status)
-for the specified event.
+This endpoint, depending on the state of the event's `:privacy` attribute,
+will create an Attendant record with either an `:attending` or `:requested`
+status; `attending` status when event is public and `requested` when event is private.
 
 ### HTTP Request
 
-`POST https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/join`
+`POST https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/joins`
 
-## Unjoin an Event
+## Remove a Join an Event
 
 > Send a DELETE request with required parameters:
 
 ```shell
-https://wildfire-dev.herokuapp.com/api/v1/events/15/unjoin
+https://wildfire-dev.herokuapp.com/api/v1/events/15/joins
 ```
 
 > A JSON response like the following would be returned:
@@ -2433,103 +2544,9 @@ from the specified event.
 
 ### HTTP Request
 
-`DELETE https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/unjoin`
+`DELETE https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/joins`
 
-## Create an Event Join Request
-
-> Send a POST request with required parameters:
-
-```shell
-https://wildfire-dev.herokuapp.com/api/v1/events/50/requests
-```
-
-> A JSON response like the following would be returned:
-
-```shell
-status: 201
-```
-```json
-{
-  "id": 50,
-  "description": "Veniam omnis mollitia est similique deleniti accusantium cumque.",
-  "media": {
-    "media_url": "http://lorempixel.com/600/338/sports/3",
-    "media_thumb": "http://lorempixel.com/300/169/sports/9",
-    "media_type": 0,
-    "width": 600,
-    "height": 338,
-    "thumb_width": 300,
-    "thumb_height": 169
-  },
-  "comments_count": 0,
-  "attendee_count": 1,
-  "privacy": 1,
-  "starts_at": "2017-01-03T10:40:17.000Z",
-  "ends_at": "2017-01-03T10:40:17.660Z",
-  "duration": 0.66,
-  "host": {
-    "id": 21,
-    "first_name": "Reagan",
-    "last_name": "Smitham",
-    "dob": "1984-07-10"
-  },
-  "venue": {
-    "id": 32,
-    "name": "New Venue",
-    "city": "Wilmington",
-    "state": "NC",
-    "icon_url": "https:\/\/ss0.4sqi.net\/img\/categories_v2\/nightlife\/default_bg_64.png",
-    "coords": {
-      "lat": 34.4332,
-      "lng": -77.8485
-    },
-    "follow_status": false,
-    "category": "Beach Bar",
-    "foursquare_id": "fsdf37fds483df747af"
-  },
-  "tags": [
-    {
-      "id": 160,
-      "name": "IW Cardinals Basketball",
-      "parent_id": 155,
-    }
-  ],
-  "attendees": [
-    {
-      "id": 276,
-      "first_name": "Adeline",
-      "last_name": "Ziemann",
-      "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/2",
-      "block_status": false,
-      "follow_status": false
-    }
-  ],
-  "requests": [
-    {
-      "id": 1,
-      "first_name": "Jordan",
-      "last_name": "Godwin",
-      "avatar_url": "http:\/\/lorempixel.com\/300\/300\/sports\/2"
-    },
-    {
-      "id": 2,
-      "first_name": "Kerry",
-      "last_name": "Knight",
-      "avatar_url": "http:\/\/lorempixel.com\/300\/300\/sports\/2"
-    }
-  ],
-  "comments": []
-}
-```
-
-This endpoint will create a 'request' (Attendant record w/ a `:requested` status)
-for the specified private event.
-
-### HTTP Request
-
-`POST https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/requests`
-
-## Show Event Attendees [Pg'd]
+## Retrieve Join (Attendees) for Event [Pg'd]
 
 > Send a GET request with required parameters:
 
@@ -2580,14 +2597,14 @@ the event.
 
 ### HTTP Request
 
-`GET https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/attendees`
+`GET https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/joins`
 
-## Join Requests for Event Host [Pg'd]
+## Retrieve Join Requests for Event [Pg'd]
 
 > Send a GET request with required parameters:
 
 ```shell
-https://wildfire-dev.herokuapp.com/api/v1/join_requests
+https://wildfire-dev.herokuapp.com/api/v1/events/327/requests
 ```
 
 > A JSON response like the following would be returned:
@@ -2684,15 +2701,14 @@ status: 200
 ]
 ```
 
-This endpoint will return an array of users who are have requested
-to join any of your event active or future events. These are ordered
-by the `requested_at` attribute beginning with the most recent.
+This endpoint will return an array of users who have _requested_
+to join the specified event.
 
 ### HTTP Request
 
-`GET https://wildfire-staging.herokuapp.com/api/v1/join_requests`
+`GET https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/requests`
 
-## Accept an Event Join Request
+## Approve an Event Join Request
 
 > Send a PATCH request with required parameters:
 
@@ -2715,7 +2731,7 @@ status: 200
 
 This endpoint will update a given user's join request from
 `requested` to `joined` (`1` => `2`). The returned response
-is a single JSON object that includes the updated attendee_status
+is a single JSON object that includes the updated attendee_status.
 
 ### HTTP Request
 
@@ -2849,7 +2865,7 @@ status: 200
     "id": 5,
     "body": "Eveniet id officiis libero architecto quia.",
     "event_id": 12,
-    "created_at": "2017-02-06T22:40:59.502Z",
+    "created_at": "2017-02-06T22:30:59.502Z",
     "user": {
       "id": 74,
       "first_name": "Eulalia",
@@ -2875,7 +2891,7 @@ status: 200
     "id": 6,
     "body": "Ducimus sed sunt voluptatem laborum dolores.",
     "event_id": 12,
-    "created_at": "2017-02-06T22:40:59.502Z",
+    "created_at": "2017-02-06T22:33:59.502Z",
     "user": {
       "id": 63,
       "first_name": "Alena",
@@ -2936,7 +2952,7 @@ status: 200
 ]
 ```
 
-Description: This endpoint will return an array of comments for the specified event.
+Description: This endpoint will return an array of comments for the specified event in ascending order by `:created_at`.
 
 ### HTTP Request
 
