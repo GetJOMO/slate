@@ -2724,6 +2724,7 @@ status: 200
 ```json
 {
   "id": 7,
+  "user_id": 324,
   "event_id": 38,
   "attendee_status": 2,
 }
@@ -2735,7 +2736,7 @@ is a single JSON object that includes the updated attendee_status.
 
 ### HTTP Request
 
-`PATCH https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/requests/:user_id`
+`PATCH https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/requests/:id`
 
 ## Ignore a Join Request
 
@@ -2761,7 +2762,7 @@ from the specified event.
 
 ### HTTP Request
 
-`DELETE https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/requests/:user_id`
+`DELETE https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/requests/:id`
 
 ## Create Event Comment
 
