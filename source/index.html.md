@@ -2463,7 +2463,7 @@ status; `attending` status when event is public and `requested` when event is pr
 > Send a DELETE request with required parameters:
 
 ```shell
-https://wildfire-dev.herokuapp.com/api/v1/events/15/joins
+https://wildfire-dev.herokuapp.com/api/v1/events/15/joins/321
 ```
 
 > A JSON response like the following would be returned:
@@ -2544,7 +2544,7 @@ from the specified event.
 
 ### HTTP Request
 
-`DELETE https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/joins`
+`DELETE https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/joins/:id`
 
 ## Retrieve Join (Attendees) for Event [Pg'd]
 
