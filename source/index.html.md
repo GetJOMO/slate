@@ -49,9 +49,9 @@ Transfer-Encoding: chunked
 ```
 
 
-### Pagination
+### Pagination<a name="pagination"></a>
 Endpoints that are paginated are denoted with `[Pg'd]` in their title. These Endpoints
-accecpt the following additional parameters:
+accept the following additional parameters:
 
 Parameter | Default | Description
 --------- | ------- | -----------
@@ -226,7 +226,7 @@ The `nonce` parameter is a JWT obtained from Layer using the Layer iOS or Androi
 to create an `identity_token` for the client to use on future Layer requests.
 </aside>
 
-## Login/Authenticate a User via Email/Password
+## Login/Auth/Re-Auth a User via Email/Password
 
 > Along with the Basic Auth Header, send a POST request with the 'nonce' from Layer
 
@@ -297,6 +297,9 @@ status: 200
 Description: Used to authenticate an existing user and obtain a Layer `identity_token`. A request
 to this endpoint should include the users's email & password in HTTP Basc Auth header, as well as the `nonce` in
 body of the request.
+
+*NOTE:* the `nonce` from Layer is only required when the client needs to
+authenticate with the Layer service (i.e. the client's session with Layer has expired).
 
 ### HTTP Request
 
@@ -640,7 +643,7 @@ This endpoint will return the profile attributes for a specified user.
 
 `GET https://wildfire-staging.herokuapp.com/api/v1/users/:id/profile`
 
-## Retrieve User Followers [Pg'd]
+## Retrieve User Followers [[Pg'd](#pagination)]
 
 > Send a GET request to the specified URI:
 
@@ -693,7 +696,7 @@ followers of the specified user.
 
 `GET https://wildfire-staging.herokuapp.com/api/v1/users/:id/followers`
 
-## Retrieve User Followings [Pg'd]
+## Retrieve User Followings [[Pg'd](#pagination)]
 
 > Send a GET request to the specified URI:
 
@@ -746,7 +749,7 @@ specified user is currently following.
 
 `GET https://wildfire-staging.herokuapp.com/api/v1/users/:id/following/users`
 
-## Retrieve Venue Followings [Pg'd]
+## Retrieve Venue Followings [[Pg'd](#pagination)]
 
 > Send a GET request to the specified URI:
 
@@ -883,7 +886,7 @@ for the current_user with the target of another user.
 
 `DELETE https://wildfire-staging.herokuapp.com/api/v1/users/:id/unfollow`
 
-## Retrieve Blocked Users [Pg'd]
+## Retrieve Blocked Users [[Pg'd](#pagination)]
 
 > Send a GET request to the specified URI:
 
@@ -1240,7 +1243,7 @@ This endpoint creates, updates, and deletes filter Feed tags for the currently l
 
 `PATCH https://wildfire-dev.herokuapp.com/api/v1/me/feed_tags`
 
-## Hosted Events for User [Pg'd]
+## Hosted Events for User [[Pg'd](#pagination)]
 
 > Send a GET request with required parameters:
 
@@ -1378,7 +1381,7 @@ user has hosted.
 
 `GET https://wildfire-staging.herokuapp.com/api/v1/users/:id/events/hosted`
 
-## Joined Events for User [Pg'd]
+## Joined Events for User [[Pg'd](#pagination)]
 
 > Send a GET request with required parameters:
 
@@ -1609,7 +1612,7 @@ user has joined.
 
 `GET https://wildfire-staging.herokuapp.com/api/v1/users/:id/attendants/joins`
 
-## Event Join Requests for User [Pg'd]
+## Event Join Requests for User [[Pg'd](#pagination)]
 
 > Send a GET request with required parameters:
 
@@ -1764,7 +1767,7 @@ user has joined.
 
 `GET https://wildfire-staging.herokuapp.com/api/v1/users/:id/attendants/requests`
 
-## All Join Requests for Hosted Events [Pg'd]
+## All Join Requests for Hosted Events [[Pg'd](#pagination)]
 
 > Send a GET request with required parameters:
 
@@ -1962,7 +1965,7 @@ thus disabling or enabling notifications for the specified event.
 
 `PATCH https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/attendees/notifications`
 
-## Tag/Mention User
+## Tag/Mention User<a name="mention_user"></a> [[Pg'd](#pagination)]
 
 > Send a GET request with required parameters:
 
@@ -2027,7 +2030,8 @@ last name match part of the search query.
 
 Parameter | Default | Description
 --------- | ------- | -----------
-`q` | nil | The requesting client's name query
+`q` | nil | Used to search for users by their name (first or last name)
+`tag_id` | nil | Used to search for users by the specified Tag
 
 # Events
 
@@ -2546,7 +2550,7 @@ from the specified event.
 
 `DELETE https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/joins/:id`
 
-## Retrieve Join (Attendees) for Event [Pg'd]
+## Retrieve Join (Attendees) for Event [[Pg'd](#pagination)]
 
 > Send a GET request with required parameters:
 
@@ -2599,7 +2603,7 @@ the event.
 
 `GET https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/joins`
 
-## Retrieve Join Requests for Event [Pg'd]
+## Retrieve Join Requests for Event [[Pg'd](#pagination)]
 
 > Send a GET request with required parameters:
 
@@ -2847,7 +2851,7 @@ Description: This endpoint will delete a specified comment for the specified eve
 
 `POST https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/comments`
 
-## Show Event Comments [Pg'd]
+## Show Event Comments [[Pg'd](#pagination)]
 
 > Send a GET request with required parameters:
 
@@ -3159,12 +3163,15 @@ the current open/closed status.
 
 `GET https://wildfire-staging.herokuapp.com/api/v1/venues/:id`
 
-## Foursquare Venues (Venue Name Query)
+## Foursquare Venues<a name="venues_query"></a> (Venue Name Query)
 
 > Send a GET request with required parameters:
 
 ```shell
-https://wildfire-staging.herokuapp.com/api/v1/venues/search?lat=34.2347&lng=-77.9481&query=duck+dive
+https://wildfire-staging.herokuapp.com/api/v1/venues/search?q=duck+dive
+```
+```shell
+https://wildfire-staging.herokuapp.com/api/v1/venues/search?tag_id=23
 ```
 
 > A JSON response like the following would be returned:
@@ -3245,7 +3252,7 @@ status: 200
 ]
 ```
 
-Description: This endpoint will return up to 10 Foursquare results based
+Description: This endpoint will return up to 40 Foursquare results based
 on the `:lat`, `:lng`, and `:query` parameters provided by the requesting client.
 
 *NOTE:* These objects are not stored in our database. Upon creating an event, the
@@ -3253,15 +3260,16 @@ venue object that is passed back will then be cached and stored for retrieval la
 
 ### HTTP Request
 
-`GET https://wildfire-staging.herokuapp.com/api/v1/venues/search?lat=00.00000&lng=00.00000&query=search+query+string+here`
+`GET https://wildfire-staging.herokuapp.com/api/v1/venues/search?q=search+query+string+here`
 
-### Query Parameters (*All are required*)
+
+### Query Parameters
+*NOTE:* Only use one of the below query parameters.
 
 Parameter | Default | Description
 --------- | ------- | -----------
-`lat` | nil | The requesting client's latitude coordinate
-`lng` | nil | The requesting client's longitude coordinate
-`query` | nil | A string containing the search query of the name of a Foursquare venue
+`q` | nil | A string containing the search query of the name of a Foursquare venue
+`tag_id` | nil | The ID of the specified Tag used to search Foursquare venues based on the Tag's name
 
 ## Foursquare Venues (Radius Search)
 
@@ -3437,7 +3445,7 @@ followed target being the specified venue.
 
 `DELETE https://wildfire-staging.herokuapp.com/api/v1/venues/:venue_id/follow`
 
-## Unfinished Venue Events [Pg'd]
+## Unfinished Venue Events [[Pg'd](#pagination)]
 
 > Send a GET request with required parameters:
 
@@ -3542,7 +3550,7 @@ not begun yet or are currently active but have not yet completed.
 
 `GET https://wildfire-staging.herokuapp.com/api/v1/venues/:venue_id/events`
 
-## Past Venue Events [Pg'd]
+## Past Venue Events [[Pg'd](#pagination)]
 
 > Send a GET request with required parameters:
 
@@ -3647,7 +3655,7 @@ active or available to join.
 
 `GET https://wildfire-staging.herokuapp.com/api/v1/venues/:venue_id/events/past`
 
-## Active Venue Events [Pg'd]
+## Active Venue Events [[Pg'd](#pagination)]
 
 > Send a GET request with required parameters:
 
@@ -3746,7 +3754,7 @@ status: 200
 Description: This endpoint will return an array of events from the
 specified Foursquare venue that are currently active/happening now.
 
-## Future Venue Events [Pg'd]
+## Future Venue Events [[Pg'd](#pagination)]
 
 > Send a GET request with required parameters:
 
@@ -3851,7 +3859,7 @@ specified Foursquare venue that are set to happen at a time in the near future.
 
 # Feeds
 
-## User Feed [Pg'd]
+## User Feed [[Pg'd](#pagination)]
 
 > Send a POST request with required parameters:
 
@@ -3962,7 +3970,7 @@ Parameter | Default | Description
 `lat` | n/a | latitude coordinate of the requesting client
 `lng` | n/a | longitude coordinate of the requesting client
 
-## Local Feed [Pg'd]
+## Local Feed [[Pg'd](#pagination)]
 
 > Send a POST request with required parameters:
 
@@ -4252,6 +4260,224 @@ Parameter | Default | Description
 `lat` | n/a | latitude coordinate of the requesting client
 `lng` | n/a | longitude coordinate of the requesting client
 `radius` | n/a | radius in meters from the users current location
+
+# Discovery
+
+## Search Users by Name or Tag [[Pg'd](#pagination)]
+
+Description: Use the [Tag/Mention User](#mention_user) endpoint for User Discovery
+
+## Search Venues by Name or Tag
+
+Description: Use the [Foursquare Venues Search](#venues_query) endpoint for Venue Discovery
+
+## Events Search by Tag [[Pg'd](#pagination)]
+
+> Send a POST request with required parameters:
+
+```shell
+https://wildfire-staging.herokuapp.com/api/v1/events/search?tag_id=2
+```
+
+> A JSON response like the following would be returned:
+
+```shell
+status: 200
+```
+```json
+[
+  {
+    "id": 189,
+    "description": "Lomo squid asymmetrical wes anderson kitsch. Retro diy waistcoat pork belly. Vegan yr mustache. Cleanse actually goth shabby chic kale chips chillwave ugh kogi.",
+    "media": {
+      "width": 600,
+      "height": 338,
+      "media_url": "http:\/\/lorempixel.com\/600\/338",
+      "media_type": "image",
+      "media_thumb": "http:\/\/lorempixel.com\/300\/169",
+      "thumb_width": 300,
+      "thumb_height": 169
+    },
+    "comments_count": 15,
+    "attendee_count": 0,
+    "privacy": 1,
+    "starts_at": "2017-03-28T00:00:00.000Z",
+    "ends_at": "2017-03-31T00:00:00.000Z",
+    "duration": 3.71,
+    "status": 1,
+    "attendee_status": 0,
+    "host": {
+      "id": 445,
+      "first_name": "Doris",
+      "last_name": "Schroeder",
+      "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/4",
+      "block_status": false,
+      "follow_status": false,
+      "reverse_block_status": false,
+      "reverse_follow_status": false,
+      "profile_tags": [
+        {
+          "id": 363,
+          "name": "PROV Friars Basketball",
+          "parent_id": 359,
+          "created_at": "2017-03-28T18:25:10.894Z",
+          "updated_at": "2017-03-28T18:25:10.894Z"
+        },
+        {
+          "id": 504,
+          "name": "CAL Bears Football",
+          "parent_id": 497,
+          "created_at": "2017-03-28T18:25:12.557Z",
+          "updated_at": "2017-03-28T18:25:12.557Z"
+        }
+      ]
+    },
+    "venue": {
+      "id": 104,
+      "name": "Fat Cat",
+      "city": "New York",
+      "state": "NY",
+      "icon_url": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/arts_entertainment\/musicvenue_jazzclub_64.png",
+      "coords": {
+        "lat": -74.002879437032,
+        "lng": -74.002879437032
+      },
+      "category": "Jazz Club",
+      "follow_status": false,
+      "foursquare_id": "3fd66200f964a52000e71ee3"
+    },
+    "tags": [
+      {
+        "id": 2,
+        "name": "Basketball",
+        "parent_id": 1,
+        "created_at": "2017-03-28T18:25:06.809Z",
+        "updated_at": "2017-03-28T18:25:06.809Z"
+      },
+      {
+        "id": 49,
+        "name": "WICH Shockers Basketball",
+        "parent_id": 39,
+        "created_at": "2017-03-28T18:25:07.372Z",
+        "updated_at": "2017-03-28T18:25:07.372Z"
+      },
+      {
+        "id": 333,
+        "name": "CLMB Lions Basketball",
+        "parent_id": 328,
+        "created_at": "2017-03-28T18:25:10.576Z",
+        "updated_at": "2017-03-28T18:25:10.576Z"
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "description": "Event 1: Jordan's fishing trip for <a class=\"user\" id=\"2\">Kerry Knight<\/a> and <a class=\"user\" id=\"3\">Gavin Baradic<\/a> goes here",
+    "media": {
+      "width": 600,
+      "height": 338,
+      "media_url": "http:\/\/lorempixel.com\/600\/338\/sports\/4",
+      "media_type": "image",
+      "media_thumb": "http:\/\/lorempixel.com\/300\/169\/sports\/4",
+      "thumb_width": 300,
+      "thumb_height": 169
+    },
+    "comments_count": 0,
+    "attendee_count": 0,
+    "privacy": 0,
+    "starts_at": "2017-04-09T00:00:00.000Z",
+    "ends_at": "2017-04-14T00:00:00.000Z",
+    "duration": 5.45,
+    "status": 0,
+    "attendee_status": 0,
+    "host": {
+      "id": 1,
+      "first_name": "Jordan",
+      "last_name": "Godwin",
+      "avatar_url": "http:\/\/lorempixel.com\/300\/300\/sports\/7",
+      "profile_tags": [
+        {
+          "id": 306,
+          "name": "MINN Golden Gophers Basketball",
+          "parent_id": 292,
+          "created_at": "2017-03-28T18:25:10.292Z",
+          "updated_at": "2017-03-28T18:25:10.292Z"
+        },
+        {
+          "id": 407,
+          "name": "UVA Cavaliers Football",
+          "parent_id": 398,
+          "created_at": "2017-03-28T18:25:11.391Z",
+          "updated_at": "2017-03-28T18:25:11.391Z"
+        },
+        {
+          "id": 506,
+          "name": "STA Cardinal Football",
+          "parent_id": 497,
+          "created_at": "2017-03-28T18:25:12.579Z",
+          "updated_at": "2017-03-28T18:25:12.579Z"
+        },
+        {
+          "id": 508,
+          "name": "ORE Ducks Football",
+          "parent_id": 497,
+          "created_at": "2017-03-28T18:25:12.602Z",
+          "updated_at": "2017-03-28T18:25:12.602Z"
+        }
+      ]
+    },
+    "venue": {
+      "id": 4,
+      "name": "Masonboro Inlet",
+      "city": "Wilmington",
+      "state": "NC",
+      "icon_url": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/parks_outdoors\/beach_64.png",
+      "coords": {
+        "lat": 34.182547362367,
+        "lng": -77.81902944261
+      },
+      "category": "Beach",
+      "follow_status": false,
+      "foursquare_id": "4c30a001a0ced13a3c61126e"
+    },
+    "tags": [
+      {
+        "id": 1,
+        "name": "Sports",
+        "parent_id": null,
+        "created_at": "2017-03-28T18:25:06.753Z",
+        "updated_at": "2017-03-28T18:25:06.753Z"
+      },
+      {
+        "id": 2,
+        "name": "Basketball",
+        "parent_id": 1,
+        "created_at": "2017-03-28T18:25:06.809Z",
+        "updated_at": "2017-03-28T18:25:06.809Z"
+      },
+      {
+        "id": 5,
+        "name": "Hockey",
+        "parent_id": 1,
+        "created_at": "2017-03-28T18:25:06.849Z",
+        "updated_at": "2017-03-28T18:25:06.849Z"
+      }
+    ]
+  }
+]
+```
+
+Description: Searches for events that have been tagged with the specified tag.
+
+### HTTP Request
+
+`GET https://wildfire-staging.herokuapp.com/api/v1/events/search?tag_id=122`
+
+### Query Parameters (or additional details)
+
+Parameter | Default | Description
+--------- | ------- | -----------
+`tag_id` | nil | Used to search for users by the specified Tag
 
 # {TEMPLATE}
 
