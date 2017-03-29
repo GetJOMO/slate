@@ -148,10 +148,10 @@ X-Runtime: 1.020325
 Connection: close
 Transfer-Encoding: chunked
 </code></pre>
-<h3 id="pagination">Pagination</h3>
+<h3 id="pagination">Pagination<a name="pagination"></a></h3>
 
 <p>Endpoints that are paginated are denoted with <code class="prettyprint">[Pg&#39;d]</code> in their title. These Endpoints
-accecpt the following additional parameters:</p>
+accept the following additional parameters:</p>
 
 <table><thead>
 <tr>
@@ -349,7 +349,7 @@ The `nonce` parameter is a JWT obtained from Layer using the Layer iOS or Androi
 to create an `identity_token` for the client to use on future Layer requests.
 </aside>
 
-<h2 id="login-authenticate-a-user-via-email-password">Login/Authenticate a User via Email/Password</h2>
+<h2 id="login-auth-re-auth-a-user-via-email-password">Login/Auth/Re-Auth a User via Email/Password</h2>
 
 <blockquote>
 <p>Along with the Basic Auth Header, send a POST request with the &lsquo;nonce&rsquo; from Layer</p>
@@ -413,6 +413,9 @@ to create an `identity_token` for the client to use on future Layer requests.
 <p>Description: Used to authenticate an existing user and obtain a Layer <code class="prettyprint">identity_token</code>. A request
 to this endpoint should include the users&rsquo;s email &amp; password in HTTP Basc Auth header, as well as the <code class="prettyprint">nonce</code> in
 body of the request.</p>
+
+<p><em>NOTE:</em> the <code class="prettyprint">nonce</code> from Layer is only required when the client needs to
+authenticate with the Layer service (i.e. the client&rsquo;s session with Layer has expired).</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -731,7 +734,7 @@ in which will then be matched on users in the database on each user&rsquo;s <cod
 
 <p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/users/:id/profile</code></p>
 
-<h2 id="retrieve-user-followers-pg-39-d">Retrieve User Followers [Pg&rsquo;d]</h2>
+<h2 id="retrieve-user-followers-pg-39-d">Retrieve User Followers [<a href="#pagination">Pg&rsquo;d</a>]</h2>
 
 <blockquote>
 <p>Send a GET request to the specified URI:</p>
@@ -780,7 +783,7 @@ followers of the specified user.</p>
 
 <p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/users/:id/followers</code></p>
 
-<h2 id="retrieve-user-followings-pg-39-d">Retrieve User Followings [Pg&rsquo;d]</h2>
+<h2 id="retrieve-user-followings-pg-39-d">Retrieve User Followings [<a href="#pagination">Pg&rsquo;d</a>]</h2>
 
 <blockquote>
 <p>Send a GET request to the specified URI:</p>
@@ -829,7 +832,7 @@ specified user is currently following.</p>
 
 <p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/users/:id/following/users</code></p>
 
-<h2 id="retrieve-venue-followings-pg-39-d">Retrieve Venue Followings [Pg&rsquo;d]</h2>
+<h2 id="retrieve-venue-followings-pg-39-d">Retrieve Venue Followings [<a href="#pagination">Pg&rsquo;d</a>]</h2>
 
 <blockquote>
 <p>Send a GET request to the specified URI:</p>
@@ -954,7 +957,7 @@ for the current_user with the target of another user.</p>
 
 <p><code class="prettyprint">DELETE https://wildfire-staging.herokuapp.com/api/v1/users/:id/unfollow</code></p>
 
-<h2 id="retrieve-blocked-users-pg-39-d">Retrieve Blocked Users [Pg&rsquo;d]</h2>
+<h2 id="retrieve-blocked-users-pg-39-d">Retrieve Blocked Users [<a href="#pagination">Pg&rsquo;d</a>]</h2>
 
 <blockquote>
 <p>Send a GET request to the specified URI:</p>
@@ -1285,7 +1288,7 @@ to remove the block with report status.</p>
 
 <p><code class="prettyprint">PATCH https://wildfire-dev.herokuapp.com/api/v1/me/feed_tags</code></p>
 
-<h2 id="hosted-events-for-user-pg-39-d">Hosted Events for User [Pg&rsquo;d]</h2>
+<h2 id="hosted-events-for-user-pg-39-d">Hosted Events for User [<a href="#pagination">Pg&rsquo;d</a>]</h2>
 
 <blockquote>
 <p>Send a GET request with required parameters:</p>
@@ -1419,7 +1422,7 @@ user has hosted.</p>
 
 <p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/users/:id/events/hosted</code></p>
 
-<h2 id="joined-events-for-user-pg-39-d">Joined Events for User [Pg&rsquo;d]</h2>
+<h2 id="joined-events-for-user-pg-39-d">Joined Events for User [<a href="#pagination">Pg&rsquo;d</a>]</h2>
 
 <blockquote>
 <p>Send a GET request with required parameters:</p>
@@ -1646,7 +1649,7 @@ user has joined.</p>
 
 <p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/users/:id/attendants/joins</code></p>
 
-<h2 id="event-join-requests-for-user-pg-39-d">Event Join Requests for User [Pg&rsquo;d]</h2>
+<h2 id="event-join-requests-for-user-pg-39-d">Event Join Requests for User [<a href="#pagination">Pg&rsquo;d</a>]</h2>
 
 <blockquote>
 <p>Send a GET request with required parameters:</p>
@@ -1797,7 +1800,7 @@ user has joined.</p>
 
 <p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/users/:id/attendants/requests</code></p>
 
-<h2 id="all-join-requests-for-hosted-events-pg-39-d">All Join Requests for Hosted Events [Pg&rsquo;d]</h2>
+<h2 id="all-join-requests-for-hosted-events-pg-39-d">All Join Requests for Hosted Events [<a href="#pagination">Pg&rsquo;d</a>]</h2>
 
 <blockquote>
 <p>Send a GET request with required parameters:</p>
@@ -1987,7 +1990,7 @@ thus disabling or enabling notifications for the specified event.</p>
 
 <p><code class="prettyprint">PATCH https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/attendees/notifications</code></p>
 
-<h2 id="tag-mention-user">Tag/Mention User</h2>
+<h2 id="tag-mention-user-pg-39-d">Tag/Mention User<a name="mention_user"></a> [<a href="#pagination">Pg&rsquo;d</a>]</h2>
 
 <blockquote>
 <p>Send a GET request with required parameters:</p>
@@ -2056,7 +2059,12 @@ last name match part of the search query.</p>
 <tr>
 <td><code class="prettyprint">q</code></td>
 <td>nil</td>
-<td>The requesting client&rsquo;s name query</td>
+<td>Used to search for users by their name (first or last name)</td>
+</tr>
+<tr>
+<td><code class="prettyprint">tag_id</code></td>
+<td>nil</td>
+<td>Used to search for users by the specified Tag</td>
 </tr>
 </tbody></table>
 
@@ -2474,7 +2482,7 @@ status; <code class="prettyprint">attending</code> status when event is public a
 <blockquote>
 <p>Send a DELETE request with required parameters:</p>
 </blockquote>
-<pre class="highlight shell"><code>https://wildfire-dev.herokuapp.com/api/v1/events/15/joins
+<pre class="highlight shell"><code>https://wildfire-dev.herokuapp.com/api/v1/events/15/joins/321
 </code></pre>
 <blockquote>
 <p>A JSON response like the following would be returned:</p>
@@ -2551,9 +2559,9 @@ from the specified event.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">DELETE https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/joins</code></p>
+<p><code class="prettyprint">DELETE https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/joins/:id</code></p>
 
-<h2 id="retrieve-join-attendees-for-event-pg-39-d">Retrieve Join (Attendees) for Event [Pg&rsquo;d]</h2>
+<h2 id="retrieve-join-attendees-for-event-pg-39-d">Retrieve Join (Attendees) for Event [<a href="#pagination">Pg&rsquo;d</a>]</h2>
 
 <blockquote>
 <p>Send a GET request with required parameters:</p>
@@ -2602,7 +2610,7 @@ the event.</p>
 
 <p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/joins</code></p>
 
-<h2 id="retrieve-join-requests-for-event-pg-39-d">Retrieve Join Requests for Event [Pg&rsquo;d]</h2>
+<h2 id="retrieve-join-requests-for-event-pg-39-d">Retrieve Join Requests for Event [<a href="#pagination">Pg&rsquo;d</a>]</h2>
 
 <blockquote>
 <p>Send a GET request with required parameters:</p>
@@ -2828,7 +2836,7 @@ from the specified event.</p>
 
 <p><code class="prettyprint">POST https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/comments</code></p>
 
-<h2 id="show-event-comments-pg-39-d">Show Event Comments [Pg&rsquo;d]</h2>
+<h2 id="show-event-comments-pg-39-d">Show Event Comments [<a href="#pagination">Pg&rsquo;d</a>]</h2>
 
 <blockquote>
 <p>Send a GET request with required parameters:</p>
@@ -3128,12 +3136,13 @@ the current open/closed status.</p>
 
 <p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/venues/:id</code></p>
 
-<h2 id="foursquare-venues-venue-name-query">Foursquare Venues (Venue Name Query)</h2>
+<h2 id="foursquare-venues-venue-name-query">Foursquare Venues<a name="venues_query"></a> (Venue Name Query)</h2>
 
 <blockquote>
 <p>Send a GET request with required parameters:</p>
 </blockquote>
-<pre class="highlight shell"><code>https://wildfire-staging.herokuapp.com/api/v1/venues/search?lat<span class="o">=</span>34.2347&amp;lng<span class="o">=</span>-77.9481&amp;query<span class="o">=</span>duck+dive
+<pre class="highlight shell"><code>https://wildfire-staging.herokuapp.com/api/v1/venues/search?q<span class="o">=</span>duck+dive
+</code></pre><pre class="highlight shell"><code>https://wildfire-staging.herokuapp.com/api/v1/venues/search?tag_id<span class="o">=</span>23
 </code></pre>
 <blockquote>
 <p>A JSON response like the following would be returned:</p>
@@ -3210,7 +3219,7 @@ the current open/closed status.</p>
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>Description: This endpoint will return up to 10 Foursquare results based
+<p>Description: This endpoint will return up to 40 Foursquare results based
 on the <code class="prettyprint">:lat</code>, <code class="prettyprint">:lng</code>, and <code class="prettyprint">:query</code> parameters provided by the requesting client.</p>
 
 <p><em>NOTE:</em> These objects are not stored in our database. Upon creating an event, the
@@ -3218,9 +3227,11 @@ venue object that is passed back will then be cached and stored for retrieval la
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/venues/search?lat=00.00000&amp;lng=00.00000&amp;query=search+query+string+here</code></p>
+<p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/venues/search?q=search+query+string+here</code></p>
 
-<h3 id="query-parameters-all-are-required">Query Parameters (<em>All are required</em>)</h3>
+<h3 id="query-parameters">Query Parameters</h3>
+
+<p><em>NOTE:</em> Only use one of the below query parameters.</p>
 
 <table><thead>
 <tr>
@@ -3230,19 +3241,14 @@ venue object that is passed back will then be cached and stored for retrieval la
 </tr>
 </thead><tbody>
 <tr>
-<td><code class="prettyprint">lat</code></td>
-<td>nil</td>
-<td>The requesting client&rsquo;s latitude coordinate</td>
-</tr>
-<tr>
-<td><code class="prettyprint">lng</code></td>
-<td>nil</td>
-<td>The requesting client&rsquo;s longitude coordinate</td>
-</tr>
-<tr>
-<td><code class="prettyprint">query</code></td>
+<td><code class="prettyprint">q</code></td>
 <td>nil</td>
 <td>A string containing the search query of the name of a Foursquare venue</td>
+</tr>
+<tr>
+<td><code class="prettyprint">tag_id</code></td>
+<td>nil</td>
+<td>The ID of the specified Tag used to search Foursquare venues based on the Tag&rsquo;s name</td>
 </tr>
 </tbody></table>
 
@@ -3426,7 +3432,7 @@ followed target being the specified venue.</p>
 
 <p><code class="prettyprint">DELETE https://wildfire-staging.herokuapp.com/api/v1/venues/:venue_id/follow</code></p>
 
-<h2 id="unfinished-venue-events-pg-39-d">Unfinished Venue Events [Pg&rsquo;d]</h2>
+<h2 id="unfinished-venue-events-pg-39-d">Unfinished Venue Events [<a href="#pagination">Pg&rsquo;d</a>]</h2>
 
 <blockquote>
 <p>Send a GET request with required parameters:</p>
@@ -3527,7 +3533,7 @@ not begun yet or are currently active but have not yet completed.</p>
 
 <p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/venues/:venue_id/events</code></p>
 
-<h2 id="past-venue-events-pg-39-d">Past Venue Events [Pg&rsquo;d]</h2>
+<h2 id="past-venue-events-pg-39-d">Past Venue Events [<a href="#pagination">Pg&rsquo;d</a>]</h2>
 
 <blockquote>
 <p>Send a GET request with required parameters:</p>
@@ -3628,7 +3634,7 @@ active or available to join.</p>
 
 <p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/venues/:venue_id/events/past</code></p>
 
-<h2 id="active-venue-events-pg-39-d">Active Venue Events [Pg&rsquo;d]</h2>
+<h2 id="active-venue-events-pg-39-d">Active Venue Events [<a href="#pagination">Pg&rsquo;d</a>]</h2>
 
 <blockquote>
 <p>Send a GET request with required parameters:</p>
@@ -3724,7 +3730,7 @@ active or available to join.</p>
 <p>Description: This endpoint will return an array of events from the
 specified Foursquare venue that are currently active/happening now.</p>
 
-<h2 id="future-venue-events-pg-39-d">Future Venue Events [Pg&rsquo;d]</h2>
+<h2 id="future-venue-events-pg-39-d">Future Venue Events [<a href="#pagination">Pg&rsquo;d</a>]</h2>
 
 <blockquote>
 <p>Send a GET request with required parameters:</p>
@@ -3826,7 +3832,7 @@ specified Foursquare venue that are set to happen at a time in the near future.<
 
 <h1 id="feeds">Feeds</h1>
 
-<h2 id="user-feed-pg-39-d">User Feed [Pg&rsquo;d]</h2>
+<h2 id="user-feed-pg-39-d">User Feed [<a href="#pagination">Pg&rsquo;d</a>]</h2>
 
 <blockquote>
 <p>Send a POST request with required parameters:</p>
@@ -3947,7 +3953,7 @@ requesting user&rsquo;s filter tags &amp; users that he/she follows.</p>
 </tr>
 </tbody></table>
 
-<h2 id="local-feed-pg-39-d">Local Feed [Pg&rsquo;d]</h2>
+<h2 id="local-feed-pg-39-d">Local Feed [<a href="#pagination">Pg&rsquo;d</a>]</h2>
 
 <blockquote>
 <p>Send a POST request with required parameters:</p>
@@ -4273,6 +4279,230 @@ events for each venue.</p>
 <td><code class="prettyprint">radius</code></td>
 <td>n/a</td>
 <td>radius in meters from the users current location</td>
+</tr>
+</tbody></table>
+
+<h1 id="discovery">Discovery</h1>
+
+<h2 id="search-users-by-name-or-tag-pg-39-d">Search Users by Name or Tag [<a href="#pagination">Pg&rsquo;d</a>]</h2>
+
+<p>Description: Use the <a href="#mention_user">Tag/Mention User</a> endpoint for User Discovery</p>
+
+<h2 id="search-venues-by-name-or-tag">Search Venues by Name or Tag</h2>
+
+<p>Description: Use the <a href="#venues_query">Foursquare Venues Search</a> endpoint for Venue Discovery</p>
+
+<h2 id="events-search-by-tag-pg-39-d">Events Search by Tag [<a href="#pagination">Pg&rsquo;d</a>]</h2>
+
+<blockquote>
+<p>Send a POST request with required parameters:</p>
+</blockquote>
+<pre class="highlight shell"><code>https://wildfire-staging.herokuapp.com/api/v1/events/search?tag_id<span class="o">=</span>2
+</code></pre>
+<blockquote>
+<p>A JSON response like the following would be returned:</p>
+</blockquote>
+<pre class="highlight shell"><code>status: 200
+</code></pre><pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">189</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lomo squid asymmetrical wes anderson kitsch. Retro diy waistcoat pork belly. Vegan yr mustache. Cleanse actually goth shabby chic kale chips chillwave ugh kogi."</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"media"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">338</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"media_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:\/\/lorempixel.com\/600\/338"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"media_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"media_thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:\/\/lorempixel.com\/300\/169"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"thumb_width"</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"thumb_height"</span><span class="p">:</span><span class="w"> </span><span class="mi">169</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"comments_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"attendee_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"privacy"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"starts_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-28T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"ends_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-31T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.71</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"attendee_status"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"host"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">445</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doris"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Schroeder"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:\/\/lorempixel.com\/300\/300\/cats\/4"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"block_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"reverse_block_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"reverse_follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"profile_tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">363</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROV Friars Basketball"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">359</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-28T18:25:10.894Z"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-28T18:25:10.894Z"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">504</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CAL Bears Football"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">497</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-28T18:25:12.557Z"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-28T18:25:12.557Z"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"venue"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">104</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fat Cat"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New York"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NY"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"icon_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:\/\/ss3.4sqi.net\/img\/categories_v2\/arts_entertainment\/musicvenue_jazzclub_64.png"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"coords"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">-74.002879437032</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-74.002879437032</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jazz Club"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"foursquare_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3fd66200f964a52000e71ee3"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Basketball"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-28T18:25:06.809Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-28T18:25:06.809Z"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">49</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WICH Shockers Basketball"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">39</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-28T18:25:07.372Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-28T18:25:07.372Z"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">333</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CLMB Lions Basketball"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">328</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-28T18:25:10.576Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-28T18:25:10.576Z"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Event 1: Jordan's fishing trip for &lt;a class=\"user\" id=\"2\"&gt;Kerry Knight&lt;\/a&gt; and &lt;a class=\"user\" id=\"3\"&gt;Gavin Baradic&lt;\/a&gt; goes here"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"media"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">338</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"media_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:\/\/lorempixel.com\/600\/338\/sports\/4"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"media_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"media_thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:\/\/lorempixel.com\/300\/169\/sports\/4"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"thumb_width"</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"thumb_height"</span><span class="p">:</span><span class="w"> </span><span class="mi">169</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"comments_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"attendee_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"privacy"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"starts_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-09T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"ends_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-14T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mf">5.45</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"attendee_status"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"host"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jordan"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Godwin"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:\/\/lorempixel.com\/300\/300\/sports\/7"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"profile_tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">306</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MINN Golden Gophers Basketball"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">292</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-28T18:25:10.292Z"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-28T18:25:10.292Z"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">407</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UVA Cavaliers Football"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">398</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-28T18:25:11.391Z"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-28T18:25:11.391Z"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">506</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STA Cardinal Football"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">497</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-28T18:25:12.579Z"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-28T18:25:12.579Z"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">508</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORE Ducks Football"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">497</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-28T18:25:12.602Z"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-28T18:25:12.602Z"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"venue"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Masonboro Inlet"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wilmington"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NC"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"icon_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:\/\/ss3.4sqi.net\/img\/categories_v2\/parks_outdoors\/beach_64.png"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"coords"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.182547362367</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.81902944261</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Beach"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"foursquare_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4c30a001a0ced13a3c61126e"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sports"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-28T18:25:06.753Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-28T18:25:06.753Z"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Basketball"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-28T18:25:06.809Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-28T18:25:06.809Z"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hockey"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-28T18:25:06.849Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-28T18:25:06.849Z"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Description: Searches for events that have been tagged with the specified tag.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/events/search?tag_id=122</code></p>
+
+<h3 id="query-parameters-or-additional-details">Query Parameters (or additional details)</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">tag_id</code></td>
+<td>nil</td>
+<td>Used to search for users by the specified Tag</td>
 </tr>
 </tbody></table>
 
