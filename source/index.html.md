@@ -3378,7 +3378,7 @@ Parameter | Default | Description
 > Send a POST request with required parameters:
 
 ```shell
-`https://wildfire-staging.herokuapp.com/api/v1/venues/:venue_id/follow`
+`https://wildfire-staging.herokuapp.com/api/v1/venues/:foursquare_id/follow`
 ```
 
 > A JSON response like the following would be returned:
@@ -3407,14 +3407,14 @@ followed target being the specified venue.
 
 ### HTTP Request
 
-`POST https://wildfire-staging.herokuapp.com/api/v1/venues/:venue_id/follow`
+`POST https://wildfire-staging.herokuapp.com/api/v1/venues/:foursquare_id/follow`
 
 ## Un-follow a Venue
 
 > Send a DELETE request with required parameters:
 
 ```shell
-`https://wildfire-staging.herokuapp.com/api/v1/venues/:venue_id/follow`
+`https://wildfire-staging.herokuapp.com/api/v1/venues/:foursquare_id/follow`
 ```
 
 > A JSON response like the following would be returned:
@@ -3443,7 +3443,7 @@ followed target being the specified venue.
 
 ### HTTP Request
 
-`DELETE https://wildfire-staging.herokuapp.com/api/v1/venues/:venue_id/follow`
+`DELETE https://wildfire-staging.herokuapp.com/api/v1/venues/:foursquare_id/follow`
 
 ## Unfinished Venue Events [[Pg'd](#pagination)]
 
@@ -3548,7 +3548,7 @@ not begun yet or are currently active but have not yet completed.
 
 ### HTTP Request
 
-`GET https://wildfire-staging.herokuapp.com/api/v1/venues/:venue_id/events`
+`GET https://wildfire-staging.herokuapp.com/api/v1/venues/:foursquare_id/events`
 
 ## Past Venue Events [[Pg'd](#pagination)]
 
@@ -3653,7 +3653,7 @@ active or available to join.
 
 ### HTTP Request
 
-`GET https://wildfire-staging.herokuapp.com/api/v1/venues/:venue_id/events/past`
+`GET https://wildfire-staging.herokuapp.com/api/v1/venues/:foursquare_id/events/past`
 
 ## Active Venue Events [[Pg'd](#pagination)]
 
@@ -3855,7 +3855,7 @@ specified Foursquare venue that are set to happen at a time in the near future.
 
 ### HTTP Request
 
-`GET https://wildfire-staging.herokuapp.com/api/v1/venues/:venue_id/events/future`
+`GET https://wildfire-staging.herokuapp.com/api/v1/venues/:foursquare_id/events/future`
 
 # Feeds
 
@@ -4147,7 +4147,7 @@ status: 200
 
 Description: This endpoint will return an array of Venues with the
 count of _unfinished_ venues on each venue object. Use the
-`/api/v1/venues/:venue_id/events` endpoint to retrieve the unfinished
+`/api/v1/venues/:foursquare_id/events` endpoint to retrieve the unfinished
 events for that venue.
 
 ### HTTP Request
@@ -4246,7 +4246,7 @@ status: 200
 Description: This endpoint will return an array of Venues based on
 the filter settings that the current_user has set. Each venue object
 includes the count of _unfinished_ venues. Use the
-`/api/v1/venues/:venue_id/events` endpoint to retrieve the unfinished
+`/api/v1/venues/:foursquare_id/events` endpoint to retrieve the unfinished
 events for each venue.
 
 ### HTTP Request
