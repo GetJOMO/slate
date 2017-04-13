@@ -365,6 +365,83 @@ identity token for making user authenticated requests to Layer's API
 
 # Users
 
+## Notifications [[Pg'd](#pagination)]
+
+> Send a GET request with required parameters:
+
+```shell
+https://wildfire-staging.herokuapp.com/api/v1/me/notifications?per_page=20
+```
+
+> A JSON response like the following would be returned:
+
+```shell
+status: 200
+```
+```json
+[
+  {
+    "id": 5167,
+    "actor": {
+      "id": 28,
+      "first_name": "Kobe"
+    },
+    "action": "joined",
+    "created_at": "2017-04-07T18:13:10.547Z",
+    "event_data": {
+      "id": 5,
+      "attendee_count": 3
+    }
+  },
+  {
+    "id": 1706,
+    "actor": {
+      "id": 6,
+      "first_name": "Nicholas"
+    },
+    "action": "mentioned",
+    "created_at": "2017-04-07T18:11:16.590Z",
+    "event_data": {
+      "id": 40,
+      "attendee_count": 45
+    }
+  },
+  {
+    "id": 1616,
+    "actor": {
+      "id": 2,
+      "first_name": "Kerry"
+    },
+    "action": "mentioned",
+    "created_at": "2017-04-07T18:11:13.289Z",
+    "event_data": {
+      "id": 38,
+      "attendee_count": 36
+    }
+  },
+  {
+    "id": 250,
+    "actor": {
+      "id": 3,
+      "first_name": "Gavin"
+    },
+    "action": "mentioned",
+    "created_at": "2017-04-07T18:10:23.686Z",
+    "event_data": {
+      "id": 10,
+      "attendee_count": 1
+    }
+  }
+]  
+```
+
+Description: This endpoint will return a paginated array of notification objects,
+ordered by the most recently received notification.
+
+### HTTP Request
+
+`GET https://wildfire-staging.herokuapp.com/api/v1/me/notifications`
+
 ## Update User
 
 > Send a PATCH request with any of the user object's parameters:
