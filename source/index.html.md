@@ -2118,7 +2118,7 @@ Parameter | Default | Description
 
 ```json
 {
-  "description": "My First Event!",
+  "description": "My First Event with <a class=\"user\" id="6">Nicholas Ng</a>!",
   "media": {
     "media_url": "http://lorempixel.com/600/338/sports/3",
     "media_thumb": "http://lorempixel.com/300/169/sports/9",
@@ -2132,6 +2132,7 @@ Parameter | Default | Description
   "starts_at": "2017-01-10",
   "duration": 3,
   "privacy": 2,
+  "mention_ids": [6],
   "venue": {
     "id": 32,
     "name": "New Venue",
@@ -2218,7 +2219,9 @@ status: 201
 }
 ```
 
-This endpoint creates an Event for the currently logged in user.
+Description: This endpoint creates an Event for the currently logged in user.
+
+*NOTE:* include the `mention_ids` with an array of integers within the JSON object when tagging users.
 
 ### HTTP Request
 
@@ -2854,7 +2857,7 @@ https://wildfire-dev.herokuapp.com/api/v1/events/22/comments
 ```
 ```json
 {
-  "body": "See you there! I'll bring the beer!!",
+  "body": "See you there <a class=\"user\" id="6">Nicholas Ng</a> and <a class=\"user\" id="4">George Taylor</a>! I'll bring the beer!!",
   "media": {
     "media_url": "test.com/img",
     "media_thumb": "test.com/img_thumb",
@@ -2864,6 +2867,7 @@ https://wildfire-dev.herokuapp.com/api/v1/events/22/comments
     "thumb_height": 100,
     "thumb_width": 100
   }
+  "mention_ids": [6, 4]
 }
 ```
 
@@ -2875,7 +2879,7 @@ status: 200
 ```json
 {
   "id": 2447,
-  "body": "See you there! I'll bring the beer!!",
+  "body": "See you there <a class=\"user\" id="6">Nicholas Ng</a> and <a class=\"user\" id="4">George Taylor</a>! I'll bring the beer!!",
   "event_id": 12,
   "created_at": "2017-02-15T16:17:29.565Z",
   "media": {
@@ -2898,6 +2902,8 @@ status: 200
 ```
 
 Description: This endpoint will create a comment for the specified event.
+
+*NOTE:* include the `mention_ids` with an array of integers within the JSON object when tagging users.
 
 ### HTTP Request
 
