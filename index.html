@@ -549,10 +549,15 @@ ordered by the most recently received notification.</p>
 <h2 id="update-user">Update User</h2>
 
 <blockquote>
-<p>Send a PATCH request with any of the user object&rsquo;s parameters:</p>
+<p>Send a PATCH request with any of the user object&rsquo;s attributes:</p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"about"</span><span class="p">:</span><span class="w"> </span><span class="s2">"An updated bio from the client app!"</span><span class="w">
+  </span><span class="s2">"about"</span><span class="p">:</span><span class="w"> </span><span class="s2">"An updated bio from the client app!"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"start_date_range"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"coords"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"34.4343"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"lng"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-77.5353"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
@@ -568,47 +573,66 @@ ordered by the most recently received notification.</p>
 </blockquote>
 <pre class="highlight shell"><code>status: 200
 </code></pre><pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jordan"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Godwin"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"about"</span><span class="p">:</span><span class="w"> </span><span class="s2">"An updated bio from the client app!"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kerry"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Knight"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1980-11-17"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"about"</span><span class="p">:</span><span class="w"> </span><span class="s2">"about kerry knight"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wilmington"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NC"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:</span><span class="se">\/\/</span><span class="s2">lorempixel.com</span><span class="se">\/</span><span class="s2">300</span><span class="se">\/</span><span class="s2">300</span><span class="se">\/</span><span class="s2">sports</span><span class="se">\/</span><span class="s2">5"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"coords"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.2257</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">77.9447</span><span class="w">
+    </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.2253</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.93786</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"auth_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cRLSSiGNKfykY9DdsJQonkTp"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"auth_token_expiry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-10-05T16:16:54.827Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"identity_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6ImxheWVyLWVpdDt2PTEiLCJraWQiOiJsYXllcjovLy9rZXlzLzA5YTI1NDZhLTdmNDItMTFlNi1hMzk3LTAyZDM1NjAwMTJmMCJ9.eyJpc3MiOiJsYXllcjovLy9wcm92aWRlcnMvY2Y4ZDEzZTgtN2U5NS0xMWU2LTkyNGItYTE1MWU1MTI0NjI0IiwicHJuIjoiamVnMzIyNEBnbWFpbC5jb20iLCJpYXQiOjE0NzU2MDE1MzIsImV4cCI6MTQ3NjgxMTEzMiwibmNlIjpudWxsfQ.NN-AW7gpnklCoMKzZ_4MoXi0b6XJJQR1nZRXATd3M1nLe1VZk9NlIr-1hYbVRspeZOm4oZuN5HJslLMiYbEot5bm48I1OS0vqqwo64azZSVGTqmJl2GAm_lRizbb10Ic90YUdUPsrMeBfaq4B1yyGX03o2xSPQvDwBetGpqAJ_6oJkH_nDi0ZABLFtml1UHtUjKxOMU06-42r8L8FDTNOHWpw7bvB-hUa1T42OFO9cuDnPytu8yZeqEeS8MoXBY6-KUoI7qaJuaEI9G2IXYlodDZkAwW38Q_hWEp01umPSwB9551E5hApU2sJS2aih2A06tvP23yRt0r1JCI4w5pbQ"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jeg3224@gmail.com"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1987-02-09"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">fake.urlto.img</span><span class="se">\/</span><span class="s2">user_avatar"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"last_login_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-10-04T16:16:54.827Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"push_notifs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"event"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"follows"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"general"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"mentions"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"messages"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
-  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"start_date_range"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
   </span><span class="s2">"social_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"twitter"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"facebook"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"instagram"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"pinterest"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="s2">"twitter"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"facebook"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"instagram"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pinterest"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="w">
   </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"followers_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"following_users_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">65</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"following_venues_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"attended_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"hosted_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"block_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"reverse_block_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"reverse_follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
   </span><span class="s2">"profile_tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hockey"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">516</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUB Tigers Football"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">510</span><span class="p">,</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sports"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UCI Anteaters Basketball"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">121</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">585</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dallas Cowboys"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">568</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"feed_tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">334</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DART Big Green Basketball"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">328</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">148</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CHS Cougars Basketball"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">146</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">541</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Miami Heat"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">537</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -4749,97 +4773,203 @@ events for each venue.</p>
 <p>Example User object:</p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
   </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kerry"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Knight"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"woozykk@gmail.com"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1982-10-24"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://fake.urlto.img/user_avatar"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"auth_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"'a2zS95rM5yrrsmxOPVZXPjC5"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"auth_token_expiry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-09-28 17:33:52.449806"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"last_login_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-09-27 17:33:52.449806"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"about"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is all about Kerry Knight."</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="s2">"['Swift', 'UNC Sports', 'Beer', 'Startups']"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1980-11-17"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"about"</span><span class="p">:</span><span class="w"> </span><span class="s2">"about kerry knight"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wilmington"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NC"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:</span><span class="se">\/\/</span><span class="s2">lorempixel.com</span><span class="se">\/</span><span class="s2">300</span><span class="se">\/</span><span class="s2">300</span><span class="se">\/</span><span class="s2">sports</span><span class="se">\/</span><span class="s2">5"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"coords"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.2253</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.93786</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"start_date_range"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
   </span><span class="s2">"social_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"facebook"</span><span class="p">:</span><span class="w"> </span><span class="s2">"729779407355"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"twitter"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"facebook"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
     </span><span class="s2">"instagram"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
     </span><span class="s2">"pinterest"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"push_notifs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"general"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"messages"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"events"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"mentions"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"follows"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+  </span><span class="s2">"followers_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"following_users_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">65</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"following_venues_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"attended_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"hosted_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"block_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"reverse_block_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"reverse_follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"profile_tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">516</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUB Tigers Football"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">510</span><span class="p">,</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UCI Anteaters Basketball"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">121</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">585</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dallas Cowboys"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">568</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"feed_tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">334</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DART Big Green Basketball"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">328</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">148</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CHS Cougars Basketball"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">146</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">541</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Miami Heat"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">537</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <table><thead>
 <tr>
 <th>Attribute</th>
 <th>Type</th>
+<th>Default</th>
 <th>Required/Optional</th>
 </tr>
 </thead><tbody>
 <tr>
 <td><code class="prettyprint">id</code></td>
 <td>:integer</td>
-<td><strong>Required</strong></td>
+<td><code class="prettyprint">n/a</code></td>
+<td><strong>Required</strong> <em>(Set by Server)</em></td>
 </tr>
 <tr>
 <td><code class="prettyprint">email</code></td>
 <td>:string</td>
-<td><strong>Required</strong></td>
-</tr>
-<tr>
-<td><code class="prettyprint">password</code></td>
-<td>:string</td>
+<td><code class="prettyprint">n/a</code></td>
 <td><strong>Required</strong></td>
 </tr>
 <tr>
 <td><code class="prettyprint">first_name</code></td>
 <td>:string</td>
+<td><code class="prettyprint">n/a</code></td>
 <td><strong>Required</strong></td>
 </tr>
 <tr>
 <td><code class="prettyprint">last_name</code></td>
 <td>:string</td>
+<td><code class="prettyprint">n/a</code></td>
 <td><strong>Required</strong></td>
 </tr>
 <tr>
 <td><code class="prettyprint">dob</code></td>
-<td>:date</td>
+<td>:datetime</td>
+<td><code class="prettyprint">n/a</code></td>
 <td><strong>Required</strong></td>
 </tr>
 <tr>
 <td><code class="prettyprint">about</code></td>
-<td>:integer</td>
+<td>:text</td>
+<td>&ldquo;</td>
 <td>Optional</td>
 </tr>
 <tr>
-<td><code class="prettyprint">tags</code></td>
-<td>:array</td>
+<td><code class="prettyprint">city</code></td>
+<td>:string</td>
+<td><code class="prettyprint">n/a</code></td>
+<td><strong>Required</strong></td>
+</tr>
+<tr>
+<td><code class="prettyprint">state</code></td>
+<td>:string</td>
+<td><code class="prettyprint">n/a</code></td>
+<td><strong>Required</strong></td>
+</tr>
+<tr>
+<td><code class="prettyprint">avatar_url</code></td>
+<td>:string</td>
+<td><code class="prettyprint">n/a</code></td>
+<td><strong>Required</strong></td>
+</tr>
+<tr>
+<td><code class="prettyprint">coords</code></td>
+<td>:object</td>
+<td><code class="prettyprint">n/a</code></td>
+<td><strong>Required</strong></td>
+</tr>
+<tr>
+<td><code class="prettyprint">push_notifs</code></td>
+<td>:object</td>
+<td><code class="prettyprint">{ general: true, messages: true, event_updates: true, mentions: true, event_comments: true, user_follows: true, join_requests: true }</code></td>
 <td>Optional</td>
 </tr>
 <tr>
 <td><code class="prettyprint">social_ids</code></td>
 <td>:object</td>
-<td>Optional</td>
+<td><code class="prettyprint">{ facebook: -1, twitter: -1, instagram: -1, pinterest: -1 }</code></td>
+<td><strong>Required</strong></td>
 </tr>
 <tr>
-<td><code class="prettyprint">avatar_url</code></td>
-<td>:string</td>
+<td><code class="prettyprint">start_date_range</code></td>
+<td>:integer</td>
+<td><code class="prettyprint">1</code></td>
+<td><strong>Required</strong></td>
+</tr>
+<tr>
+<td><code class="prettyprint">badge_count</code></td>
+<td>:integer</td>
+<td><code class="prettyprint">0</code></td>
 <td>Optional</td>
 </tr>
 <tr>
 <td><code class="prettyprint">auth_token</code></td>
 <td>:string</td>
+<td><code class="prettyprint">n/a</code></td>
 <td><strong>Required</strong> <em>(Set by Server &amp; used on all requests)</em></td>
 </tr>
 <tr>
 <td><code class="prettyprint">auth_token_expires_at</code></td>
 <td>:datetime</td>
+<td><code class="prettyprint">n/a</code></td>
 <td><strong>Required</strong> <em>(Set by Server)</em></td>
+</tr>
+<tr>
+<td><code class="prettyprint">last_login_time</code></td>
+<td>:datetime</td>
+<td><code class="prettyprint">n/a</code></td>
+<td><strong>Required</strong> <em>(Set by Server)</em></td>
+</tr>
+<tr>
+<td><code class="prettyprint">active</code></td>
+<td>:boolean</td>
+<td><code class="prettyprint">false</code></td>
+<td><strong>Required</strong> <em>(Set by Server)</em></td>
+</tr>
+<tr>
+<td><code class="prettyprint">digits_id</code></td>
+<td>:string</td>
+<td><code class="prettyprint">n/a</code></td>
+<td><strong>Required</strong></td>
+</tr>
+<tr>
+<td><code class="prettyprint">profile_tags</code></td>
+<td>[:objects]</td>
+<td>{}</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td><code class="prettyprint">feed_tags</code></td>
+<td>[:objects]</td>
+<td>{}</td>
+<td>Optional</td>
 </tr>
 </tbody></table>
 
@@ -4910,11 +5040,6 @@ events for each venue.</p>
 </tr>
 </thead><tbody>
 <tr>
-<td><code class="prettyprint">foursquare_id</code></td>
-<td>:string</td>
-<td><strong>Required</strong></td>
-</tr>
-<tr>
 <td><code class="prettyprint">description</code></td>
 <td>:string</td>
 <td><strong>Required</strong></td>
@@ -4940,6 +5065,11 @@ events for each venue.</p>
 <td><strong>Required</strong></td>
 </tr>
 <tr>
+<td><code class="prettyprint">ends_at</code></td>
+<td>:datetime</td>
+<td><strong>Required</strong> <em>Set by server (based on starts_at &amp; duration)</em></td>
+</tr>
+<tr>
 <td><code class="prettyprint">coords</code></td>
 <td>:point</td>
 <td><strong>Required</strong> <em>(lat/lng values formatted by the server)</em></td>
@@ -4947,7 +5077,7 @@ events for each venue.</p>
 <tr>
 <td><code class="prettyprint">host_id</code></td>
 <td>:integer</td>
-<td><strong>Required</strong></td>
+<td><strong>Required</strong> <em>Set by server (based on current_user)</em></td>
 </tr>
 <tr>
 <td><code class="prettyprint">created_at</code></td>
