@@ -8,46 +8,94 @@ Below are the resource models that the Wildfire API has.
 
 ```json
 {
+  "id": 2,
   "first_name": "Kerry",
   "last_name": "Knight",
-  "email": "woozykk@gmail.com",
-  "dob": "1982-10-24",
-  "avatar_url": "https://fake.urlto.img/user_avatar",
-  "auth_token": "'a2zS95rM5yrrsmxOPVZXPjC5",
-  "auth_token_expiry": "2016-09-28 17:33:52.449806",
-  "last_login_time": "2016-09-27 17:33:52.449806",
-  "about": "This is all about Kerry Knight.",
-  "tags": "['Swift', 'UNC Sports', 'Beer', 'Startups']",
+  "dob": "1980-11-17",
+  "about": "about kerry knight",
+  "city": "Wilmington",
+  "state": "NC",
+  "avatar_url": "http:\/\/lorempixel.com\/300\/300\/sports\/5",
+  "coords": {
+    "lat": 34.2253,
+    "lng": -77.93786
+  },
+  "start_date_range": 1,
   "social_ids": {
-    "facebook": "729779407355",
     "twitter": null,
+    "facebook": null,
     "instagram": null,
     "pinterest": null
   },
-  "push_notifs": {
-    "general": true,
-    "messages": true,
-    "events": false,
-    "mentions": true,
-    "follows": true
-  }
+  "followers_count": 16,
+  "following_users_count": 65,
+  "following_venues_count": 15,
+  "attended_count": 15,
+  "hosted_count": 10,
+  "block_status": false,
+  "follow_status": false,
+  "reverse_block_status": false,
+  "reverse_follow_status": false,
+  "profile_tags": [
+    {
+      "id": 516,
+      "name": "AUB Tigers Football",
+      "parent_id": 510,
+    },
+    {
+      "id": 123,
+      "name": "UCI Anteaters Basketball",
+      "parent_id": 121
+    }
+    {
+      "id": 585,
+      "name": "Dallas Cowboys",
+      "parent_id": 568
+    }
+  ],
+  "feed_tags": [
+    {
+      "id": 334,
+      "name": "DART Big Green Basketball",
+      "parent_id": 328
+    },
+    {
+      "id": 148,
+      "name": "CHS Cougars Basketball",
+      "parent_id": 146
+    },
+    {
+      "id": 541,
+      "name": "Miami Heat",
+      "parent_id": 537
+    }
+  ]
 }
 ```
 
-Attribute | Type | Required/Optional
---------- | ------- | -----------
-`id` | :integer | **Required**
-`email` | :string | **Required**
-`password` | :string | **Required**
-`first_name` | :string | **Required**
-`last_name` | :string | **Required**
-`dob` | :date | **Required**
-`about` | :integer | Optional
-`tags` | :array | Optional
-`social_ids` | :object | Optional
-`avatar_url` | :string | Optional
-`auth_token` | :string | **Required** *(Set by Server & used on all requests)*
-`auth_token_expires_at` | :datetime | **Required** *(Set by Server)*
+Attribute | Type | Default | Required/Optional
+--------- | ---- | ------- | -----------
+`id` | :integer | `n/a` | **Required** *(Set by Server)*
+`email` | :string | `n/a` | **Required**
+`first_name` | :string | `n/a` | **Required**
+`last_name` | :string | `n/a` | **Required**
+`dob` | :datetime | `n/a` | **Required**
+`about` | :text | '' | Optional
+`city` | :string | `n/a` | **Required**
+`state` | :string | `n/a` | **Required**
+`avatar_url` | :string | `n/a` | **Required**
+`coords` | :object | `n/a` | **Required**
+`push_notifs` | :object | `{ general: true, messages: true, event_updates: true, mentions: true, event_comments: true, user_follows: true, join_requests: true }` | Optional
+`social_ids` | :object | `{ facebook: -1, twitter: -1, instagram: -1, pinterest: -1 }` | **Required**
+`start_date_range` | :integer | `1` | **Required**
+`badge_count` | :integer | `0` | Optional
+`auth_token` | :string | `n/a` | **Required** *(Set by Server & used on all requests)*
+`auth_token_expires_at` | :datetime | `n/a` | **Required** *(Set by Server)*
+`last_login_time` | :datetime | `n/a` | **Required** *(Set by Server)*
+`active` | :boolean | `false` | **Required** *(Set by Server)*
+`digits_id` | :string | `n/a` | **Required**
+`profile_tags` | [:objects] | {} | Optional
+`feed_tags` | [:objects] | {} | Optional
 
 ## Event
 
@@ -111,13 +159,13 @@ Attribute | Type | Required/Optional
 
 Attribute | Type | Required/Optional
 --------- | ------- | -----------
-`foursquare_id` | :string | **Required**
 `description` | :string | **Required**
 `image_url` | :string | **Required**
 `tags` | :object | **Required**
 `starts_at` | :datetime | **Required**
 `duration` | :float | **Required**
+`ends_at` | :datetime | **Required** *Set by server (based on starts_at & duration)*
 `coords` | :point | **Required** *(lat/lng values formatted by the server)*
-`host_id` | :integer | **Required**
+`host_id` | :integer | **Required** *Set by server (based on current_user)*
 `created_at` | :datetime | Optional
 `updated_at` | :datetime | Optional

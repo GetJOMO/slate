@@ -444,11 +444,16 @@ ordered by the most recently received notification.
 
 ## Update User
 
-> Send a PATCH request with any of the user object's parameters:
+> Send a PATCH request with any of the user object's attributes:
 
 ```json
 {
-  "about": "An updated bio from the client app!"
+  "about": "An updated bio from the client app!",
+  "start_date_range": 2,
+  "coords": {
+    "lat": "34.4343",
+    "lng": "-77.5353"
+  }
 }
 ```
 
@@ -468,47 +473,66 @@ status: 200
 ```
 ```json
 {
-  "id": 23,
-  "first_name": "Jordan",
-  "last_name": "Godwin",
-  "about": "An updated bio from the client app!",
+  "id": 2,
+  "first_name": "Kerry",
+  "last_name": "Knight",
+  "dob": "1980-11-17",
+  "about": "about kerry knight",
   "city": "Wilmington",
   "state": "NC",
+  "avatar_url": "http:\/\/lorempixel.com\/300\/300\/sports\/5",
   "coords": {
-    "lat": 34.2257,
-    "lng": 77.9447
+    "lat": 34.2253,
+    "lng": -77.93786
   },
-  "auth_token": "cRLSSiGNKfykY9DdsJQonkTp",
-  "auth_token_expiry": "2016-10-05T16:16:54.827Z",
-  "identity_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6ImxheWVyLWVpdDt2PTEiLCJraWQiOiJsYXllcjovLy9rZXlzLzA5YTI1NDZhLTdmNDItMTFlNi1hMzk3LTAyZDM1NjAwMTJmMCJ9.eyJpc3MiOiJsYXllcjovLy9wcm92aWRlcnMvY2Y4ZDEzZTgtN2U5NS0xMWU2LTkyNGItYTE1MWU1MTI0NjI0IiwicHJuIjoiamVnMzIyNEBnbWFpbC5jb20iLCJpYXQiOjE0NzU2MDE1MzIsImV4cCI6MTQ3NjgxMTEzMiwibmNlIjpudWxsfQ.NN-AW7gpnklCoMKzZ_4MoXi0b6XJJQR1nZRXATd3M1nLe1VZk9NlIr-1hYbVRspeZOm4oZuN5HJslLMiYbEot5bm48I1OS0vqqwo64azZSVGTqmJl2GAm_lRizbb10Ic90YUdUPsrMeBfaq4B1yyGX03o2xSPQvDwBetGpqAJ_6oJkH_nDi0ZABLFtml1UHtUjKxOMU06-42r8L8FDTNOHWpw7bvB-hUa1T42OFO9cuDnPytu8yZeqEeS8MoXBY6-KUoI7qaJuaEI9G2IXYlodDZkAwW38Q_hWEp01umPSwB9551E5hApU2sJS2aih2A06tvP23yRt0r1JCI4w5pbQ",
-  "email": "jeg3224@gmail.com",
-  "dob": "1987-02-09",
-  "active": true,
-  "avatar_url": "https:\/\/fake.urlto.img\/user_avatar",
-  "last_login_time": "2016-10-04T16:16:54.827Z",
-  "push_notifs": {
-    "event": false,
-    "follows": false,
-    "general": false,
-    "mentions": false,
-    "messages": false
-  },
+  "start_date_range": 2,
   "social_ids": {
-    "twitter": null,
-    "facebook": null,
-    "instagram": null,
-    "pinterest": null
+    "twitter": -1,
+    "facebook": -1,
+    "instagram": -1,
+    "pinterest": -1
   },
+  "followers_count": 16,
+  "following_users_count": 65,
+  "following_venues_count": 15,
+  "attended_count": 15,
+  "hosted_count": 10,
+  "block_status": false,
+  "follow_status": false,
+  "reverse_block_status": false,
+  "reverse_follow_status": false,
   "profile_tags": [
     {
-      "id": 5,
-      "name": "Hockey",
-      "parent_id": 1
+      "id": 516,
+      "name": "AUB Tigers Football",
+      "parent_id": 510,
     },
     {
-      "id": 1,
-      "name": "Sports",
-      "parent_id": null
+      "id": 123,
+      "name": "UCI Anteaters Basketball",
+      "parent_id": 121
+    }
+    {
+      "id": 585,
+      "name": "Dallas Cowboys",
+      "parent_id": 568
+    }
+  ],
+  "feed_tags": [
+    {
+      "id": 334,
+      "name": "DART Big Green Basketball",
+      "parent_id": 328
+    },
+    {
+      "id": 148,
+      "name": "CHS Cougars Basketball",
+      "parent_id": 146
+    },
+    {
+      "id": 541,
+      "name": "Miami Heat",
+      "parent_id": 537
     }
   ]
 }
