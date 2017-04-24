@@ -3148,7 +3148,7 @@ This endpoint will return a flat array of Tag objects
 > Send a GET request with required parameters:
 
 ```shell
-`https://wildfire-staging.herokuapp.com/api/v1/venues/2`
+`https://wildfire-staging.herokuapp.com/api/v1/venues/5759a613cd1040089032b492`
 ```
 
 > A JSON response like the following would be returned:
@@ -3268,7 +3268,7 @@ the current open/closed status.
 
 ### HTTP Request
 
-`GET https://wildfire-staging.herokuapp.com/api/v1/venues/:id`
+`GET https://wildfire-staging.herokuapp.com/api/v1/venues/:foursquare_id/`
 
 ## Foursquare Venues<a name="venues_query"></a> (Venue Name Query)
 
