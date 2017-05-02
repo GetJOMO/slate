@@ -381,56 +381,92 @@ status: 200
 ```json
 [
   {
-    "id": 5167,
+    "id": 4893,
     "actor": {
-      "id": 28,
-      "first_name": "Kobe"
+      "id": 374,
+      "first_name": "Kieran",
+      "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/8"
     },
-    "action": "joined",
-    "created_at": "2017-04-07T18:13:10.547Z",
-    "event_data": {
-      "id": 5,
-      "attendee_count": 3
-    }
+    "action": 0,
+    "text": "Kieran joined your event",
+    "data": {
+      "event": {
+        "id": 1,
+        "attendee_count": 2
+      }
+    },
+    "created_at": "2017-05-02T16:45:50.962Z"
   },
   {
-    "id": 1706,
+    "id": 1205,
     "actor": {
       "id": 6,
-      "first_name": "Nicholas"
+      "first_name": "Nicholas",
+      "avatar_url": "http:\/\/lorempixel.com\/300\/300\/sports\/3"
     },
-    "action": "mentioned",
-    "created_at": "2017-04-07T18:11:16.590Z",
-    "event_data": {
-      "id": 40,
-      "attendee_count": 45
-    }
+    "action": 3,
+    "text": "Nicholas commented on an event you're attending",
+    "data": {
+      "event": {
+        "id": 89,
+        "description": "Event 30: Nicholas' fun event for <a class=\"user\" id=\"1\">Jordan Godwin<\/a>, <a class=\"user\" id=\"2\">Kerry Knight<\/a> and <a class=\"user\" id=\"3\">Gavin Baradic<\/a>."
+      },
+      "comment": {
+        "id": 847,
+        "body": "This sounds really fun!!"
+      },
+    },
+    "created_at": "2017-05-02T15:52:10.758Z"
+  }
+  {
+    "id": 4892,
+    "actor": {
+      "id": 354,
+      "first_name": "Lemuel",
+      "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/4"
+    },
+    "action": 2,
+    "text": "Lemuel is now following you",
+    "data": "{}",
+    "created_at": "2017-05-02T16:43:08.987Z"
   },
   {
-    "id": 1616,
+    "id": 1727,
     "actor": {
-      "id": 2,
-      "first_name": "Kerry"
+      "id": 7,
+      "first_name": "Mike",
+      "avatar_url": "https:\/\/s3.amazonaws.com\/jomo-dev-us-east-1\/uploads\/60aa27c2-8547-4bdc-aba2-247c3426e7a4.png"
     },
-    "action": "mentioned",
-    "created_at": "2017-04-07T18:11:13.289Z",
-    "event_data": {
-      "id": 38,
-      "attendee_count": 36
-    }
+    "action": 4,
+    "text": "Mike mentioned you in an event",
+    "data": {
+      "event": {
+        "id": 41,
+        "description": "Event 41: Nicholas' fun event for <a class=\"user\" id=\"1\">Jordan Godwin<\/a>, <a class=\"user\" id=\"2\">Kerry Knight<\/a> and <a class=\"user\" id=\"3\">Gavin Baradic<\/a>."
+      }
+    },
+    "created_at": "2017-05-02T16:27:34.757Z"
   },
   {
-    "id": 250,
+    "id": 1205,
     "actor": {
-      "id": 3,
-      "first_name": "Gavin"
+      "id": 6,
+      "first_name": "Nicholas",
+      "avatar_url": "http:\/\/lorempixel.com\/300\/300\/sports\/3"
     },
-    "action": "mentioned",
-    "created_at": "2017-04-07T18:10:23.686Z",
-    "event_data": {
-      "id": 10,
-      "attendee_count": 1
-    }
+    "action": 5,
+    "text": "Nicholas mentioned you in a comment",
+    "data": {
+      "event": {
+        "id": 30,
+        "description": "Event 30: Nicholas' fun event for <a class=\"user\" id=\"1\">Jordan Godwin<\/a>, <a class=\"user\" id=\"2\">Kerry Knight<\/a> and <a class=\"user\" id=\"3\">Gavin Baradic<\/a>."
+      },
+      "comment": {
+        "id": 283,
+        "body": "I'll be there <a class=\"user\" id=\"1\">Jordan Godwin<\/a>!"
+      },
+    },
+    "created_at": "2017-05-02T15:52:10.758Z"
   }
 ]  
 ```
@@ -441,6 +477,33 @@ ordered by the most recently received notification.
 ### HTTP Request
 
 `GET https://wildfire-staging.herokuapp.com/api/v1/me/notifications`
+
+## Update Device Badge Count
+
+> Send a PATCH request with any of the user object's attributes:
+
+```json
+{
+  "device_badge_count": 1
+}
+```
+
+> A JSON response like the following would be returned:
+
+```shell
+status: 200
+```
+```json
+{
+  "device_badge_count": 1
+}
+```
+
+Description: Updates the current user's `device_badge_count` attribute
+
+### HTTP Request
+
+`PATCH https://wildfire-staging.herokuapp.com/api/v1/me/device_badge_count`
 
 ## Update User
 
