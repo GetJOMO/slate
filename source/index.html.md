@@ -474,6 +474,17 @@ status: 200
 Description: This endpoint will return a paginated array of notification objects,
 ordered by the most recently received notification.
 
+**Action Types:**
+```
+{
+  joined: 0,
+  followed: 1,
+  commented: 2,
+  event_mention: 3,
+  comment_mention: 4
+}
+```
+
 ### HTTP Request
 
 `GET https://wildfire-staging.herokuapp.com/api/v1/me/notifications`
