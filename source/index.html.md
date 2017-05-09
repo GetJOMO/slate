@@ -481,7 +481,10 @@ ordered by the most recently received notification.
   followed: 1,
   commented: 2,
   event_mention: 3,
-  comment_mention: 4
+  comment_mention: 4,
+  event_updated: 5,
+  new_badge: 6,
+  general: 7
 }
 ```
 
