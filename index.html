@@ -578,6 +578,17 @@ identity token for making user authenticated requests to Layer&rsquo;s API</p>
 <p>Description: This endpoint will return a paginated array of notification objects,
 ordered by the most recently received notification.</p>
 
+<p><strong>Action Types:</strong>
+<code class="prettyprint">
+{
+  joined: 0,
+  followed: 1,
+  commented: 2,
+  event_mention: 3,
+  comment_mention: 4
+}
+</code></p>
+
 <h3 id="http-request">HTTP Request</h3>
 
 <p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/me/notifications</code></p>
