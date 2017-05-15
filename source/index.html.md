@@ -2890,6 +2890,56 @@ from the specified event.
 
 `DELETE https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/requests/:id`
 
+## Check-in to an Event
+
+> Send a PATCH request with required parameters:
+
+```shell
+https://wildfire-dev.herokuapp.com/api/v1/events/32/joins/7/check_in
+```
+```json
+```json
+{
+  "body": "Made it to the event!",
+  "media": {
+    "media_url": "test.com/img",
+    "media_thumb": "test.com/img_thumb",
+    "media_type": 0,
+    "height": 300,
+    "width": 300,
+    "thumb_height": 100,
+    "thumb_width": 100
+  }
+}
+```
+
+> A JSON response like the following would be returned:
+
+```shell
+status: 200
+```
+```json
+{
+  "id": 37,
+  "user_id": 7,
+  "event_id": 32,
+  "attendee_status": 3
+}
+```
+
+This endpoint will allow an Attendee with a `:joined` status to check-in to an event.
+
+### HTTP Request
+
+`DELETE https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/joins/:user_id/check_in`
+
+### Request Body Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+`media` | nil | A media object just like Events or Comments **(Required)**
+`body` | nil | A string of text content **(Optional)**
+
 ## Create Event Comment
 
 > Send a POST request with required parameters:
