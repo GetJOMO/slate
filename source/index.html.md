@@ -2563,75 +2563,16 @@ status: 201
 ```
 ```json
 {
-  "id": 15,
-  "description": "Et rerum vero eveniet excepturi.",
-  "media": {
-    "media_url": "http://lorempixel.com/600/338/sports/3",
-    "media_thumb": "http://lorempixel.com/300/169/sports/9",
-    "media_type": 0,
-    "width": 600,
-    "height": 338,
-    "thumb_width": 300,
-    "thumb_height": 169
-  },
-  "comments_count": 0,
-  "attendee_count": 1,
-  "status": 0,
-  "privacy": 0,
-  "attendee_status": 0,
-  "notifications_status": false,
-  "starts_at": "2017-01-04T12:22:53.000Z",
-  "ends_at": "2017-01-04T12:23:02.630Z",
-  "duration": 9.63,
-  "host": {
-    "id": 7,
-    "first_name": "Carlotta",
-    "last_name": "Huels",
-    "dob": "1998-08-05"
-  },
-  "venue": {
-    "id": 32,
-    "name": "New Venue",
-    "city": "Wilmington",
-    "state": "NC",
-    "icon_url": "https:\/\/ss0.4sqi.net\/img\/categories_v2\/nightlife\/default_bg_64.png",
-    "coords": {
-      "lat": 34.4332,
-      "lng": -77.8485
-    },
-    "follow_status": false,
-    "category": "Beach Bar",
-    "foursquare_id": "fsdf37fds483df747af"
-  },
-  "tags": [
-    {
-      "id": 160,
-      "name": "IW Cardinals Basketball",
-      "parent_id": 155,
-    }
-  ],
-  "attendees": [
-    {
-      "id": 1,
-      "first_name": "Jordan",
-      "last_name": "Godwin",
-      "avatar_url": "http:\/\/lorempixel.com\/300\/300\/sports\/1"
-    },
-    {
-      "id": 2,
-      "first_name": "Kerry",
-      "last_name": "Knight",
-      "avatar_url": "http:\/\/lorempixel.com\/300\/300\/sports\/2"
-    }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "See you there! I'll bring the beer!!",
-      "user_id": 1,
-      "created_at": "2017-02-06T22:40:59.502Z"
-    }
-  ]
+  "id": 2339,
+  "user_id": 17,
+  "first_name": "Jamal",
+  "last_name": "Schinner",
+  "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/8",
+  "event_id": 39,
+  "description": "Event 39: Kerry's sports party for <a class=\"user\" id=\"1\">Jordan Godwin<\/a> and <a class=\"user\" id=\"3\">Gavin Baradic<\/a>.",
+  "ends_at": "2017-05-19T00:00:00.000Z",
+  "requested_at": "2017-05-15T14:56:55.114Z",
+  "attendee_status": 1
 }
 ```
 
@@ -2731,7 +2672,7 @@ from the specified event.
 
 `DELETE https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/joins/:id`
 
-## Retrieve Join (Attendees) for Event [[Pg'd](#pagination)]
+## Retrieve Joins (Attendees) for Event [[Pg'd](#pagination)]
 
 > Send a GET request with required parameters:
 
