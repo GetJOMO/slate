@@ -4164,49 +4164,66 @@ status: 200
     "id": 3,
     "description": "Jordan's fishing trip for <a class=\"user\" id=\"2\">Kerry Knight<\/a> and <a class=\"user\" id=\"3\">Gavin Baradic<\/a> goes here",
     "media": {
-      "media_url": "http://lorempixel.com/600/338/sports/3",
-      "media_thumb": "http://lorempixel.com/300/169/sports/9",
-      "media_type": 0,
       "width": 600,
       "height": 338,
+      "media_url": "http:\/\/lorempixel.com\/600\/338\/people\/4",
+      "media_type": "image",
+      "media_thumb": "http:\/\/lorempixel.com\/300\/169\/people\/4",
       "thumb_width": 300,
       "thumb_height": 169
     },
-    "starts_at": "2017-01-19T11:17:07.000Z",
-    "ends_at": "2017-01-19T11:17:16.439Z",
-    "status": 0,
-    "status": 0,
+    "comments_count": 40,
     "privacy": 0,
-    "attendee_status": 0,
-    "notifications_status": false,
-    "comments_count": 0,
-    "attendee_count": 0,
-    "host": {
-      "id": 1,
-      "first_name": "Jordan",
-      "last_name": "Godwin",
-      "avatar_url": "http:\/\/lorempixel.com\/300\/300\/sports\/3",
-      "profile_tags": [
+    "starts_at": "2017-05-22T00:00:00.000Z",
+    "ends_at": "2017-05-28T00:00:00.000Z",
+    "duration": 6.86,
+    "event_status": 1,
+    "attendee_data": {
+      "me": {},
+      "total_attendee_count": 41,
+      "follows_attendee_count": 4,
+      "follows_data": [
         {
-          "id": 94,
-          "name": "Fishing",
-          "parent_id": 32,
+          "user_id": 5,
+          "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/7"
+        },
+        {
+          "user_id": 232,
+          "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/5"
+        },
+        {
+          "user_id": 381,
+          "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/2"
+        },
+        {
+          "user_id": 524,
+          "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/2"
         }
       ]
     },
+    "host": {
+      "id": 5,
+      "first_name": "Test",
+      "last_name": "Testerson",
+      "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/7",
+      "block_status": false,
+      "follow_status": true,
+      "reverse_block_status": false,
+      "reverse_follow_status": true
+    },
     "venue": {
-      "id": 193,
-      "name": "Atlantic Ocean",
+      "id": 29,
+      "name": "Barbary Coast",
       "city": "Wilmington",
       "state": "NC",
-      "icon_url": "https:\/\/ss0.4sqi.net\/img\/categories_v2\/nightlife\/default_bg_64.png",
+      "icon_url": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/nightlife\/divebar_64.png",
       "coords": {
-        "lat": 34.4332,
-        "lng": -77.8485
+        "lat": 34.233611017457,
+        "lng": -77.948636357948
       },
+      "category": "Dive Bar",
       "follow_status": false,
-      "category": "Outdoors",
-      "foursquare_id": "le5kd742qff83m7d48st",
+      "foursquare_id": "4b88846bf964a520b7fd31e3"
     },
     "tags": [
       {
@@ -4221,7 +4238,74 @@ status: 200
       }
     ]
   },
-  ...
+  {
+    ...
+  },
+  {
+    "id": 15,
+    "description": "Event 15: Kerry's sports party for <a class=\"user\" id=\"1\">Jordan Godwin<\/a> and <a class=\"user\" id=\"3\">Gavin Baradic<\/a>.",
+    "media": {
+      "width": 600,
+      "height": 338,
+      "media_url": "http:\/\/lorempixel.com\/600\/338\/sports\/9",
+      "media_type": "image",
+      "media_thumb": "http:\/\/lorempixel.com\/300\/169\/sports\/9",
+      "thumb_width": 300,
+      "thumb_height": 169
+    },
+    "comments_count": 33,
+    "privacy": 0,
+    "starts_at": "2017-05-18T00:00:00.000Z",
+    "ends_at": "2017-05-25T00:00:00.000Z",
+    "duration": 7.39,
+    "event_status": 1,
+    "attendee_data": {
+      "me": {
+        "user_id": 2,
+        "attendee_status": 2,
+        "mute_notifications": false
+      },
+      "total_attendee_count": 40,
+      "follows_attendee_count": 2,
+      "follows_data": [
+        {
+          "user_id": 75,
+          "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/2"
+        },
+        {
+          "user_id": 453,
+          "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/2"
+        }
+      ]
+    },
+    "host": {
+      "id": 2,
+      "first_name": "Kerry",
+      "last_name": "Knight",
+      "avatar_url": "http:\/\/lorempixel.com\/300\/300\/sports\/5"
+    },
+    "venue": {
+      "id": 6,
+      "name": "Ironclad Brewery",
+      "city": "Wilmington",
+      "state": "NC",
+      "icon_url": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/food\/brewery_64.png",
+      "coords": {
+        "lat": 34.237000354377,
+        "lng": -77.947729825973
+      },
+      "category": "Brewery",
+      "follow_status": false,
+      "foursquare_id": "53dbd858498e33be781da324"
+    },
+    "tags": [
+      {
+        "id": 312,
+        "name": "Beer",
+        "parent_id": 35,
+      }
+    ]
+  }
 ]
 ```
 
@@ -4267,7 +4351,24 @@ status: 200
     "category": "Tech Startup",
     "follow_status": true,
     "foursquare_id": "5759a613cd1040089032b492",
-    "active_events_count": 14
+    "active_events_count": 14,
+    "future_events_count": 3
+  },
+  {
+    "id": 6,
+    "name": "Ironclad Brewery",
+    "city": "Wilmington",
+    "state": "NC",
+    "icon_url": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/food\/brewery_64.png",
+    "coords": {
+      "lat": 34.237000354377,
+      "lng": -77.947729825973
+    },
+    "category": "Brewery",
+    "follow_status": false,
+    "foursquare_id": "53dbd858498e33be781da324",
+    "active_events_count": 42,
+    "future_events_count": 0
   },
   {
     ...
@@ -4285,7 +4386,8 @@ status: 200
     "category": "Pub",
     "follow_status": false,
     "foursquare_id": "4bf58dd8d48988d11b941735",
-    "active_events_count": 11
+    "active_events_count": 11,
+    "future_events_count": 1
   },
   {
     "id": 3,
@@ -4300,7 +4402,8 @@ status: 200
     "category": "Coffee Shop",
     "follow_status": false,
     "foursquare_id": "53fa55f3498ed31bb942100a",
-    "active_events_count": 7
+    "active_events_count": 7,
+    "future_events_count": 0
   },
   {
     "id": 4,
@@ -4315,7 +4418,8 @@ status: 200
     "category": "Beach",
     "follow_status": false,
     "foursquare_id": "4c30a001a0ced13a3c61126e",
-    "active_events_count": 3
+    "active_events_count": 3,
+    "future_events_count": 1
   }
 ]
 ```
@@ -4365,7 +4469,8 @@ status: 200
     "category": "Tech Startup",
     "follow_status": true,
     "foursquare_id": "5759a613cd1040089032b492",
-    "active_events_count": 14
+    "active_events_count": 14,
+    "future_events_count": 1
   },
   {
     "id": 2,
@@ -4380,7 +4485,8 @@ status: 200
     "category": "Pub",
     "follow_status": false,
     "foursquare_id": "4bf58dd8d48988d11b941735",
-    "active_events_count": 11
+    "active_events_count": 11,
+    "future_events_count": 0
   },
   {
     ...
@@ -4398,7 +4504,8 @@ status: 200
     "category": "Coffee Shop",
     "follow_status": false,
     "foursquare_id": "53fa55f3498ed31bb942100a",
-    "active_events_count": 7
+    "active_events_count": 7,
+    "future_events_count": 5
   },
   {
     "id": 4,
@@ -4413,7 +4520,8 @@ status: 200
     "category": "Beach",
     "follow_status": false,
     "foursquare_id": "4c30a001a0ced13a3c61126e",
-    "active_events_count": 3
+    "active_events_count": 3,
+    "future_events_count": 0
   }
 ]
 ```
