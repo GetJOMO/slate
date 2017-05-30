@@ -2839,7 +2839,7 @@ to join the specified event.
 > Send a PATCH request with required parameters:
 
 ```shell
-https://wildfire-dev.herokuapp.com/api/v1/events/38/requests/7
+https://wildfire-dev.herokuapp.com/api/v1/events/38/requests/324
 ```
 
 > A JSON response like the following would be returned:
@@ -2862,14 +2862,14 @@ is a single JSON object that includes the updated attendee_status.
 
 ### HTTP Request
 
-`PATCH https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/requests/:id`
+`PATCH https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/requests/:user_id`
 
 ## Ignore a Join Request
 
 > Send a DELETE request with required parameters:
 
 ```shell
-https://wildfire-dev.herokuapp.com/api/v1/events/32/requests/7
+https://wildfire-dev.herokuapp.com/api/v1/events/32/requests/324
 ```
 
 > A JSON response like the following would be returned:
@@ -2888,16 +2888,16 @@ from the specified event.
 
 ### HTTP Request
 
-`DELETE https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/requests/:id`
+`DELETE https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/requests/:user_id`
 
 ## Check-in to an Event
 
-> Send a PATCH request with required parameters:
+> Send a POST request with required parameters:
 
 ```shell
-https://wildfire-dev.herokuapp.com/api/v1/events/32/joins/7/check_in
+https://wildfire-dev.herokuapp.com/api/v1/events/32/check_in
 ```
-```json
+
 ```json
 {
   "body": "Made it to the event!",
@@ -2931,7 +2931,7 @@ This endpoint will allow an Attendee with a `:joined` status to check-in to an e
 
 ### HTTP Request
 
-`DELETE https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/joins/:user_id/check_in`
+`POST https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/check_in`
 
 ### Request Body Parameters
 
@@ -2939,6 +2939,34 @@ Parameter | Default | Description
 --------- | ------- | -----------
 `media` | nil | A media object just like Events or Comments **(Required)**
 `body` | nil | A string of text content **(Optional)**
+
+## Check-in to an Event
+
+> Send a GET request with required parameters:
+
+```shell
+https://wildfire-dev.herokuapp.com/api/v1/events/32/check_ins
+```
+
+> A JSON response like the following would be returned:
+
+```shell
+status: 200
+```
+```json
+{
+  "id": 37,
+  "user_id": 7,
+  "event_id": 32,
+  "attendee_status": 3
+}
+```
+
+This endpoint will allow an Attendee with a `:joined` status to check-in to an event.
+
+### HTTP Request
+
+`GET https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/check_ins`
 
 ## Create Event Comment
 
