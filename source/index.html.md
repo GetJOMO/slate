@@ -2890,12 +2890,12 @@ from the specified event.
 
 `DELETE https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/requests/:user_id`
 
-## Check-in to an Event
+## Checkin to an Event
 
 > Send a POST request with required parameters:
 
 ```shell
-https://wildfire-dev.herokuapp.com/api/v1/events/32/check_in
+https://wildfire-dev.herokuapp.com/api/v1/events/32/checkin
 ```
 
 ```json
@@ -2920,10 +2920,48 @@ status: 200
 ```
 ```json
 {
-  "id": 37,
-  "user_id": 7,
+  "id": 4,
+  "media": {
+    "media_url": "test.com\/img",
+    "media_thumb": "test.com\/img_thumb",
+    "media_type": 0,
+    "height": 300,
+    "width": 300,
+    "thumb_height": 100,
+    "thumb_width": 100
+  },
   "event_id": 32,
-  "attendee_status": 3
+  "attendee_status": 3,
+  "created_at": "2017-05-31T18:53:40.773Z",
+  "user": {
+    "id": 13,
+    "first_name": "Aubree",
+    "last_name": "Pagac",
+    "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/8",
+    "profile_tags": [
+      {
+        "id": 1,
+        "name": "Sports",
+        "parent_id": null,
+        "created_at": "2017-05-24T18:52:41.614Z",
+        "updated_at": "2017-05-24T18:52:41.614Z"
+      },
+      {
+        "id": 29,
+        "name": "SEMO Redhawks Basketball",
+        "parent_id": 26,
+        "created_at": "2017-05-24T18:52:40.994Z",
+        "updated_at": "2017-05-24T18:52:40.994Z"
+      },
+      {
+        "id": 549,
+        "name": "Cleveland Cavaliers",
+        "parent_id": 537,
+        "created_at": "2017-05-24T18:52:47.505Z",
+        "updated_at": "2017-05-24T18:52:47.505Z"
+      }
+    ]
+  }
 }
 ```
 
@@ -2931,7 +2969,7 @@ This endpoint will allow an Attendee with a `:joined` status to check-in to an e
 
 ### HTTP Request
 
-`POST https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/check_in`
+`POST https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/checkin`
 
 ### Request Body Parameters
 
@@ -2940,12 +2978,12 @@ Parameter | Default | Description
 `media` | nil | A media object just like Events or Comments **(Required)**
 `body` | nil | A string of text content **(Optional)**
 
-## Check-in to an Event
+## Get Event Checkins
 
 > Send a GET request with required parameters:
 
 ```shell
-https://wildfire-dev.herokuapp.com/api/v1/events/32/check_ins
+https://wildfire-dev.herokuapp.com/api/v1/events/32/checkins
 ```
 
 > A JSON response like the following would be returned:
@@ -2954,19 +2992,93 @@ https://wildfire-dev.herokuapp.com/api/v1/events/32/check_ins
 status: 200
 ```
 ```json
-{
-  "id": 37,
-  "user_id": 7,
-  "event_id": 32,
-  "attendee_status": 3
-}
+[
+  {
+    "id": 3,
+    "media": {
+      "width": 300,
+      "height": 300,
+      "media_url": "test.com\/img",
+      "media_type": 0,
+      "media_thumb": "test.com\/img_thumb",
+      "thumb_width": 100,
+      "thumb_height": 100
+    },
+    "event_id": 32,
+    "attendee_status": 3,
+    "created_at": "2017-05-31T18:20:00.651Z",
+    "user": {
+      "id": 11,
+      "first_name": "Gay",
+      "last_name": "Watsica",
+      "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/6",
+      "profile_tags": [
+        {
+          "id": 1,
+          "name": "Sports",
+          "parent_id": null,
+          "created_at": "2017-05-24T18:52:48.104Z",
+          "updated_at": "2017-05-24T18:52:48.104Z"
+        },
+        {
+          "id": 245,
+          "name": "WRST Raiders Basketball",
+          "parent_id": 241,
+          "created_at": "2017-05-24T18:52:43.576Z",
+          "updated_at": "2017-05-24T18:52:43.576Z"
+        }
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "media": {
+      "width": 300,
+      "height": 300,
+      "media_url": "test.com\/img",
+      "media_type": 0,
+      "media_thumb": "test.com\/img_thumb",
+      "thumb_width": 100,
+      "thumb_height": 100
+    },
+    "event_id": 32,
+    "attendee_status": 3,
+    "created_at": "2017-05-31T18:53:40.773Z",
+    "user": {
+      "id": 13,
+      "first_name": "Aubree",
+      "last_name": "Pagac",
+      "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/8",
+      "block_status": false,
+      "follow_status": false,
+      "reverse_block_status": false,
+      "reverse_follow_status": false,
+      "profile_tags": [
+        {
+          "id": 87,
+          "name": "IDHO Vandals Basketball",
+          "parent_id": 75,
+          "created_at": "2017-05-24T18:52:41.614Z",
+          "updated_at": "2017-05-24T18:52:41.614Z"
+        },
+        {
+          "id": 29,
+          "name": "SEMO Redhawks Basketball",
+          "parent_id": 26,
+          "created_at": "2017-05-24T18:52:40.994Z",
+          "updated_at": "2017-05-24T18:52:40.994Z"
+        }
+      ]
+    }
+  }
+]
 ```
 
-This endpoint will allow an Attendee with a `:joined` status to check-in to an event.
+This endpoint retrieve all checkin's for the specified event.
 
 ### HTTP Request
 
-`GET https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/check_ins`
+`GET https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/checkins`
 
 ## Create Event Comment
 
