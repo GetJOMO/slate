@@ -2921,6 +2921,7 @@ status: 200
 ```json
 {
   "id": 4,
+  "body": "Made it to the event!",
   "media": {
     "media_url": "test.com\/img",
     "media_thumb": "test.com\/img_thumb",
@@ -2931,7 +2932,6 @@ status: 200
     "thumb_width": 100
   },
   "event_id": 32,
-  "attendee_status": 3,
   "created_at": "2017-05-31T18:53:40.773Z",
   "user": {
     "id": 13,
@@ -2995,6 +2995,7 @@ status: 200
 [
   {
     "id": 3,
+    "body": "Made it to the event!",
     "media": {
       "width": 300,
       "height": 300,
@@ -3005,7 +3006,6 @@ status: 200
       "thumb_height": 100
     },
     "event_id": 32,
-    "attendee_status": 3,
     "created_at": "2017-05-31T18:20:00.651Z",
     "user": {
       "id": 11,
@@ -3032,6 +3032,7 @@ status: 200
   },
   {
     "id": 4,
+    "body": "",
     "media": {
       "width": 300,
       "height": 300,
@@ -3042,7 +3043,6 @@ status: 200
       "thumb_height": 100
     },
     "event_id": 32,
-    "attendee_status": 3,
     "created_at": "2017-05-31T18:53:40.773Z",
     "user": {
       "id": 13,
