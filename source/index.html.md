@@ -3500,6 +3500,7 @@ status: 200
     "name": "Duck & Dive Pub",
     "city": "Wilmington",
     "state": "NC",
+    "address": "11 S. Front St",
     "coords": {
       "lat": 34.234175252892,
       "lng": -77.947961431061
@@ -3513,6 +3514,7 @@ status: 200
     "name": "Dig & Dive",
     "city": "Wilmington",
     "state": "NC",
+    "address": "129 Covil Rd.",
     "coords": {
       "lat": 34.238095496413,
       "lng": -77.899629099616
@@ -3526,6 +3528,7 @@ status: 200
     "name": "Ducks Sporting Goods",
     "city": "Wilmington",
     "state": "NC",
+    "address": "1292 Military Cutoff Rd.",
     "coords": {
       "lat": 34.213194444444,
       "lng": -77.887222222222
@@ -3542,6 +3545,7 @@ status: 200
     "name": "Two Duck Lake",
     "city": "Castle Hayne",
     "state": "NC",
+    "address": "6 3/4 Holland Dr",
     "coords": {
       "lat": 34.300494887124,
       "lng": -77.919621866052
@@ -3555,6 +3559,7 @@ status: 200
     "name": "Diversified Energy",
     "city": "Wilm",
     "state": "NC",
+    "address": "Gordon Road",
     "coords": {
       "lat": 34.268261124196,
       "lng": -77.82300554898
@@ -3605,6 +3610,7 @@ status: 200
     "name": "Buzz's Roost",
     "city": "Wilmington",
     "state": "NC",
+    "address": "11 S. Front St",
     "coords": {
       "lat": 34.23477,
       "lng": -77.948472
@@ -3618,6 +3624,7 @@ status: 200
     "name": "Untappd HQ - ILM",
     "city": "Wilmington",
     "state": "NC",
+    "address": "21 S. Front St",
     "coords": {
       "lat": 34.235789629482,
       "lng": -77.947483062744
@@ -3631,6 +3638,7 @@ status: 200
     "name": "The Husk Seed Store And Bar",
     "city": "Wilmington",
     "state": "NC",
+    "address": "26 S. Front St",
     "coords": {
       "lat": 34.234334508993,
       "lng": -77.94827937235
@@ -3645,6 +3653,7 @@ status: 200
     "name": "Wilmington Riverwalk",
     "city": "Wilmington",
     "state": "NC",
+    "address": "Water Street",
     "coords": {
       "lat": 34.234473662713,
       "lng": -77.949545550328
@@ -3658,6 +3667,7 @@ status: 200
     "name": "Dram + Morsel",
     "city": "Wilmington",
     "state": "NC",
+    "address": "33 S Front St",
     "coords": {
       "lat": 34.234334962627,
       "lng": -77.948360145092
