@@ -2877,12 +2877,12 @@ from the specified event.</p>
 
 <p><code class="prettyprint">DELETE https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/requests/:user_id</code></p>
 
-<h2 id="check-in-to-an-event">Check-in to an Event</h2>
+<h2 id="checkin-to-an-event">Checkin to an Event</h2>
 
 <blockquote>
 <p>Send a POST request with required parameters:</p>
 </blockquote>
-<pre class="highlight shell"><code>https://wildfire-dev.herokuapp.com/api/v1/events/32/check_in
+<pre class="highlight shell"><code>https://wildfire-dev.herokuapp.com/api/v1/events/32/checkin
 </code></pre><pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Made it to the event!"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"media"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -2901,17 +2901,55 @@ from the specified event.</p>
 </blockquote>
 <pre class="highlight shell"><code>status: 200
 </code></pre><pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">37</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"media"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"media_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test.com</span><span class="se">\/</span><span class="s2">img"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"media_thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test.com</span><span class="se">\/</span><span class="s2">img_thumb"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"media_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"thumb_height"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"thumb_width"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+  </span><span class="p">},</span><span class="w">
   </span><span class="s2">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"attendee_status"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+  </span><span class="s2">"attendee_status"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-31T18:53:40.773Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aubree"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pagac"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:</span><span class="se">\/\/</span><span class="s2">lorempixel.com</span><span class="se">\/</span><span class="s2">300</span><span class="se">\/</span><span class="s2">300</span><span class="se">\/</span><span class="s2">cats</span><span class="se">\/</span><span class="s2">8"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"profile_tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sports"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-24T18:52:41.614Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-24T18:52:41.614Z"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">29</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEMO Redhawks Basketball"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">26</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-24T18:52:40.994Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-24T18:52:40.994Z"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">549</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cleveland Cavaliers"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">537</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-24T18:52:47.505Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-24T18:52:47.505Z"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint will allow an Attendee with a <code class="prettyprint">:joined</code> status to check-in to an event.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/check_in</code></p>
+<p><code class="prettyprint">POST https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/checkin</code></p>
 
 <h3 id="request-body-parameters">Request Body Parameters</h3>
 
@@ -2934,29 +2972,103 @@ from the specified event.</p>
 </tr>
 </tbody></table>
 
-<h2 id="check-in-to-an-event">Check-in to an Event</h2>
+<h2 id="get-event-checkins">Get Event Checkins</h2>
 
 <blockquote>
 <p>Send a GET request with required parameters:</p>
 </blockquote>
-<pre class="highlight shell"><code>https://wildfire-dev.herokuapp.com/api/v1/events/32/check_ins
+<pre class="highlight shell"><code>https://wildfire-dev.herokuapp.com/api/v1/events/32/checkins
 </code></pre>
 <blockquote>
 <p>A JSON response like the following would be returned:</p>
 </blockquote>
 <pre class="highlight shell"><code>status: 200
-</code></pre><pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">37</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"attendee_status"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
-</span><span class="p">}</span><span class="w">
+</code></pre><pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"media"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"media_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test.com</span><span class="se">\/</span><span class="s2">img"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"media_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"media_thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test.com</span><span class="se">\/</span><span class="s2">img_thumb"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"thumb_width"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"thumb_height"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attendee_status"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-31T18:20:00.651Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gay"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Watsica"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:</span><span class="se">\/\/</span><span class="s2">lorempixel.com</span><span class="se">\/</span><span class="s2">300</span><span class="se">\/</span><span class="s2">300</span><span class="se">\/</span><span class="s2">cats</span><span class="se">\/</span><span class="s2">6"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"profile_tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sports"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-24T18:52:48.104Z"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-24T18:52:48.104Z"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">245</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WRST Raiders Basketball"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">241</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-24T18:52:43.576Z"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-24T18:52:43.576Z"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"media"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"media_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test.com</span><span class="se">\/</span><span class="s2">img"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"media_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"media_thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test.com</span><span class="se">\/</span><span class="s2">img_thumb"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"thumb_width"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"thumb_height"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attendee_status"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-31T18:53:40.773Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aubree"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pagac"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:</span><span class="se">\/\/</span><span class="s2">lorempixel.com</span><span class="se">\/</span><span class="s2">300</span><span class="se">\/</span><span class="s2">300</span><span class="se">\/</span><span class="s2">cats</span><span class="se">\/</span><span class="s2">8"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"block_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"reverse_block_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"reverse_follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"profile_tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">87</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IDHO Vandals Basketball"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">75</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-24T18:52:41.614Z"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-24T18:52:41.614Z"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">29</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEMO Redhawks Basketball"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">26</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-24T18:52:40.994Z"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-24T18:52:40.994Z"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>This endpoint will allow an Attendee with a <code class="prettyprint">:joined</code> status to check-in to an event.</p>
+<p>This endpoint retrieve all checkin&rsquo;s for the specified event.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/check_ins</code></p>
+<p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/checkins</code></p>
 
 <h2 id="create-event-comment">Create Event Comment</h2>
 
@@ -3351,6 +3463,7 @@ the current open/closed status.</p>
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Duck &amp; Dive Pub"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wilmington"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NC"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11 S. Front St"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"coords"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.234175252892</span><span class="p">,</span><span class="w">
       </span><span class="s2">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.947961431061</span><span class="w">
@@ -3364,6 +3477,7 @@ the current open/closed status.</p>
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dig &amp; Dive"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wilmington"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NC"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"129 Covil Rd."</span><span class="p">,</span><span class="w">
     </span><span class="s2">"coords"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.238095496413</span><span class="p">,</span><span class="w">
       </span><span class="s2">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.899629099616</span><span class="w">
@@ -3377,6 +3491,7 @@ the current open/closed status.</p>
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ducks Sporting Goods"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wilmington"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NC"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1292 Military Cutoff Rd."</span><span class="p">,</span><span class="w">
     </span><span class="s2">"coords"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.213194444444</span><span class="p">,</span><span class="w">
       </span><span class="s2">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.887222222222</span><span class="w">
@@ -3393,6 +3508,7 @@ the current open/closed status.</p>
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Two Duck Lake"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Castle Hayne"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NC"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6 3/4 Holland Dr"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"coords"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.300494887124</span><span class="p">,</span><span class="w">
       </span><span class="s2">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.919621866052</span><span class="w">
@@ -3406,6 +3522,7 @@ the current open/closed status.</p>
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Diversified Energy"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wilm"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NC"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gordon Road"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"coords"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.268261124196</span><span class="p">,</span><span class="w">
       </span><span class="s2">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.82300554898</span><span class="w">
@@ -3466,6 +3583,7 @@ venue object that is passed back will then be cached and stored for retrieval la
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Buzz's Roost"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wilmington"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NC"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11 S. Front St"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"coords"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.23477</span><span class="p">,</span><span class="w">
       </span><span class="s2">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.948472</span><span class="w">
@@ -3479,6 +3597,7 @@ venue object that is passed back will then be cached and stored for retrieval la
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Untappd HQ - ILM"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wilmington"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NC"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21 S. Front St"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"coords"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.235789629482</span><span class="p">,</span><span class="w">
       </span><span class="s2">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.947483062744</span><span class="w">
@@ -3492,6 +3611,7 @@ venue object that is passed back will then be cached and stored for retrieval la
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Husk Seed Store And Bar"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wilmington"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NC"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"26 S. Front St"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"coords"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.234334508993</span><span class="p">,</span><span class="w">
       </span><span class="s2">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.94827937235</span><span class="w">
@@ -3506,6 +3626,7 @@ venue object that is passed back will then be cached and stored for retrieval la
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wilmington Riverwalk"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wilmington"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NC"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Water Street"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"coords"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.234473662713</span><span class="p">,</span><span class="w">
       </span><span class="s2">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.949545550328</span><span class="w">
@@ -3519,6 +3640,7 @@ venue object that is passed back will then be cached and stored for retrieval la
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dram + Morsel"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wilmington"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NC"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"33 S Front St"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"coords"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.234334962627</span><span class="p">,</span><span class="w">
       </span><span class="s2">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.948360145092</span><span class="w">
