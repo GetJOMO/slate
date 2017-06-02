@@ -2978,6 +2978,96 @@ Parameter | Default | Description
 `media` | nil | A media object just like Events or Comments **(Required)**
 `body` | nil | A string of text content **(Optional)**
 
+## Delete an Event Checkin
+
+> Send a DELETE request with required parameters:
+
+```shell
+https://wildfire-dev.herokuapp.com/api/v1/events/12/checkin
+```
+
+> A JSON response like the following would be returned:
+
+```shell
+status: 200
+```
+```json
+{
+  "id": 12,
+  "description": "Sunset cruise on the sailboat. Request to join please!",
+  "media": {
+    "width": 600,
+    "height": 338,
+    "media_url":
+    "http://lorempixel.com/600/338/sports/\#{Faker::Number.between(1, 9)}",
+    "media_type": 0,
+    "media_thumb":
+    "http://lorempixel.com/300/169/sports/\#{Faker::Number.between(1, 9)}",
+    "thumb_width": 300,
+    "thumb_height": 169
+  },
+  "comments_count": 0,
+  "privacy": 1,
+  "starts_at": "2017-06-02T20:53:46.000Z",
+  "ends_at": "2017-06-02T22:53:46.000Z",
+  "duration": 2.0,
+  "event_status": 0,
+  "attendee_data": {
+    "me": {
+      "user_id": 5,
+      "attendee_status": 2,
+      "mute_notifications": false
+    },
+    "total_attendee_count": 2,
+    "follows_attendee_count": 1,
+    "users_data": [
+      {
+        "user_id": 2,
+        "last_name": "Anthony",
+        "avatar_url": "https://fake.urlto.img/user_avatar_gavin",
+        "first_name": "Gavin",
+        "follow_status": true
+      },
+      {
+        "user_id": 6,
+        "last_name": "Richman",
+        "avatar_url": "https://fake.urlto.img/user_avatar",
+        "first_name": "Nick",
+        "follow_status": false
+      }
+    ]
+  },
+  "host": {
+    "id": 688598839,
+    "first_name": "Nick",
+    "last_name": "Richman",
+    "avatar_url": "https://fake.urlto.img/user_avatar",
+    "block_status": false,
+    "follow_status": false,
+    "reverse_block_status": false,
+    "reverse_follow_status": false,
+    "profile_tags": []
+  },
+  "venue": {
+    "id": 491513946,
+    "name": "Wrightsville Beach",
+    "city": "Wrightsville Beach",
+    "state": "NC",
+    "icon_url": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/beach_64.png",
+    "coords": { "lat": 34.2085, "lng": 77.7964 },
+    "category": "Beach",
+    "follow_status": false,
+    "foursquare_id": "4b9c5278f964a5205a5f36e3"
+  }
+}
+```
+
+This endpoint will allow an Attendee with a `:checked_in` status to delete their event checkin record.
+
+### HTTP Request
+
+`DELETE https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/checkin`
+
 ## Get Event Checkins
 
 > Send a GET request with required parameters:
