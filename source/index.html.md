@@ -104,7 +104,7 @@ are not the `auth` endpoint requests. Use the `token` endpoint to get an existin
 user's `auth_token` for making further requests.
 
 <aside class="notice">
-You must use the LayerKit or Layer Android SDK in order to obtain the `nonce` used in the `token` endpoint request.
+OPTIONAL: You must use the LayerKit or Layer Android SDK in order to obtain the `nonce` used in the `token` endpoint request.
 </aside>
 
 ## Verify Email Address
@@ -778,7 +778,7 @@ status: 200
       "starts_at": "2017-02-13T21:06:00.000Z",
       "ends_at": "2017-02-13T21:06:03.930Z",
       "status": 0,
-      "privacy": 0,
+      "event_privacy": 0,
       "comments_count": 3,
       "attendee_count": 0,
       "attendee_status": 0,
@@ -1449,9 +1449,47 @@ status: 200
       "thumb_height": 169
     },
     "comments_count": 0,
-    "attendee_count": 1,
+    "attendee_data": {
+      "me": {
+        "user_id": 1,
+        "attendee_status": 2,
+        "mute_notifications": false
+      },
+      "total_attendee_count": 42,
+      "follows_attendee_count": 7,
+      "users_data": [
+        {
+          "user_id": 17,
+          "last_name": "Larson",
+          "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/8",
+          "first_name": "Clement",
+          "follow_status": true
+        },
+        {
+          "user_id": 89,
+          "last_name": "Effertz",
+          "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/5",
+          "first_name": "Newell",
+          "follow_status": true
+        },
+        {
+          "user_id": 389,
+          "last_name": "White",
+          "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/2",
+          "first_name": "Albina",
+          "follow_status": true
+        },
+        {
+          "user_id": 375,
+          "last_name": "Pollich",
+          "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/8",
+          "first_name": "Cindy",
+          "follow_status": true
+        }
+      ]
+    },
     "status": 0,
-    "privacy": 0,
+    "event_privacy": 0,
     "attendee_status": 0,
     "notifications_status": false,
     "starts_at": "2017-01-06T01:03:14.000Z",
@@ -1501,9 +1539,47 @@ status: 200
       "thumb_height": 169
     },
     "comments_count": 0,
-    "attendee_count": 0,
+    "attendee_data": {
+      "me": {
+        "user_id": 2,
+        "attendee_status": 2,
+        "mute_notifications": false
+      },
+      "total_attendee_count": 42,
+      "follows_attendee_count": 7,
+      "users_data": [
+        {
+          "user_id": 17,
+          "last_name": "Larson",
+          "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/8",
+          "first_name": "Clement",
+          "follow_status": true
+        },
+        {
+          "user_id": 89,
+          "last_name": "Effertz",
+          "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/5",
+          "first_name": "Newell",
+          "follow_status": true
+        },
+        {
+          "user_id": 389,
+          "last_name": "White",
+          "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/2",
+          "first_name": "Albina",
+          "follow_status": true
+        },
+        {
+          "user_id": 375,
+          "last_name": "Pollich",
+          "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/8",
+          "first_name": "Cindy",
+          "follow_status": true
+        }
+      ]
+    },
     "status": 0,
-    "privacy": 0,
+    "event_privacy": 0,
     "attendee_status": 0,
     "notifications_status": false,
     "starts_at": "2017-01-10T00:00:00.000Z",
@@ -1589,7 +1665,7 @@ status: 200
     "comments_count": 0,
     "attendee_count": 1,
     "status": 0,
-    "privacy": 0,
+    "event_privacy": 0,
     "attendee_status": 0,
     "notifications_status": false,
     "starts_at": "2017-01-03T10:40:17.000Z",
@@ -1649,7 +1725,7 @@ status: 200
     "comments_count": 0,
     "attendee_count": 4,
     "status": 0,
-    "privacy": 0,
+    "event_privacy": 0,
     "attendee_status": 0,
     "notifications_status": false,
     "starts_at": "2017-01-05T07:22:26.000Z",
@@ -1730,7 +1806,7 @@ status: 200
     "comments_count": 0,
     "attendee_count": 1,
     "status": 0,
-    "privacy": 0,
+    "event_privacy": 0,
     "attendee_status": 0,
     "notifications_status": false,
     "starts_at": "2017-01-05T01:21:10.000Z",
@@ -1820,7 +1896,7 @@ status: 200
     "comments_count": 0,
     "attendee_count": 4,
     "status": 0,
-    "privacy": 0,
+    "event_privacy": 0,
     "attendee_status": 0,
     "notifications_status": false,
     "starts_at": "2017-01-03T08:54:01.000Z",
@@ -1885,7 +1961,7 @@ status: 200
     "comments_count": 0,
     "attendee_count": 2,
     "status": 0,
-    "privacy": 0,
+    "event_privacy": 0,
     "attendee_status": 0,
     "notifications_status": false,
     "starts_at": "2017-01-05T22:22:18.000Z",
@@ -2084,7 +2160,7 @@ status: 200
   "comments_count": 0,
   "attendee_count": 4,
   "status": 0,
-  "privacy": 0,
+  "event_privacy": 0,
   "attendee_status": 0,
   "notifications_status": false,
   "starts_at": "2017-01-03T08:54:01.000Z",
@@ -2211,6 +2287,109 @@ Parameter | Default | Description
 `q` | nil | Used to search for users by their name (first or last name)
 `tag_id` | nil | Used to search for users by the specified Tag
 
+## Get User Checkins
+
+> Send a GET request with required parameters:
+
+```shell
+https://wildfire-dev.herokuapp.com/api/v1/users/11/checkins
+```
+
+> A JSON response like the following would be returned:
+
+```shell
+status: 200
+```
+```json
+[
+  {
+    "id": 3,
+    "body": "Made it to the event!",
+    "media": {
+      "width": 300,
+      "height": 300,
+      "media_url": "test.com\/img",
+      "media_type": 0,
+      "media_thumb": "test.com\/img_thumb",
+      "thumb_width": 100,
+      "thumb_height": 100
+    },
+    "event_id": 32,
+    "venue_id": 232,
+    "created_at": "2017-05-31T18:20:00.651Z",
+    "user": {
+      "id": 11,
+      "first_name": "Gay",
+      "last_name": "Watsica",
+      "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/6",
+      "profile_tags": [
+        {
+          "id": 1,
+          "name": "Sports",
+          "parent_id": null,
+          "created_at": "2017-05-24T18:52:48.104Z",
+          "updated_at": "2017-05-24T18:52:48.104Z"
+        },
+        {
+          "id": 245,
+          "name": "WRST Raiders Basketball",
+          "parent_id": 241,
+          "created_at": "2017-05-24T18:52:43.576Z",
+          "updated_at": "2017-05-24T18:52:43.576Z"
+        }
+      ]
+    }
+  },
+  {
+    ...
+  },
+  {
+    "id": 4,
+    "body": "",
+    "media": {
+      "width": 300,
+      "height": 300,
+      "media_url": "test.com\/img",
+      "media_type": 0,
+      "media_thumb": "test.com\/img_thumb",
+      "thumb_width": 100,
+      "thumb_height": 100
+    },
+    "event_id": 32,
+    "venue_id": 232,
+    "created_at": "2017-05-31T18:53:40.773Z",
+    "user": {
+      "id": 11,
+      "first_name": "Gay",
+      "last_name": "Watsica",
+      "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/6",
+      "profile_tags": [
+        {
+          "id": 1,
+          "name": "Sports",
+          "parent_id": null,
+          "created_at": "2017-05-24T18:52:48.104Z",
+          "updated_at": "2017-05-24T18:52:48.104Z"
+        },
+        {
+          "id": 245,
+          "name": "WRST Raiders Basketball",
+          "parent_id": 241,
+          "created_at": "2017-05-24T18:52:43.576Z",
+          "updated_at": "2017-05-24T18:52:43.576Z"
+        }
+      ]
+    }
+  }
+]
+```
+
+This endpoint will retrieve all checkin's for the specified user.
+
+### HTTP Request
+
+`GET https://wildfire-staging.herokuapp.com/api/v1/users/:user_id/checkins`
+
 # Events
 
 ## Create Event
@@ -2232,7 +2411,7 @@ Parameter | Default | Description
   "tag_ids": [3, 1, 11],
   "starts_at": "2017-01-10",
   "duration": 3,
-  "privacy": 2,
+  "event_privacy": 2,
   "mention_ids": [6],
   "venue": {
     "id": 32,
@@ -2272,7 +2451,7 @@ status: 201
   "comments_count": 0,
   "attendee_count": 0,
   "status": 0,
-  "privacy": 0,
+  "event_privacy": 0,
   "attendee_status": 0,
   "notifications_status": false,
   "starts_at": "2017-01-10T00:00:00.000Z",
@@ -2357,7 +2536,7 @@ status: 200
   "comments_count": 0,
   "attendee_count": 1,
   "status": 0,
-  "privacy": 0,
+  "event_privacy": 0,
   "attendee_status": 0,
   "notifications_status": false,
   "starts_at": "2017-01-03T09:53:32.000Z",
@@ -2459,7 +2638,7 @@ status: 200
   "comments_count": 1,
   "attendee_count": 1,
   "status": 0,
-  "privacy": 0,
+  "event_privacy": 0,
   "attendee_status": 0,
   "notifications_status": false,
   "starts_at": "2017-01-10T00:00:00.000Z",
@@ -2613,7 +2792,7 @@ status: 200
   "comments_count": 0,
   "attendee_count": 1,
   "status": 0,
-  "privacy": 0,
+  "event_privacy": 0,
   "attendee_status": 0,
   "notifications_status": false,
   "starts_at": "2017-01-04T12:22:53.000Z",
@@ -2895,7 +3074,7 @@ from the specified event.
 > Send a POST request with required parameters:
 
 ```shell
-https://wildfire-dev.herokuapp.com/api/v1/events/32/checkin
+https://wildfire-dev.herokuapp.com/api/v1/events/96/checkin
 ```
 
 ```json
@@ -2920,8 +3099,8 @@ status: 200
 ```
 ```json
 {
-  "id": 4,
-  "body": "Made it to the event!",
+  "id": 74,
+  "body": "Yeah, I made it too! Awesome scene so far!!",
   "media": {
     "media_url": "test.com\/img",
     "media_thumb": "test.com\/img_thumb",
@@ -2931,13 +3110,14 @@ status: 200
     "thumb_height": 100,
     "thumb_width": 100
   },
-  "event_id": 32,
-  "created_at": "2017-05-31T18:53:40.773Z",
+  "event_id": 96,
+  "venue_id": 25,
+  "created_at": "2017-06-13T14:06:54.003Z",
   "user": {
-    "id": 13,
-    "first_name": "Aubree",
-    "last_name": "Pagac",
-    "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/8",
+    "id": 2,
+    "first_name": "Kerry",
+    "last_name": "Knight",
+    "avatar_url": "http:\/\/lorempixel.com\/300\/300\/sports\/8",
     "profile_tags": [
       {
         "id": 1,
@@ -2965,7 +3145,8 @@ status: 200
 }
 ```
 
-This endpoint will allow an Attendee with a `:joined` status to check-in to an event.
+This endpoint will allow an Attendee with a `:joined` status to create a photo
+check-in to an event. Since the Checkin is a 'Photo Checkin', the `:media` attribute is required.
 
 ### HTTP Request
 
@@ -2983,7 +3164,7 @@ Parameter | Default | Description
 > Send a DELETE request with required parameters:
 
 ```shell
-https://wildfire-dev.herokuapp.com/api/v1/events/12/checkin
+https://wildfire-dev.herokuapp.com/api/v1/events/96/checkins/2
 ```
 
 > A JSON response like the following would be returned:
@@ -2993,7 +3174,7 @@ status: 200
 ```
 ```json
 {
-  "id": 12,
+  "id": 96,
   "description": "Sunset cruise on the sailboat. Request to join please!",
   "media": {
     "width": 600,
@@ -3007,14 +3188,14 @@ status: 200
     "thumb_height": 169
   },
   "comments_count": 0,
-  "privacy": 1,
+  "event_privacy": 1,
   "starts_at": "2017-06-02T20:53:46.000Z",
   "ends_at": "2017-06-02T22:53:46.000Z",
   "duration": 2.0,
   "event_status": 0,
   "attendee_data": {
     "me": {
-      "user_id": 5,
+      "user_id": 343,
       "attendee_status": 2,
       "mute_notifications": false
     },
@@ -3038,18 +3219,22 @@ status: 200
     ]
   },
   "host": {
-    "id": 688598839,
-    "first_name": "Nick",
-    "last_name": "Richman",
-    "avatar_url": "https://fake.urlto.img/user_avatar",
-    "block_status": false,
-    "follow_status": false,
-    "reverse_block_status": false,
-    "reverse_follow_status": false,
-    "profile_tags": []
+    "id": 343,
+    "first_name": "Annamae",
+    "last_name": "Williamson",
+    "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/6",
+    "profile_tags": [
+      {
+        "id": 605,
+        "name": "Calgary Flames",
+        "parent_id": 601,
+        "created_at": "2017-06-08T15:58:37.404Z",
+        "updated_at": "2017-06-08T15:58:37.404Z"
+      }
+    ]
   },
   "venue": {
-    "id": 491513946,
+    "id": 491,
     "name": "Wrightsville Beach",
     "city": "Wrightsville Beach",
     "state": "NC",
@@ -3066,7 +3251,7 @@ This endpoint will allow an Attendee with a `:checked_in` status to delete their
 
 ### HTTP Request
 
-`DELETE https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/checkin`
+`DELETE https://wildfire-staging.herokuapp.com/api/v1/events/:event_id/checkins/:user_id`
 
 ## Get Event Checkins
 
@@ -3096,6 +3281,7 @@ status: 200
       "thumb_height": 100
     },
     "event_id": 32,
+    "venue_id": 232,
     "created_at": "2017-05-31T18:20:00.651Z",
     "user": {
       "id": 11,
@@ -3133,6 +3319,7 @@ status: 200
       "thumb_height": 100
     },
     "event_id": 32,
+    "venue_id": 232,
     "created_at": "2017-05-31T18:53:40.773Z",
     "user": {
       "id": 13,
@@ -3164,7 +3351,7 @@ status: 200
 ]
 ```
 
-This endpoint retrieve all checkin's for the specified event.
+This endpoint will retrieve all checkin's for the specified event.
 
 ### HTTP Request
 
@@ -3494,7 +3681,7 @@ status: 200
       "ends_at": "2017-01-21T03:22:17.719Z",
       "status": 0,
       "status": 0,
-      "privacy": 0,
+      "event_privacy": 0,
       "attendee_status": 0,
       "notifications_status": false,
       "comments_count": 0,
@@ -3891,7 +4078,7 @@ status: 200
     "ends_at": "2017-01-21T03:22:17.719Z",
     "status": 0,
     "status": 0,
-    "privacy": 0,
+    "event_privacy": 0,
     "attendee_status": 0,
     "notifications_status": false,
     "comments_count": 0,
@@ -3996,7 +4183,7 @@ status: 200
     "ends_at": "2017-01-21T03:22:17.719Z",
     "status": 0,
     "status": 0,
-    "privacy": 0,
+    "event_privacy": 0,
     "attendee_status": 0,
     "notifications_status": false,
     "comments_count": 0,
@@ -4101,7 +4288,7 @@ status: 200
     "ends_at": "2017-01-21T03:22:17.719Z",
     "status": 0,
     "status": 0,
-    "privacy": 0,
+    "event_privacy": 0,
     "attendee_status": 0,
     "notifications_status": false,
     "comments_count": 0,
@@ -4200,7 +4387,7 @@ status: 200
     "ends_at": "2017-01-21T03:22:17.719Z",
     "status": 0,
     "status": 0,
-    "privacy": 0,
+    "event_privacy": 0,
     "attendee_status": 0,
     "notifications_status": false,
     "comments_count": 0,
@@ -4272,6 +4459,109 @@ specified Foursquare venue that are set to happen at a time in the near future.
 
 `GET https://wildfire-staging.herokuapp.com/api/v1/venues/:foursquare_id/events/future`
 
+## Get Venues Checkins
+
+> Send a GET request with required parameters:
+
+```shell
+https://wildfire-dev.herokuapp.com/api/v1/venues/232/checkins
+```
+
+> A JSON response like the following would be returned:
+
+```shell
+status: 200
+```
+```json
+[
+  {
+    "id": 3,
+    "body": "Made it to the event!",
+    "media": {
+      "width": 300,
+      "height": 300,
+      "media_url": "test.com\/img",
+      "media_type": 0,
+      "media_thumb": "test.com\/img_thumb",
+      "thumb_width": 100,
+      "thumb_height": 100
+    },
+    "event_id": 82,
+    "venue_id": 232,
+    "created_at": "2017-05-31T18:20:00.651Z",
+    "user": {
+      "id": 11,
+      "first_name": "Gary",
+      "last_name": "Watsica",
+      "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/6",
+      "profile_tags": [
+        {
+          "id": 1,
+          "name": "Sports",
+          "parent_id": null,
+          "created_at": "2017-05-24T18:52:48.104Z",
+          "updated_at": "2017-05-24T18:52:48.104Z"
+        },
+        {
+          "id": 245,
+          "name": "WRST Raiders Basketball",
+          "parent_id": 241,
+          "created_at": "2017-05-24T18:52:43.576Z",
+          "updated_at": "2017-05-24T18:52:43.576Z"
+        }
+      ]
+    }
+  },
+  {
+    ...
+  },
+  {
+    "id": 4,
+    "body": "",
+    "media": {
+      "width": 300,
+      "height": 300,
+      "media_url": "test.com\/img",
+      "media_type": 0,
+      "media_thumb": "test.com\/img_thumb",
+      "thumb_width": 100,
+      "thumb_height": 100
+    },
+    "event_id": 384,
+    "venue_id": 232,
+    "created_at": "2017-05-31T18:53:40.773Z",
+    "user": {
+      "id": 32,
+      "first_name": "Daniel",
+      "last_name": "Winston",
+      "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/6",
+      "profile_tags": [
+        {
+          "id": 1,
+          "name": "Sports",
+          "parent_id": null,
+          "created_at": "2017-05-24T18:52:48.104Z",
+          "updated_at": "2017-05-24T18:52:48.104Z"
+        },
+        {
+          "id": 245,
+          "name": "WRST Raiders Basketball",
+          "parent_id": 241,
+          "created_at": "2017-05-24T18:52:43.576Z",
+          "updated_at": "2017-05-24T18:52:43.576Z"
+        }
+      ]
+    }
+  }
+]
+```
+
+This endpoint will retrieve all checkin's for the specified venue.
+
+### HTTP Request
+
+`GET https://wildfire-staging.herokuapp.com/api/v1/venues/:foursquare_id/checkins`
+
 # Feeds
 
 ## User Feed [[Pg'd](#pagination)]
@@ -4305,7 +4595,7 @@ status: 200
     "ends_at": "2017-01-21T03:22:17.719Z",
     "status": 0,
     "status": 0,
-    "privacy": 0,
+    "event_privacy": 0,
     "attendee_status": 0,
     "notifications_status": false,
     "comments_count": 0,
@@ -4413,7 +4703,7 @@ status: 200
       "thumb_height": 169
     },
     "comments_count": 40,
-    "privacy": 0,
+    "event_privacy": 0,
     "starts_at": "2017-05-22T00:00:00.000Z",
     "ends_at": "2017-05-28T00:00:00.000Z",
     "duration": 6.86,
@@ -4494,7 +4784,7 @@ status: 200
       "thumb_height": 169
     },
     "comments_count": 33,
-    "privacy": 0,
+    "event_privacy": 0,
     "starts_at": "2017-05-18T00:00:00.000Z",
     "ends_at": "2017-05-25T00:00:00.000Z",
     "duration": 7.39,
@@ -4823,7 +5113,7 @@ status: 200
     },
     "comments_count": 15,
     "attendee_count": 0,
-    "privacy": 1,
+    "event_privacy": 1,
     "starts_at": "2017-03-28T00:00:00.000Z",
     "ends_at": "2017-03-31T00:00:00.000Z",
     "duration": 3.71,
@@ -4907,7 +5197,7 @@ status: 200
     },
     "comments_count": 0,
     "attendee_count": 0,
-    "privacy": 0,
+    "event_privacy": 0,
     "starts_at": "2017-04-09T00:00:00.000Z",
     "ends_at": "2017-04-14T00:00:00.000Z",
     "duration": 5.45,

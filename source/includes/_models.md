@@ -113,12 +113,49 @@ Attribute | Type | Default | Required/Optional
   "starts_at": "2017-01-19T11:17:07.000Z",
   "ends_at": "2017-01-19T11:17:16.439Z",
   "status": 0,
-  "status": 0,
-  "privacy": 0,
+  "event_privacy": 0,
   "attendee_status": 0,
   "comments_count": 0,
-  "attendee_count": 0,
-  "host": {
+  "attendee_data": {
+    "me": {
+      "user_id": 2,
+      "attendee_status": 2,
+      "mute_notifications": false
+    },
+    "total_attendee_count": 42,
+    "follows_attendee_count": 7,
+    "users_data": [
+        {
+          "user_id": 17,
+          "last_name": "Larson",
+          "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/8",
+          "first_name": "Clement",
+          "follow_status": true
+        },
+        {
+          "user_id": 89,
+          "last_name": "Effertz",
+          "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/5",
+          "first_name": "Newell",
+          "follow_status": true
+        },
+        {
+          "user_id": 389,
+          "last_name": "White",
+          "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/2",
+          "first_name": "Albina",
+          "follow_status": true
+        },
+        {
+          "user_id": 375,
+          "last_name": "Pollich",
+          "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/8",
+          "first_name": "Cindy",
+          "follow_status": true
+        }
+      ]
+    },
+    "host": {
     "id": 1,
     "first_name": "Jordan",
     "last_name": "Godwin",
