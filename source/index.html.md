@@ -139,8 +139,86 @@ Parameter | Description
 --------- | -----------
 `email` | Specify email address to verify
 
+## Register User via Facebook
 
-## Register new User
+> Send a POST request with the following parameters:
+
+```json
+{
+  "first_name": "Aaron",
+  "last_name": "Rodgers",
+  "gender": 1,
+  "city": "Green Bay",
+  "state": "WI",
+  "avatar_url": "https://nflprofile.com/aaron_rodgers",
+  "coords": {
+    "lat": "44.5192",
+    "lng": "88.0198"
+  },
+  "avatar_url": "https://fake.urlto.img/user_avatar",
+  "provider": 0,
+  "firebase_id": "937849239748230",
+  "facebook_id": "362492374237349",
+  "fb_token": "d24ab65a3b4ae389b459"
+}
+```
+
+> The above request returns the following JSON:
+
+```shell
+status: 201
+```
+```json
+{
+  "id": 612,
+  "email": "greenbay4lyfe@gmail.com",
+  "first_name": "Aaron",
+  "last_name": "Rodgers",
+  "dob": "",
+  "about": "",
+  "city": "Green Bay",
+  "state": "WI",
+  "coords": {
+    "lat": 44.5192,
+    "lng": 88.0198
+  },
+  "push_notifs": {
+    "general": true,
+    "messages": true,
+    "event_updates": true,
+    "mentions": true,
+    "event_comments": true,
+    "user_follows": true,
+    "join_requests": true
+  },
+  "social_ids": {
+    "facebook": "362492374237349",
+    "twitter": "-1",
+    "instagram": "-1",
+    "pinterest": "-1"
+  },
+  "avatar_url": "https:\/\/nflprofile.com\/aaron_rodgers",
+  "followers_count": 0,
+  "attended_count": 0,
+  "hosted_count": 0,
+  "following_users_count": 0,
+  "following_venues_count": 0,
+  "auth_token": "NqwNxcZ86y8qAHHDzjCh6PUq",
+  "auth_token_expiry": "2017-06-24T14:24:30.905Z",
+  "last_login_time": "2017-06-23T14:24:30.905Z",
+  "digits_id": "",
+  "profile_tags": [],
+  "feed_tags": []
+}
+```
+
+Description: Used to register a new client user from Facebook Ouath via Firebase.
+
+### HTTP Request
+
+`POST https://wildfire-dev.herokuapp.com/api/v1/users/register/facebook`
+
+## [Dep'd]: Register User via Email/Password
 
 > Send a POST request with the following parameters:
 
@@ -4566,7 +4644,7 @@ This endpoint will retrieve all checkin's for the specified venue.
 
 ## User Feed [[Pg'd](#pagination)]
 
-> Send a POST request with required parameters:
+> Send a GET request with required parameters:
 
 ```shell
 GET https://wildfire-staging.herokuapp.com/api/v1/feeds/user_feed?lat=34.225723432&lng=-77.944723238
@@ -4580,84 +4658,152 @@ status: 200
 ```json
 [
   {
-    "id": 2,
-    "description": "Gavin's Coffee event description for <a class=\"user\" id=\"2\">Kerry Knight<\/a> and <a class=\"user\" id=\"1\">Jordan Godwin<\/a>.",
+    "id": 77,
+    "description": "Harum dolores omnis esse pariatur hic.",
     "media": {
-      "media_url": "http://lorempixel.com/600/338/sports/3",
-      "media_thumb": "http://lorempixel.com/300/169/sports/9",
-      "media_type": 0,
       "width": 600,
       "height": 338,
+      "media_url": "http:\/\/lorempixel.com\/600\/338\/abstract\/3",
+      "media_type": "image",
+      "media_thumb": "http:\/\/lorempixel.com\/300\/169\/abstract\/3",
       "thumb_width": 300,
       "thumb_height": 169
     },
-    "starts_at": "2017-01-21T03:22:12.000Z",
-    "ends_at": "2017-01-21T03:22:17.719Z",
-    "status": 0,
-    "status": 0,
-    "event_privacy": 0,
-    "attendee_status": 0,
-    "notifications_status": false,
-    "comments_count": 0,
-    "attendee_count": 0,
+    "comments_count": 19,
+    "privacy": 1,
+    "starts_at": "2017-06-14T00:00:00.000Z",
+    "ends_at": "2017-06-22T00:00:00.000Z",
+    "duration": 8.25608,
+    "event_status": 1,
+    "attendee_data": {
+      "me": {},
+      "total_attendee_count": 0,
+      "follows_attendee_count": 0,
+      "users_data": []
+    },
     "host": {
-      "id": 3,
-      "first_name": "Gavin",
-      "last_name": "Baradic",
-      "avatar_url": "http:\/\/lorempixel.com\/300\/300\/sports\/4",
+      "id": 496,
+      "first_name": "Linda",
+      "last_name": "Crona",
+      "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/6",
       "block_status": false,
       "follow_status": false,
-      "profile_tags": [
-        {
-          "id": 1,
-          "name": "Sports",
-          "parent_id": null
-        },
-        {
-          "id": 3,
-          "name": "Football",
-          "parent_id": 1
-        }
-      ]
+      "reverse_block_status": true,
+      "reverse_follow_status": false
     },
     "venue": {
-      "id": 84,
-      "name": "21 South Coffee",
-      "city": "Wilmington",
+      "id": 26,
+      "name": "Silver Dollar",
+      "city": "Carolina Beach",
       "state": "NC",
-      "icon_url": "https:\/\/ss0.4sqi.net\/img\/categories_v2\/nightlife\/default_bg_64.png",
+      "icon_url": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/nightlife\/divebar_64.png",
       "coords": {
-        "lat": 34.4332,
-        "lng": -77.8485
+        "lat": 34.033268094063,
+        "lng": -77.89241194725
       },
+      "category": "Dive Bar",
       "follow_status": false,
-      "category": "Coffee Shop",
-      "foursquare_id": "ag5gd742dsf83g7d48g",
+      "foursquare_id": "4c1a4d3eb306c9284e5b60b7"
     },
     "tags": [
       {
-        "id": 1,
-        "name": "Sports",
-        "parent_id": null
+        "id": 350,
+        "name": "PORT Pilots Basketball",
+        "parent_id": 348,
+        "created_at": "2017-05-15T18:07:12.118Z",
+        "updated_at": "2017-05-15T18:07:12.118Z"
       },
       {
-        "id": 3,
-        "name": "Football",
-        "parent_id": 1
+        "id": 273,
+        "name": "MSST Bulldogs Basketball",
+        "parent_id": 264,
+        "created_at": "2017-05-15T18:07:10.947Z",
+        "updated_at": "2017-05-15T18:07:10.947Z"
       },
       {
-        "id": 5,
-        "name": "Hockey",
-        "parent_id": 1
-      },
-      {
-        "id": 7,
-        "name": "Racing",
-        "parent_id": 1
+        "id": 493,
+        "name": "UNLV Rebels Football",
+        "parent_id": 484,
+        "created_at": "2017-05-15T18:07:14.358Z",
+        "updated_at": "2017-05-15T18:07:14.358Z"
       }
     ]
   },
-  ...
+  {
+    "id": 123,
+    "description": "Odit accusamus ab illo facere numquam quo corrupti temporibus.",
+    "media": {
+      "width": 600,
+      "height": 338,
+      "media_url": "http:\/\/lorempixel.com\/600\/338\/animals\/6",
+      "media_type": "image",
+      "media_thumb": "http:\/\/lorempixel.com\/300\/169\/animals\/6",
+      "thumb_width": 300,
+      "thumb_height": 169
+    },
+    "comments_count": 17,
+    "privacy": 1,
+    "starts_at": "2017-06-17T00:00:00.000Z",
+    "ends_at": "2017-06-22T00:00:00.000Z",
+    "duration": 5.54884,
+    "event_status": 0,
+    "attendee_data": {
+      "me": {},
+      "total_attendee_count": 0,
+      "follows_attendee_count": 0,
+      "users_data": []
+    },
+    "host": {
+      "id": 310,
+      "first_name": "Davon",
+      "last_name": "Beatty",
+      "avatar_url": "http:\/\/lorempixel.com\/300\/300\/cats\/8",
+      "block_status": false,
+      "follow_status": false,
+      "reverse_block_status": false,
+      "reverse_follow_status": false
+    },
+    "venue": {
+      "id": 53,
+      "name": "The Players' Retreat",
+      "city": "Raleigh",
+      "state": "NC",
+      "icon_url": "https:\/\/ss3.4sqi.net\/img\/categories_v2\/nightlife\/sportsbar_64.png",
+      "coords": {
+        "lat": -78.661452233791,
+        "lng": -78.661452233791
+      },
+      "category": "Sports Bar",
+      "follow_status": true,
+      "foursquare_id": "4ad8bd4ef964a520351421e3"
+    },
+    "tags": [
+      {
+        "id": 273,
+        "name": "MSST Bulldogs Basketball",
+        "parent_id": 264,
+        "created_at": "2017-05-15T18:07:10.947Z",
+        "updated_at": "2017-05-15T18:07:10.947Z"
+      },
+      {
+        "id": 43,
+        "name": "L-IL Ramblers Basketball",
+        "parent_id": 39,
+        "created_at": "2017-05-15T18:07:07.147Z",
+        "updated_at": "2017-05-15T18:07:07.147Z"
+      },
+      {
+        "id": 336,
+        "name": "PRIN Tigers Basketball",
+        "parent_id": 328,
+        "created_at": "2017-05-15T18:07:11.902Z",
+        "updated_at": "2017-05-15T18:07:11.902Z"
+      }
+    ]
+  },
+  {
+    ...
+  }
 ]
 ```
 
