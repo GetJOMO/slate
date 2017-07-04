@@ -157,9 +157,16 @@ Parameter | Description
   },
   "avatar_url": "https://fake.urlto.img/user_avatar",
   "provider": 0,
-  "firebase_id": "937849239748230",
-  "facebook_id": "362492374237349",
-  "fb_token": "d24ab65a3b4ae389b459"
+  "external_auth": [
+    "firebase": {
+      "id": "937849239748230",
+      "token": ""
+    },
+    "facebook" {
+      "id": "362492374237349",
+      "token": "d24ab65a3b4ae389b459"
+    }
+  ]
 }
 ```
 
@@ -191,12 +198,6 @@ status: 201
     "user_follows": true,
     "join_requests": true
   },
-  "social_ids": {
-    "facebook": "362492374237349",
-    "twitter": "-1",
-    "instagram": "-1",
-    "pinterest": "-1"
-  },
   "avatar_url": "https:\/\/nflprofile.com\/aaron_rodgers",
   "followers_count": 0,
   "attended_count": 0,
@@ -206,9 +207,18 @@ status: 201
   "auth_token": "NqwNxcZ86y8qAHHDzjCh6PUq",
   "auth_token_expiry": "2017-06-24T14:24:30.905Z",
   "last_login_time": "2017-06-23T14:24:30.905Z",
-  "digits_id": "",
   "profile_tags": [],
-  "feed_tags": []
+  "feed_tags": [],
+  "external_auth": [
+    "firebase": {
+      "id": "937849239748230",
+      "token": ""
+    },
+    "facebook" {
+      "id": "362492374237349",
+      "token": "d24ab65a3b4ae389b459"
+    }
+  ]
 }
 ```
 
@@ -218,7 +228,13 @@ Description: Used to register a new client user from Facebook Ouath via Firebase
 
 `POST https://wildfire-dev.herokuapp.com/api/v1/users/register/facebook`
 
-## [Dep'd]: Register User via Email/Password
+<aside class="notice">
+NOTE: The presence of a `:token` within one of the `:external_auth` objects
+indicates that the it was used for authorization, whereas the absense of a `:token`
+indicates that the external account was only _linked_ to the user's profile
+</aside>
+
+## Register User via Email/Password
 
 > Send a POST request with the following parameters:
 
@@ -235,9 +251,13 @@ Description: Used to register a new client user from Facebook Ouath via Firebase
     "lat": "44.5192",
     "lng": "88.0198"
   },
-  "digits_id": "36345202355432034912",
+  "external_auth": {
+    "firebase": {
+      "id": "937849239748230"
+    }
+  },
   "password": "super_bowl_bound",
-  "nonce": "0D9lwwyOhgGzfLdfp0QpI7CjVcReaipQKfugVPLWXfUNMoBEE1T_2vzjEkCHirTWq7w7lp8GXs7f1vqwv6G6Kw"
+  "provider": 1
 }
 ```
 
@@ -253,7 +273,7 @@ status: 201
   "first_name": "Aaron",
   "last_name": "Rodgers",
   "dob": "1983-12-02",
-  "about": null,
+  "about": "",
   "city": "Green Bay",
   "state": "WI",
   "coords": {
@@ -270,11 +290,11 @@ status: 201
     "user_follows": true,
     "join_requests": true
   },
-  "social_ids": {
-    "facebook": null,
-    "twitter": null,
-    "instagram": null,
-    "pinterest": null
+  "external_auth": {
+    "firebase": {
+      "id": "937849239748230",
+      "token": ""
+    }
   },
   "avatar_url": "https:\/\/nflprofile.com\/aaron_rodgers",
   "followers_count": 0,
@@ -286,21 +306,27 @@ status: 201
   "auth_token_expiry": "2017-02-03T19:51:08.659Z",
   "identity_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6ImxheWVyLWVpdDt2PTEiLCJraWQiOiJsYXllcjovLy9rZXlzLzA5YTI1NDZhLTdmNDItMTFlNi1hMzk3LTAyZDM1NjAwMTJmMCJ9.eyJpc3MiOiJsYXllcjovLy9wcm92aWRlcnMvY2Y4ZDEzZTgtN2U5NS0xMWU2LTkyNGItYTE1MWU1MTI0NjI0IiwicHJuIjoiNTA3IiwiaWF0IjoxNDg2MDY1MDY4LCJleHAiOjE0ODcyNzQ2NjgsIm5jZSI6IjBEOWx3d3lPaGdHemZMZGZwMFFwSTdDalZjUmVhaXBRS2Z1Z1ZQTFdYZlVOTW9CRUUxVF8ydnpqRWtDSGlyVFdxN3c3bHA4R1hzN2YxdnF3djZHNkt3In0.WwIqqbmCsI1qgbMmp-IEu3VEB3_wxVK1PxtVfIdHCUK7c0S5eh4DUxrrF8ZS6FV7jcML3x0vNlQN_Cwp0Vf9k99zaVz8H0XZ2tPrKPWBESnkRQn6dh-DiKe_E5SySxYIjeleMMaQ_ZMVt93d2GMYLCEnz0Lj2dO6eeI-Zoig05Gu7jCC5hQ0mc2TXTi5tRHVPdkaVfqWw9X1EZhbE55lXncMg8aqg4Y-ivnRc-wVabd_Vz2ypt9G0X0ls1LkpWsn1oBssO6yOj3VSby-duMd2n2A54svFswHQRAs_Ka7msiD5Ht2U-88D5indwr5w2z0ZPg-owVu1VG4GJ8ljxitNQ",
   "last_login_time": "2017-02-02T19:51:08.660Z",
-  "digits_id": "36345202355432034912",
   "profile_tags": [],
   "feed_tags": [],
   "feed_time_setting": 0
 }
 ```
 
-Description: Used to register a new client user and obtain a Layer `identity_token`
+Description: Used to register a new client user and _optionally_ obtain a Layer `identity_token`
+if `:nonce` is included.
 
 ### HTTP Request
 
 `POST https://wildfire-dev.herokuapp.com/api/v1/users/register`
 
 <aside class="notice">
-The `nonce` parameter is a JWT obtained from Layer using the Layer iOS or Android SDK. The server uses this
+NOTE: The presence of a `:token` within one of the `:external_auth` objects
+indicates that the it was used for authorization, whereas the absense of a `:token`
+indicates that the external account was only _linked_ to the user's profile
+</aside>
+
+<aside class="notice">
+NOTE: The `nonce` parameter is a JWT obtained from Layer using the Layer iOS or Android SDK. The server uses this
 to create an `identity_token` for the client to use on future Layer requests.
 </aside>
 
@@ -344,12 +370,16 @@ status: 200
     "mentions": true,
     "user_follows": true
   },
-  "social_ids": {
-    "facebook": null,
-    "twitter": null,
-    "instagram": null,
-    "pinterest": null
-  },
+  "external_auth": [
+    "firebase": {
+      "id": "937849239748230",
+      "token": ""
+    },
+    "facebook" {
+      "id": "362492374237349",
+      "token": "d24ab65a3b4ae389b459"
+    }
+  ],
   "profile_tags": [
     {
       "id": 5,
