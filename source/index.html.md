@@ -80,11 +80,7 @@ Header | Description
 ```
 
 ```shell
-'Authorization': 'Basic my.email@gmail.com:s3cur3_p455w0rd'
-```
-
-```shell
-'Authorization': 'Token o1yR62rL5yvvsmxLEVEXPjC3'
+'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImUyOGU2MDQwOTI4OTA4ZTE2YzNjMThlNTc2ZDg1Y2QxNmEyNjRlZWEifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vam9tby1iMTU5OCIsIm5hbWUiOiJOaWNob2xhcyBOZyIsInBpY3R1cmUiOiJodHRwczovL3Njb250ZW50Lnh4LmZiY2RuLm5ldC92L3QxLjAtMS9zMTAweDEwMC8xNDI5MjI5MF8xMDE1NTE3NjUzNTk0MzA5OF85NDE2NTkwMzUzNzU5MzY1ODJfbi5qcGc_b2g9ZDQ2NTA3NTRmODc4OGEwOWYwMDVhYzk3MGJiZGI3Yjgmb2U9NUEwOUU1NEQiLCJhdWQiOiJqb21vLWIxNTk4IiwiYXV0aF90aW1lIjoxNTAxNzgwNzk4LCJ1c2VyX2lkIjoiNU5tbFIxVGZId2dwNTBUV1loWXFJckF3cnlaMiIsInN1YiI6IjVObWxSMVRmSHdncDUwVFdZaFlxSXJBd3J5WjIiLCJpYXQiOjE1MDE3OTI5NjgsImV4cCI6MTUwMTc5NjU2OCwiZW1haWwiOiJuZ2hldW5neXVAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImZhY2Vib29rLmNvbSI6WyIxMDE1NjM0MzY1MzI1ODA5OCJdLCJlbWFpbCI6WyJuZ2hldW5neXVAZ21haWwuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoiZmFjZWJvb2suY29tIn19.N7DSP3KqYvCvJ21JzjAd0p9b41b0Skp6pKWVzJ3iioKd5_Q9rGoqkp_X01sRJfmjnSNW817Sedba3DJROxAJwXmHqvUF_o59tPx_ns7TvBfqFE70Tq3pF0EpJi0oZyT1a5ICnEVnjuKCZYooNkpE0rUI4gHZUJolXxxB0xFDVNHHbLeT9hNaq5MdSHQKKJ3rHuAqmmOYJAr9IpMKDCMlCyUxcCrzzEDs-vRQPbthoyg9j3arKfAgO0XSB-00agcStB54SYg7yYoN9Ly4QKZQT5Lrz8hjlLJGV8_M_MB4C2sO4BVphpUdUlH8GBw4OC44LaPc5qDcRZwDHV51MvvXyA'
 ```
 
 Wildfire uses multiple HTTP headers to authenticate API requests. The three different HTTP headers & their use cases for
@@ -94,50 +90,33 @@ each are described below.
 The first is a `Client-key` header that is an unique API key which is checked for in *ALL* requests to the Wildfire API.
 This API key can be obtained from an API administrator.
 
-### HTTP Basic Auth Header
-This header (in addition to the `Client-key` header) is only required on the `auth` endpoint requests. This header
-should include the users's email & password as seen in the example to the right.
-
-### HTTP Token Auth Header
-This header (in addition to the `Client-key` header) is required on all requests that
-are not the `auth` endpoint requests. Use the `token` endpoint to get an existing
-user's `auth_token` for making further requests.
+### Firebase Auth Token
+This header (in addition to the `Client-key` header) is required on all requests. The token is
+a JSON Web Token that is provided by Firebase and is then verified by the Wildfire Server API.
 
 <aside class="notice">
 OPTIONAL: You must use the LayerKit or Layer Android SDK in order to obtain the `nonce` used in the `token` endpoint request.
 </aside>
 
-## Verify Email Address
+## Verify User
 
 > Send a GET request with the email to be verified:
 
 ```shell
-https://wildfire-staging.herokuapp.com/api/v1/auth/verify_email?email=woozykk@gmail.com
+https://wildfire-staging.herokuapp.com/api/v1/auth/verify_user
 ```
 
-> If the email is available, the following JSON response will be returned:
+> If the user exists, the following JSON response will be returned:
 
 ```shell
 status: 200
 ```
-```json
-{
-  "email_exists": false
-}
-```
 
-This endpoint is used during the on-boarding process to verify that the user's email address has not
-already been registered with a previous account.
+This endpoint is used during the on-boarding process to verify that if a user exists.
 
 ### HTTP Request
 
-`GET https://wildfire-staging.herokuapp.com/api/v1/auth/verify_email`
-
-### Query Parameters
-
-Parameter | Description
---------- | -----------
-`email` | Specify email address to verify
+`GET https://wildfire-staging.herokuapp.com/api/v1/auth/verify_user`
 
 ## Register User via Facebook
 
@@ -156,17 +135,8 @@ Parameter | Description
     "lng": "88.0198"
   },
   "avatar_url": "https://fake.urlto.img/user_avatar",
-  "provider": 0,
-  "external_auth": [
-    "firebase": {
-      "id": "937849239748230",
-      "token": ""
-    },
-    "facebook" {
-      "id": "362492374237349",
-      "token": "d24ab65a3b4ae389b459"
-    }
-  ]
+  "firebase_id": "937849239748230",
+  "facebook_id": "324849239748230"
 }
 ```
 
@@ -201,24 +171,13 @@ status: 201
   "avatar_url": "https:\/\/nflprofile.com\/aaron_rodgers",
   "followers_count": 0,
   "attended_count": 0,
+  "checkins_count": 0,
   "hosted_count": 0,
   "following_users_count": 0,
   "following_venues_count": 0,
-  "auth_token": "NqwNxcZ86y8qAHHDzjCh6PUq",
-  "auth_token_expiry": "2017-06-24T14:24:30.905Z",
   "last_login_time": "2017-06-23T14:24:30.905Z",
-  "profile_tags": [],
-  "feed_tags": [],
-  "external_auth": [
-    "firebase": {
-      "id": "937849239748230",
-      "token": ""
-    },
-    "facebook" {
-      "id": "362492374237349",
-      "token": "d24ab65a3b4ae389b459"
-    }
-  ]
+  "firebase_id": "937849239748230",
+  "facebook_id": "324849239748230"
 }
 ```
 
@@ -226,195 +185,11 @@ Description: Used to register a new client user from Facebook Ouath via Firebase
 
 ### HTTP Request
 
-`POST https://wildfire-dev.herokuapp.com/api/v1/users/register/facebook`
-
-<aside class="notice">
-NOTE: The presence of a `:token` within one of the `:external_auth` objects
-indicates that the it was used for authorization, whereas the absense of a `:token`
-indicates that the external account was only _linked_ to the user's profile
-</aside>
-
-## Register User via Email/Password
-
-> Send a POST request with the following parameters:
-
-```json
-{
-  "email": "greenbay4lyfe@gmail.com",
-  "first_name": "Aaron",
-  "last_name": "Rodgers",
-  "dob": "1983-12-02",
-  "city": "Green Bay",
-  "state": "WI",
-  "avatar_url": "https:\/\/nflprofile.com\/aaron_rodgers",
-  "coords": {
-    "lat": "44.5192",
-    "lng": "88.0198"
-  },
-  "external_auth": {
-    "firebase": {
-      "id": "937849239748230"
-    }
-  },
-  "password": "super_bowl_bound",
-  "provider": 1
-}
-```
-
-> The above request returns the following JSON:
-
-```shell
-status: 201
-```
-```json
-{
-  "id": 507,
-  "email": "greenbay4lyfe@gmail.com",
-  "first_name": "Aaron",
-  "last_name": "Rodgers",
-  "dob": "1983-12-02",
-  "about": "",
-  "city": "Green Bay",
-  "state": "WI",
-  "coords": {
-    "lat": 44.5192,
-    "lng": 88.0198
-  },
-  "start_date_range": 0,
-  "push_notifs": {
-    "general": true,
-    "messages": true,
-    "event_updates": true,
-    "mentions": true,
-    "event_comments": true,
-    "user_follows": true,
-    "join_requests": true
-  },
-  "external_auth": {
-    "firebase": {
-      "id": "937849239748230",
-      "token": ""
-    }
-  },
-  "avatar_url": "https:\/\/nflprofile.com\/aaron_rodgers",
-  "followers_count": 0,
-  "following_users_count": 0,
-  "following_venues_count": 0,
-  "attended_count": 0,
-  "hosted_count": 0,
-  "auth_token": "gq5fusas63pjQ38beMPn9XPt",
-  "auth_token_expiry": "2017-02-03T19:51:08.659Z",
-  "identity_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6ImxheWVyLWVpdDt2PTEiLCJraWQiOiJsYXllcjovLy9rZXlzLzA5YTI1NDZhLTdmNDItMTFlNi1hMzk3LTAyZDM1NjAwMTJmMCJ9.eyJpc3MiOiJsYXllcjovLy9wcm92aWRlcnMvY2Y4ZDEzZTgtN2U5NS0xMWU2LTkyNGItYTE1MWU1MTI0NjI0IiwicHJuIjoiNTA3IiwiaWF0IjoxNDg2MDY1MDY4LCJleHAiOjE0ODcyNzQ2NjgsIm5jZSI6IjBEOWx3d3lPaGdHemZMZGZwMFFwSTdDalZjUmVhaXBRS2Z1Z1ZQTFdYZlVOTW9CRUUxVF8ydnpqRWtDSGlyVFdxN3c3bHA4R1hzN2YxdnF3djZHNkt3In0.WwIqqbmCsI1qgbMmp-IEu3VEB3_wxVK1PxtVfIdHCUK7c0S5eh4DUxrrF8ZS6FV7jcML3x0vNlQN_Cwp0Vf9k99zaVz8H0XZ2tPrKPWBESnkRQn6dh-DiKe_E5SySxYIjeleMMaQ_ZMVt93d2GMYLCEnz0Lj2dO6eeI-Zoig05Gu7jCC5hQ0mc2TXTi5tRHVPdkaVfqWw9X1EZhbE55lXncMg8aqg4Y-ivnRc-wVabd_Vz2ypt9G0X0ls1LkpWsn1oBssO6yOj3VSby-duMd2n2A54svFswHQRAs_Ka7msiD5Ht2U-88D5indwr5w2z0ZPg-owVu1VG4GJ8ljxitNQ",
-  "last_login_time": "2017-02-02T19:51:08.660Z",
-  "profile_tags": [],
-  "feed_tags": [],
-  "feed_time_setting": 0
-}
-```
-
-Description: Used to register a new client user and _optionally_ obtain a Layer `identity_token`
-if `:nonce` is included.
-
-### HTTP Request
-
 `POST https://wildfire-dev.herokuapp.com/api/v1/users/register`
-
-<aside class="notice">
-NOTE: The presence of a `:token` within one of the `:external_auth` objects
-indicates that the it was used for authorization, whereas the absense of a `:token`
-indicates that the external account was only _linked_ to the user's profile
-</aside>
 
 <aside class="notice">
 NOTE: The `nonce` parameter is a JWT obtained from Layer using the Layer iOS or Android SDK. The server uses this
 to create an `identity_token` for the client to use on future Layer requests.
-</aside>
-
-## Login/Auth/Re-Auth a User via Email/Password
-
-> Along with the Basic Auth Header, send a POST request with the 'nonce' from Layer
-
-```shell
-'Authorization': 'Basic my.email@gmail.com:s3cur3_p455w0rd'
-```
-
-```json
-{
-  "nonce": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.po9twTrX99V7XgAk5mVskkiq8aa0lpYOue62ehubRY4"
-}
-```
-
-> The above request returns JSON structured like this:
-
-```shell
-status: 200
-```
-```json
-{
-  "id": 12,
-  "email": "lk3317@gmail.com",
-  "first_name": "Lauren",
-  "last_name": "Godwin",
-  "dob": "1988-05-12",
-  "about": null,
-  "city": "Wilmington",
-  "state": "NC",
-  "coords": {
-    "lat": 34.2257,
-    "lng": 77.9447
-  },
-  "push_notifs": {
-    "general": true,
-    "messages": true,
-    "events": true,
-    "mentions": true,
-    "user_follows": true
-  },
-  "external_auth": [
-    "firebase": {
-      "id": "937849239748230",
-      "token": ""
-    },
-    "facebook" {
-      "id": "362492374237349",
-      "token": "d24ab65a3b4ae389b459"
-    }
-  ],
-  "profile_tags": [
-    {
-      "id": 5,
-      "name": "Hockey",
-      "parent_id": 1
-    },
-    {
-      "id": 1,
-      "name": "Sports",
-      "parent_id": null
-    }
-  ],
-  "avatar_url": "https:\/\/fake.urlto.img\/user_avatar",
-  "auth_token": "WnwkLV4R9YDuD1bDcQvH7Pe6",
-  "auth_token_expiry": "2016-11-09T15:38:59.493Z",
-  "identity_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6ImxheWVyLWVpdDt2PTEiLCJraWQiOiJsYXllcjovLy9rZXlzLzA5YTI1NDZhLTdmNDItMTFlNi1hMzk3LTAyZDM1NjAwMTJmMCJ9.eyJpc3MiOiJsYXllcjovLy9wcm92aWRlcnMvY2Y4ZDEzZTgtN2U5NS0xMWU2LTkyNGItYTE1MWU1MTI0NjI0IiwicHJuIjoibGszMzE3QGdtYWlsLmNvbSIsImlhdCI6MTQ3ODYxOTUzOSwiZXhwIjoxNDc5ODI5MTM5LCJuY2UiOiJfMTU3NnVQdFo5QzV1NXhlV0pVcXdHZzhTOVF5dnRNVmFhdGlTQ3c4dDlmWEE3NnFEX1NmSHBVeTMxYy1MRmVVNnlza3VuSXkyN3dzc0E1bHdYS0V3ZyJ9.PMtpDlAmR1U1DZt2ep_fWndEvn_Z16nFCoFw9CLE0DbAMLs_G8bHgUaytccjrDUi4iXSEwA4qVKrhSCWs_sR16qICKfNUgNevu4ioL3OYmIoZjExsm6hHVKO8B3s43gHlHIO7B8UWIWs5CuuRj2VK3piNnOkO63daChNPDZHdVVgq47-ldB2k9GuctRPHe8Zu3dZK2Wa5N24BOYah0K79V5Dntsbmre0UP9lVy4HQBv0VmnVcJBR4UNzrt4lFD2xJsX-SdZYrFPWjVuYN4GqyvFOO2N8A1NPd7hYcBqVY8cdY0ZQ2KA5qboMaA5-2XxAQuTfOx36FwUSWoatUq80yA",
-  "active": true,
-  "last_login_time": "2016-11-08T15:38:59.493Z",
-  "digits_id": "36345202355432034911"
-}
-```
-
-Description: Used to authenticate an existing user and obtain a Layer `identity_token`. A request
-to this endpoint should include the users's email & password in HTTP Basc Auth header, as well as the `nonce` in
-body of the request.
-
-*NOTE:* the `nonce` from Layer is only required when the client needs to
-authenticate with the Layer service (i.e. the client's session with Layer has expired).
-
-### HTTP Request
-
-`POST https://wildfire-dev.herokuapp.com/api/v1/auth`
-
-<aside class="notice">
-Along with the Basic Auth Header, send a POST request with the ‘nonce’ from Layer
 </aside>
 
 ## Logout the current User
@@ -422,7 +197,7 @@ Along with the Basic Auth Header, send a POST request with the ‘nonce’ from 
 > Along with the Token Auth Header, send a PATCH request to the specified URI:
 
 ```shell
-'Authorization': 'Token Ac7qVZsS5Az7SVdgcrnEgXbf'
+https://wildfire-dev.herokuapp.com/api/v1/me/logout
 ```
 
 > The server will respond with the following JSON:
@@ -446,6 +221,10 @@ and delete their `auth_token`, forcing them to re-authenticate on the following 
 ## Refresh Layer Identity Token for Current User
 
 > Send a POST request with required parameters:
+
+```shell
+https://wildfire-dev.herokuapp.com/api/v1/auth/refresh_identity_token
+```
 
 ```json
 {
@@ -592,7 +371,10 @@ ordered by the most recently received notification.
   comment_mention: 4,
   event_updated: 5,
   new_badge: 6,
-  general: 7
+  new_checkin: 7,
+  join_request: 8,
+  accepted_request: 9,
+  general: 10
 }
 ```
 
@@ -671,22 +453,19 @@ status: 200
     "lng": -77.93786
   },
   "start_date_range": 2,
-  "social_ids": {
-    "twitter": -1,
-    "facebook": -1,
-    "instagram": -1,
-    "pinterest": -1
-  },
   "followers_count": 16,
   "following_users_count": 65,
   "following_venues_count": 15,
   "attended_count": 15,
   "hosted_count": 10,
+  "checkins_count": 3,
   "block_status": false,
   "follow_status": false,
   "reverse_block_status": false,
   "reverse_follow_status": false,
-  "profile_tags": [
+  "firebase_id": "937849239748230",
+  "facebook_id": "324849239748230",
+  "tags": [
     {
       "id": 516,
       "name": "AUB Tigers Football",
@@ -701,23 +480,6 @@ status: 200
       "id": 585,
       "name": "Dallas Cowboys",
       "parent_id": 568
-    }
-  ],
-  "feed_tags": [
-    {
-      "id": 334,
-      "name": "DART Big Green Basketball",
-      "parent_id": 328
-    },
-    {
-      "id": 148,
-      "name": "CHS Cougars Basketball",
-      "parent_id": 146
-    },
-    {
-      "id": 541,
-      "name": "Miami Heat",
-      "parent_id": 537
     }
   ]
 }
@@ -751,26 +513,23 @@ the following data on the auth'ed user's model will be updated:
 
 `active: false`
 `push_notifs: { general: false, messages: false, event: false, mentions: false, follows: false }`
-`auth_token: nil`
-`auth_token_expiry: Time.zone.now`
-`password_reset_token: nil`
 
 
 ### HTTP Request
 
-`POST https://wildfire-dev.herokuapp.com/api/v1/me/deactivate`
+`POST https://wildfire-staging.herokuapp.com/api/v1/me/deactivate`
 
-## Find Users by Digits ID
+## Find Facebook Friends Using JOMO
 
 > Along with the Token Auth Header, send a POST request to the specified URI:
 
 ```shell
-'Authorization': 'Token Ac7qVZsS5Az7SVdgcrnEgXbf'
+https://wildfire-staging.herokuapp.com/api/v1/me/find_friends
 ```
 
 ```json
 {
-  "digits_ids": ["21659940719036163543", "19008283224256407389", "22530798334117390808", "68701303679444498592", "64307672012076350746", "28459077552041890622"]
+  "token": "Ac7qVZsS5Az7SVdgcrnEgXbf23sdfajidafasdikvmj823"
 }
 ```
 
@@ -779,49 +538,36 @@ the following data on the auth'ed user's model will be updated:
 ```shell
 status: 200
 ```
+
 ```json
 [
   {
-    "id": 13,
-    "first_name": "Jordy",
-    "last_name": "D'Amore",
-    "avatar_url": "https://fake.urlto.img/Jordy_user_avatar"
+    "id": 1,
+    "first_name": "Jordan",
+    "last_name": "Godwin",
+    "avatar_url": "http:\/\/lorempixel.com\/300\/300\/sports\/9",
+    "facebook_id": "794663274565",
+    "block_status": false,
+    "follow_status": false,
+    "reverse_block_status": false,
+    "reverse_follow_status": false
   },
   {
-    "id": 14,
-    "first_name": "Jaquan",
-    "last_name": "Breitenberg",
-    "avatar_url": "https://fake.urlto.img/Jaquan_user_avatar"
-  },
-  {
-    "id": 15,
-    "first_name": "Frieda",
-    "last_name": "Stamm",
-    "avatar_url": "https://fake.urlto.img/Frieda_user_avatar"
-  }
-  {
-    "id": 16,
-    "first_name": "Brice",
-    "last_name": "Marvin",
-    "avatar_url": "https://fake.urlto.img/Brice_user_avatar"
-  },
-  {
-    "id": 17,
-    "first_name": "Titus",
-    "last_name": "Gleichner",
-    "avatar_url": "https://fake.urlto.img/Titus_user_avatar"
-  },
-  {
-    "id": 18,
-    "first_name": "Elwyn",
-    "last_name": "Ledner",
-    "avatar_url": "https://fake.urlto.img/Elwyn_user_avatar"
+    "id": 1,
+    "first_name": "Lauren",
+    "last_name": "Godwin",
+    "avatar_url": "http:\/\/lorempixel.com\/300\/300\/clothing\/9",
+    "facebook_id": "4663272379245237",
+    "block_status": false,
+    "follow_status": false,
+    "reverse_block_status": false,
+    "reverse_follow_status": false
   }
 ]
 ```
 
-Description: Use this endpoint to pass an array of unique `:id`'s obtained from Digits,
-in which will then be matched on users in the database on each user's `digit_id` attribute.
+Description: Use this endpoint to pass the facebook token for the current_user to have an
+array of users returned that are friends on facebook and also using the JOMO app.
 
 
 ### HTTP Request
