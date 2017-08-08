@@ -205,8 +205,7 @@ the following headers:</p>
 <p>HTTP Request Headers:</p>
 </blockquote>
 <pre class="highlight shell"><code><span class="s1">'Client-key'</span>: <span class="s1">'UNIQUE_CLIENT_KEY_GOES_HERE'</span>
-</code></pre><pre class="highlight shell"><code><span class="s1">'Authorization'</span>: <span class="s1">'Basic my.email@gmail.com:s3cur3_p455w0rd'</span>
-</code></pre><pre class="highlight shell"><code><span class="s1">'Authorization'</span>: <span class="s1">'Token o1yR62rL5yvvsmxLEVEXPjC3'</span>
+</code></pre><pre class="highlight shell"><code><span class="s1">'Authorization'</span>: <span class="s1">'Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImUyOGU2MDQwOTI4OTA4ZTE2YzNjMThlNTc2ZDg1Y2QxNmEyNjRlZWEifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vam9tby1iMTU5OCIsIm5hbWUiOiJOaWNob2xhcyBOZyIsInBpY3R1cmUiOiJodHRwczovL3Njb250ZW50Lnh4LmZiY2RuLm5ldC92L3QxLjAtMS9zMTAweDEwMC8xNDI5MjI5MF8xMDE1NTE3NjUzNTk0MzA5OF85NDE2NTkwMzUzNzU5MzY1ODJfbi5qcGc_b2g9ZDQ2NTA3NTRmODc4OGEwOWYwMDVhYzk3MGJiZGI3Yjgmb2U9NUEwOUU1NEQiLCJhdWQiOiJqb21vLWIxNTk4IiwiYXV0aF90aW1lIjoxNTAxNzgwNzk4LCJ1c2VyX2lkIjoiNU5tbFIxVGZId2dwNTBUV1loWXFJckF3cnlaMiIsInN1YiI6IjVObWxSMVRmSHdncDUwVFdZaFlxSXJBd3J5WjIiLCJpYXQiOjE1MDE3OTI5NjgsImV4cCI6MTUwMTc5NjU2OCwiZW1haWwiOiJuZ2hldW5neXVAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImZhY2Vib29rLmNvbSI6WyIxMDE1NjM0MzY1MzI1ODA5OCJdLCJlbWFpbCI6WyJuZ2hldW5neXVAZ21haWwuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoiZmFjZWJvb2suY29tIn19.N7DSP3KqYvCvJ21JzjAd0p9b41b0Skp6pKWVzJ3iioKd5_Q9rGoqkp_X01sRJfmjnSNW817Sedba3DJROxAJwXmHqvUF_o59tPx_ns7TvBfqFE70Tq3pF0EpJi0oZyT1a5ICnEVnjuKCZYooNkpE0rUI4gHZUJolXxxB0xFDVNHHbLeT9hNaq5MdSHQKKJ3rHuAqmmOYJAr9IpMKDCMlCyUxcCrzzEDs-vRQPbthoyg9j3arKfAgO0XSB-00agcStB54SYg7yYoN9Ly4QKZQT5Lrz8hjlLJGV8_M_MB4C2sO4BVphpUdUlH8GBw4OC44LaPc5qDcRZwDHV51MvvXyA'</span>
 </code></pre>
 <p>Wildfire uses multiple HTTP headers to authenticate API requests. The three different HTTP headers &amp; their use cases for
 each are described below.</p>
@@ -216,56 +215,32 @@ each are described below.</p>
 <p>The first is a <code class="prettyprint">Client-key</code> header that is an unique API key which is checked for in <em>ALL</em> requests to the Wildfire API.
 This API key can be obtained from an API administrator.</p>
 
-<h3 id="http-basic-auth-header">HTTP Basic Auth Header</h3>
+<h3 id="firebase-auth-token">Firebase Auth Token</h3>
 
-<p>This header (in addition to the <code class="prettyprint">Client-key</code> header) is only required on the <code class="prettyprint">auth</code> endpoint requests. This header
-should include the users&rsquo;s email &amp; password as seen in the example to the right.</p>
-
-<h3 id="http-token-auth-header">HTTP Token Auth Header</h3>
-
-<p>This header (in addition to the <code class="prettyprint">Client-key</code> header) is required on all requests that
-are not the <code class="prettyprint">auth</code> endpoint requests. Use the <code class="prettyprint">token</code> endpoint to get an existing
-user&rsquo;s <code class="prettyprint">auth_token</code> for making further requests.</p>
+<p>This header (in addition to the <code class="prettyprint">Client-key</code> header) is required on all requests. The token is
+a JSON Web Token that is provided by Firebase and is then verified by the Wildfire Server API.</p>
 
 <aside class="notice">
 OPTIONAL: You must use the LayerKit or Layer Android SDK in order to obtain the `nonce` used in the `token` endpoint request.
 </aside>
 
-<h2 id="verify-email-address">Verify Email Address</h2>
+<h2 id="verify-user">Verify User</h2>
 
 <blockquote>
 <p>Send a GET request with the email to be verified:</p>
 </blockquote>
-<pre class="highlight shell"><code>https://wildfire-staging.herokuapp.com/api/v1/auth/verify_email?email<span class="o">=</span>woozykk@gmail.com
+<pre class="highlight shell"><code>https://wildfire-staging.herokuapp.com/api/v1/auth/verify_user
 </code></pre>
 <blockquote>
-<p>If the email is available, the following JSON response will be returned:</p>
+<p>If the user exists, the following JSON response will be returned:</p>
 </blockquote>
 <pre class="highlight shell"><code>status: 200
-</code></pre><pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"email_exists"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint is used during the on-boarding process to verify that the user&rsquo;s email address has not
-already been registered with a previous account.</p>
+</code></pre>
+<p>This endpoint is used during the on-boarding process to verify that if a user exists.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/auth/verify_email</code></p>
-
-<h3 id="query-parameters">Query Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><code class="prettyprint">email</code></td>
-<td>Specify email address to verify</td>
-</tr>
-</tbody></table>
+<p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/auth/verify_user</code></p>
 
 <h2 id="register-user-via-facebook">Register User via Facebook</h2>
 
@@ -284,17 +259,8 @@ already been registered with a previous account.</p>
     </span><span class="s2">"lng"</span><span class="p">:</span><span class="w"> </span><span class="s2">"88.0198"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="s2">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://fake.urlto.img/user_avatar"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"provider"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"external_auth"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="s2">"firebase"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"937849239748230"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"facebook"</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"362492374237349"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d24ab65a3b4ae389b459"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
+  </span><span class="s2">"firebase_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"937849239748230"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"facebook_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"324849239748230"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
@@ -326,208 +292,24 @@ already been registered with a previous account.</p>
   </span><span class="s2">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">nflprofile.com</span><span class="se">\/</span><span class="s2">aaron_rodgers"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"followers_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="s2">"attended_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"checkins_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="s2">"hosted_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="s2">"following_users_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="s2">"following_venues_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"auth_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NqwNxcZ86y8qAHHDzjCh6PUq"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"auth_token_expiry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-24T14:24:30.905Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"last_login_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-23T14:24:30.905Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"profile_tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-  </span><span class="s2">"feed_tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-  </span><span class="s2">"external_auth"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="s2">"firebase"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"937849239748230"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"facebook"</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"362492374237349"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d24ab65a3b4ae389b459"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
+  </span><span class="s2">"firebase_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"937849239748230"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"facebook_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"324849239748230"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Description: Used to register a new client user from Facebook Ouath via Firebase.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST https://wildfire-dev.herokuapp.com/api/v1/users/register/facebook</code></p>
-
-<aside class="notice">
-NOTE: The presence of a `:token` within one of the `:external_auth` objects
-indicates that the it was used for authorization, whereas the absense of a `:token`
-indicates that the external account was only _linked_ to the user&rsquo;s profile
-</aside>
-
-<h2 id="register-user-via-email-password">Register User via Email/Password</h2>
-
-<blockquote>
-<p>Send a POST request with the following parameters:</p>
-</blockquote>
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"greenbay4lyfe@gmail.com"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aaron"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rodgers"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1983-12-02"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Green Bay"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WI"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">nflprofile.com</span><span class="se">\/</span><span class="s2">aaron_rodgers"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"coords"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"44.5192"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"lng"</span><span class="p">:</span><span class="w"> </span><span class="s2">"88.0198"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"external_auth"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"firebase"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"937849239748230"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"super_bowl_bound"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"provider"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<blockquote>
-<p>The above request returns the following JSON:</p>
-</blockquote>
-<pre class="highlight shell"><code>status: 201
-</code></pre><pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">507</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"greenbay4lyfe@gmail.com"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aaron"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rodgers"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1983-12-02"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"about"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Green Bay"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WI"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"coords"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">44.5192</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">88.0198</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"start_date_range"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"push_notifs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"general"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"messages"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"event_updates"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"mentions"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"event_comments"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"user_follows"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"join_requests"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"external_auth"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"firebase"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"937849239748230"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">nflprofile.com</span><span class="se">\/</span><span class="s2">aaron_rodgers"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"followers_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"following_users_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"following_venues_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"attended_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"hosted_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"auth_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gq5fusas63pjQ38beMPn9XPt"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"auth_token_expiry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-03T19:51:08.659Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"identity_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6ImxheWVyLWVpdDt2PTEiLCJraWQiOiJsYXllcjovLy9rZXlzLzA5YTI1NDZhLTdmNDItMTFlNi1hMzk3LTAyZDM1NjAwMTJmMCJ9.eyJpc3MiOiJsYXllcjovLy9wcm92aWRlcnMvY2Y4ZDEzZTgtN2U5NS0xMWU2LTkyNGItYTE1MWU1MTI0NjI0IiwicHJuIjoiNTA3IiwiaWF0IjoxNDg2MDY1MDY4LCJleHAiOjE0ODcyNzQ2NjgsIm5jZSI6IjBEOWx3d3lPaGdHemZMZGZwMFFwSTdDalZjUmVhaXBRS2Z1Z1ZQTFdYZlVOTW9CRUUxVF8ydnpqRWtDSGlyVFdxN3c3bHA4R1hzN2YxdnF3djZHNkt3In0.WwIqqbmCsI1qgbMmp-IEu3VEB3_wxVK1PxtVfIdHCUK7c0S5eh4DUxrrF8ZS6FV7jcML3x0vNlQN_Cwp0Vf9k99zaVz8H0XZ2tPrKPWBESnkRQn6dh-DiKe_E5SySxYIjeleMMaQ_ZMVt93d2GMYLCEnz0Lj2dO6eeI-Zoig05Gu7jCC5hQ0mc2TXTi5tRHVPdkaVfqWw9X1EZhbE55lXncMg8aqg4Y-ivnRc-wVabd_Vz2ypt9G0X0ls1LkpWsn1oBssO6yOj3VSby-duMd2n2A54svFswHQRAs_Ka7msiD5Ht2U-88D5indwr5w2z0ZPg-owVu1VG4GJ8ljxitNQ"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"last_login_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-02T19:51:08.660Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"profile_tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-  </span><span class="s2">"feed_tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-  </span><span class="s2">"feed_time_setting"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>Description: Used to register a new client user and <em>optionally</em> obtain a Layer <code class="prettyprint">identity_token</code>
-if <code class="prettyprint">:nonce</code> is included.</p>
-
-<h3 id="http-request">HTTP Request</h3>
-
 <p><code class="prettyprint">POST https://wildfire-dev.herokuapp.com/api/v1/users/register</code></p>
-
-<aside class="notice">
-NOTE: The presence of a `:token` within one of the `:external_auth` objects
-indicates that the it was used for authorization, whereas the absense of a `:token`
-indicates that the external account was only _linked_ to the user&rsquo;s profile
-</aside>
 
 <aside class="notice">
 NOTE: The `nonce` parameter is a JWT obtained from Layer using the Layer iOS or Android SDK. The server uses this
 to create an `identity_token` for the client to use on future Layer requests.
-</aside>
-
-<h2 id="login-auth-re-auth-a-user-via-email-password">Login/Auth/Re-Auth a User via Email/Password</h2>
-
-<blockquote>
-<p>Along with the Basic Auth Header, send a POST request with the &lsquo;nonce&rsquo; from Layer</p>
-</blockquote>
-<pre class="highlight shell"><code><span class="s1">'Authorization'</span>: <span class="s1">'Basic my.email@gmail.com:s3cur3_p455w0rd'</span>
-</code></pre><pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"nonce"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.po9twTrX99V7XgAk5mVskkiq8aa0lpYOue62ehubRY4"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<blockquote>
-<p>The above request returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight shell"><code>status: 200
-</code></pre><pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lk3317@gmail.com"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lauren"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Godwin"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1988-05-12"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"about"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wilmington"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NC"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"coords"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.2257</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">77.9447</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"push_notifs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"general"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"messages"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"events"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"mentions"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"user_follows"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"external_auth"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="s2">"firebase"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"937849239748230"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"facebook"</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"362492374237349"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d24ab65a3b4ae389b459"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">],</span><span class="w">
-  </span><span class="s2">"profile_tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hockey"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sports"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">],</span><span class="w">
-  </span><span class="s2">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">fake.urlto.img</span><span class="se">\/</span><span class="s2">user_avatar"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"auth_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WnwkLV4R9YDuD1bDcQvH7Pe6"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"auth_token_expiry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-09T15:38:59.493Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"identity_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6ImxheWVyLWVpdDt2PTEiLCJraWQiOiJsYXllcjovLy9rZXlzLzA5YTI1NDZhLTdmNDItMTFlNi1hMzk3LTAyZDM1NjAwMTJmMCJ9.eyJpc3MiOiJsYXllcjovLy9wcm92aWRlcnMvY2Y4ZDEzZTgtN2U5NS0xMWU2LTkyNGItYTE1MWU1MTI0NjI0IiwicHJuIjoibGszMzE3QGdtYWlsLmNvbSIsImlhdCI6MTQ3ODYxOTUzOSwiZXhwIjoxNDc5ODI5MTM5LCJuY2UiOiJfMTU3NnVQdFo5QzV1NXhlV0pVcXdHZzhTOVF5dnRNVmFhdGlTQ3c4dDlmWEE3NnFEX1NmSHBVeTMxYy1MRmVVNnlza3VuSXkyN3dzc0E1bHdYS0V3ZyJ9.PMtpDlAmR1U1DZt2ep_fWndEvn_Z16nFCoFw9CLE0DbAMLs_G8bHgUaytccjrDUi4iXSEwA4qVKrhSCWs_sR16qICKfNUgNevu4ioL3OYmIoZjExsm6hHVKO8B3s43gHlHIO7B8UWIWs5CuuRj2VK3piNnOkO63daChNPDZHdVVgq47-ldB2k9GuctRPHe8Zu3dZK2Wa5N24BOYah0K79V5Dntsbmre0UP9lVy4HQBv0VmnVcJBR4UNzrt4lFD2xJsX-SdZYrFPWjVuYN4GqyvFOO2N8A1NPd7hYcBqVY8cdY0ZQ2KA5qboMaA5-2XxAQuTfOx36FwUSWoatUq80yA"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"last_login_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-08T15:38:59.493Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"digits_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"36345202355432034911"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>Description: Used to authenticate an existing user and obtain a Layer <code class="prettyprint">identity_token</code>. A request
-to this endpoint should include the users&rsquo;s email &amp; password in HTTP Basc Auth header, as well as the <code class="prettyprint">nonce</code> in
-body of the request.</p>
-
-<p><em>NOTE:</em> the <code class="prettyprint">nonce</code> from Layer is only required when the client needs to
-authenticate with the Layer service (i.e. the client&rsquo;s session with Layer has expired).</p>
-
-<h3 id="http-request">HTTP Request</h3>
-
-<p><code class="prettyprint">POST https://wildfire-dev.herokuapp.com/api/v1/auth</code></p>
-
-<aside class="notice">
-Along with the Basic Auth Header, send a POST request with the ‘nonce’ from Layer
 </aside>
 
 <h2 id="logout-the-current-user">Logout the current User</h2>
@@ -535,7 +317,7 @@ Along with the Basic Auth Header, send a POST request with the ‘nonce’ from 
 <blockquote>
 <p>Along with the Token Auth Header, send a PATCH request to the specified URI:</p>
 </blockquote>
-<pre class="highlight shell"><code><span class="s1">'Authorization'</span>: <span class="s1">'Token Ac7qVZsS5Az7SVdgcrnEgXbf'</span>
+<pre class="highlight shell"><code>https://wildfire-dev.herokuapp.com/api/v1/me/logout
 </code></pre>
 <blockquote>
 <p>The server will respond with the following JSON:</p>
@@ -557,7 +339,8 @@ and delete their <code class="prettyprint">auth_token</code>, forcing them to re
 <blockquote>
 <p>Send a POST request with required parameters:</p>
 </blockquote>
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
+<pre class="highlight shell"><code>https://wildfire-dev.herokuapp.com/api/v1/auth/refresh_identity_token
+</code></pre><pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"nonce"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c61s5_f-_uOSJztlBr0QPVWhuUsgTKBZ91sSAy-oR0Ulmvkm6f4NOauFZesjDvIiyouFg57sI35LYu7ysMHOMQ"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -693,7 +476,10 @@ ordered by the most recently received notification.</p>
   comment_mention: 4,
   event_updated: 5,
   new_badge: 6,
-  general: 7
+  new_checkin: 7,
+  join_request: 8,
+  accepted_request: 9,
+  general: 10
 }
 </code></p>
 
@@ -764,22 +550,19 @@ ordered by the most recently received notification.</p>
     </span><span class="s2">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.93786</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="s2">"start_date_range"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"social_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"twitter"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"facebook"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"instagram"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"pinterest"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="w">
-  </span><span class="p">},</span><span class="w">
   </span><span class="s2">"followers_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
   </span><span class="s2">"following_users_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">65</span><span class="p">,</span><span class="w">
   </span><span class="s2">"following_venues_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
   </span><span class="s2">"attended_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
   </span><span class="s2">"hosted_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"checkins_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
   </span><span class="s2">"block_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
   </span><span class="s2">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
   </span><span class="s2">"reverse_block_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
   </span><span class="s2">"reverse_follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"profile_tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="s2">"firebase_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"937849239748230"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"facebook_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"324849239748230"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">516</span><span class="p">,</span><span class="w">
       </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUB Tigers Football"</span><span class="p">,</span><span class="w">
@@ -794,23 +577,6 @@ ordered by the most recently received notification.</p>
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">585</span><span class="p">,</span><span class="w">
       </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dallas Cowboys"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">568</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">],</span><span class="w">
-  </span><span class="s2">"feed_tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">334</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DART Big Green Basketball"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">328</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">148</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CHS Cougars Basketball"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">146</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">541</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Miami Heat"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">537</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -843,23 +609,20 @@ ordered by the most recently received notification.</p>
 the following data on the auth&#39;ed user&rsquo;s model will be updated:</p>
 
 <p><code class="prettyprint">active: false</code>
-<code class="prettyprint">push_notifs: { general: false, messages: false, event: false, mentions: false, follows: false }</code>
-<code class="prettyprint">auth_token: nil</code>
-<code class="prettyprint">auth_token_expiry: Time.zone.now</code>
-<code class="prettyprint">password_reset_token: nil</code></p>
+<code class="prettyprint">push_notifs: { general: false, messages: false, event: false, mentions: false, follows: false }</code></p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST https://wildfire-dev.herokuapp.com/api/v1/me/deactivate</code></p>
+<p><code class="prettyprint">POST https://wildfire-staging.herokuapp.com/api/v1/me/deactivate</code></p>
 
-<h2 id="find-users-by-digits-id">Find Users by Digits ID</h2>
+<h2 id="find-facebook-friends-using-jomo">Find Facebook Friends Using JOMO</h2>
 
 <blockquote>
 <p>Along with the Token Auth Header, send a POST request to the specified URI:</p>
 </blockquote>
-<pre class="highlight shell"><code><span class="s1">'Authorization'</span>: <span class="s1">'Token Ac7qVZsS5Az7SVdgcrnEgXbf'</span>
+<pre class="highlight shell"><code>https://wildfire-staging.herokuapp.com/api/v1/me/find_friends
 </code></pre><pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"digits_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"21659940719036163543"</span><span class="p">,</span><span class="w"> </span><span class="s2">"19008283224256407389"</span><span class="p">,</span><span class="w"> </span><span class="s2">"22530798334117390808"</span><span class="p">,</span><span class="w"> </span><span class="s2">"68701303679444498592"</span><span class="p">,</span><span class="w"> </span><span class="s2">"64307672012076350746"</span><span class="p">,</span><span class="w"> </span><span class="s2">"28459077552041890622"</span><span class="p">]</span><span class="w">
+  </span><span class="s2">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ac7qVZsS5Az7SVdgcrnEgXbf23sdfajidafasdikvmj823"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
@@ -868,45 +631,31 @@ the following data on the auth&#39;ed user&rsquo;s model will be updated:</p>
 <pre class="highlight shell"><code>status: 200
 </code></pre><pre class="highlight json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jordy"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"D'Amore"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://fake.urlto.img/Jordy_user_avatar"</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jordan"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Godwin"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:</span><span class="se">\/\/</span><span class="s2">lorempixel.com</span><span class="se">\/</span><span class="s2">300</span><span class="se">\/</span><span class="s2">300</span><span class="se">\/</span><span class="s2">sports</span><span class="se">\/</span><span class="s2">9"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"facebook_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"794663274565"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"block_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"reverse_block_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"reverse_follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jaquan"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Breitenberg"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://fake.urlto.img/Jaquan_user_avatar"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Frieda"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stamm"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://fake.urlto.img/Frieda_user_avatar"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brice"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Marvin"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://fake.urlto.img/Brice_user_avatar"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Titus"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gleichner"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://fake.urlto.img/Titus_user_avatar"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elwyn"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ledner"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://fake.urlto.img/Elwyn_user_avatar"</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lauren"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Godwin"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:</span><span class="se">\/\/</span><span class="s2">lorempixel.com</span><span class="se">\/</span><span class="s2">300</span><span class="se">\/</span><span class="s2">300</span><span class="se">\/</span><span class="s2">clothing</span><span class="se">\/</span><span class="s2">9"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"facebook_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4663272379245237"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"block_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"reverse_block_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"reverse_follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>Description: Use this endpoint to pass an array of unique <code class="prettyprint">:id</code>&rsquo;s obtained from Digits,
-in which will then be matched on users in the database on each user&rsquo;s <code class="prettyprint">digit_id</code> attribute.</p>
+<p>Description: Use this endpoint to pass the facebook token for the current_user to have an
+array of users returned that are friends on facebook and also using the JOMO app.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -1200,7 +949,7 @@ specified user is currently following.</p>
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Description: Use this endpoint to follow a target user (create a follow) for the
-current_user with the target of another user. This is the Twitter-style &#39;one-way&rsquo; Follow.</p>
+current_user with the target of another user. This is the Twitter-style &lsquo;one-way&rsquo; Follow.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
