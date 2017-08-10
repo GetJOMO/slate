@@ -521,7 +521,7 @@ the following data on the auth'ed user's model will be updated:
 
 ## Find Facebook Friends Using JOMO
 
-> Along with the Token Auth Header, send a POST request to the specified URI:
+> Along with the Token Auth Header, send a GET request to the specified URI:
 
 ```shell
 https://wildfire-staging.herokuapp.com/api/v1/me/find_friends
@@ -572,7 +572,7 @@ array of users returned that are friends on facebook and also using the JOMO app
 
 ### HTTP Request
 
-`POST https://wildfire-dev.herokuapp.com/api/v1/users/find_digits`
+`GET https://wildfire-dev.herokuapp.com/api/v1/me/find_friends?token=EAAZAvtcsxhLMBADwMYG1RnD4rGFdZA2XcS9B0JK4E9ZAlXsuHZBJSLyvF433mGUiJtBvjw7WJ4sh7JO7uvqeww5nPCUWZAgn1z6QfvqZCl5xWIlmUtqL3Y530WXnB4rmvZC1vuHUZCAsRnc74AWvqRaYeHgKOH74uOKsOUrwSu6TL0YadOfpjNidctcZCWgQa5rgZD`
 
 ## Get User Profile
 
