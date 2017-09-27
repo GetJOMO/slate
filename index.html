@@ -5224,6 +5224,94 @@ events for each venue.</p>
 </tr>
 </tbody></table>
 
+<h1 id="images">Images</h1>
+
+<h2 id="images-search-via-bing-api">Images Search via Bing API</h2>
+
+<blockquote>
+<p>Send a GET request with required parameters:</p>
+</blockquote>
+<pre class="highlight shell"><code>https://wildfire-staging.herokuapp.com/api/v1/images/search?q<span class="o">=</span>duke+basketball&amp;page<span class="o">=</span>1&amp;per_page<span class="o">=</span>50
+</code></pre>
+<blockquote>
+<p>A JSON response like the following would be returned:</p>
+</blockquote>
+<pre class="highlight shell"><code>status: 200
+</code></pre><pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:</span><span class="se">\/\/</span><span class="s2">www.bing.com</span><span class="se">\/</span><span class="s2">cr?IG=FD582B4EB2904C008DACC9F24EB62E47&amp;CID=18C6E3EA71786AE02B31E8E0707E6BC5&amp;rd=1&amp;h=EYmyl6N3Kx6-2nvVCFerlnnnOhpDbWYHGwfZVjqptAY&amp;v=1&amp;r=http%3a%2f%2fnews.fiu.edu%2fwp-content%2fuploads%2fbasketball.jpg&amp;p=DevEx,5009.1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"thumb_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">tse2.mm.bing.net</span><span class="se">\/</span><span class="s2">th?id=OIP.DYsvGZUaRnb5d8LVeJruzQD2Es&amp;pid=Api"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:</span><span class="se">\/\/</span><span class="s2">www.bing.com</span><span class="se">\/</span><span class="s2">cr?IG=FD582B4EB2904C008DACC9F24EB62E47&amp;CID=18C6E3EA71786AE02B31E8E0707E6BC5&amp;rd=1&amp;h=t_yfnZmTeeEhzcxuKaycrRIICNnWE-FkyVA4Pv0yU68&amp;v=1&amp;r=http%3a%2f%2fupload.wikimedia.org%2fwikipedia%2fcommons%2f7%2f7a%2fBasketball.png&amp;p=DevEx,5015.1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"thumb_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">tse1.mm.bing.net</span><span class="se">\/</span><span class="s2">th?id=OIP.m3KV6ywO19IfCOjH5tBCXwEsEs&amp;pid=Api"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:</span><span class="se">\/\/</span><span class="s2">www.bing.com</span><span class="se">\/</span><span class="s2">cr?IG=FD582B4EB2904C008DACC9F24EB62E47&amp;CID=18C6E3EA71786AE02B31E8E0707E6BC5&amp;rd=1&amp;h=c3qoil5bs3IHRZmIOd_ufWu9tWRbkWRBz2gWaRgFJwI&amp;v=1&amp;r=http%3a%2f%2fs3.amazonaws.com%2fvnn-aws-sites%2f10188%2ffiles%2f2017%2f02%2f7dbcd0ef5aa0d212-BasketballStockImage.jpg&amp;p=DevEx,5021.1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"thumb_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">tse1.explicit.bing.net</span><span class="se">\/</span><span class="s2">th?id=OIP.VnEy6s3M58Ga6GRvvhQv-QEkEs&amp;pid=Api"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:</span><span class="se">\/\/</span><span class="s2">www.bing.com</span><span class="se">\/</span><span class="s2">cr?IG=FD582B4EB2904C008DACC9F24EB62E47&amp;CID=18C6E3EA71786AE02B31E8E0707E6BC5&amp;rd=1&amp;h=7te_i-ZysYbms983gKZi5h8qOPA9oyIgiodIJJEV0gg&amp;v=1&amp;r=http%3a%2f%2fmurrayglobal.files.wordpress.com%2f2012%2f03%2fbasketball.jpg&amp;p=DevEx,5027.1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"thumb_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">tse2.mm.bing.net</span><span class="se">\/</span><span class="s2">th?id=OIP.tqyRBFPb39ne2tGX__bRnAEsEs&amp;pid=Api"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:</span><span class="se">\/\/</span><span class="s2">www.bing.com</span><span class="se">\/</span><span class="s2">cr?IG=FD582B4EB2904C008DACC9F24EB62E47&amp;CID=18C6E3EA71786AE02B31E8E0707E6BC5&amp;rd=1&amp;h=Kvg6ZD-UuFxNmuOknCCk95dWpsXavX0RjFTNUYAOzzU&amp;v=1&amp;r=http%3a%2f%2fthumb101.shutterstock.com%2fdisplay_pic_with_logo%2f540784%2f124198177%2fstock-photo-basketball-isolated-on-a-white-background-as-a-sports-and-fitness-symbol-of-a-team-leisure-activity-124198177.jpg&amp;p=DevEx,5033.1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"thumb_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">tse2.mm.bing.net</span><span class="se">\/</span><span class="s2">th?id=OIP.5ooh4fdTEtHRREzav6GHJwElEs&amp;pid=Api"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Description: This endpoint will a paginated response of images from the Bing search API.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/images/search?q=search+query+string+here&amp;page=1&amp;per_page=50</code></p>
+
+<h3 id="required-header-on-all-subsequent-requests">Required Header on all subsequent requests</h3>
+
+<p><em>NOTE:</em> After the initial request has been made to this endpoint a header similar to the
+one below will be returned. This header should be persisted on the client device and
+must be passed on all subsequent requests to this endpoint.</p>
+
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>&#39;X-MSEdge-ClientID&rsquo;</td>
+<td>&#39;18C6E3EA71786AE02B31E8E0707E6BC5&rsquo;</td>
+</tr>
+</tbody></table>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<p><em>NOTE:</em> Only use one of the below query parameters.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">q</code></td>
+<td>nil</td>
+<td>A string containing the search query for images</td>
+</tr>
+<tr>
+<td><code class="prettyprint">page</code></td>
+<td>1</td>
+<td>the page being requested from the Bing Image Search API</td>
+</tr>
+<tr>
+<td><code class="prettyprint">per_page</code></td>
+<td>25</td>
+<td>the number of images to return per requested page</td>
+</tr>
+</tbody></table>
+
 <h1 id="template">{TEMPLATE}</h1>
 
 <h2 id="template-title-of-the-endpoint">{TEMPLATE: Title of the Endpoint}</h2>
