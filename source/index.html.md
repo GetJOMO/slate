@@ -5214,6 +5214,70 @@ Parameter | Default | Description
 --------- | ------- | -----------
 `tag_id` | nil | Used to search for users by the specified Tag
 
+# Images
+
+## Images Search via Bing API
+
+> Send a GET request with required parameters:
+
+```shell
+https://wildfire-staging.herokuapp.com/api/v1/images/search?q=duke+basketball&page=1&per_page=50
+```
+
+> A JSON response like the following would be returned:
+
+```shell
+status: 200
+```
+```json
+[
+  {
+    "url": "http:\/\/www.bing.com\/cr?IG=FD582B4EB2904C008DACC9F24EB62E47&CID=18C6E3EA71786AE02B31E8E0707E6BC5&rd=1&h=EYmyl6N3Kx6-2nvVCFerlnnnOhpDbWYHGwfZVjqptAY&v=1&r=http%3a%2f%2fnews.fiu.edu%2fwp-content%2fuploads%2fbasketball.jpg&p=DevEx,5009.1",
+    "thumb_url": "https:\/\/tse2.mm.bing.net\/th?id=OIP.DYsvGZUaRnb5d8LVeJruzQD2Es&pid=Api"
+  },
+  {
+    "url": "http:\/\/www.bing.com\/cr?IG=FD582B4EB2904C008DACC9F24EB62E47&CID=18C6E3EA71786AE02B31E8E0707E6BC5&rd=1&h=t_yfnZmTeeEhzcxuKaycrRIICNnWE-FkyVA4Pv0yU68&v=1&r=http%3a%2f%2fupload.wikimedia.org%2fwikipedia%2fcommons%2f7%2f7a%2fBasketball.png&p=DevEx,5015.1",
+    "thumb_url": "https:\/\/tse1.mm.bing.net\/th?id=OIP.m3KV6ywO19IfCOjH5tBCXwEsEs&pid=Api"
+  },
+  {
+    "url": "http:\/\/www.bing.com\/cr?IG=FD582B4EB2904C008DACC9F24EB62E47&CID=18C6E3EA71786AE02B31E8E0707E6BC5&rd=1&h=c3qoil5bs3IHRZmIOd_ufWu9tWRbkWRBz2gWaRgFJwI&v=1&r=http%3a%2f%2fs3.amazonaws.com%2fvnn-aws-sites%2f10188%2ffiles%2f2017%2f02%2f7dbcd0ef5aa0d212-BasketballStockImage.jpg&p=DevEx,5021.1",
+    "thumb_url": "https:\/\/tse1.explicit.bing.net\/th?id=OIP.VnEy6s3M58Ga6GRvvhQv-QEkEs&pid=Api"
+  },
+  {
+    "url": "http:\/\/www.bing.com\/cr?IG=FD582B4EB2904C008DACC9F24EB62E47&CID=18C6E3EA71786AE02B31E8E0707E6BC5&rd=1&h=7te_i-ZysYbms983gKZi5h8qOPA9oyIgiodIJJEV0gg&v=1&r=http%3a%2f%2fmurrayglobal.files.wordpress.com%2f2012%2f03%2fbasketball.jpg&p=DevEx,5027.1",
+    "thumb_url": "https:\/\/tse2.mm.bing.net\/th?id=OIP.tqyRBFPb39ne2tGX__bRnAEsEs&pid=Api"
+  },
+  {
+    "url": "http:\/\/www.bing.com\/cr?IG=FD582B4EB2904C008DACC9F24EB62E47&CID=18C6E3EA71786AE02B31E8E0707E6BC5&rd=1&h=Kvg6ZD-UuFxNmuOknCCk95dWpsXavX0RjFTNUYAOzzU&v=1&r=http%3a%2f%2fthumb101.shutterstock.com%2fdisplay_pic_with_logo%2f540784%2f124198177%2fstock-photo-basketball-isolated-on-a-white-background-as-a-sports-and-fitness-symbol-of-a-team-leisure-activity-124198177.jpg&p=DevEx,5033.1",
+    "thumb_url": "https:\/\/tse2.mm.bing.net\/th?id=OIP.5ooh4fdTEtHRREzav6GHJwElEs&pid=Api"
+  }
+]
+```
+
+Description: This endpoint will a paginated response of images from the Bing search API.
+
+### HTTP Request
+
+`GET https://wildfire-staging.herokuapp.com/api/v1/images/search?q=search+query+string+here&page=1&per_page=50`
+
+### Required Header on all subsequent requests
+*NOTE:* After the initial request has been made to this endpoint a header similar to the
+one below will be returned. This header should be persisted on the client device and
+must be passed on all subsequent requests to this endpoint.
+
+Key | Value
+--------- | -------
+'X-MSEdge-ClientID' | '18C6E3EA71786AE02B31E8E0707E6BC5'
+
+### Query Parameters
+*NOTE:* Only use one of the below query parameters.
+
+Parameter | Default | Description
+--------- | ------- | -----------
+`q` | nil | A string containing the search query for images
+`page` | 1 | the page being requested from the Bing Image Search API
+`per_page` | 25 | the number of images to return per requested page
+
 # {TEMPLATE}
 
 ## {TEMPLATE: Title of the Endpoint}
