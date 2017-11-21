@@ -686,11 +686,11 @@ array of users returned that are friends on facebook and also using the JOMO app
   </span><span class="p">},</span><span class="w">
   </span><span class="s2">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:</span><span class="se">\/\/</span><span class="s2">lorempixel.com</span><span class="se">\/</span><span class="s2">300</span><span class="se">\/</span><span class="s2">300</span><span class="se">\/</span><span class="s2">sports</span><span class="se">\/</span><span class="s2">7"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"start_date_range"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"social_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"twitter"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"facebook"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"instagram"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"pinterest"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="s2">"facebook_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10157763278620394"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"instagram"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3574783585</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jomokerry"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"is_expired"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="s2">"followers_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
   </span><span class="s2">"following_users_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">102</span><span class="p">,</span><span class="w">
@@ -699,7 +699,7 @@ array of users returned that are friends on facebook and also using the JOMO app
   </span><span class="s2">"hosted_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
   </span><span class="s2">"block_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
   </span><span class="s2">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"profile_tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
   </span><span class="s2">"events"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">29</span><span class="p">,</span><span class="w">
@@ -2266,6 +2266,227 @@ last name match part of the search query.</p>
 <h3 id="http-request">HTTP Request</h3>
 
 <p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/users/:user_id/checkins</code></p>
+
+<h2 id="link-user-39-s-instagram-account">Link user&rsquo;s Instagram account</h2>
+
+<blockquote>
+<p>Send a POST request with required parameters:</p>
+</blockquote>
+<pre class="highlight shell"><code>https://wildfire-dev.herokuapp.com/api/v1/auth/instagram
+</code></pre><pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f0f77ddd31af406f8f4857710000405e"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>A JSON response like the following would be returned:</p>
+</blockquote>
+<pre class="highlight shell"><code>status: 200
+</code></pre><pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kerry"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Knight"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1980-11-17"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"about"</span><span class="p">:</span><span class="w"> </span><span class="s2">"about kerry knight"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wilmington"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NC"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"coords"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.2257</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">77.9447</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:</span><span class="se">\/\/</span><span class="s2">lorempixel.com</span><span class="se">\/</span><span class="s2">300</span><span class="se">\/</span><span class="s2">300</span><span class="se">\/</span><span class="s2">sports</span><span class="se">\/</span><span class="s2">7"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"start_date_range"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"facebook_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10157763278620394"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"instagram"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3574783585</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jomokerry"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"is_expired"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"followers_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"following_users_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">102</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"following_venues_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"attended_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"hosted_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"block_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"events"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Description: This endpoint will allow the current user to sign-in &amp; link their instagram account</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST https://wildfire-staging.herokuapp.com/api/v1/auth/instagram</code></p>
+
+<h2 id="remove-linked-instagram-account-from-user-profile">Remove linked Instagram account from user profile</h2>
+
+<blockquote>
+<p>Send a DELETE request with required parameters:</p>
+</blockquote>
+<pre class="highlight shell"><code>https://wildfire-dev.herokuapp.com/api/v1/auth/instagram
+</code></pre>
+<blockquote>
+<p>A JSON response like the following would be returned:</p>
+</blockquote>
+<pre class="highlight shell"><code>status: 200
+</code></pre><pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kerry"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Knight"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1980-11-17"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"about"</span><span class="p">:</span><span class="w"> </span><span class="s2">"about kerry knight"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wilmington"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NC"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"coords"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">34.2257</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">77.9447</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http:</span><span class="se">\/\/</span><span class="s2">lorempixel.com</span><span class="se">\/</span><span class="s2">300</span><span class="se">\/</span><span class="s2">300</span><span class="se">\/</span><span class="s2">sports</span><span class="se">\/</span><span class="s2">7"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"start_date_range"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"facebook_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10157763278620394"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"followers_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"following_users_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">102</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"following_venues_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"attended_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"hosted_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"block_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"follow_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"events"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Description: This endpoint will remove the linked instagram account details from the current user</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">DELETE https://wildfire-staging.herokuapp.com/api/v1/auth/instagram</code></p>
+
+<h2 id="get-recent-media-from-a-user-w-linked-instagram-account">Get recent media from a user w/ linked instagram account</h2>
+
+<blockquote>
+<p>Send a GET request with required parameters:</p>
+</blockquote>
+<pre class="highlight shell"><code>https://wildfire-dev.herokuapp.com/api/v1/users/2/instagram/media
+</code></pre>
+<blockquote>
+<p>A JSON response like the following would be returned:</p>
+</blockquote>
+<pre class="highlight shell"><code>status: 200
+</code></pre><pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"comments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"caption"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"created_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1296710352"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Inside le truc #foodtruck"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"from"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kevin"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kevin Systrom"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"26621408"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"likes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://instagr.am/p/BWrVZ/"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kevin"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"profile_picture"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://distillery.s3.amazonaws.com/profiles/profile_3_75sq_1295574122.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"created_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1296710327"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"images"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"low_resolution"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://distillery.s3.amazonaws.com/media/2011/02/02/6ea7baea55774c5e81e7e3e1f6e791a7_6.jpg"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">306</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">306</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"thumbnail"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://distillery.s3.amazonaws.com/media/2011/02/02/6ea7baea55774c5e81e7e3e1f6e791a7_5.jpg"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"standard_resolution"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://distillery.s3.amazonaws.com/media/2011/02/02/6ea7baea55774c5e81e7e3e1f6e791a7_7.jpg"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">612</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">612</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"users_in_photo"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"filter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Earlybird"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"foodtruck"</span><span class="p">],</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22721881"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">37.778720183610183</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">-122.3962783813477</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"520640"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"street_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Le Truc"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"videos"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"low_resolution"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://distilleryvesper9-13.ak.instagram.com/090d06dad9cd11e2aa0912313817975d_102.mp4"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">480</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">480</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"standard_resolution"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://distilleryvesper9-13.ak.instagram.com/090d06dad9cd11e2aa0912313817975d_101.mp4"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">640</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">640</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"comments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"caption"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"likes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://instagr.am/p/D/"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1279340983"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"images"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"low_resolution"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://distilleryimage2.ak.instagram.com/11f75f1cd9cc11e2a0fd22000aa8039a_6.jpg"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">306</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">306</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"thumbnail"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://distilleryimage2.ak.instagram.com/11f75f1cd9cc11e2a0fd22000aa8039a_5.jpg"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"standard_resolution"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://distilleryimage2.ak.instagram.com/11f75f1cd9cc11e2a0fd22000aa8039a_7.jpg"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">612</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">612</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"video"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"users_in_photo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"filter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vesper"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"363839373298"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kevin"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kevin S"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"profile_picture"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://distillery.s3.amazonaws.com/profiles/profile_3_75sq_1295574122.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Description: This endpoint will fetch the recent media from the specified user&rsquo;s instagram account</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://wildfire-staging.herokuapp.com/api/v1/users/2/instagram/media</code></p>
 
 <h1 id="events">Events</h1>
 
