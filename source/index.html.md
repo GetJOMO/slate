@@ -602,11 +602,11 @@ status: 200
   },
   "avatar_url": "http:\/\/lorempixel.com\/300\/300\/sports\/7",
   "start_date_range": 0,
-  "social_ids": {
-    "twitter": null,
-    "facebook": null,
-    "instagram": null,
-    "pinterest": null
+  "facebook_id": "10157763278620394",
+  "instagram": {
+    "user_id": 3574783585,
+    "username": "jomokerry",
+    "is_expired": false
   },
   "followers_count": 16,
   "following_users_count": 102,
@@ -615,7 +615,7 @@ status: 200
   "hosted_count": 10,
   "block_status": false,
   "follow_status": false,
-  "profile_tags": [],
+  "tags": [],
   "events": [
     {
       "id": 29,
@@ -2243,6 +2243,242 @@ This endpoint will retrieve all checkin's for the specified user.
 ### HTTP Request
 
 `GET https://wildfire-staging.herokuapp.com/api/v1/users/:user_id/checkins`
+
+## Link user's Instagram account
+
+> Send a POST request with required parameters:
+
+```shell
+https://wildfire-dev.herokuapp.com/api/v1/auth/instagram
+```
+
+```json
+{
+  "code": "f0f77ddd31af406f8f4857710000405e"
+}
+```
+
+> A JSON response like the following would be returned:
+
+```shell
+status: 200
+```
+```json
+{
+  "id": 2,
+  "first_name": "Kerry",
+  "last_name": "Knight",
+  "dob": "1980-11-17",
+  "about": "about kerry knight",
+  "city": "Wilmington",
+  "state": "NC",
+  "coords": {
+    "lat": 34.2257,
+    "lng": 77.9447
+  },
+  "avatar_url": "http:\/\/lorempixel.com\/300\/300\/sports\/7",
+  "start_date_range": 0,
+  "facebook_id": "10157763278620394",
+  "instagram": {
+    "user_id": 3574783585,
+    "username": "jomokerry",
+    "is_expired": false
+  },
+  "followers_count": 16,
+  "following_users_count": 102,
+  "following_venues_count": 3,
+  "attended_count": 5,
+  "hosted_count": 10,
+  "block_status": false,
+  "follow_status": false,
+  "tags": [],
+  "events": []
+}
+```
+
+Description: This endpoint will allow the current user to sign-in & link their instagram account
+
+### HTTP Request
+
+`POST https://wildfire-staging.herokuapp.com/api/v1/auth/instagram`
+
+## Remove linked Instagram account from user profile
+
+> Send a DELETE request with required parameters:
+
+```shell
+https://wildfire-dev.herokuapp.com/api/v1/auth/instagram
+```
+
+> A JSON response like the following would be returned:
+
+```shell
+status: 200
+```
+```json
+{
+  "id": 2,
+  "first_name": "Kerry",
+  "last_name": "Knight",
+  "dob": "1980-11-17",
+  "about": "about kerry knight",
+  "city": "Wilmington",
+  "state": "NC",
+  "coords": {
+    "lat": 34.2257,
+    "lng": 77.9447
+  },
+  "avatar_url": "http:\/\/lorempixel.com\/300\/300\/sports\/7",
+  "start_date_range": 0,
+  "facebook_id": "10157763278620394",
+  "followers_count": 16,
+  "following_users_count": 102,
+  "following_venues_count": 3,
+  "attended_count": 5,
+  "hosted_count": 10,
+  "block_status": false,
+  "follow_status": false,
+  "tags": [],
+  "events": []
+}
+```
+
+Description: This endpoint will remove the linked instagram account details from the current user
+
+### HTTP Request
+
+`DELETE https://wildfire-staging.herokuapp.com/api/v1/auth/instagram`
+
+## Get recent media from a user w/ linked instagram account
+
+> Send a GET request with required parameters:
+
+```shell
+https://wildfire-dev.herokuapp.com/api/v1/users/2/instagram/media
+```
+
+> A JSON response like the following would be returned:
+
+```shell
+status: 200
+```
+```json
+[
+  {
+    "comments": {
+        "count": 0
+    },
+    "caption": {
+        "created_time": "1296710352",
+        "text": "Inside le truc #foodtruck",
+        "from": {
+            "username": "kevin",
+            "full_name": "Kevin Systrom",
+            "type": "user",
+            "id": "3"
+        },
+        "id": "26621408"
+    },
+    "likes": {
+        "count": 15
+    },
+    "link": "http://instagr.am/p/BWrVZ/",
+    "user": {
+        "username": "kevin",
+        "profile_picture": "http://distillery.s3.amazonaws.com/profiles/profile_3_75sq_1295574122.jpg",
+        "id": "3"
+    },
+    "created_time": "1296710327",
+    "images": {
+        "low_resolution": {
+            "url": "http://distillery.s3.amazonaws.com/media/2011/02/02/6ea7baea55774c5e81e7e3e1f6e791a7_6.jpg",
+            "width": 306,
+            "height": 306
+        },
+        "thumbnail": {
+            "url": "http://distillery.s3.amazonaws.com/media/2011/02/02/6ea7baea55774c5e81e7e3e1f6e791a7_5.jpg",
+            "width": 150,
+            "height": 150
+        },
+        "standard_resolution": {
+            "url": "http://distillery.s3.amazonaws.com/media/2011/02/02/6ea7baea55774c5e81e7e3e1f6e791a7_7.jpg",
+            "width": 612,
+            "height": 612
+        }
+    },
+    "type": "image",
+    "users_in_photo": [],
+    "filter": "Earlybird",
+    "tags": ["foodtruck"],
+    "id": "22721881",
+    "location": {
+        "latitude": 37.778720183610183,
+        "longitude": -122.3962783813477,
+        "id": "520640",
+        "street_address": "",
+        "name": "Le Truc"
+    }
+  },
+  {
+    "videos": {
+        "low_resolution": {
+            "url": "http://distilleryvesper9-13.ak.instagram.com/090d06dad9cd11e2aa0912313817975d_102.mp4",
+            "width": 480,
+            "height": 480
+        },
+        "standard_resolution": {
+            "url": "http://distilleryvesper9-13.ak.instagram.com/090d06dad9cd11e2aa0912313817975d_101.mp4",
+            "width": 640,
+            "height": 640
+        },
+    "comments": {
+        "count": 2
+    },
+    "caption": null,
+    "likes": {
+        "count": 1
+    },
+    "link": "http://instagr.am/p/D/",
+    "created_time": "1279340983",
+    "images": {
+        "low_resolution": {
+            "url": "http://distilleryimage2.ak.instagram.com/11f75f1cd9cc11e2a0fd22000aa8039a_6.jpg",
+            "width": 306,
+            "height": 306
+        },
+        "thumbnail": {
+            "url": "http://distilleryimage2.ak.instagram.com/11f75f1cd9cc11e2a0fd22000aa8039a_5.jpg",
+            "width": 150,
+            "height": 150
+        },
+        "standard_resolution": {
+            "url": "http://distilleryimage2.ak.instagram.com/11f75f1cd9cc11e2a0fd22000aa8039a_7.jpg",
+            "width": 612,
+            "height": 612
+        }
+    },
+    "type": "video",
+    "users_in_photo": null,
+    "filter": "Vesper",
+    "tags": [],
+    "id": "363839373298",
+    "user": {
+        "username": "kevin",
+        "full_name": "Kevin S",
+        "profile_picture": "http://distillery.s3.amazonaws.com/profiles/profile_3_75sq_1295574122.jpg",
+        "id": "3"
+    },
+    "location": null
+  },
+  {}
+]
+```
+
+Description: This endpoint will fetch the recent media from the specified user's instagram account
+
+### HTTP Request
+
+`GET https://wildfire-staging.herokuapp.com/api/v1/users/2/instagram/media`
 
 # Events
 
